@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  project: MyString
+  request_ref: MyString
+  description: MyString
+  disclipline: MyString
+  status: MyString
+  auth_cost: 9.99
+  request_date: 2011-03-01 01:14:36
+  auth_date: 2011-03-01 01:14:36
+
+two:
+  project: MyString
+  request_ref: MyString
+  description: MyString
+  disclipline: MyString
+  status: MyString
+  auth_cost: 9.99
+  request_date: 2011-03-01 01:14:36
+  auth_date: 2011-03-01 01:14:36

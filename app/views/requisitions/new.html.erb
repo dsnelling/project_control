@@ -1,0 +1,53 @@
+<h1>New requisition</h1>
+
+<% form_for(@requisition) do |f| %>
+  <%= f.error_messages %>
+<table>
+  <tr>
+    <td><%= f.label :req_num %></td>
+    <td><%= f.text_field :req_num %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :commodity %></td>
+    <td><%= f.text_field :commodity %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :scope %></td>
+    <td><%= f.select :scope, Requisition::SCOPE_TYPES %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :status %></td>
+    <td><%= f.select :status, Requisition::STATUS_TYPES %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :mr_doc %></td>
+    <td><%= f.text_field :mr_doc %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :budget_rmb %></td>
+    <td><%= f.text_field :budget_rmb %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :required_on_site %></td>
+    <td><%= f.date_select :required_on_site %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :enquiry_issued %></td>
+    <td><%= f.date_select :enquiry_issued %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :tbt_issued %></td>
+    <td><%= f.date_select :tbt_issued %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :cbt_issued %></td>
+    <td><%= f.date_select :cbt_issued %></td>
+  </tr>
+  <tr>
+    <td><%= f.submit 'Create' %></td>
+	<td>&nbsp;</td>
+  </tr>
+</table>
+<% end %>
+
+<%= link_to 'Back', requisitions_path %>

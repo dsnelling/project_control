@@ -1,0 +1,27 @@
+<h1>Project Management and Tracking System</h1>
+<h2>Main Menu</h2>
+
+<% if session[:user_id] -%>
+  <h3>Set Project</h3>
+  <% form_tag set_project_path do %>
+     <%= select_tag(:project, options_for_select(@projects, session[:project])) %>
+	<%= submit_tag "Set Project" %>
+  <% end %>
+
+<% end -%>
+<h3>User actions:</h3>
+<ul>
+  <li><%= link_to "Service Requests", :action => "index", :controller => "service_requests" %></li>
+  <li>Correspondance Logs</li>
+  <li><%= link_to "Requisitions", requisitions_path %></li>
+  <li><%= link_to "Logout", "/logout" %></li>
+</ul>
+<h3>Administrative actions:</h3>
+<ul>
+  <li><%= link_to "Set up Project Numbers", projects_path %></li>
+  <li><%= link_to "User Administration", users_path %></li>
+  <li><%= link_to "Logout", "/logout" %></li>
+  <li><%= link_to "About...", about_path %></li>
+</ul>
+
+<br /><br />

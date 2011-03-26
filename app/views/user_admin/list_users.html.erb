@@ -1,0 +1,38 @@
+<h1>Listing of Users</h1>
+<table>
+  <tr valign="top" class="list-header">
+    <th>Username</th>
+	<th>Forename</th>
+	<th>Surname</th>
+	<th>email</th>
+	<th>Company</th>
+	<th>disabled?</th>
+	<th>superuser</th>
+  </tr>
+
+<% @all_users.each do |u| %>
+
+  <tr valign="top" class="<%= cycle('list-line-odd','list-line-even') %>">
+    <td><%=h u.username %></td>
+    <td><%=h u.forename %></td>
+    <td><%=h u.surname %></td>
+    <td><%=h u.email_addr %></td>
+    <td><%=h u.company %></td>
+    <td><%=h u.disabled %></td>
+	<td><%=h u.superuser %></td>
+	<td><%= link_to 'Edit', edit_user_admin_path(u) %></td>
+	<td><%= link_to "Show Roles", roles_path(u) %></td>
+	<td><%= link_to 'Destroy', user_admin_path(u), :confirm => 'Are you sure?',
+	        :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= link_to 'New User', new_user_path %> |
+<%= link_to 'Change Password', :controller => "user_admin",
+     :action => "change_password" %>
+
+
+
+

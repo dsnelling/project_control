@@ -1,0 +1,76 @@
+<h1>Editing contract</h1>
+
+<% form_for(@contract) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :requisition_id %><br />
+    <%= f.text_field :requisition_id %>
+  </p>
+  <p>
+    <%= f.label :commodity %><br />
+    <%= f.text_field :commodity %>
+  </p>
+  <p>
+    <%= f.label :reference %><br />
+    <%= f.text_field :reference %>
+  </p>
+  <p>
+    <%= f.label :commence_date %><br />
+    <%= f.date_select :commence_date %>
+  </p>
+  <p>
+    <%= f.label :supplier %><br />
+    <%= f.text_field :supplier %>
+  </p>
+  <p>
+    <%= f.label :value_orig %><br />
+    <%= f.text_field :value_orig %>
+  </p>
+  <p>
+    <%= f.label :value_current %><br />
+    <%= f.text_field :value_current %>
+  </p>
+  <p>
+    <%= f.label :delivery_terms %><br />
+    <%= f.text_field :delivery_terms %>
+  </p>
+  <p>
+    <%= f.label :delivery_date_contract %><br />
+    <%= f.date_select :delivery_date_contract %>
+  </p>
+  <p>
+    <%= f.label :delivery_date_forecast %><br />
+    <%= f.date_select :delivery_date_forecast %>
+  </p>
+  <p>
+    <%= f.label :expedite_contract %><br />
+    <%= f.text_field :expedite_contract %>
+  </p>
+  <p>
+    <%= f.label :expedite_email %><br />
+    <%= f.text_field :expedite_email %>
+  </p>
+  <p>
+    <%= f.label :expedite_phone %><br />
+    <%= f.text_field :expedite_phone %>
+  </p>
+  <p>
+    <%= f.label :expedite_last_contact %><br />
+    <%= f.date_select :expedite_last_contact %>
+  </p>
+  <p>
+    <%= f.label :expedit_status %><br />
+    <%= f.text_field :expedit_status %>
+  </p>
+  <p>
+    <%= f.label :update_by %><br />
+    <%= f.text_field :update_by %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @contract %> |
+<%= link_to 'Back', contracts_path %>

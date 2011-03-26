@@ -1,0 +1,65 @@
+<% # lets try to use some CSS to make this look good -%>
+
+<div id="content_block">
+  <div id="form-row-1">
+    <strong>
+	  <span class="form-row-1-label">Req num:</span>
+	  <span class="form-row-1-data"><%=h @requisition.req_num %></span>
+      <span class="form-row-1-label">Commodity:</span>
+      <span class="form-row-1-data"><%=h @requisition.commodity %></span>
+	</strong>
+  </div>
+
+  <div id="form-row-1">
+    <span class="form-row-1-label">Scope:</span>
+	<span class="form-row-1-data"><%=h @requisition.scope %></span>
+    <span class="form-row-1-label">Status:</span>
+    <span class="form-row-1-data"><%=h @requisition.status %></span>
+  </div>
+
+<p>
+  <b>MR doc:</b>
+  <%=h @requisition.mr_doc %>
+</p>
+
+<p>
+  <b>Budget rmb:</b>
+  <%=h @requisition.budget_rmb %>
+</p>
+
+<p>
+  <b>Required on site:</b>
+  <%=h @requisition.required_on_site %>
+</p>
+
+<p>
+  <b>Enquiry issued:</b>
+  <%=h @requisition.enquiry_issued %>
+</p>
+
+<p>
+  <b>Tbt issued:</b>
+  <%=h @requisition.tbt_issued %>
+</p>
+
+<p>
+  <b>Cbt issued:</b>
+  <%=h @requisition.cbt_issued %>
+</p>
+
+<p>
+  <b>Update by:</b>
+  <%=h @requisition.update_by %>
+</p>
+
+</div>
+<%= link_to 'Add comment', new_requisition_req_comment_url(@requisition) %> |
+<%= link_to 'Edit', edit_requisition_path(@requisition) %> |
+<%= link_to 'Back', requisitions_path %>
+
+<hr />
+<% unless @requisition.req_comments.empty? %>
+  <%= render :partial => "/req_comments/comment", 
+       :collection => @requisition.req_comments %>
+<% end %>
+

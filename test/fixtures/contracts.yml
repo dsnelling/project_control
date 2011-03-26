@@ -1,0 +1,37 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  requisition_id: 1
+  commodity: MyString
+  reference: MyString
+  commence_date: 2011-03-23
+  supplier: MyString
+  value_orig: 9.99
+  value_current: 9.99
+  delivery_terms: MyString
+  delivery_date_contract: 2011-03-23
+  delivery_date_forecast: 2011-03-23
+  expedite_contract: MyString
+  expedite_email: MyString
+  expedite_phone: MyString
+  expedite_last_contact: 2011-03-23
+  expedit_status: MyString
+  update_by: MyString
+
+two:
+  requisition_id: 1
+  commodity: MyString
+  reference: MyString
+  commence_date: 2011-03-23
+  supplier: MyString
+  value_orig: 9.99
+  value_current: 9.99
+  delivery_terms: MyString
+  delivery_date_contract: 2011-03-23
+  delivery_date_forecast: 2011-03-23
+  expedite_contract: MyString
+  expedite_email: MyString
+  expedite_phone: MyString
+  expedite_last_contact: 2011-03-23
+  expedit_status: MyString
+  update_by: MyString

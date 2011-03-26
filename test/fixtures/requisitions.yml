@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  req_num: MyString
+  commodity: MyString
+  scope: MyString
+  status: MyString
+  mr_doc: MyString
+  budget_rmb: 9.99
+  required_on_site: 2011-03-11
+  enquiry_issued: 2011-03-11
+  tbt_issued: 2011-03-11
+  cbt_issued: 2011-03-11
+  update_by: MyString
+
+two:
+  req_num: MyString
+  commodity: MyString
+  scope: MyString
+  status: MyString
+  mr_doc: MyString
+  budget_rmb: 9.99
+  required_on_site: 2011-03-11
+  enquiry_issued: 2011-03-11
+  tbt_issued: 2011-03-11
+  cbt_issued: 2011-03-11
+  update_by: MyString

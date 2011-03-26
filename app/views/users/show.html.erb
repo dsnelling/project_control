@@ -1,0 +1,43 @@
+<h1>Show User Detail</h1>
+
+<table>
+   <tr>
+     <td>Username:</td>
+     <td><%=h @user.username %></td>
+   </tr>
+   <tr>
+     <td>Forename:</td>
+     <td><%=h @user.forename %></td>
+   </tr>
+   <tr>
+     <td>Surname:</td>
+     <td><%=h @user.surname %></td>
+   </tr>
+   <tr>
+     <td>Email:</td>
+     <td><%=h @user.email_addr %></td>
+   </tr>
+   <tr>
+     <td>Company:</td>
+     <td><%=h @user.company %></td>
+   </tr>
+   <tr>
+     <td>User disabled?</td>
+     <td><%=h @user.disabled %></td>
+   </tr>
+   <tr>
+     <td>Superuser?</td>
+	 <td><%=h @user.superuser %></td>
+   </tr>
+  </table>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+
+
+
+
+
+

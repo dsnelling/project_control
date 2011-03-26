@@ -1,0 +1,43 @@
+<h1>Listing requisitions</h1>
+
+<div id="requisition-table">
+<table class="item_table">
+  <tr class="list-header">
+    <th>Req num</th>
+    <th>Commodity</th>
+    <th>Scope</th>
+    <th>Status</th>
+    <th>MR doc</th>
+    <th>Budget rmb</th>
+    <th>Required on site</th>
+    <th>Enquiry issued</th>
+    <th>TBT issued</th>
+    <th>CBT issued</th>
+    <th>Update by</th>
+	<th col-span="3">Action</th>
+  </tr>
+
+<% @requisitions.each do |requisition| %>
+  <tr valign="top", class="<%= cycle('list-line-odd', 'list-line-even') %>" >
+    <td><%=h requisition.req_num %></td>
+    <td><%=h truncate(requisition.commodity, :length => 30) %></td>
+    <td><%=h requisition.scope %></td>
+    <td><%=h requisition.status %></td>
+    <td><%=h requisition.mr_doc %></td>
+    <td><%=h requisition.budget_rmb %></td>
+    <td><%=h requisition.required_on_site %></td>
+    <td><%=h requisition.enquiry_issued %></td>
+    <td><%=h requisition.tbt_issued %></td>
+    <td><%=h requisition.cbt_issued %></td>
+    <td><%=h requisition.update_by %></td>
+    <td><%= link_to 'Show', requisition %></td>
+    <td><%= link_to 'Edit', edit_requisition_path(requisition) %></td>
+    <td><%= link_to 'Destroy', requisition, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+<br />
+<%= will_paginate @requisitions %>
+
+<%= link_to 'New requisition', new_requisition_path %>

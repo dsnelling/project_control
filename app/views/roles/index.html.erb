@@ -1,0 +1,31 @@
+<h1>Roles Maintainence</h1>
+
+<h2>Roles for user: <%=h @user.username %></h2>
+
+<table>
+  <% @roles_of_user.each do |role| %>
+      <tr><td><%=h role.name%></td>
+	  <td>
+	     <% form_tag :action => :remove_role_from_user, :id => role do%>
+	       <%= submit_tag 'Remove' %>
+		 <% end %>
+	  </td>
+	  </tr>
+  <% end %>
+</table>
+
+<h2>All available roles</h2>
+<table>
+  <% @roles_not_of_user.each do |role| %>
+      <tr>
+	    <td><%=h role.name%></td>
+ 	    <td>
+	      <% form_tag :action => :add_role_to_user, :id => role do%>
+	         <%= submit_tag 'Add' %>
+		  <% end %>
+	  </td>
+	 <% end %>
+</table>
+
+<%= link_to "Back", users_url %>
+<p>Find me in app/views/roles/index.html.erb</p>
