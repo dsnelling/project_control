@@ -10,25 +10,31 @@
 </head> 
 <body>
 <div id="header">
-  <h1 id="logo"><table><tr valign="bottom"><td><a href="/"><%= image_tag "capclogo001.png", :height => 40, :alt => "Project Control System" %></a></td><td><%= image_tag "capcname001.png", :height => 40 %></td></tr></table>
+  <div id="logo">
+     <a href="/"><%= image_tag "capclogo001.png", :height => 40,
+                :alt => "Project Control System" %></a>
+  </div>
+  <div id="logo_name">
+    <%= image_tag "capcname001.png", :height => 40 %>
   </div>
 
-<%= render :partial => "top_menu" %>
-
 <% if session[:user_id] -%>
-   <div> 
-     <table width="50%"><tr>
-       <td>You are logged in as <b><%= session[:username] %></b></td>
-	   <td>Active project is <b><%= session[:project] %></b></td>
-     </tr></table>
+   <div id="user_project_banner"> 
+       <p>You are logged in as <em><%= session[:username] %></em></p>
+       <p>Active project is <em><%= session[:project] %></em></p>
    </div>
   <% end -%>
+
+</div>
 <hr />
+<%= render :partial => "top_menu" %>
 <% if flash[:notice] -%>
   <div id="notice"><%= flash[:notice] %></div>
 <% end -%>
 
+<div id="content">
   <%= yield %>
+</div>
 
 <div id="footer">
 <hr />

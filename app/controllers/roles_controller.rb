@@ -6,10 +6,14 @@ class RolesController < ApplicationController
   before_filter :check_authentication, :check_authorisation
 
   def index
-  @roles = Role.find(:all)
-  @roles_of_user = @user.roles.find(:all)
-  @roles_not_of_user = Role.find(:all, :conditions => ["id NOT IN (?)",
-     @roles_of_user] )
+    @roles = Role.find(:all)
+    @roles_of_user = @user.roles.find(:all)
+    if !@roles_of_user.empty?
+      @roles_not_of_user = Role.find(:all, :conditions => ["id NOT IN (?)",
+        @roles_of_user] )
+    else
+      @roles_not_of_user = @roles
+    end
   end
 
   def create

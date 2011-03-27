@@ -1,7 +1,7 @@
 /* projectcontrol.css  */
 body { background-color: #fff; color: #333; }
 
-body, p, td {
+body, p  {
   background: #ffffff;
   font-family: verdana,helvetica,sans-serif;
   font-size: 13px;
@@ -13,13 +13,57 @@ img {
   border:0;
   display:block;}
 
-#header_menu {
-  background: #ccffcc ;
+div {
+  padding: 5px;
+  width: 100%;
   }
 
+em {
+  font-weight: bold;
+  }
+
+table {
+  border-collapse: collapse;
+  }
+
+td {
+  border: 1px solid silver;
+  }
+
+/* -- specific boxes -- */
+#header {
+  width: 100%;
+  height: 50px;
+  }
+
+#logo {
+  float: left;
+  width: 50px;
+  }
+
+#logo_name {
+  float: left;
+  width: 300px;
+  }
+
+
+#header_menu {
+  clear: both;
+  background: #ccffcc ;
+  height: 20px;
+  }
+
+#user_project_banner {
+  float: right;
+  text-align: right;
+  height: 30px;
+  width: 600px;
+  }
+
+
 /* overall content stuff */
-#content_block {
-  border: 1px;
+#content {
+  clear: both;
   }
 
 /* for form-looking stuff */
@@ -56,6 +100,7 @@ img {
 
 #footer {
   font: smaller;
+  text-align: center;
   }
 
 #notice {
