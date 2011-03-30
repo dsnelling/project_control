@@ -29,23 +29,23 @@
   </tr>
   <tr>
     <td><%= f.label :required_on_site %></td>
-    <td><%= f.date_select :required_on_site %></td>
+    <td><%= f.date_select :required_on_site, :include_blank => true %></td>
   </tr>
   <tr>
     <td><%= f.label :enquiry_issued %></td>
-    <td><%= f.date_select :enquiry_issued %></td>
+    <td><%= f.date_select :enquiry_issued, :include_blank => true %></td>
   </tr>
   <tr>
     <td><%= f.label :tbt_issued %></td>
-    <td><%= f.date_select :tbt_issued %></td>
+    <td><%= f.date_select :tbt_issued, :include_blank => true %></td>
   </tr>
   <tr>
     <td><%= f.label :cbt_issued %></td>
     <td><%= f.date_select :cbt_issued %></td>
   </tr>
   <tr>
-    <td><%= f.submit 'Update' %></td>
 	<td>&nbsp;</td>
+    <td><%= f.submit 'Update' %></td>
   </tr>
   </table>
 <% end %>

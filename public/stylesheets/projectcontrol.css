@@ -26,10 +26,6 @@ table {
   border-collapse: collapse;
   }
 
-td {
-  border: 1px solid silver;
-  }
-
 /* -- specific boxes -- */
 #header {
   width: 100%;
@@ -67,35 +63,27 @@ td {
   }
 
 /* for form-looking stuff */
-#form-row-1 {
-  height:25px;
+.form-row-1 {
+  height: 35px;
+  width: 750px;
+  /*border: 1px solid red; */
+  padding: 2px;
   }
 
 .form-row-1-label {
   float: left;
-  width: 200px;
+  width: 170px;
   text-align: right;
-  padding: 0px 30px 0px 0px;
-  /*border: 1px;
-  background-color: blue; */
+  padding: 0px 20px 0px 0px;
+  /* border: 1px solid blue; background-color: pink ;*/
   }
 
 .form-row-1-data {
   float: left;
-  width: 200px;
+  width: 150px;
   text-align: left;
   padding: 0px 0px 0px 0px;
-  /* border: 1px;
-  background-color: yellow; */
-  }
-/* for tables as indexes */
-.item_table {
-  border: 1px;
-  border-color: #000;
-  }
-
-#table_items {
-  padding: 1 px;
+  /* border: 1px solid green; background-color: yellow; */
   }
 
 #footer {
@@ -156,8 +144,11 @@ a:hover { color: #fff; background-color:#000; }
   font-size: 12px;
   list-style: square;
 }
+
+/* tables for listings on index pages */
 .list-header {
   background-color: #ccc;
+  border: 1px solid silver ;
   }
 
 .list-line-odd {
@@ -167,3 +158,8 @@ a:hover { color: #fff; background-color:#000; }
 .list-line-even {
   background-color: #eee;
   }
+
+.list-cell {
+  border: 1px solid silver;
+  }
+

@@ -5,6 +5,27 @@ class Requisition < ActiveRecord::Base
   has_many :contracts
   has_many :req_comments
 
+  REQ_TYPES = [
+    ["", ""],
+	["C - vessels","C"],
+	["D - motors","D"],
+	["E - exchangers","E"],
+	["F - furnace parts","F"],
+	["G - pumps","G"],
+	["H - cranes, HVAC, civil items","H"],
+	["J - instruments","J"],
+	["K - compressors, fans","K"],
+	["L - piping, mechanical","L"],
+	["N - adsorbents, internals","N"],
+	["P - electrical","P"],
+	["R - provisoning, spares","R"],
+	["S - steelwork","S"],
+	["Q - tanks","Q"],
+	["T - Technip reformer items","T"],
+	["U - packaged equipment","U"],
+	["W - silencer","W"]
+  ]
+
   STATUS_TYPES = [
    #as displayed      in db
     ["",               ""],

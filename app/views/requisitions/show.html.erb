@@ -1,63 +1,56 @@
 <% # lets try to use some CSS to make this look good -%>
 
 <div id="content_block">
-  <div id="form-row-1">
+  <div class="form-row-1">
     <strong>
-	  <span class="form-row-1-label">Req num:</span>
-	  <span class="form-row-1-data"><%=h @requisition.req_num %></span>
-      <span class="form-row-1-label">Commodity:</span>
-      <span class="form-row-1-data"><%=h @requisition.commodity %></span>
+	  <div class="form-row-1-label">Req num:</div>
+	  <div class="form-row-1-data"><%=h @requisition.req_num %> </div>
+      <div class="form-row-1-label">Commodity:</div>
+      <div class="form-row-1-data"><%=h @requisition.commodity %> </div>
 	</strong>
   </div>
 
-  <div id="form-row-1">
-    <span class="form-row-1-label">Scope:</span>
-	<span class="form-row-1-data"><%=h @requisition.scope %></span>
-    <span class="form-row-1-label">Status:</span>
-    <span class="form-row-1-data"><%=h @requisition.status %></span>
+  <div class="form-row-1">
+    <div class="form-row-1-label">Scope:</div>
+	<div class="form-row-1-data"><%=h @requisition.scope %>&nbsp;</div>
+    <div class="form-row-1-label">Status:</div>
+    <div class="form-row-1-data"><%=h @requisition.status %>&nbsp;</div>
   </div>
 
-<p>
-  <b>MR doc:</b>
-  <%=h @requisition.mr_doc %>
-</p>
+  <div class="form-row-1">
+    <div class="form-row-1-label">MR Doc:</div>
+	<div class="form-row-1-data"><%=h @requisition.mr_doc %>&nbsp;</div>
+    <div class="form-row-1-label">Budget (RMB):</div>
+    <div class="form-row-1-data">
+	  <%=h number_to_currency(@requisition.budget_rmb, :unit => "RMB") %>&nbsp;</div>
+  </div>
 
-<p>
-  <b>Budget rmb:</b>
-  <%=h @requisition.budget_rmb %>
-</p>
+  <div class="form-row-1">
+    <div class="form-row-1-label">Required on Site Date:</div>
+	<div class="form-row-1-data"><%=h @requisition.required_on_site %>&nbsp;</div>
+    <div class="form-row-1-label">Enquiry Issue Date:</div>
+    <div class="form-row-1-data"><%=h @requisition.enquiry_issued %>&nbsp;</div>
+  </div>
 
-<p>
-  <b>Required on site:</b>
-  <%=h @requisition.required_on_site %>
-</p>
+  <div class="form-row-1">
+    <div class="form-row-1-label">TBT Issue Date:</div>
+	<div class="form-row-1-data"><%=h @requisition.tbt_issued %>&nbsp;</div>
+    <div class="form-row-1-label">CBT Issue Date:</div>
+    <div class="form-row-1-data"><%=h @requisition.cbt_issued %>&nbsp;</div>
+  </div>
 
-<p>
-  <b>Enquiry issued:</b>
-  <%=h @requisition.enquiry_issued %>
-</p>
-
-<p>
-  <b>Tbt issued:</b>
-  <%=h @requisition.tbt_issued %>
-</p>
-
-<p>
-  <b>Cbt issued:</b>
-  <%=h @requisition.cbt_issued %>
-</p>
-
-<p>
-  <b>Update by:</b>
-  <%=h @requisition.update_by %>
-</p>
+  <div class="form-row-1">
+    <div class="form-row-1-label">Updated By:</div>
+	<div class="form-row-1-data"><%=h @requisition.update_by %>&nbsp;</div>
+  </div>
 
 </div>
+<br />
+<div id="form-navigation">
 <%= link_to 'Add comment', new_requisition_req_comment_url(@requisition) %> |
 <%= link_to 'Edit', edit_requisition_path(@requisition) %> |
 <%= link_to 'Back', requisitions_path %>
-
-<hr />
+<div>
 <% unless @requisition.req_comments.empty? %>
   <%= render :partial => "/req_comments/comment", 
        :collection => @requisition.req_comments %>
