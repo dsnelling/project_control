@@ -1,13 +1,11 @@
 <% # lets try to use some CSS to make this look good -%>
 
 <div id="content_block">
-  <div class="form-row-1">
-    <strong>
+  <div class="form-row-1-em">
 	  <div class="form-row-1-label">Req num:</div>
-	  <div class="form-row-1-data"><%=h @requisition.req_num %> </div>
+	  <div class="form-row-1-data"><%=h @requisition.req_num %></div>
       <div class="form-row-1-label">Commodity:</div>
       <div class="form-row-1-data"><%=h @requisition.commodity %> </div>
-	</strong>
   </div>
 
   <div class="form-row-1">
@@ -22,12 +20,14 @@
 	<div class="form-row-1-data"><%=h @requisition.mr_doc %>&nbsp;</div>
     <div class="form-row-1-label">Budget (RMB):</div>
     <div class="form-row-1-data">
-	  <%=h number_to_currency(@requisition.budget_rmb, :unit => "RMB") %>&nbsp;</div>
+	  <%=h number_to_currency(@requisition.budget_rmb, :unit => "RMB") %>&nbsp;
+	</div>
   </div>
 
   <div class="form-row-1">
     <div class="form-row-1-label">Required on Site Date:</div>
-	<div class="form-row-1-data"><%=h @requisition.required_on_site %>&nbsp;</div>
+	<div class="form-row-1-data">
+	    <%=h @requisition.required_on_site %>&nbsp;</div>
     <div class="form-row-1-label">Enquiry Issue Date:</div>
     <div class="form-row-1-data"><%=h @requisition.enquiry_issued %>&nbsp;</div>
   </div>
@@ -47,10 +47,11 @@
 </div>
 <br />
 <div id="form-navigation">
-<%= link_to 'Add comment', new_requisition_req_comment_url(@requisition) %> |
-<%= link_to 'Edit', edit_requisition_path(@requisition) %> |
-<%= link_to 'Back', requisitions_path %>
-<div>
+  <%= link_to 'Add comment', new_requisition_req_comment_url(@requisition) %> |
+  <%= link_to 'Edit', edit_requisition_path(@requisition) %> |
+  <%= link_to 'Back', requisitions_path %>
+</div>
+
 <% unless @requisition.req_comments.empty? %>
   <%= render :partial => "/req_comments/comment", 
        :collection => @requisition.req_comments %>

@@ -53,7 +53,7 @@ class UsersController < ApplicationController
 	    @user.password= params[:new_password]
 		if @user.save
 		  flash[:notice] = "Password successfully updated ... for " +
-		    session[:username]
+		    @user.username
 		  redirect_to(:action => :index)
 		  return
 		end

@@ -70,6 +70,13 @@ table {
   padding: 2px;
   }
 
+.form-row-1-em {
+  height: 35px;
+  width: 750px;
+  padding: 2px;
+  font-weight: bold;
+  }
+
 .form-row-1-label {
   float: left;
   width: 170px;
@@ -87,7 +94,8 @@ table {
   }
 
 #footer {
-  font: smaller;
+  font-size: 10px;
+  font-style: italic;
   text-align: center;
   }
 
@@ -96,7 +104,8 @@ table {
   padding: 1em;
   margin-bottom: 2em;
   background-color: #f0f0f0;
-  font: bold sans-serif ;
+  font-weight: bold;
+  font-family: sans-serif ;
   }
   
 pre {

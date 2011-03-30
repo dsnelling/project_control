@@ -3,9 +3,10 @@
 ActionController::Routing::Routes.draw do |map|
 #  map.resources :contracts  #---> need to think if we want to address contracts independently, or just via requsitions
   map.resources :requisitions do |r|
-     r.resources :contracts
+  #--   r.resources :contracts
 	 r.resources :req_comments
   end
+  map.resources :contracts   # temporary fix
   map.resources :projects
   map.resources :service_requests
 #  map.resources :user_admin, :collection => { :login => [:get, :post],
