@@ -1,84 +1,70 @@
-<p>
-  <b>Requisition:</b>
-  <%=h @contract.requisition_id %>
-</p>
+<h2>Details for Purchase Contract</h2>
+<table>
+  <tr>
+    <td><b>Reference:</b></td>
+    <td><b><%=h @contract.reference %><em></td>
+    <td><b>Commodity:</b></td>
+    <td><b><%=h @contract.commodity %></b></td>
+  </tr>
 
-<p>
-  <b>Commodity:</b>
-  <%=h @contract.commodity %>
-</p>
+  <tr>
+    <td>Commence date:</td>
+    <td><%=h @contract.commence_date %></td>
+    <td>Supplier:</td>
+    <td><%=h @contract.supplier %></td>
+  </tr>
 
-<p>
-  <b>Reference:</b>
-  <%=h @contract.reference %>
-</p>
+  <tr>
+    <td>Currency:</td>
+    <td><%=h @contract.currency %></td>
+    <td>Value orig:</td>
+    <td><%=h @contract.value_orig %></td>
+  <tr>
+    <td> &nbsp;</td><td>&nbsp;</td>
+    <td>Value current:</td>
+    <td><%=h @contract.value_current %></td>
+  </tr>
+  <tr>
+    <td>Delivery terms:</td>
+    <td><%=h @contract.delivery_terms %></td>
+    <td>Delivery date contract:</td>
+    <td><%=h @contract.delivery_date_contract %></td>
+  </tr>
 
-<p>
-  <b>Commence date:</b>
-  <%=h @contract.commence_date %>
-</p>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Delivery date forecast:</td>
+    <td><%=h @contract.delivery_date_forecast %></td>
+  </tr>
 
-<p>
-  <b>Supplier:</b>
-  <%=h @contract.supplier %>
-</p>
+  <tr>
+    <td>Expedite contact (name):</td>
+    <td><%=h @contract.expedite_contract %></td>
+    <td>Expedite email:</td>
+    <td><%=h @contract.expedite_email %></td>
+  </tr>
 
-<p>
-  <b>Value orig:</b>
-  <%=h @contract.value_orig %>
-</p>
+  <tr>
+    <td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>Expedite phone:</td>
+    <td><%=h @contract.expedite_phone %></td>
+  </tr>
 
-<p>
-  <b>Value current:</b>
-  <%=h @contract.value_current %>
-</p>
+  <tr>
+    <td>Expedite last contact:</td>
+    <td><%=h @contract.expedite_last_contact %></td>
+    <td>Expedite status:</td>
+    <td><%=h @contract.expedite_status %></td>
+  </tr>
 
-<p>
-  <b>Delivery terms:</b>
-  <%=h @contract.delivery_terms %>
-</p>
-
-<p>
-  <b>Delivery date contract:</b>
-  <%=h @contract.delivery_date_contract %>
-</p>
-
-<p>
-  <b>Delivery date forecast:</b>
-  <%=h @contract.delivery_date_forecast %>
-</p>
-
-<p>
-  <b>Expedite contract:</b>
-  <%=h @contract.expedite_contract %>
-</p>
-
-<p>
-  <b>Expedite email:</b>
-  <%=h @contract.expedite_email %>
-</p>
-
-<p>
-  <b>Expedite phone:</b>
-  <%=h @contract.expedite_phone %>
-</p>
-
-<p>
-  <b>Expedite last contact:</b>
-  <%=h @contract.expedite_last_contact %>
-</p>
-
-<p>
-  <b>Expedite status:</b>
-  <%=h @contract.expedite_status %>
-</p>
-
-<p>
-  <b>Update by:</b>
-  <%=h @contract.update_by %>
-</p>
-
+  <tr>
+    <td>Update by:</td>
+    <td><%=h @contract.update_by %></td>
+  </tr>
+</table>
 
 <%= link_to 'Edit',
-   edit_requisition_contract_path(@contract.requisition, @contract) %> |
-<%= link_to 'Back', requisition_path(@contract.requisition) %>
+   edit_requisition_contract_path(@requisition, @contract) %> |
+<%= link_to 'Back', requisition_path(@requisition) %>

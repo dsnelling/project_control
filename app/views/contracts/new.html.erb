@@ -2,11 +2,6 @@
 
 <% form_for([@requisition,@contract]) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :requisition_id %><br />
-    <%= f.text_field :requisition_id %>
-  </p>
   <p>
     <%= f.label :commodity %><br />
     <%= f.text_field :commodity %>
@@ -22,6 +17,10 @@
   <p>
     <%= f.label :supplier %><br />
     <%= f.text_field :supplier %>
+  </p>
+  <p>
+    <%= f.label :currency %><br />
+	<%= f.select :currency, Contract::CURRENCY_TYPES %>
   </p>
   <p>
     <%= f.label :value_orig %><br />
@@ -61,11 +60,7 @@
   </p>
   <p>
     <%= f.label :expedite_status %><br />
-    <%= f.text_field :expedite_status %>
-  </p>
-  <p>
-    <%= f.label :update_by %><br />
-    <%= f.text_field :update_by %>
+    <%= f.select :expedite_status, Contract::EXPEDITE_STATUS_TYPES %>
   </p>
   <p>
     <%= f.submit 'Create' %>

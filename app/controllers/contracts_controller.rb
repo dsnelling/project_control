@@ -43,11 +43,13 @@ class ContractsController < ApplicationController
   # POST /contracts.xml
   def create
     @contract = Contract.new(params[:contract])
+    @contract.update_by = session[:username]
+
 
     respond_to do |format|
       if @requisition.contracts << @contract
         flash[:notice] = 'Contract was successfully created.'
-        format.html { redirect_to requisition_url(@contract) }
+        format.html { redirect_to requisition_url(@requisition) }
         format.xml  { render :xml => @contract, :status => :created, :location => @contract }
       else
         format.html { render :action => "new" }
@@ -60,11 +62,13 @@ class ContractsController < ApplicationController
   # PUT /contracts/1.xml
   def update
     @contract = @requisition.contracts.find(params[:id])
+    @contract.update_by = session[:username]
 
     respond_to do |format|
       if @contract.update_attributes(params[:contract])
         flash[:notice] = 'Contract was successfully updated.'
-        format.html { redirect_to requisition_url(@requisition) }
+        format.html { redirect_to requisition_contract_url(@requisition,
+		   @contract) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

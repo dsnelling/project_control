@@ -15,17 +15,19 @@ class Contract < ActiveRecord::Base
 	["Supplier Late","late"],
 	["Released","released"]
   ]	
+  CURRENCY_TYPES = [
+    ["",""],
+    ["RMB","RMB"],
+	["EUR","EUR"],
+	["USD","USD"]
+  ]
 
   validates_presence_of :commodity, :reference, :commence_date, :supplier
   validates_uniqueness_of :reference
   validates_inclusion_of :expedite_status,
     :in => EXPEDITE_STATUS_TYPES.map {|disp, value| value}
+  validates_inclusion_of :currency,
+    :in => CURRENCY_TYPES.map {|disp, value| value}
 
-
-  def before_save
-  end
-
-  def before_update
-  end
 
 end
