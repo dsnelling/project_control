@@ -7,7 +7,6 @@
     <th>Reference</th>
     <th>Commence date</th>
     <th>Supplier</th>
-<!--
     <th>Value orig</th>
     <th>Value current</th>
     <th>Delivery terms</th>
@@ -17,8 +16,7 @@
     <th>Expedite email</th>
     <th>Expedite phone</th>
     <th>Expedite last contact</th>
-    <th>Expedit status</th>
- -->
+    <th>Expedite status</th>
     <th>Update by</th>
   </tr>
 
@@ -29,8 +27,7 @@
     <td><%=h contract.reference %></td>
     <td><%=h contract.commence_date %></td>
     <td><%=h contract.supplier %></td>
-<!--
-<td><%=h contract.value_orig %></td>
+    <td><%=h contract.value_orig %></td>
     <td><%=h contract.value_current %></td>
     <td><%=h contract.delivery_terms %></td>
     <td><%=h contract.delivery_date_contract %></td>
@@ -39,9 +36,8 @@
     <td><%=h contract.expedite_email %></td>
     <td><%=h contract.expedite_phone %></td>
     <td><%=h contract.expedite_last_contact %></td>
-    <td><%=h contract.expedit_status %></td>
-  -->
-<td><%=h contract.update_by %></td>
+    <td><%=h contract.expedite_status %></td>
+    <td><%=h contract.update_by %></td>
     <td><%= link_to 'Show', contract %></td>
     <td><%= link_to 'Edit', edit_contract_path(contract) %></td>
     <td><%= link_to 'Destroy', contract, :confirm => 'Are you sure?', :method => :delete %></td>

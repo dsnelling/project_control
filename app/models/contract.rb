@@ -18,7 +18,7 @@ class Contract < ActiveRecord::Base
 
   validates_presence_of :commodity, :reference, :commence_date, :supplier
   validates_uniqueness_of :reference
-  validates_inclusion_of :expedit_status,
+  validates_inclusion_of :expedite_status,
     :in => EXPEDITE_STATUS_TYPES.map {|disp, value| value}
 
 

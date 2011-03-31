@@ -69,8 +69,8 @@
 </p>
 
 <p>
-  <b>Expedit status:</b>
-  <%=h @contract.expedit_status %>
+  <b>Expedite status:</b>
+  <%=h @contract.expedite_status %>
 </p>
 
 <p>
@@ -79,5 +79,6 @@
 </p>
 
 
-<%= link_to 'Edit', edit_contract_path(@contract) %> |
-<%= link_to 'Back', contracts_path %>
+<%= link_to 'Edit',
+   edit_requisition_contract_path(@contract.requisition, @contract) %> |
+<%= link_to 'Back', requisition_path(@contract.requisition) %>

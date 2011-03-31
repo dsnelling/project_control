@@ -1,0 +1,21 @@
+<!-- partial to show summary information about contracts as part
+  of the requisition screen. called once for each contract.
+  formatting all a bit crap at the moment!              -->
+  <tr class="list-line-odd">
+    <td class="list-cell"><%=h contract.commodity %></td>
+    <td class="list-cell"><%=h contract.reference %></td>
+    <td class="list-cell"><%=h contract.commence_date %></td>
+    <td class="list-cell"><%=h contract.supplier %></td>
+    <td class="list-cell"><%=h contract.value_orig %></td>
+    <td class="list-cell"><%=h contract.value_current %></td>
+    <td class="list-cell"><%=h contract.delivery_terms %></td>
+    <td class="list-cell"><%=h contract.delivery_date_contract %></td>
+    <td class="list-cell"><%=h contract.delivery_date_forecast %></td>
+    <td class="list-cell"><%= link_to 'Show',
+	    requisition_contract_path(contract.requisition,contract) %> |
+      <%= link_to 'Edit',
+	    edit_requisition_contract_path(contract.requisition,contract) %> |
+      <%= link_to 'Destroy',
+	    requisition_contract_path(contract.requisition, contract),
+		:confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>

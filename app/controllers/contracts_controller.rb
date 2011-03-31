@@ -1,8 +1,10 @@
 class ContractsController < ApplicationController
+  before_filter :find_requisition
+
   # GET /contracts
   # GET /contracts.xml
   def index
-    @contracts = Contract.all
+    @contracts = @requisition.contracts.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -34,7 +36,7 @@ class ContractsController < ApplicationController
 
   # GET /contracts/1/edit
   def edit
-    @contract = Contract.find(params[:id])
+    @contract = @requisition.contracts.find(params[:id])
   end
 
   # POST /contracts
@@ -43,9 +45,9 @@ class ContractsController < ApplicationController
     @contract = Contract.new(params[:contract])
 
     respond_to do |format|
-      if @contract.save
+      if @requisition.contracts << @contract
         flash[:notice] = 'Contract was successfully created.'
-        format.html { redirect_to(@contract) }
+        format.html { redirect_to requisition_url(@contract) }
         format.xml  { render :xml => @contract, :status => :created, :location => @contract }
       else
         format.html { render :action => "new" }
@@ -57,12 +59,12 @@ class ContractsController < ApplicationController
   # PUT /contracts/1
   # PUT /contracts/1.xml
   def update
-    @contract = Contract.find(params[:id])
+    @contract = @requisition.contracts.find(params[:id])
 
     respond_to do |format|
       if @contract.update_attributes(params[:contract])
         flash[:notice] = 'Contract was successfully updated.'
-        format.html { redirect_to(@contract) }
+        format.html { redirect_to requisition_url(@requisition) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -74,12 +76,21 @@ class ContractsController < ApplicationController
   # DELETE /contracts/1
   # DELETE /contracts/1.xml
   def destroy
-    @contract = Contract.find(params[:id])
-    @contract.destroy
+    contract = @requisition.contracts.find(params[:id])
+    @requisition.contracts.delete(contract)
 
     respond_to do |format|
-      format.html { redirect_to(contracts_url) }
+      format.html { redirect_to(requisition_url(@requisition)) }
       format.xml  { head :ok }
     end
   end
+
+private
+  def find_requisition
+    @requisition_id = params[:requisition_id]
+	return redirect_to (requisition_url) unless @requisition_id
+	@requisition = Requisition.find(@requisition_id)
+  end
+
+
 end

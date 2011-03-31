@@ -1,11 +1,12 @@
 <div class="comment">
-  <p>
-    <strong>Comment last updated: <%= comment.updated_at %><br/>
-	Comment updated by: <%=h comment.comment_by %></strong>
-    <%= link_to "Edit", edit_requisition_req_comment_url(:id => comment,
+<h3>Comments for this requisition:</h3>
+<p>
+    Last updated by <%=h comment.comment_by %> at 
+	   <%= comment.updated_at.strftime("%Y-%m-%d") %>
+    <%= link_to "Edit comment", edit_requisition_req_comment_url(:id => comment,
                                   :requisition_id => comment.requisition_id) %>
 
-    <%= link_to "Delete", requisition_req_comment_url(:id => comment,
+    <%= link_to "Delete comment", requisition_req_comment_url(:id => comment,
                                   :requisition_id => comment.requisition_id), 
                                   :method => :delete %>
   </p>

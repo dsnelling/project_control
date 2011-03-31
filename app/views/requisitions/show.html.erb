@@ -46,11 +46,23 @@
 
 </div>
 <br />
+
+<% unless @requisition.contracts.empty? %>
+  <%= render :partial => "/contracts/contract_header" %>
+  <%= render :partial => "/contracts/contract",
+     :collection => @requisition.contracts %>
+  <%= render :partial => "/contracts/contract_footer" %>
+<% end %>
+
 <div id="form-navigation">
+  <%= link_to 'Add Purchase contract',
+         new_requisition_contract_url(@requisition) %> |
   <%= link_to 'Add comment', new_requisition_req_comment_url(@requisition) %> |
   <%= link_to 'Edit', edit_requisition_path(@requisition) %> |
   <%= link_to 'Back', requisitions_path %>
 </div>
+
+
 
 <% unless @requisition.req_comments.empty? %>
   <%= render :partial => "/req_comments/comment", 
