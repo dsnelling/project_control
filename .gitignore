@@ -8,5 +8,6 @@ config/database.yml
 .DS_Store
 tmp/**/*
 db/*.sqlite3
-
+*.swp
+debug*
 

@@ -24,6 +24,8 @@ ActionController::Routing::Routes.draw do |map|
   map.about '/about', :controller => :main_menu, :action => :about
   map.set_project '/main_menu/set_project', 
       :controller => :main_menu, :action => :set_project
+  map.debug_info 'main_menu/debug_info',
+     :controller => :main_menu, :action => :debug_info
 
 #default routes
 #  map.connect ':controller/:action/:id'

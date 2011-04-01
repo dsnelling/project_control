@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 	  if user
 	    session[:user_id] = user.id
 		session[:username] = user.username
+		session[:project] = params[:project] if params[:project]
 	    redirect_to main_menu_path
 	  else
 	    flash[:notice] = "Invalid user/password!!"

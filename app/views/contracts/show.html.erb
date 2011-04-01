@@ -64,7 +64,14 @@
     <td><%=h @contract.update_by %></td>
   </tr>
 </table>
-
+<% if @contract.expedite_comment %>
+  <p>
+    Expeditors comments:<br />
+    <%=h @contract.expedite_comment %>
+  </p>
+<% end %>
+<br />
 <%= link_to 'Edit',
    edit_requisition_contract_path(@requisition, @contract) %> |
-<%= link_to 'Back', requisition_path(@requisition) %>
+<%= link_to 'Back - this requisition', requisition_path(@requisition) %> |
+<%= link_to 'Back - list of requisitions', requisitions_path %>

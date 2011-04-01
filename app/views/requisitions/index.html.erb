@@ -1,7 +1,8 @@
 <h1>Listing requisitions</h1>
 <div id="requisition-filter">
   <% form_tag(requisitions_path, :method => :get) do %>
-    <%= select_tag :req_filter, options_for_select (Requisition::REQ_TYPES,params[:req_filter]) %>
+    <%= select_tag :req_filter, 
+	    options_for_select (Requisition::REQ_TYPES,session[:req_filter]) %>
     <%= submit_tag "Filter" %>
   <% end %>
 </div>

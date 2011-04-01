@@ -11,6 +11,8 @@
     <td class="list-cell"><%=h contract.delivery_terms %></td>
     <td class="list-cell"><%=h contract.delivery_date_contract %></td>
     <td class="list-cell"><%=h contract.delivery_date_forecast %></td>
+	<td class="list-cell"><%=h truncate(contract.expedite_comment,
+	  :length => 30) %></td>
     <td class="list-cell"><%= link_to 'Show',
 	    requisition_contract_path(contract.requisition,contract) %> |
       <%= link_to 'Edit',

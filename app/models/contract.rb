@@ -13,6 +13,8 @@ class Contract < ActiveRecord::Base
 	["Awaiting Materials","materials"],
 	["Awaiting Free-issues","free-issues"],
 	["Supplier Late","late"],
+	["Late, but under control","Late-under control"],
+	["late, not in control","not in control"],
 	["Released","released"]
   ]	
   CURRENCY_TYPES = [

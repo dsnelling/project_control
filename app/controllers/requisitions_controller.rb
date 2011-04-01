@@ -1,6 +1,7 @@
 # RequsitionsController - allows requsitions to be managed.
 # usual CRUD actions.
 # comments can be added against a requisition - using comments controller
+# contracts also can be added against requisitions
 
 require "will_paginate"
 
@@ -11,10 +12,13 @@ class RequisitionsController < ApplicationController
 # GET /requisitions
   # GET /requisitions.xml
   def index
-    #filter on start chars of req_num. filter key passed in form
-    conditions = params[:req_filter] ?
+    #keep filter for next time
+	session[:req_filter] = params[:req_filter] if params[:req_filter]
+
+   #filter on start chars of req_num. filter key passed in form
+    conditions = session[:req_filter] ?
 	  ["project = ? AND req_num LIKE ?",session[:project],
-	       params[:req_filter]+"%"] :
+	       session[:req_filter]+"%"] :
 	  ["project = ?", session[:project] ]
 
    	@requisitions = Requisition.paginate :page => params[:page],
