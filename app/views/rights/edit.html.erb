@@ -1,0 +1,25 @@
+<h1>Editing rights</h1>
+<table>
+<% form_for(@right) do |f| %>
+  <tr>
+    <td><%= f.label :name %></td>
+	<td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :controller %></td>
+	<td><%= f.text_field :controller %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :action %></td>
+	<td><%= f.text_field :action %></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+	<td><%= f.submit 'Update' %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to 'Show', @right %> |
+<%= link_to 'Back', rights_path %>
+
+

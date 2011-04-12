@@ -2,7 +2,8 @@
 <div id="requisition-filter">
   <% form_tag(requisitions_path, :method => :get) do %>
     <%= select_tag :req_filter, 
-	    options_for_select (Requisition::REQ_TYPES,session[:req_filter]) %>
+	    options_for_select (Requisition::REQ_TYPES,session[:req_filter]),
+		:onchange => 'this.form.submit()' %>
     <%= submit_tag "Filter" %>
   <% end %>
 </div>
@@ -26,8 +27,9 @@
   <tr class="<%= cycle('list-line-odd', 'list-line-even') %>" >
     <td class="list-cell"><%=h requisition.req_num %></td>
     <td class="list-cell">
-	    <%=h truncate(requisition.commodity, :length => 30) %></td>
-    <td class="list-cell"><%=h requisition.scope %></td>
+	    <%=h truncate(requisition.commodity, :length => 50) %></td>
+    <td class="list-cell">
+	    <%=h requisition.scope %></td>
     <td class="list-cell"><%=h requisition.status %></td>
     <td class="list-cell"><%=h requisition.mr_doc %></td>
     <td class="list-cell"><%=h requisition.required_on_site %></td>

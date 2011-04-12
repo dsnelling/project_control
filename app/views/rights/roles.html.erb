@@ -1,0 +1,30 @@
+<!-- Hell, this is ugly, but it works! -->
+<h1>Available Roles & associated Rights</h1>
+<table class="item-table">
+  <tr class="list-header">
+    <th class="list-cell">ID</th>
+	<th class="list-cell">Name</th>
+	<th class="list-cell">Rights</th>
+  </tr>
+
+<% @roles.each do |role| %>
+  <tr class="<%= cycle('list-line-odd','list-line-even') %>">
+    <td valign="top" class="list-cell"><%=h role.id %></td>
+	<td valign="top" class="list-cell"><%=h role.name %></td>
+    <td class="list-cell">
+	   <% unless role.rights.empty? %>
+	     <table>
+	        <%= render :partial => "/rights/right",
+			    :collection => role.rights, :locals => { :role_id => role.id }%>
+	     </table>
+	   <% end %>
+	   <% form_tag add_right_right_path(role) do %>
+	     <%= select_tag( :right_id, options_for_select(@rights)) %>
+		 <%= submit_tag 'Add Right' %>
+	   <% end %>
+	 &nbsp;</td>
+  </tr>
+<% end %>
+</table>
+
+	   

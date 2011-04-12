@@ -14,7 +14,8 @@ ActionController::Routing::Routes.draw do |map|
 	 user.resources :roles, :collection => { :add_role_to_user => :post,
 	    :remove_role_from_user => :post }
   end
- 
+  map.resources :rights, :collection => { :roles => :get }, :member => 
+      { :add_right => :post, :remove_right => :post } 
 
 # named routes (some is not very @RESTful, but hey, it works!)
   map.root :controller => :main_menu

@@ -1,0 +1,20 @@
+<h1>Show rights</h1>
+<table>
+  <tr>
+    <td>Name:</td>
+	<td><%= @right.name %></td>
+  </tr>
+  <tr>
+    <td>Controller:</td>
+	<td><%= @right.controller %></td>
+  </tr>
+  <tr>
+    <td>Action:</td>
+	<td><%= @right.action %></td>
+  </tr>
+</table>
+
+<%= link_to 'Edit', edit_right_path(@right) %> |
+<%= link_to 'Back', rights_path %>
+
+
