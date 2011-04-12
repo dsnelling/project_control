@@ -2,69 +2,71 @@
 
 <% form_for([@requisition,@contract]) do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :commodity %><br />
-    <%= f.text_field :commodity %>
-  </p>
-  <p>
-    <%= f.label :reference %><br />
-    <%= f.text_field :reference %>
-  </p>
-  <p>
-    <%= f.label :commence_date %><br />
-    <%= f.date_select :commence_date, :include_blank => true %>
-  </p>
-  <p>
-    <%= f.label :supplier %><br />
-    <%= f.text_field :supplier %>
-  </p>
-  <p>
-    <%= f.label :currency %><br />
-	<%= f.select :currency, Contract::CURRENCY_TYPES %>
-  </p>
-  <p>
-    <%= f.label :value_orig %><br />
-    <%= f.text_field :value_orig %>
-  </p>
-  <p>
-    <%= f.label :value_current %><br />
-    <%= f.text_field :value_current %>
-  </p>
-  <p>
-    <%= f.label :delivery_terms %><br />
-    <%= f.text_field :delivery_terms %>
-  </p>
-  <p>
-    <%= f.label :delivery_date_contract %><br />
-    <%= f.date_select :delivery_date_contract, :include_blank => true %>
-  </p>
-  <p>
-    <%= f.label :delivery_date_forecast %><br />
-    <%= f.date_select :delivery_date_forecast, :include_blank => true %>
-  </p>
-  <p>
-    <%= f.label :expedite_contract %><br />
-    <%= f.text_field :expedite_contract %>
-  </p>
-  <p>
-    <%= f.label :expedite_email %><br />
-    <%= f.text_field :expedite_email %>
-  </p>
-  <p>
-    <%= f.label :expedite_phone %><br />
-    <%= f.text_field :expedite_phone %>
-  </p>
-  <p>
-    <%= f.label :expedite_last_contact %><br />
-    <%= f.date_select :expedite_last_contact, :include_blank => true %>
-  </p>
-  <p>
-    <%= f.label :expedite_status %><br />
-    <%= f.select :expedite_status, Contract::EXPEDITE_STATUS_TYPES %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
+<table>
+  <tr>
+    <td><%= f.label :commodity %></td>
+    <td><%= f.text_field :commodity %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :reference %></td>
+    <td><%= f.text_field :reference %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :commence_date %></td>
+    <td><%= f.date_select :commence_date, :include_blank => true %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :supplier %></td>
+    <td><%= f.text_field :supplier %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :currency %></td>
+	<td><%= f.select :currency, Contract::CURRENCY_TYPES %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :value_orig %></td>
+    <td><%= f.text_field :value_orig %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :value_current %></td>
+    <td><%= f.text_field :value_current %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :delivery_terms %></td>
+    <td><%= f.text_field :delivery_terms %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :delivery_date_contract %></td>
+    <td><%= f.date_select :delivery_date_contract, :include_blank => true %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :delivery_date_forecast %></td>
+    <td><%= f.date_select :delivery_date_forecast, :include_blank => true %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :expedite_contract %></td>
+    <td><%= f.text_field :expedite_contract %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :expedite_email %></td>
+    <td><%= f.text_field :expedite_email %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :expedite_phone %></td>
+    <td><%= f.text_field :expedite_phone %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :expedite_last_contact %></td>
+    <td><%= f.date_select :expedite_last_contact, :include_blank => true %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :expedite_status %></td>
+    <td><%= f.select :expedite_status, Contract::EXPEDITE_STATUS_TYPES %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= f.submit 'Create' %></td></td>
+  </tr>
+</table>
+<% end %></td>
 
-<%= link_to 'Back', requisition_path(@requisition) %>
+<%= link_to 'Back', requisition_path(@requisition) %></td>
