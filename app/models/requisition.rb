@@ -5,9 +5,12 @@ class Requisition < ActiveRecord::Base
   has_many :contracts
   has_many :req_comments
 
-  named_scope :by_req, lambda {|r| {:conditions => ['req_num LIKE ?', r+'%'] }}
-  named_scope :by_scope, lambda {|s| { :conditions => ['scope LIKE ?', s+'%'] }}
-  named_scope :by_status, lambda {|s| {:conditions => ['status LIKE ?', s+'%'] }}
+  named_scope :by_req, lambda {|r| {:conditions => ['req_num LIKE ?',
+    r.to_s + '%'] }}
+  named_scope :by_scope, lambda {|s| { :conditions => ['scope LIKE ?',
+    s.to_s + '%'] }}
+  named_scope :by_status, lambda {|s| {:conditions => ['status LIKE ?',
+    s.to_s + '%'] }}
 
   REQ_TYPES = [
     ["", ""],

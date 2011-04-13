@@ -10,4 +10,4 @@ tmp/**/*
 db/*.sqlite3
 *.swp
 debug*
-
+doc/app/*
