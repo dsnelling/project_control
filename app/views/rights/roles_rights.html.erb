@@ -14,7 +14,7 @@
 	   <% unless role.rights.empty? %>
 	     <table>
 	        <%= render :partial => "/rights/right",
-			    :collection => role.rights %>
+			    :collection => role.rights.sort_by { |r| r.name } %>
 	     </table>
 	   <% end %>
 	 &nbsp;</td>

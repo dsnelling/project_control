@@ -50,7 +50,7 @@ class RightsController < ApplicationController
 # allocated rights to roles
 
   def roles
-    @roles = Role.find(:all)
+    @roles = Role.find(:all, :order => "name")
 	@rights = Right.find(:all, :order => "name").map {|r| [r.name, r.id] }
   end
 

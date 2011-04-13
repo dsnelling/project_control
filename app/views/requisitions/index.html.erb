@@ -1,8 +1,24 @@
 <h1>Listing requisitions</h1>
-<div id="requisition-filter">
+<div class="requisition-filter">
   <% form_tag(requisitions_path, :method => :get) do %>
     <%= select_tag :req_filter, 
 	    options_for_select (Requisition::REQ_TYPES,session[:req_filter]),
+		:onchange => 'this.form.submit()' %>
+    <%= submit_tag "Filter" %>
+  <% end %>
+</div>
+<div class="requisition-filter">
+  <% form_tag(requisitions_path, :method => :get) do %>
+    <%= select_tag :scope_filter, 
+	    options_for_select (Requisition::SCOPE_TYPES,session[:scope_filter]),
+		:onchange => 'this.form.submit()' %>
+    <%= submit_tag "Filter" %>
+  <% end %>
+</div>
+<div class="requisition-filter">
+  <% form_tag(requisitions_path, :method => :get) do %>
+    <%= select_tag :status_filter, 
+	    options_for_select (Requisition::STATUS_TYPES,session[:status_filter]),
 		:onchange => 'this.form.submit()' %>
     <%= submit_tag "Filter" %>
   <% end %>
@@ -20,6 +36,8 @@
     <th class="list-cell">Enquiry issued</th>
     <th class="list-cell">TBT issued<br />
          CBT issued</th>
+	<th class="list-cell-vert">PO?</th>
+	<th class="list-cell-vert">Com?</th>
     <th  class="list-cell" colspan="3">Action</th>
   </tr>
 
@@ -37,6 +55,10 @@
     <td class="list-cell"><%=h requisition.enquiry_issued %></td>
     <td class="list-cell"><%=h requisition.tbt_issued %><br/>
         <%=h requisition.cbt_issued %></td>
+    <td class="list-cell"><%= requisition.contracts.empty? ? "&nbsp;" : "Y" %>
+	  </td>
+	<td class="list-cell"><%= requisition.req_comments.empty? ? "&nbsp;": "Y" %>
+	  </td>
     <td class="list-cell"><%= link_to 'Show', requisition %></td>
     <td class="list-cell"><%= link_to 'Edit',
 	    edit_requisition_path(requisition) %></td>

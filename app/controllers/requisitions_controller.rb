@@ -9,20 +9,23 @@ class RequisitionsController < ApplicationController
 # check authentication status
   before_filter :check_authentication, :check_authorisation
 
-# GET /requisitions
+  # GET /requisitions
   # GET /requisitions.xml
+  # produces a tabular listing of requisitions, filtered by the applicable
+  # project (stored in a session variable), and filtered.
+  #
   def index
     #keep filter for next time
 	session[:req_filter] = params[:req_filter] if params[:req_filter]
+	session[:scope_filter] = params[:scope_filter] if params[:scope_filter]
+	session[:status_filter] = params[:status_filter] if params[:status_filter]
 
-   #filter on start chars of req_num. filter key passed in form
-    conditions = session[:req_filter] ?
-	  ["project = ? AND req_num LIKE ?",session[:project],
-	       session[:req_filter]+"%"] :
-	  ["project = ?", session[:project] ]
-
-   	@requisitions = Requisition.paginate :page => params[:page],
-	     :conditions => conditions, :order => :req_num
+    #uses named scopes chained together to implement filter
+   	@requisitions = Requisition.by_req(session[:req_filter]).\
+	  by_scope(session[:scope_filter]).by_status(session[:status_filter]).\
+	  paginate(:page => params[:page],
+	  :conditions => ["project = ?", session[:project] ],
+	  :order => :req_num)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -32,6 +35,8 @@ class RequisitionsController < ApplicationController
 
   # GET /requisitions/1
   # GET /requisitions/1.xml
+  # shows an individual requisition, with associated contracts (aka PO) and
+  # comments
   def show
     @requisition = Requisition.find(params[:id])
 

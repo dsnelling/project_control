@@ -5,8 +5,13 @@ class Requisition < ActiveRecord::Base
   has_many :contracts
   has_many :req_comments
 
+  named_scope :by_req, lambda {|r| {:conditions => ['req_num LIKE ?', r+'%'] }}
+  named_scope :by_scope, lambda {|s| { :conditions => ['scope LIKE ?', s+'%'] }}
+  named_scope :by_status, lambda {|s| {:conditions => ['status LIKE ?', s+'%'] }}
+
   REQ_TYPES = [
     ["", ""],
+	["B - services","B"],
 	["C - vessels","C"],
 	["D - motors","D"],
 	["E - exchangers","E"],
@@ -16,6 +21,7 @@ class Requisition < ActiveRecord::Base
 	["J - instruments","J"],
 	["K - compressors, fans","K"],
 	["L - piping, mechanical","L"],
+	["M - construction items","M"],
 	["N - adsorbents, internals","N"],
 	["P - electrical","P"],
 	["R - provisoning, spares","R"],
@@ -50,6 +56,5 @@ class Requisition < ActiveRecord::Base
   validates_presence_of :commodity
   validates_inclusion_of :scope, :in => SCOPE_TYPES.map {|disp, value| value}
   validates_inclusion_of :status, :in => STATUS_TYPES.map {|disp, value| value}
-
 
 end

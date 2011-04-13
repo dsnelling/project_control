@@ -1,18 +1,16 @@
-<div class="comment">
-<h3>Comments for this requisition:</h3>
-<p>
-    Last updated by <%=h comment.comment_by %> at 
-	   <%= comment.updated_at.strftime("%Y-%m-%d") %>
-    <%= link_to "Edit comment", edit_requisition_req_comment_url(:id => comment,
+<div class="comment-caption">
+By <%=h comment.comment_by %> at 
+	   <%= comment.updated_at.strftime("%Y-%m-%d") %>:
+</div>
+<div class="comment-leftcolumn">
+  <%=h comment.comment %>
+</div>
+<div class="comment-rightcolumn">
+  <%= link_to "Edit comment", edit_requisition_req_comment_url(:id => comment,
                                   :requisition_id => comment.requisition_id) %>
-
-    <%= link_to "Delete comment", requisition_req_comment_url(:id => comment,
+  <br />
+  <%= link_to "Delete comment", requisition_req_comment_url(:id => comment,
                                   :requisition_id => comment.requisition_id), 
                                   :method => :delete %>
-  </p>
-  <blockquote>
-    <%=h comment.comment %>
-  </blockquote>
+</div>
 
-
-</div>                                    
