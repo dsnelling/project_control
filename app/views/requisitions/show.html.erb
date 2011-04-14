@@ -38,7 +38,7 @@
    <!-- contracts for this requisition -->
     <%= render :partial => "/contracts/contract_header" %>
     <%= render :partial => "/contracts/contract",
-     :collection => @requisition.contracts %>
+     :collection => @requisition.contracts.sort_by {|c| c.reference } %>
     <%= render :partial => "/contracts/contract_footer" %>
   <% end %>
 

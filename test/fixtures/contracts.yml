@@ -15,7 +15,7 @@ one:
   expedite_email: MyString
   expedite_phone: MyString
   expedite_last_contact: 2011-03-23
-  expedit_status: MyString
+  expedite_status: MyString
   update_by: MyString
 
 two:
@@ -33,5 +33,5 @@ two:
   expedite_email: MyString
   expedite_phone: MyString
   expedite_last_contact: 2011-03-23
-  expedit_status: MyString
+  expedite_status: MyString
   update_by: MyString

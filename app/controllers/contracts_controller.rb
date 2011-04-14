@@ -92,7 +92,7 @@ class ContractsController < ApplicationController
 private
   def find_requisition
     @requisition_id = params[:requisition_id]
-	return redirect_to (requisition_url) unless @requisition_id
+	return redirect_to(requisition_url) unless @requisition_id
 	@requisition = Requisition.find(@requisition_id)
   end
 

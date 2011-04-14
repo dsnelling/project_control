@@ -63,6 +63,14 @@ table {
   }
 /* -- end of overall stuff --- */
 
+/* -- for menu block in the main menu -- */
+#main-menu {
+  font-size: 18px;
+  line-height: 130%;
+  padding: 20px 0px 10px 100px;
+  /* border: 1px solid cyan; */
+  }
+
 /* for form-looking stuff */
 #form-leftcolumn {
   float: left;
