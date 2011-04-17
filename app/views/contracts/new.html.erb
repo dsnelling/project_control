@@ -13,7 +13,7 @@
   </tr>
   <tr>
     <td><%= f.label :commence_date %></td>
-    <td><%= f.date_select :commence_date, :include_blank => true %></td>
+    <td><%= f.calendar_date_select :commence_date %></td>
   </tr>
   <tr>
     <td><%= f.label :supplier %></td>
@@ -37,11 +37,11 @@
   </tr>
   <tr>
     <td><%= f.label :delivery_date_contract %></td>
-    <td><%= f.date_select :delivery_date_contract, :include_blank => true %></td>
+    <td><%= f.calendar_date_select :delivery_date_contract %></td>
   </tr>
   <tr>
     <td><%= f.label :delivery_date_forecast %></td>
-    <td><%= f.date_select :delivery_date_forecast, :include_blank => true %></td>
+    <td><%= f.calendar_date_select :delivery_date_forecast %></td>
   </tr>
   <tr>
     <td><%= f.label :expedite_contract %></td>

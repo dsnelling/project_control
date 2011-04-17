@@ -7,7 +7,8 @@
     <td class="list-cell"><%=h contract.commence_date %></td>
     <td class="list-cell"><%=h contract.supplier %></td>
     <td class="list-cell"><%=h contract.currency %></td>
-    <td class="list-cell"><%=h contract.value_current %></td>
+    <td class="list-cell"><%= number_with_delimiter(contract.value_current)
+	   %></td>
     <td class="list-cell"><%=h contract.delivery_terms %></td>
     <td class="list-cell"><%=h contract.delivery_date_contract %></td>
     <td class="list-cell"><%=h contract.delivery_date_forecast %></td>

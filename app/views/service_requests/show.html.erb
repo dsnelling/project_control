@@ -1,44 +1,46 @@
-<table>
+<table class="show-table">
  <tr>
-    <td><b>Project:</b></td>
-    <td><%=h @service_request.project %></td>
+    <td class="show-table-label"><b>Project:</b></td>
+    <td class="show-table-data"><%=h @service_request.project %></td>
   </tr>
 
   <tr>
-    <td><b>Request ref:</b></td>
-    <td><%=h @service_request.request_ref %></td>
+    <td class="show-table-label"><b>Request ref:</b></td>
+    <td class="show-table-data"><%=h @service_request.request_ref %></td>
   </tr>
 
   <tr>
-    <td><b>Description:</b></td>
-    <td><%=h @service_request.description %></td>
+    <td class="show-table-label"><b>Description:</b></td>
+    <td class="show-table-data"><%=h @service_request.description %></td>
   </tr>
 
   <tr>
-    <td><b>Disclipline:</b></td>
-    <td><%=h @service_request.disclipline %></td>
+    <td class="show-table-label"><b>Disclipline:</b></td>
+    <td class="show-table-data"><%=h @service_request.disclipline %></td>
   </tr>
 
   <tr>
-    <td><b>Status:</b></td>
-    <td><%=h @service_request.status %></td>
+    <td class="show-table-label"><b>Status:</b></td>
+    <td class="show-table-data"><%=h @service_request.status %></td>
   </tr>
 
   <tr>
-    <td><b>Auth cost:</b></td>
-    <td>RMB<%=h @service_request.auth_cost %></td>
+    <td class="show-table-label"><b>Auth cost:</b></td>
+    <td class="show-table-data">RMB<%=h @service_request.auth_cost %></td>
   </tr>
 
   <tr>
-    <td><b>Request date:</b></td>
-    <td><%=h @service_request.request_date.strftime("%Y-%m-%d") %></td>
+    <td class="show-table-label"><b>Request date:</b></td>
+    <td class="show-table-data"><%=h @service_request.request_date.strftime(
+	  "%Y-%m-%d") if @service_request.request_date%></td>
   </tr>
 
   <tr>
-    <td><b>Auth date:</b></td>
-    <td><%=h @service_request.auth_date.strftime('%Y-%m-%d') if @service_request.auth_date  %>&nbsp;</td>
+    <td class="show-table-label"><b>Auth date:</b></td>
+    <td class="show-table-data"><%=h @service_request.auth_date.strftime(
+	  '%Y-%m-%d') if @service_request.auth_date  %>&nbsp;</td>
   </tr>
 </table>
-
+<br />
 <%= link_to 'Edit', edit_service_request_path(@service_request) %> |
 <%= link_to 'Back', service_requests_path %>

@@ -24,6 +24,7 @@
   <% end %>
 </div>
 <div id="requisition-table">
+<p>"R-O-S": Required on Site date; "R-PO": Required date of Purchase Contract</p> 
 <table class="item_table">
   <tr class="list-header">
     <th class="list-cell">Req num</th>
@@ -31,7 +32,7 @@
     <th class="list-cell">Scope</th>
     <th class="list-cell">Status</th>
     <th class="list-cell">MR doc</th>
-    <th class="list-cell">Required<br />On Site</th>
+    <th class="list-cell">R-O-S<br />R-PO</th>
 	<th class="list-cell">Bid Applic<br />Approved</th>
     <th class="list-cell">Enquiry issued</th>
     <th class="list-cell">TBT issued<br />
@@ -50,7 +51,8 @@
 	    <%=h requisition.scope %></td>
     <td class="list-cell"><%=h requisition.status %></td>
     <td class="list-cell"><%=h requisition.mr_doc %></td>
-    <td class="list-cell"><%=h requisition.required_on_site %></td>
+    <td class="list-cell"><%=h requisition.required_on_site %><br />
+	  <%=h requisition.required_contract %></td>
     <td class="list-cell"><%=h requisition.bid_applic_approved %></td>
     <td class="list-cell"><%=h requisition.enquiry_issued %></td>
     <td class="list-cell"><%=h requisition.tbt_issued %><br/>

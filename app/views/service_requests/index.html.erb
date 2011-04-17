@@ -1,29 +1,37 @@
 <h1>Listing of Service Requests</h1>
 
-<table>
+<div class="sr-filter">
+  <% form_tag (service_requests_path, :method => :get) do %>
+    <%= select_tag :proj_filter,
+	  options_for_select(@projects, params[:proj_filter]), :onchange =>'this.form.submit()' %>
+  <% end %>
+</div>
+
+<table class="item-table">
   <tr valign="top" class="list-header">
-    <th>Project</th>
-    <th>Request ref</th>
-    <th>Description</th>
-    <th>Disclipline</th>
-    <th>Status</th>
-    <th>Auth cost</th>
-    <th>Request date</th>
-    <th>Auth date</th>
-	<th>Action</th>
+    <th class="list-cell">Project</th>
+    <th class="list-cell">Request ref</th>
+    <th class="list-cell">Description</th>
+    <th class="list-cell">Disclipline</th>
+    <th class="list-cell">Status</th>
+    <th class="list-cell">Auth cost</th>
+    <th class="list-cell">Request date</th>
+    <th class="list-cell">Auth date</th>
+	<th class="list-cell">Action</th>
   </tr>
 
 <% @service_requests.each do |service_request| %>
   <tr valign="top" class="<%= cycle('list-line-odd','list-line-even') %>">
-    <td><%=h service_request.project %></td>
-    <td><%=h service_request.request_ref %></td>
-    <td><%=h truncate(service_request.description, :length => 40) %></td>
-    <td><%=h service_request.disclipline %></td>
-    <td><%=h service_request.status %></td>
-    <td><%=h number_to_currency(service_request.auth_cost, :unit => ' ') %></td>
-    <td><%=h service_request.request_date.strftime("%Y-%m-%d") if service_request.request_date%></td>
-    <td><%=h service_request.auth_date.strftime("%Y-%m-%d") if service_request.auth_date %>&nbsp;</td>
-    <td><%= link_to 'Show', service_request %> |
+    <td class="list-cell"><%=h service_request.project %></td>
+    <td class="list-cell"><%=h service_request.request_ref %></td>
+    <td class="list-cell"><%=h truncate(service_request.description, :length => 40) %></td>
+    <td class="list-cell"><%=h service_request.disclipline %></td>
+    <td class="list-cell"><%=h service_request.status %></td>
+    <td style="text-align: right">
+	  <%=h number_to_currency(service_request.auth_cost, :unit => ' ') %></td>
+    <td class="list-cell"><%=h service_request.request_date.strftime("%Y-%m-%d") if service_request.request_date%></td>
+    <td class="list-cell"><%=h service_request.auth_date.strftime("%Y-%m-%d") if service_request.auth_date %>&nbsp;</td>
+    <td class="list-cell"><%= link_to 'Show', service_request %> |
       <%= link_to 'Edit', edit_service_request_path(service_request) %> |
       <%= link_to 'Destroy', service_request, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

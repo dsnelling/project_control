@@ -6,7 +6,10 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <meta name="keywords" content="project control system" />
 <title>ProjectControlSystem: <%= controller.action_name %></title>
+  <%= javascript_include_tag "prototype" %> 
   <%= stylesheet_link_tag 'projectcontrol' %>
+  <%= CalendarDateSelect.format = (:iso_date) %>
+  <%= calendar_date_select_includes "silver" %>
 </head> 
 <body>
 <div id="header">

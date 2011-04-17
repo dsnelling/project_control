@@ -29,23 +29,27 @@
   </tr>
   <tr>
     <td><%= f.label :required_on_site %></td>
-    <td><%= f.date_select :required_on_site, :include_blank => true %></td>
+    <td><%= f.calendar_date_select :required_on_site %></td>
+   <tr>
+    <td><%= f.label :required_contract %></td>
+    <td><%= f.calendar_date_select :required_contract %></td>
+  </tr>
   </tr>
   <tr>
     <td><%= f.label :bid_applic_approved %></td>
-    <td><%= f.date_select :bid_applic_approved, :include_blank => true %></td>
+    <td><%= f.calendar_date_select :bid_applic_approved %></td>
   </tr>
   <tr>
     <td><%= f.label :enquiry_issued %></td>
-    <td><%= f.date_select :enquiry_issued, :include_blank => true %></td>
+    <td><%= f.calendar_date_select :enquiry_issued %></td>
   </tr>
   <tr>
     <td><%= f.label :tbt_issued %></td>
-    <td><%= f.date_select :tbt_issued, :include_blank => true %></td>
+    <td><%= f.calendar_date_select :tbt_issued %></td>
   </tr>
   <tr>
     <td><%= f.label :cbt_issued %></td>
-    <td><%= f.date_select :cbt_issued, :include_blank => true %></td>
+    <td><%= f.calendar_date_select :cbt_issued %></td>
   </tr>
   <tr>
 	<td>&nbsp;</td>

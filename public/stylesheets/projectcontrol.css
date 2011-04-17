@@ -117,6 +117,25 @@ table {
   /* border: 1px solid green; background-color: yellow; */
   }
 
+/* table-based 'show' pages */
+.show-table {
+  margin: 0px 0px 0px 20px;
+  }
+
+.show-table-label {
+  text-align: right;
+  font-weight: bold;
+  padding: 5px 10px 0px 0px;
+  /* border-bottom: 1px dotted silver; */
+  }
+
+.show-table-data {
+  padding: 5px 10px 0px 0px;
+  border-bottom: 1px dotted silver;
+  }
+
+
+
 /* for the contracts and comments on the "show" requisition page */
 #req-contracts {
   clear: both;

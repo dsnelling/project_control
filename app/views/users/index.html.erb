@@ -1,29 +1,31 @@
 <h1>Listing of Users</h1>
-<table>
+<table class="item-table">
   <tr valign="top" class="list-header">
-    <th>Username</th>
-	<th>Forename</th>
-	<th>Surname</th>
-	<th>email</th>
-	<th>Company</th>
-	<th>disabled?</th>
-	<th>superuser</th>
-	<th colspan="3">Action</th>
+    <th class="list-cell">Username</th>
+	<th class="list-cell">Forename</th>
+	<th class="list-cell">Surname</th>
+	<th class="list-cell">email</th>
+	<th class="list-cell">Company</th>
+	<th class="list-cell">Last Login</th>
+	<th class="list-cell">disabled?</th>
+	<th class="list-cell">superuser</th>
+	<th  class="list-cell"colspan="3">Action</th>
   </tr>
 
 <% @all_users.each do |u| %>
 
   <tr valign="top" class="<%= cycle('list-line-odd','list-line-even') %>">
-    <td><%=h u.username %></td>
-    <td><%=h u.forename %></td>
-    <td><%=h u.surname %></td>
-    <td><%=h u.email_addr %></td>
-    <td><%=h u.company %></td>
-    <td><%=h u.disabled %></td>
-	<td><%=h u.superuser %></td>
-	<td><%= link_to 'Edit', edit_user_path(u) %>|</td>
-	<td><%= link_to "Show Roles", user_roles_path(u) %>|</td>
-	<td><%= link_to 'Destroy', user_path(u), :confirm => 'Are you sure?',
+    <td class="list-cell"><%=h u.username %></td>
+    <td class="list-cell"><%=h u.forename %></td>
+    <td class="list-cell"><%=h u.surname %></td>
+    <td class="list-cell"><%=h u.email_addr %></td>
+    <td class="list-cell"><%=h u.company %></td>
+	<td class="list-cell"><%=h u.last_login %></td>
+    <td class="list-cell"><%=h u.disabled %></td>
+	<td class="list-cell"><%=h u.superuser %></td>
+	<td class="list-cell"><%= link_to 'Edit', edit_user_path(u) %>|</td>
+	<td class="list-cell"><%= link_to "Show Roles", user_roles_path(u) %>|</td>
+	<td class="list-cell"><%= link_to 'Destroy', user_path(u), :confirm => 'Are you sure?',
 	        :method => :delete %></td>
   </tr>
 <% end %>

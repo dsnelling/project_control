@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :project %><br />
-    <%= f.text_field :project %>
+    <%= f.select :project, @projects %>
   </p>
   <p>
     <%= f.label :request_ref %><br />
@@ -21,7 +21,7 @@
   </p>
   <p>
     <%= f.label :status %><br />
-    <%= f.text_field :status %>
+    <%= f.select :status, ServiceRequest::STATUS_TYPES %>
   </p>
   <p>
     <%= f.label :auth_cost %><br />
@@ -29,11 +29,11 @@
   </p>
   <p>
     <%= f.label :request_date %><br />
-    <%= f.datetime_select :request_date %>
+    <%= f.calendar_date_select :request_date %>
   </p>
   <p>
     <%= f.label :auth_date %><br />
-    <%= f.datetime_select :auth_date %>
+    <%= f.calendar_date_select :auth_date %>
   </p>
   <p>
     <%= f.submit 'Create' %>

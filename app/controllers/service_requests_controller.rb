@@ -10,8 +10,10 @@ class ServiceRequestsController < ApplicationController
   # GET /service_requests
   # GET /service_requests.xml
   def index
-    @service_requests = ServiceRequest.paginate :page => params[:page],
+    @service_requests = ServiceRequest.by_project(params[:proj_filter]).
+	  paginate :page => params[:page],
 	  :order => "project, request_ref"
+	@projects = [""] + Project.find(:all).map {|p| p.name }
 
     respond_to do |format|
       format.html # index.html.erb
@@ -34,6 +36,7 @@ class ServiceRequestsController < ApplicationController
   # GET /service_requests/new.xml
   def new
     @service_request = ServiceRequest.new
+	@projects = Project.find(:all).map {|p| p.name }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,6 +47,7 @@ class ServiceRequestsController < ApplicationController
   # GET /service_requests/1/edit
   def edit
     @service_request = ServiceRequest.find(params[:id])
+	@projects = Project.find(:all).map {|p| p.name }
   end
 
   # POST /service_requests
@@ -52,7 +56,8 @@ class ServiceRequestsController < ApplicationController
     @service_request = ServiceRequest.new(params[:service_request])
 
     respond_to do |format|
-	  @service_request.auth_date = nil if !(@service_request.status == "approved") 
+	  @service_request.auth_date = nil if !(@service_request.status.upcase ==
+	    "APPROVED") 
       if @service_request.save
         flash[:notice] = 'ServiceRequest was successfully created.'
         format.html { redirect_to(@service_request) }
@@ -73,7 +78,7 @@ class ServiceRequestsController < ApplicationController
       if @service_request.update_attributes(params[:service_request])
 	    # no approved date unless service request status is "approved"
 		#    - perhaps this should go in the model
-		if !(@service_request.status == "approved") 
+		if !(@service_request.status.upcase == "APPROVED") 
 	      @service_request.auth_date = nil
         end
 		if @service_request.save

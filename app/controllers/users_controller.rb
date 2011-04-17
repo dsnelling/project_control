@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 	    session[:user_id] = user.id
 		session[:username] = user.username
 		session[:project] = params[:project] if params[:project]
+		user.update_attribute(:last_login, Time.now)
 	    redirect_to main_menu_path
 	  else
 	    flash[:notice] = "Invalid user/password!!"
@@ -33,7 +34,11 @@ class UsersController < ApplicationController
     name = User.find(session[:user_id]).username
     session[:user_id] = nil
 	session[:username] = nil
-	flash[:notice] = name + " Logged out!!!"
+	# purge session variables
+	session_count = ActiveRecord::SessionStore::
+	Session.delete_all( [ 'updated_at < ?', 1.day.ago])
+	flash[:notice] = name +
+	   " Logged out!!!; #{session_count} Sessions purged .. "
     redirect_to(:action => :login)
   end
 
