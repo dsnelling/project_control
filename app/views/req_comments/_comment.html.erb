@@ -6,10 +6,10 @@ By <%=h comment.comment_by %> at
   <%=h comment.comment %>
 </div>
 <div class="comment-rightcolumn">
-  <%= link_to "Edit comment", edit_requisition_req_comment_url(:id => comment,
+  <%= link_to t('edit'), edit_requisition_req_comment_url(:id => comment,
                                   :requisition_id => comment.requisition_id) %>
   <br />
-  <%= link_to "Delete comment", requisition_req_comment_url(:id => comment,
+  <%= link_to t('destroy'), requisition_req_comment_url(:id => comment,
                                   :requisition_id => comment.requisition_id), 
                                   :method => :delete %>
 </div>

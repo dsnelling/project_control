@@ -3,6 +3,8 @@
 # perform the requested action?). check_auth* filters are in individual
 # controllers
 
+# sets the locale based on locale set in the session
+
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 
@@ -15,13 +17,14 @@ class ApplicationController < ActionController::Base
   layout "main"   # use the standard layout all the time
 
   # Scrub sensitive parameters from your log
-  filter_parameter_logging :password
+  filter_parameter_logging :passworda
+  before_filter :set_user_locale
 
 private
 
   def check_authentication
     unless session[:user_id]
-	  flash[:notice] = "failed authentication"
+	  flash[:notice] = t('flash.auth_failed')
 	  session[:intended_action] = action_name
 	  session[:intended_controller] = controller_name
 	  redirect_to (login_url)
@@ -36,11 +39,18 @@ private
 	    right.action == action_name && right.controller == \
 		   self.class.controller_path }
 		}
-	  flash[:notice] = "You are not authorised to view the page requested"
+	  flash[:notice] = t('flash.page_not_auth')
 	  request.env["HTTP_REFERER"] ? (redirect_to :back) : 
 	       (redirect_to(main_menu_url))
 	  return false
     end
   end
+
+  def set_user_locale
+    session[:locale] = params[:locale] if params[:locale]
+	I18n.locale = session[:locale] || I18n.default_locale
+  end
+
 end
+
 

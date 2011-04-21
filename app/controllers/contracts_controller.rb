@@ -16,6 +16,8 @@ class ContractsController < ApplicationController
   # GET /contracts/1.xml
   def show
     @contract = Contract.find(params[:id])
+	user = User.find(session[:user_id])
+	@view_costs = user.has_right?("View Costs")
 
     respond_to do |format|
       format.html # show.html.erb
@@ -48,7 +50,7 @@ class ContractsController < ApplicationController
 
     respond_to do |format|
       if @requisition.contracts << @contract
-        flash[:notice] = 'Contract was successfully created.'
+        flash[:notice] = t 'flash.contr_create'
         format.html { redirect_to requisition_url(@requisition) }
         format.xml  { render :xml => @contract, :status => :created, :location => @contract }
       else
@@ -66,7 +68,7 @@ class ContractsController < ApplicationController
 
     respond_to do |format|
       if @contract.update_attributes(params[:contract])
-        flash[:notice] = 'Contract was successfully updated.'
+        flash[:notice] = t 'flash.contr_update'
         format.html { redirect_to requisition_contract_url(@requisition,
 		   @contract) }
         format.xml  { head :ok }

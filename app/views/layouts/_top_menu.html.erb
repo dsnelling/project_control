@@ -1,11 +1,10 @@
-<!-- dummy header menu - not to be used -->
 <div id="header_menu">
   <table width="100%"><tr>
-    <td><%= link_to "Home", :root %></td>
-	<td>Requisitions</td>
-	<td>Expediting</td>
-	<td>Service Requests</td>
-	<td><%= link_to "logout", :logout %>
+    <td><%= link_to t('main_menu.home'), :root %></td>
+	<td><%= link_to t('main_menu.menu_reqs'), requisitions_path %></td>
+	<td><%= link_to t('main_menu.menu_sr'), service_requests_path %></td>
+	<td><%= link_to t('main_menu.user_admin'), users_path %></td>
+	<td><%= link_to t('logout'), :logout %>
   </tr></table>
 </div>
 

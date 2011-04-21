@@ -1,13 +1,11 @@
 <div id="header_menu">
   <table width="100%"><tr>
-    <td><%= link_to "Home", root_path %></td>
-	<td><%= link_to "Requisitions", requisitions_path %></td>
-	<td>Expediting</td>
-    <td><%= link_to "Service Requests", service_requests_path %></td>
-	<td><%= link_to "User Maintainence", users_path %></td>
-	<td><%= link_to "Logout", logout_path %></td>
+    <td><%= link_to t('main_menu.home'), :root %></td>
+	<td><%= link_to t('main_menu.menu_reqs'), requisitions_path %></td>
+	<td><%= link_to t('main_menu.menu_sr'),service_request_path %></td>
+	<td><%= link_to t('main_menu.user_admin'), users_path %></td>
+	<td><%= link_to t('logout'), :logout %>
   </tr></table>
 </div>
-<hr />
 
 

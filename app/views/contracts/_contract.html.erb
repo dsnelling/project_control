@@ -7,18 +7,20 @@
     <td class="list-cell"><%=h contract.commence_date %></td>
     <td class="list-cell"><%=h contract.supplier %></td>
     <td class="list-cell"><%=h contract.currency %></td>
-    <td class="list-cell"><%= number_with_delimiter(contract.value_current)
-	   %></td>
+    <% if @view_costs %>
+      <td class="list-cell"><%= number_with_delimiter(contract.value_current)
+	     %></td>
+    <% end %>
     <td class="list-cell"><%=h contract.delivery_terms %></td>
     <td class="list-cell"><%=h contract.delivery_date_contract %></td>
     <td class="list-cell"><%=h contract.delivery_date_forecast %></td>
 	<td class="list-cell"><%=h truncate(contract.expedite_comment,
 	  :length => 30) %></td>
-    <td class="list-cell"><%= link_to 'Show',
+    <td class="list-cell"><%= link_to t('show'),
 	    requisition_contract_path(contract.requisition,contract) %> |
-      <%= link_to 'Edit',
+      <%= link_to t('edit'),
 	    edit_requisition_contract_path(contract.requisition,contract) %> |
-      <%= link_to 'Destroy',
+      <%= link_to t('destroy'),
 	    requisition_contract_path(contract.requisition, contract),
-		:confirm => 'Are you sure?', :method => :delete %></td>
+		:confirm => t('confirm'), :method => :delete %></td>
   </tr>

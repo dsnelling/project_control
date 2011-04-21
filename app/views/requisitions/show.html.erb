@@ -1,38 +1,40 @@
 <% # lets try to use some CSS to make this look good -%>
 
 <div id="form-leftcolumn">
-  <div class="form-row-1-label">Req num:</div>
+  <div class="form-row-1-label"><%= t 'req.req_ref' %>:</div>
   <div class="form-row-1-data"><%=h @requisition.req_num %></div>
-  <div class="form-row-1-label">Commodity:</div>
+  <div class="form-row-1-label"><%= t 'req.commodity' %>:</div>
   <div class="form-row-1-data"><%=h @requisition.commodity %> </div>
-  <div class="form-row-1-label">Scope:</div>
-  <div class="form-row-1-data"><%=h @requisition.scope %>&nbsp;</div>
-  <div class="form-row-1-label">Status:</div>
-  <div class="form-row-1-data"><%=h @requisition.status %>&nbsp;</div>
-  <div class="form-row-1-label">MR Doc:</div>
+  <div class="form-row-1-label"><%= t 'req.scope' %>:</div>
+  <div class="form-row-1-data"><%=h display_req_scope(@requisition.scope)
+      %>&nbsp;</div>
+  <div class="form-row-1-label"><%= t 'req.status' %>:</div>
+  <div class="form-row-1-data"><%=h display_req_status(@requisition.status)
+      %>&nbsp;</div>
+  <div class="form-row-1-label"><%= t 'req.mr_doc' %>:</div>
   <div class="form-row-1-data"><%=h @requisition.mr_doc %>&nbsp;</div>
-  <div class="form-row-1-label">Budget (RMB):</div>
+  <div class="form-row-1-label"><%= t 'req.budget' %>:</div>
   <div class="form-row-1-data">
 	  <%=h number_to_currency(@requisition.budget_rmb, :unit => "RMB") %>&nbsp;
     </div>
 </div>
 
 <div id="form-rightcolumn">
-  <div class="form-row-1-label">Required on Site Date:</div>
+  <div class="form-row-1-label"><%= t 'req.ros_date' %>:</div>
   <div class="form-row-1-data">
 	    <%=h @requisition.required_on_site %>&nbsp;</div>
-  <div class="form-row-1-label">Required Date of Contract:</div>
+  <div class="form-row-1-label"><%= t 'req.rpo_date' %>:</div>
   <div class="form-row-1-data">
 	    <%=h @requisition.required_contract %>&nbsp;</div>
-  <div class="form-row-1-label">Bid Application Approval:</div>
+  <div class="form-row-1-label"><%= t 'req.bid_applic' %>:</div>
   <div class="form-row-1-data"><%=h @requisition.bid_applic_approved %></div>
-  <div class="form-row-1-label">Enquiry Issue Date:</div>
+  <div class="form-row-1-label"><%= t 'req.enq_issued' %>:</div>
   <div class="form-row-1-data"><%=h @requisition.enquiry_issued %>&nbsp;</div>
-  <div class="form-row-1-label">TBT Issue Date:</div>
+  <div class="form-row-1-label"><%= t 'req.tbt_issue' %>:</div>
   <div class="form-row-1-data"><%=h @requisition.tbt_issued %>&nbsp;</div>
-  <div class="form-row-1-label">CBT Issue Date:</div>
+  <div class="form-row-1-label"><%= t 'req.cbt_issue' %>:</div>
   <div class="form-row-1-data"><%=h @requisition.cbt_issued %>&nbsp;</div>
-  <div class="form-row-1-label">Updated By:</div>
+  <div class="form-row-1-label"><%= t 'update_by' %>:</div>
   <div class="form-row-1-data"><%=h @requisition.update_by %>&nbsp;</div>
 </div>
 
@@ -45,19 +47,20 @@
     <%= render :partial => "/contracts/contract_footer" %>
   <% end %>
 
+<%= link_to t('req.new_contract'),
+         new_requisition_contract_url(@requisition) %> |
+<%= link_to t('req.edit_req'), edit_requisition_path(@requisition) %>
+
   <% unless @requisition.req_comments.empty? %>
     <!-- comments against this requisition -->
-    <h3>Comments against this requisition:</h3>
+    <h3><%= t 'req.comment_header' %></h3>
     <%= render :partial => "/req_comments/comment", 
        :collection => @requisition.req_comments %>
   <% end %>
 </div>
 
 <div id="form-navigation">
-  <%= link_to 'Add New Purchase contract',
-         new_requisition_contract_url(@requisition) %> |
-  <%= link_to 'Add New Comment', new_requisition_req_comment_url(@requisition) %> |
-  <%= link_to 'Edit this Requisition', edit_requisition_path(@requisition) %> |
-  <%= link_to 'Back to Requisitions List', requisitions_path %>
+  <%= link_to t('req.new_comment'), new_requisition_req_comment_url(@requisition) %> |
+   <%= link_to t('req.back'), requisitions_path %>
 </div>
 

@@ -48,4 +48,10 @@ class User < ActiveRecord::Base
     roles.delete(role) if roles.find_by_id(role)
   end
 
+  #return true if the current user has the right
+  def has_right?(r)
+	self.roles.detect {|role| role.rights.detect {|right| right.name == 
+	  r }}
+  end
+	
 end

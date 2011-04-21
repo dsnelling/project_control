@@ -18,11 +18,11 @@ class MainMenuController < ApplicationController
   def about
   end
 
-  # set the project number
+  # set the project number & locale
   def set_project
     if request.post?
       session[:project] = params[:project] if params[:project]
-	  redirect_to :action => :index
+      redirect_to :action => :index
     end
   end
 

@@ -1,16 +1,23 @@
- <h1>Please log in:</h1>
+<p style="color: red;"> I don't think we actually use this view ....</p>
 
- <% form_tag(:action => "login") do %>
-	<table>
-	  <tr>
+
+<h1>Please log in:</h1>
+
+<% form_tag(:action => "login") do %>
+  <table>
+    <tr>
 	    <td><label for="username">Name:</label></td>
 	    <td><%= text_field_tag "username" %></td>
-	  </tr>
-	  <tr>
+	</tr>
+	<tr>
 	    <td><label for="password">Password:</td>
 		<td><%= password_field_tag "password" %></td>
-	  </tr>
-	  <tr>
+	</tr>
+    <tr>
+	  <td><label for "language">Set Language</td>
+	  <td><%= select_tag %>
+
+    <tr>
 	    <td><%= submit_tag "Submit" %></td>
 		<td>&nbsp;</td>
 	  </tr>

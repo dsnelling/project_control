@@ -1,0 +1,23 @@
+# config/s3.yml
+#
+# credentials for Amazon S3 storage
+# reference environment variables here, so actual values need to be loaded
+# in environment somehow.
+#
+# use:
+# $heroku config:add S3_ACCESS_KEY='your_key'
+# $heroku config:add S3_SECRET_KEY='your_secret'
+# $heroku config:add S3_BUCKET_NAME='your_bucket_name'
+#
+development:
+  access_key_id: <%= ENV['S3_ACCESS_KEY'] %>
+  secret_access_key: <%= ENV['S3_SECRET_KEY'] %>
+  bucket: capc-project-development
+
+production:
+  access_key_id: <%= ENV['S3_ACCESS_KEY'] %>
+  secret_access_key: <%= ENV['S3_SECRET_KEY'] %>
+  bucket: capc-project
+
+
+

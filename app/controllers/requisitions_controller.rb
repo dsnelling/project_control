@@ -39,6 +39,8 @@ class RequisitionsController < ApplicationController
   # comments
   def show
     @requisition = Requisition.find(params[:id])
+    user = User.find(session[:user_id])
+    @view_costs = user.has_right?("View Costs")
 
     respond_to do |format|
       format.html # show.html.erb
@@ -72,7 +74,7 @@ class RequisitionsController < ApplicationController
 
     respond_to do |format|
       if @requisition.save
-        flash[:notice] = 'Requisition was successfully created.'
+        flash[:notice] = t 'flash.req_create'
         format.html { redirect_to(@requisition) }
         format.xml  { render :xml => @requisition, :status => :created, :location => @requisition }
       else
@@ -90,7 +92,7 @@ class RequisitionsController < ApplicationController
       if (@requisition.update_attributes(params[:requisition]) && 
 	             @requisition.update_attributes(:project => session[:project],
 			         :update_by => session[:username]))
-        flash[:notice] = 'Requisition was successfully updated.'
+        flash[:notice] = t 'flash.req_update'
         format.html { redirect_to(@requisition) }
         format.xml  { head :ok }
       else

@@ -1,69 +1,70 @@
-<h2>Details for Purchase Contract</h2>
+<h2><%= t 'contr.show_title' %></h2>
 <table class="show-table">
   <tr>
-    <td class="show-table-label">Reference:</td>
+    <td class="show-table-label"><%= t 'contr.ref' %>:</td>
     <td class="show-table-data"><%=h @contract.reference %></td>
-    <td class="show-table-label">Commodity:</td>
+    <td class="show-table-label"><%= t 'contr.commodity' %>:</td>
     <td class="show-table-data"><%=h @contract.commodity %></td>
   </tr>
 
   <tr>
-    <td class="show-table-label">Commence date:</td>
+    <td class="show-table-label"><%= t 'contr.com_date' %>:</td>
     <td class="show-table-data"><%=h @contract.commence_date %></td>
-    <td class="show-table-label">Supplier:</td>
+    <td class="show-table-label"><%= t 'contr.supplier' %>:</td>
     <td class="show-table-data"><%=h @contract.supplier %></td>
   </tr>
-
+<% if @view_costs %>
   <tr>
-    <td class="show-table-label">Currency:</td>
+    <td class="show-table-label"><%= t 'contr.currency' %>:</td>
     <td class="show-table-data"><%=h @contract.currency %></td>
-    <td class="show-table-label">Value orig:</td>
+    <td class="show-table-label"><%= t 'contr.value_' %>:</td>
     <td class="show-table-data"><%= number_with_delimiter(
 	   @contract.value_orig) %></td>
   <tr>
     <td class="show-table-label"> &nbsp;</td>
 	<td class="show-table-data">&nbsp;</td>
-    <td class="show-table-label">Value current:</td>
+    <td class="show-table-label"><%= t 'contr.value_c' %>:</td>
     <td class="show-table-data"><%= number_with_delimiter(
 	   @contract.value_current) %></td>
   </tr>
+<% end %> 
   <tr>
-    <td class="show-table-label">Delivery terms:</td>
+    <td class="show-table-label"><%= t 'contr.d_terms' %>:</td>
     <td class="show-table-data"><%=h @contract.delivery_terms %></td>
-    <td class="show-table-label">Delivery date contract:</td>
+    <td class="show-table-label"><%= t 'contr.d_date_c' %>:</td>
     <td class="show-table-data"><%=h @contract.delivery_date_contract %></td>
   </tr>
 
   <tr>
     <td class="show-table-label">&nbsp;</td>
     <td class="show-table-data">&nbsp;</td>
-    <td class="show-table-label">Delivery date forecast:</td>
+    <td class="show-table-label"><%= t 'contr.d_date_f' %>:</td>
     <td class="show-table-data"><%=h @contract.delivery_date_forecast %></td>
   </tr>
 
   <tr>
-    <td class="show-table-label">Expedite contact (name):</td>
+    <td class="show-table-label"><%= t 'contr.ex_contact' %>:</td>
     <td class="show-table-data"><%=h @contract.expedite_contract %></td>
-    <td class="show-table-label">Expedite email:</td>
+    <td class="show-table-label"><%= t 'contr.ex_email' %>:</td>
     <td class="show-table-data"><%=h @contract.expedite_email %></td>
   </tr>
 
   <tr>
     <td class="show-table-label">&nbsp;</td>
 	<td class="show-table-data">&nbsp;</td>
-	<td class="show-table-label">Expedite phone:</td>
+	<td class="show-table-label"><%= t 'contr.ex_phone' %>:</td>
     <td class="show-table-data"><%=h @contract.expedite_phone %></td>
   </tr>
 
   <tr>
-    <td class="show-table-label">Expedite last contact:</td>
+    <td class="show-table-label"><%= t 'contr.ex_date' %>:</td>
     <td class="show-table-data"><%=h @contract.expedite_last_contact %></td>
-    <td class="show-table-label">Expedite status:</td>
+    <td class="show-table-label"><%= t 'contr.ex_status' %>:</td>
     <td class="show-table-data"><%=h @contract.expedite_status %></td>
   </tr>
 
   <tr>
-    <td class="show-table-label">Update by:</td>
+    <td class="show-table-label"><%= t 'update_by' %>:</td>
     <td class="show-table-data"><%=h @contract.update_by %></td>
   </tr>
 </table>
@@ -74,7 +75,7 @@
   </p>
 <% end %>
 <br />
-<%= link_to 'Edit',
+<%= link_to t('edit'),
    edit_requisition_contract_path(@requisition, @contract) %> |
-<%= link_to 'Back - this requisition', requisition_path(@requisition) %> |
-<%= link_to 'Back - list of requisitions', requisitions_path %>
+<%= link_to t('contr.back'), requisition_path(@requisition) %> |
+<%= link_to t('req.back'), requisitions_path %>

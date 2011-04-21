@@ -1,8 +1,53 @@
 require 'test_helper'
 
 class ContractTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+ test "invalid with empty attributes" do
+    contract = Contract.new
+	assert !contract.valid?
+	assert contract.errors.invalid?(:reference)
+	assert contract.errors.invalid?(:commence_date)
+	assert contract.errors.invalid?(:commodity)
+	assert contract.errors.invalid?(:supplier)
   end
+
+  test "contract currency in list" do
+    contract = Contract.new(:reference => "CONTRACT-1", :commence_date =>
+	  "2011-06-22", :commodity => "big valves", :currency => "RMB", :supplier =>
+	  "no 1 valve company", :expedite_status => "")
+    contract.currency = "blah"
+    assert !contract.valid?
+
+    contract.currency = "EUR"
+    assert contract.valid?
+  end
+
+  test "expedite_status in list" do
+    contract = Contract.new(:reference => "CONTRACT-2", :commence_date => 
+	  "2011-04-22", :supplier => "no 2 valve company",
+	  :commodity => "little valves", :currency => "EUR", :expedite_status => "")
+    contract.expedite_status = "blah"
+    assert !contract.valid?
+
+    contract.expedite_status = "unknown"
+    assert contract.valid?
+  end
+
+  test "req_num uniqueness test" do
+    contract1 = Contract.new(:reference => "CONTRACT-1", :commence_date =>
+	  "2011-06-22", :commodity => "big valves", :currency => "RMB", :supplier =>
+	  "no 1 valve company", :expedite_status => "")
+    assert contract1.valid?
+    contract1.save
+  
+    contract2 = Contract.new(:reference => "CONTRACT-1", :commence_date =>
+	  "2011-06-23", :commodity => "big valves", :currency => "RMB", :supplier =>
+	  "no 1 valve company", :expedite_status => "")
+
+    assert !contract2.valid?
+
+	contract2.reference = "CONTRACT-2"
+	assert contract2.valid?
+
+  end
+
 end

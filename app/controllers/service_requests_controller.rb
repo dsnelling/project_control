@@ -1,7 +1,7 @@
 # provides listing and update of service requests
 #
 require "will_paginate"
-#
+
 class ServiceRequestsController < ApplicationController
 
   # must be logged in to access this controller
@@ -59,7 +59,7 @@ class ServiceRequestsController < ApplicationController
 	  @service_request.auth_date = nil if !(@service_request.status.upcase ==
 	    "APPROVED") 
       if @service_request.save
-        flash[:notice] = 'ServiceRequest was successfully created.'
+        flash[:notice] = t('flash.sr_create')
         format.html { redirect_to(@service_request) }
         format.xml  { render :xml => @service_request, :status => :created, :location => @service_request }
       else
@@ -82,7 +82,7 @@ class ServiceRequestsController < ApplicationController
 	      @service_request.auth_date = nil
         end
 		if @service_request.save
-          flash[:notice] = 'ServiceRequest was successfully updated.'
+          flash[:notice] = t('flash.sr_update')
           format.html { redirect_to(@service_request) }
           format.xml  { head :ok }
         else

@@ -1,34 +1,41 @@
-<h1>Project Management and Tracking System</h1>
-<h2>Main Menu</h2>
+<%= # debug session
+  %>
+<%= # debug I18n.locale
+   %>
+
+<h1><%= t 'main_menu.title' %></h1>
+<h2><%= t 'main_menu.subtitle' %></h2>
 
 <% if !session[:user_id] -%>
-  <%= render :partial => "login" %>
+  <%= render :partial => "/users/login" %>
 <% else %>
-<h3>Set Project</h3>
+<h3><%= t 'main_menu.set_project' %></h3>
   <% form_tag set_project_path do %>
     <%= select_tag(:project,
 	      options_for_select(@projects, session[:project]),
 		  :onchange => 'this.form.submit()') %>
-	<%= submit_tag "Set Project" %>
+    <%= select_tag :locale, options_for_select(LANGUAGES,I18n.locale),
+	   :onchange => 'this.form.submit()' %>
+	<%= submit_tag "Set" %>
   <% end %>
 
 <div id="main-menu">
-  <h3>User actions:</h3>
+  <h3><%= t 'main_menu.menu_title_1' %></h3>
   <ul>
-    <li><%= link_to "Requisitions and Purchase Contracts",
+    <li><%= link_to t('main_menu.menu_reqs'),
        requisitions_path %></li>
-    <li><%= link_to "Service Requests", :action => "index",
+    <li><%= link_to t('main_menu.menu_sr'), :action => "index",
 	   :controller => "service_requests" %></li>
     <li>Correspondance Logs</li>
-    <li><%= link_to "Logout", "/logout" %></li>
+    <li><%= link_to t('logout'), "/logout" %></li>
   </ul>
-  <h3>Administrative actions:</h3>
+  <h3><%= t 'main_menu.menu_title_2' %></h3>
   <ul>
-    <li><%= link_to "Set up Project Numbers", projects_path %></li>
-    <li><%= link_to "Change Password", change_password_users_path %></li>
-    <li><%= link_to "User Administration", users_path %></li>
-    <li><%= link_to "Logout", "/logout" %></li>
-    <li><%= link_to "About...", about_path %></li>
+    <li><%= link_to t('main_menu.proj_numbers'), projects_path %></li>
+    <li><%= link_to t('change_password'), change_password_users_path %></li>
+    <li><%= link_to t('main_menu.user_admin'), users_path %></li>
+    <li><%= link_to t('logout'), "/logout" %></li>
+    <li><%= link_to t('main_menu.about'), about_path %></li>
   </ul>
 </div>
 <% end %>

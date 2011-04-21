@@ -1,62 +1,63 @@
-<h1>Editing requisition</h1>
+<h1><%= t  'req.title_edit' %></h1>
 
 <% form_for(@requisition) do |f| %>
   <%= f.error_messages %>
   <table>
   <tr>
-    <td><%= f.label :req_num %></td>
+    <td><%= f.label :req_num, t('req.req_ref') %></td>
     <td><%= f.text_field :req_num %></td>
   </tr>
   <tr>
-    <td><%= f.label :commodity %></td>
+    <td><%= f.label :commodity, t('req.commodity') %></td>
     <td><%= f.text_field :commodity %></td>
   </tr>
   <tr>
-    <td><%= f.label :scope %></td>
+    <td><%= f.label :scope, t('req.scope') %></td>
     <td><%= f.select :scope, Requisition::SCOPE_TYPES %></td>
   </tr>
   <tr>
-    <td><%= f.label :status %></td>
+    <td><%= f.label :status, t('req.status') %></td>
     <td><%= f.select :status, Requisition::STATUS_TYPES %></td>
   </tr>
   <tr>
-    <td><%= f.label :mr_doc %></td>
+    <td><%= f.label :mr_doc, t('req.mr_doc') %></td>
     <td><%= f.text_field :mr_doc %></td>
   </tr>
   <tr>
-    <td><%= f.label :budget_rmb %></td>
+    <td><%= f.label :budget_rmb, t('req.budget') %></td>
     <td><%= f.text_field :budget_rmb %></td>
   </tr>
   <tr>
-    <td><%= f.label :required_on_site %></td>
+    <td><%= f.label :required_on_site, t('req.ros_date') %></td>
     <td><%= f.calendar_date_select :required_on_site %></td>
    <tr>
-    <td><%= f.label :required_contract %></td>
+    <td><%= f.label :required_contract, t('req.rpo_date') %></td>
     <td><%= f.calendar_date_select :required_contract %></td>
   </tr>
   </tr>
   <tr>
-    <td><%= f.label :bid_applic_approved %></td>
+    <td><%= f.label :bid_applic_approved, t('req.bid_applic') %></td>
     <td><%= f.calendar_date_select :bid_applic_approved %></td>
   </tr>
   <tr>
-    <td><%= f.label :enquiry_issued %></td>
+    <td><%= f.label :enquiry_issued, t('req.enq_issue') %></td>
     <td><%= f.calendar_date_select :enquiry_issued %></td>
   </tr>
   <tr>
-    <td><%= f.label :tbt_issued %></td>
+    <td><%= f.label :tbt_issued, t('req.tbt_issue') %></td>
     <td><%= f.calendar_date_select :tbt_issued %></td>
   </tr>
   <tr>
-    <td><%= f.label :cbt_issued %></td>
+    <td><%= f.label :cbt_issued, t('req.cbt_issue') %></td>
     <td><%= f.calendar_date_select :cbt_issued %></td>
   </tr>
   <tr>
 	<td>&nbsp;</td>
-    <td><%= f.submit 'Update' %></td>
+    <td><%= f.submit t('update') %></td>
   </tr>
   </table>
 <% end %>
 
-<%= link_to 'Show', @requisition %> |
-<%= link_to 'Back', requisitions_path %>
+<%= link_to t('show'), @requisition %> |
+<%= link_to t('back'), requisitions_path %>
+

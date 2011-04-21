@@ -1,0 +1,27 @@
+ <h1>Please log in:</h1>
+
+<% form_tag(:controller => :users, :action =>:login) do %>
+  <table>
+    <tr>
+    <td><label "username">Name:</label></td>
+    <td><%= text_field_tag :username %></td>
+  </tr>
+  <tr>
+     <td><label for="password">Password:</td>
+     <td><%= password_field_tag :password %></td>
+   </tr>
+   <tr>
+     <td>Set Project:</td>
+     <td><%= select_tag :project,
+	   options_for_select(@projects, session[:project]) %></td>
+   </tr>
+   <tr>
+      <td>Language:</td>
+      <td><%= select_tag :locale, options_for_select(LANGUAGES,I18n.locale) %>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><%= submit_tag "Submit" %></td>
+    </tr>
+  </table>
+<% end %>

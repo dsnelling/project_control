@@ -1,11 +1,11 @@
 <% form_for [@requisition, @req_comment] do |form| %>
 <fieldset>
-  <legend>Add a Comment</legend>
+  <legend><%= t 'req_com.new_title' %></legend>
 	
   <%= render :partial => 'form', :object => form %>
 
   <p>
-    <%= submit_tag "Create" %>
+    <%= submit_tag t('create') %>
   </p>
 </fieldset>
 <% end %>

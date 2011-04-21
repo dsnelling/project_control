@@ -4,7 +4,7 @@
     <%= select_tag :req_filter, 
 	    options_for_select (Requisition::REQ_TYPES,session[:req_filter]),
 		:onchange => 'this.form.submit()' %>
-    <%= submit_tag "Filter" %>
+    <%= submit_tag t("filter") %>
   <% end %>
 </div>
 <div class="requisition-filter">
@@ -12,7 +12,7 @@
     <%= select_tag :scope_filter, 
 	    options_for_select (Requisition::SCOPE_TYPES,session[:scope_filter]),
 		:onchange => 'this.form.submit()' %>
-    <%= submit_tag "Filter" %>
+    <%= submit_tag t "filter" %>
   <% end %>
 </div>
 <div class="requisition-filter">
@@ -20,26 +20,25 @@
     <%= select_tag :status_filter, 
 	    options_for_select (Requisition::STATUS_TYPES,session[:status_filter]),
 		:onchange => 'this.form.submit()' %>
-    <%= submit_tag "Filter" %>
+    <%= submit_tag t "filter" %>
   <% end %>
 </div>
 <div id="requisition-table">
-<p>"R-O-S": Required on Site date; "R-PO": Required date of Purchase Contract</p> 
+<p><%= t 'req.legend' %></p>
 <table class="item_table">
   <tr class="list-header">
-    <th class="list-cell">Req num</th>
-    <th class="list-cell">Commodity</th>
-    <th class="list-cell">Scope</th>
-    <th class="list-cell">Status</th>
-    <th class="list-cell">MR doc</th>
-    <th class="list-cell">R-O-S<br />R-PO</th>
-	<th class="list-cell">Bid Applic<br />Approved</th>
-    <th class="list-cell">Enquiry issued</th>
-    <th class="list-cell">TBT issued<br />
-         CBT issued</th>
-	<th class="list-cell-vert">PO?</th>
-	<th class="list-cell-vert">Com?</th>
-    <th  class="list-cell" colspan="3">Action</th>
+    <th class="list-cell"><%= t 'req.req_ref' %></th>
+    <th class="list-cell"><%= t 'req.commodity' %></th>
+    <th class="list-cell"><%= t 'req.scope' %></th>
+    <th class="list-cell"><%= t 'req.status' %></th>
+    <th class="list-cell"><%= t 'req.mr_doc' %></th>
+    <th class="list-cell"><%= t 'req.ros_rpo' %></th>
+	<th class="list-cell"><%= t 'req.bid_applic_s' %></th>
+    <th class="list-cell"><%= t 'req.enq_issue' %></th>
+    <th class="list-cell"><%= t 'req.tbt_cbt' %></th>
+	<th class="list-cell-vert"><%= t 'req.po_q' %></th>
+	<th class="list-cell-vert"><%= t 'req.com_q' %></th>
+    <th  class="list-cell" colspan="3"><%= t 'action' %></th>
   </tr>
 
 <% @requisitions.each do |requisition| %>
@@ -48,8 +47,8 @@
     <td class="list-cell">
 	    <%=h truncate(requisition.commodity, :length => 50) %></td>
     <td class="list-cell">
-	    <%=h requisition.scope %></td>
-    <td class="list-cell"><%=h requisition.status %></td>
+	    <%= display_req_scope(requisition.scope) %></td>
+    <td class="list-cell"><%= display_req_status(requisition.status) %></td>
     <td class="list-cell"><%=h requisition.mr_doc %></td>
     <td class="list-cell"><%=h requisition.required_on_site %><br />
 	  <%=h requisition.required_contract %></td>
@@ -61,16 +60,17 @@
 	  </td>
 	<td class="list-cell"><%= requisition.req_comments.empty? ? "&nbsp;": "Y" %>
 	  </td>
-    <td class="list-cell"><%= link_to 'Show', requisition %></td>
-    <td class="list-cell"><%= link_to 'Edit',
+    <td class="list-cell"><%= link_to t('show'), requisition %></td>
+    <td class="list-cell"><%= link_to t('edit'),
 	    edit_requisition_path(requisition) %></td>
-    <td><%= link_to 'Destroy', requisition, :confirm => 'Are you sure?',
+    <td><%= link_to t('destroy'), requisition, :confirm => t('confirm'),
 	    :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 </div>
 <br />
-<%= will_paginate @requisitions %>
+<%= will_paginate @requisitions, :previous_label => t('will_paginate.previous'),
+   :next_label => t('will_paginate.next') %>
 
-<%= link_to 'New requisition', new_requisition_path %>
+<%= link_to t('req.new'), new_requisition_path %>

@@ -1,43 +1,43 @@
-<h1>New service_request</h1>
+<h1><%= t 'service_r.title_new' %></h1>
 
 <% form_for(@service_request) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :project %><br />
+    <%= f.label :project, t('service_r.project') %><br />
     <%= f.select :project, @projects %>
   </p>
   <p>
-    <%= f.label :request_ref %><br />
+    <%= f.label :request_ref, t('service_r.request_ref') %><br />
     <%= f.text_field :request_ref %>
   </p>
   <p>
-    <%= f.label :description %><br />
+    <%= f.label :description, t('service_r.desc') %><br />
     <%= f.text_field :description %>
   </p>
   <p>
-    <%= f.label :disclipline %><br />
+    <%= f.label :disclipline, t('service_r.disclipline') %><br />
     <%= f.text_field :disclipline %>
   </p>
   <p>
-    <%= f.label :status %><br />
+    <%= f.label :status, t('service_r.status') %><br />
     <%= f.select :status, ServiceRequest::STATUS_TYPES %>
   </p>
   <p>
-    <%= f.label :auth_cost %><br />
+    <%= f.label :auth_cost, t('service_r.auth_cost') %><br />
     <%= f.text_field :auth_cost %>
   </p>
   <p>
-    <%= f.label :request_date %><br />
+    <%= f.label :request_date, t('service_r.request') %><br />
     <%= f.calendar_date_select :request_date %>
   </p>
   <p>
-    <%= f.label :auth_date %><br />
+    <%= f.label :auth_date, t('service_r.auth_date') %><br />
     <%= f.calendar_date_select :auth_date %>
   </p>
   <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit t('create') %>
   </p>
 <% end %>
 
-<%= link_to 'Back', service_requests_path %>
+<%= link_to t('back'), service_requests_path %>

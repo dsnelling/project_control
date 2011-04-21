@@ -12,12 +12,35 @@ class RequisitionTest < ActiveSupport::TestCase
 
   test "req scope in list" do
     req = Requisition.new(:req_num => "X34",:project => "my project",
-	  :commodity => "some commodity")
+	  :commodity => "some commodity", :scope => "JV", :status => "enquiry")
     req.scope = "blah"
     assert !req.valid?
 
     req.scope = "lpec_ps"
     assert req.valid?
+  end
+
+  test "req status in list" do
+    req = Requisition.new(:req_num => "X34",:project => "my project",
+	  :commodity => "some commodity", :scope => "JV", :status => "enquiry")
+    req.status = "blah"
+    assert !req.valid?
+
+    req.status = "LOI"
+    assert req.valid?
+  end
+
+  test "req_num uniqueness test" do
+    req1 = Requisition.new(:req_num => "X35",:project => "my project",
+	  :commodity => "some commodity", :scope => "JV", :status => "enquiry")
+    req1.save
+    req2 = Requisition.new(:req_num => "X35",:project => "my project",
+	  :commodity => "some commodity", :scope => "JV", :status => "enquiry")
+    assert !req2.valid?
+
+	req2.project = "your project"
+	assert req2.valid?
+
   end
 
 end

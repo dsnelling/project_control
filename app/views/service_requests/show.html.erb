@@ -1,46 +1,46 @@
 <table class="show-table">
  <tr>
-    <td class="show-table-label"><b>Project:</b></td>
+    <td class="show-table-label"><%= t 'service_r.project' %></td>
     <td class="show-table-data"><%=h @service_request.project %></td>
   </tr>
 
   <tr>
-    <td class="show-table-label"><b>Request ref:</b></td>
+    <td class="show-table-label"><%= t 'service_r.request_ref' %></td>
     <td class="show-table-data"><%=h @service_request.request_ref %></td>
   </tr>
 
   <tr>
-    <td class="show-table-label"><b>Description:</b></td>
+    <td class="show-table-label"><%= t 'service_r.desc' %></td>
     <td class="show-table-data"><%=h @service_request.description %></td>
   </tr>
 
   <tr>
-    <td class="show-table-label"><b>Disclipline:</b></td>
+    <td class="show-table-label"><%= t 'service_r.disclipline' %></td>
     <td class="show-table-data"><%=h @service_request.disclipline %></td>
   </tr>
 
   <tr>
-    <td class="show-table-label"><b>Status:</b></td>
+    <td class="show-table-label"><%= t 'service_r.status' %></td>
     <td class="show-table-data"><%=h @service_request.status %></td>
   </tr>
 
   <tr>
-    <td class="show-table-label"><b>Auth cost:</b></td>
+    <td class="show-table-label"><%= t 'service_r.auth_cost'%></td>
     <td class="show-table-data">RMB<%=h @service_request.auth_cost %></td>
   </tr>
 
   <tr>
-    <td class="show-table-label"><b>Request date:</b></td>
+    <td class="show-table-label"><%= t 'service_r.request' %></td>
     <td class="show-table-data"><%=h @service_request.request_date.strftime(
 	  "%Y-%m-%d") if @service_request.request_date%></td>
   </tr>
 
   <tr>
-    <td class="show-table-label"><b>Auth date:</b></td>
+    <td class="show-table-label"><%= t 'service_r.auth_date' %></td>
     <td class="show-table-data"><%=h @service_request.auth_date.strftime(
 	  '%Y-%m-%d') if @service_request.auth_date  %>&nbsp;</td>
   </tr>
 </table>
 <br />
-<%= link_to 'Edit', edit_service_request_path(@service_request) %> |
-<%= link_to 'Back', service_requests_path %>
+<%= link_to t('edit'), edit_service_request_path(@service_request) %> |
+<%= link_to t('back'), service_requests_path %>

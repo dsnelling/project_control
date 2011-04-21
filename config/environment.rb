@@ -44,6 +44,7 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 
+  #config.encoding = "utf-8"
 
 # formats for calendar_date_select plugin
 #CalendarDateSelect.format = :iso_date
