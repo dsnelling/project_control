@@ -1,6 +1,8 @@
 # DS Mar-2011
 
 ActionController::Routing::Routes.draw do |map|
+  map.resources :site_hours
+
 #  map.resources :contracts  #---> need to think if we want to address contracts independently, or just via requsitions
   map.resources :requisitions do |r|
      r.resources :contracts

@@ -1,0 +1,39 @@
+<h1><%= t 'site_hr.show_title' %></h1>
+<table class="show-table">
+  <tr>
+  <td class="show-table-label"><%= t 'site_hr.week_start' %></td>
+  <td class="show-table-data"><%=h @site_hour.week_start %></td>
+</tr>
+
+<tr>
+  <td class="show-table-label"><%= t 'site_hr.owner_hr' %></td>
+  <td class="show-table-number"><%=h number_with_delimiter(@site_hour.owner_hr) %>
+</tr>
+
+<tr>
+  <td class="show-table-label"><%= t 'site_hr.epc_hr' %></td>
+  <td class="show-table-number"><%=h number_with_delimiter(@site_hour.epc_hr) %>
+</tr>
+
+<tr>
+  <td class="show-table-label"><%= t 'site_hr.svision_hr' %></td>
+  <td class="show-table-number"><%=
+    number_with_delimiter(@site_hour.svision_hr) %>
+</tr>
+
+<tr>
+  <td class="show-table-label"><%= t 'site_hr.constr_hr' %></td>
+  <td class="show-table-number"><%= 
+    number_with_delimiter(@site_hour.constr_hr) %>
+</tr>
+
+<tr>
+  <td class="show-table-label"><%= t 'site_hr.total_hr' %></td>
+  <td class="show-table-number"><%=
+    number_with_delimiter(@site_hour.total_hr) %>
+</tr>
+
+<table>
+<br />
+<%= link_to t('edit'), edit_site_hour_path(@site_hour) %> |
+<%= link_to t('back'), site_hours_path %>

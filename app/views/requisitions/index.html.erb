@@ -1,4 +1,4 @@
-<h1>Listing requisitions</h1>
+<h1><%= t 'req.index_title' %></h1>
 <div class="requisition-filter">
   <% form_tag(requisitions_path, :method => :get) do %>
     <%= select_tag :req_filter, 
@@ -38,7 +38,7 @@
     <th class="list-cell"><%= t 'req.tbt_cbt' %></th>
 	<th class="list-cell-vert"><%= t 'req.po_q' %></th>
 	<th class="list-cell-vert"><%= t 'req.com_q' %></th>
-    <th  class="list-cell" colspan="3"><%= t 'action' %></th>
+    <th class="list-cell" colspan="3"><%= t 'action' %></th>
   </tr>
 
 <% @requisitions.each do |requisition| %>

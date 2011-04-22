@@ -5,8 +5,8 @@ en:
   hello: "Hello world"
   logout: "Logout"
   change_password: "Change Password"
-  logged_in_as: "You are logged in as :"
-  active_project: "Active project is :"
+  logged_in_as: "You are logged in as: "
+  active_project: "Active project is: "
   edit: "Edit"
   new: "New"
   show: "Show"
@@ -34,6 +34,8 @@ en:
     req_update: "Requisition successfully updated..!"
     contr_create: "Contract successfully created..!"
     contr_update: "Contract successfully updated..!"
+    site_hr_create: "Manhour record successfully created..!"
+    site_hr_update: "Manhour record successfully updated..!"
 
   main_menu:
     title: "Project Management and Tracking System"
@@ -44,6 +46,7 @@ en:
     menu_title_2: "Administrative Actions:"
     menu_reqs: "Requisitions and Purchase contracts"
     menu_sr: "Service Requests"
+    safety_stats: "Safety Statistics"
     proj_numbers: "Project Number Maintainence"
     user_admin: "User Adminstration"
     about: "About....."
@@ -121,4 +124,15 @@ en:
     comment: "Comment"
     req: "Requisition"
 
-
+  site_hr:
+    new_title: "Enter Week's Manhours"
+    new_instructions: "Enter the manhours for one week. Owner is CAPC, Supervisoin is Construction Supervison & Safety Consultancy"
+    index_title: "Site Manhours by Week"
+    show_title: "Site Manhours for week"
+    new: "Enter manhours for new week"
+    week_start: "Week Starting"
+    owner_hr: "Owner"
+    epc_hr: "EPC Co"
+    svision_hr: "Supervision"
+    constr_hr: "Construction Co"
+    total_hr: "Total Manhours"
