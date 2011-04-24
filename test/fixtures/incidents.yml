@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  project: MyString
+  reference: MyString
+  category: MyString
+  incident_date: 2011-04-23
+  title: MyString
+  description: MyText
+  company: MyString
+  incident_report: MyString
+
+two:
+  project: MyString
+  reference: MyString
+  category: MyString
+  incident_date: 2011-04-23
+  title: MyString
+  description: MyText
+  company: MyString
+  incident_report: MyString

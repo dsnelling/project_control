@@ -1,0 +1,42 @@
+<h1><%= t('incident.edit_title') %></h1>
+
+<% form_for(@incident, :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+<table>
+  <tr>
+    <td><%= f.label :reference, t('incident.reference') %></td>
+    <td><%= f.text_field :reference %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :category, t('incident.category') %></td>
+    <td><%= f.select :category, Incident::CATEGORY_TYPES %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :incident_date, t('incident.incident_date') %></td>
+    <td><%= f.calendar_date_select :incident_date %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :title, t('incident.title') %></td>
+    <td><%= f.text_field :title %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :description, t('incident.description') %></td>
+    <td><%= f.text_area :description, :rows => 4 %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :company, t('incident.company') %></td>
+    <td><%= f.text_field :company %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :incident_report, t('incident.report') %></td>
+    <td><%= f.file_field :incident_report %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= f.submit t('update') %></td>
+  </tr>
+</table>
+
+<% end %>
+
+<%= link_to t('show'), @incident %> |
+<%= link_to t('back'), incidents_path %>

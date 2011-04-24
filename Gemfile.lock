@@ -55,7 +55,7 @@ PLATFORMS
 DEPENDENCIES
   aws-s3
   calendar_date_select
-  carrierwave
+  carrierwave (~> 0.4)
   fog
   paperclip (~> 2.3)
   rails (~> 2.3.5)

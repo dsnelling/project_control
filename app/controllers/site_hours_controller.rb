@@ -5,7 +5,7 @@ require "will_paginate"
 class SiteHoursController < ApplicationController
   before_filter :check_authentication, :check_authorisation
 
-# GET /site_hours
+  # GET /site_hours
   # GET /site_hours.xml
   def index
 

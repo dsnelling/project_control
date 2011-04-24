@@ -34,6 +34,9 @@ zh:
     req_update: "招标文件已成功更新..!"
     contr_create: "合同成功创建..!"
     contr_update: "合同成功更新..!"
+    site_hr_create: "Manhour record successfully created..!"
+    site_hr_update: "Manhour record successfully updated..!"
+
 
   main_menu:
     title: "项目管理和跟踪系统"
@@ -44,6 +47,7 @@ zh:
     menu_title_2: "行政行为:"
     menu_reqs: "请购单和采购合同"
     menu_sr: "服务请求"
+    safety_stats: "安全统计"
     proj_numbers: "项目编号维护"
     user_admin: "用户管理"
     about: "关于....."
@@ -121,4 +125,15 @@ zh:
     comment: "备注"
     req: "招标文件"
 
-
+  site_hr:
+    new_title: "Enter Week's Manhours"
+    new_instructions: "Enter the manhours for one week. Owner is CAPC, Supervisoin is Construction Supervison & Safety Consultancy"
+    index_title: "Site Manhours by Week"
+    show_title: "Site Manhours for week"
+    new: "Enter manhours for new week"
+    week_start: "Week Starting"
+    owner_hr: "Owner"
+    epc_hr: "EPC Co"
+    svision_hr: "Supervision"
+    constr_hr: "Construction Co"
+    total_hr: "Total Manhours"
