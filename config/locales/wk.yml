@@ -35,6 +35,9 @@ wk:
     req_update: "Req^#i52sition succes@#$ly upda&(d..!"
     site_hr_create: "Ma5324r record succes@#$52#ly cr53ted..!"
     site_hr_update: "Ma53ur rec#4%d succ#$%#ully upda%#d..!"
+    incident_create: "Incident record successfully created..!"
+    incident_update: "Incident record successfully updated..!"
+
 
   main_menu:
     title: "Project Ma^%08df sddf s%#sf sfd s f"
@@ -46,6 +49,7 @@ wk:
     menu_reqs: "Requi35>3%3$%#$%#ns and P#$%ase con#%345cts"
     menu_sr: "Se3$%#%e Req534%#5ts"
     safety_stats: "Sa@#%ty Sta235@#cs"
+    incidents: "Incidents and Reports"
     proj_numbers: "Pro53$%#ct Num#%$#r Maint#$%#$%345ce"
     user_admin: "U3$%er Admin#$%#$%34%3on"
     about: "Ab34%#$%....."
@@ -136,3 +140,19 @@ wk:
     svision_hr: "Supe@#s!%on"
     constr_hr: "Constr@%#$%on Co"
     total_hr: "To@%#4al Man@#$%urs"
+
+  incident:
+    new_title: "Ent3%er N*w I@$@#nent"
+    new_instructions: "blah blha lblah"
+    index_title: "Inc#%3$s"
+    show_title: "Dea@#tils for inci#$@#dent"
+    new: "Enter New Inc@#$nt"
+    project: "Pro@%^ct"
+    reference: "R$f"
+    category: "Cat!312ory"
+    incident_date: "D42te"
+    title: "Ti%@e"
+    description: "Des#$5ion"
+    company: "Com@#$#@y"
+    report: "Re#@$t"
+

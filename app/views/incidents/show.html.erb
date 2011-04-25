@@ -6,7 +6,7 @@
 </tr>
 
 <tr>
-  <td class="show-table-label"><%= t('Reference') %></td>
+  <td class="show-table-label"><%= t('incident.reference') %></td>
   <td class="show-table-data"><%=h @incident.reference %></td>
 </tr>
 
@@ -16,7 +16,7 @@
 </tr>
 
 <tr>
-  <td class="show-table-label"><%= t('Incident date') %></td>
+  <td class="show-table-label"><%= t('incident.incident_date') %></td>
   <td class="show-table-data"><%=h @incident.incident_date %></td>
 </tr>
 
@@ -36,7 +36,7 @@
 </tr>
 
 <tr>
-  <td class="show-table-label"><%= t('incident.incident_report') %></td>
+  <td class="show-table-label"><%= t('incident.report') %></td>
   <td class="show-table-data"><%= link_to "Report",
     @incident.incident_report_url if @incident.incident_report_url %></td>
 </tr>

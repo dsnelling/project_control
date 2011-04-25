@@ -36,7 +36,8 @@ zh:
     contr_update: "合同成功更新..!"
     site_hr_create: "Manhour record successfully created..!"
     site_hr_update: "Manhour record successfully updated..!"
-
+    incident_create: "Incident record successfully created..!"
+    incident_update: "Incident record successfully updated..!"
 
   main_menu:
     title: "项目管理和跟踪系统"
@@ -49,6 +50,7 @@ zh:
     menu_sr: "服务请求"
     safety_stats: "安全统计"
     proj_numbers: "项目编号维护"
+    incidents: "Incidents and Reports"
     user_admin: "用户管理"
     about: "关于....."
 
@@ -137,3 +139,19 @@ zh:
     svision_hr: "Supervision"
     constr_hr: "Construction Co"
     total_hr: "Total Manhours"
+
+  incident:
+    new_title: "Enter New Incident"
+    new_instructions: "blah blha lblah"
+    index_title: "Incidents"
+    show_title: "Details for incident"
+    new: "Enter New Incident"
+    project: "Project"
+    reference: "Ref"
+    category: "Category"
+    incident_date: "Date"
+    title: "Title"
+    description: "Description"
+    company: "Company"
+    report: "Report"
+
