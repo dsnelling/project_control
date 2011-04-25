@@ -48,7 +48,7 @@
   <% end %>
 
 <%= link_to t('req.new_contract'),
-         new_requisition_contract_url(@requisition) %> |
+          new_requisition_contract_url(@requisition, :commodity => @requisition.commodity)  %> |
 <%= link_to t('req.edit_req'), edit_requisition_path(@requisition) %>
 
   <% unless @requisition.req_comments.empty? %>

@@ -123,7 +123,7 @@ table {
   }
 
 .show-table-label {
-  text-align: right;
+  text-align: right top;
   font-weight: bold;
   padding: 5px 10px 0px 0px;
   /* border-bottom: 1px dotted silver; */

@@ -29,6 +29,7 @@ class ContractsController < ApplicationController
   # GET /contracts/new.xml
   def new
     @contract = Contract.new
+	@contract.commodity = params[:commodity]
 
     respond_to do |format|
       format.html # new.html.erb

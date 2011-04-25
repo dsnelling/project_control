@@ -33,6 +33,12 @@ class RequisitionsController < ApplicationController
     end
   end
 
+  def report
+    @requisitions = Requisition.find(:all, :conditions => ["project = ?",
+	  session[:project] ], :order => :req_num)
+  end
+
+
   # GET /requisitions/1
   # GET /requisitions/1.xml
   # shows an individual requisition, with associated contracts (aka PO) and

@@ -31,14 +31,15 @@
 	  <%=h number_to_currency(service_request.auth_cost, :unit => ' ') %></td>
     <td class="list-cell"><%=h service_request.request_date.strftime("%Y-%m-%d") if service_request.request_date%></td>
     <td class="list-cell"><%=h service_request.auth_date.strftime("%Y-%m-%d") if service_request.auth_date %>&nbsp;</td>
-    <td class="list-cell"><%= link_to 'Show', service_request %> |
-      <%= link_to 'Edit', edit_service_request_path(service_request) %> |
-      <%= link_to 'Destroy', service_request, :confirm => t('confirm'), :method => :delete %></td>
+    <td class="list-cell"><%= link_to t('show'), service_request %> |
+      <%= link_to t('edit'), edit_service_request_path(service_request) %> |
+      <%= link_to t('destroy'), service_request, :confirm => t('confirm'), :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<%= will_paginate @service_requests %>
+<%= will_paginate @service_requests,  :previous_label =>
+   t('will_paginate.previous'), :next_label => t('will_paginate.next') %>
 
 <br />
 

@@ -1,0 +1,42 @@
+<h1>Here is requsitions#report</h1>
+
+<table class="item_table">
+  <tr class="list-header">
+    <th class="list-cell"><%= t 'req.req_ref' %></th>
+    <th class="list-cell"><%= t 'req.commodity' %></th>
+    <th class="list-cell"><%= t 'req.scope' %></th>
+    <th class="list-cell"><%= t 'req.status' %></th>
+    <th class="list-cell"><%= t 'req.mr_doc' %></th>
+    <th class="list-cell"><%= t 'req.ros_rpo' %></th>
+	<th class="list-cell"><%= t 'req.bid_applic_s' %></th>
+    <th class="list-cell"><%= t 'req.enq_issue' %></th>
+    <th class="list-cell"><%= t 'req.tbt_cbt' %></th>
+  </tr>
+
+<% @requisitions.each do |requisition| %>
+  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>" >
+    <td class="list-cell"><%=h requisition.req_num %></td>
+    <td class="list-cell">
+	    <%=h truncate(requisition.commodity, :length => 50) %></td>
+    <td class="list-cell">
+	    <%= display_req_scope(requisition.scope) %></td>
+    <td class="list-cell"><%= display_req_status(requisition.status) %></td>
+    <td class="list-cell"><%=h requisition.mr_doc %></td>
+    <td class="list-cell"><%=h requisition.required_on_site %><br />
+	  <%=h requisition.required_contract %></td>
+    <td class="list-cell"><%=h requisition.bid_applic_approved %></td>
+    <td class="list-cell"><%=h requisition.enquiry_issued %></td>
+    <td class="list-cell"><%=h requisition.tbt_issued %><br/>
+        <%=h requisition.cbt_issued %></td>
+  </tr>
+    <% unless requisition.contracts.empty? %>
+   <!-- contracts for this requisition -->
+   <td colspan="10"><table>
+    <%= render :partial => "/contracts/contract",
+    :collection => requisition.contracts.sort_by {|c| c.reference } %>
+	</table></td>
+  <% end %>
+
+
+<% end %>
+</table>
