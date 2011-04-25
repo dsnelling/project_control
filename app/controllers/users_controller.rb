@@ -14,6 +14,8 @@ class UsersController < ApplicationController
 
 
   def login
+    @projects = Project.find(:all, :order => "name").map {
+	  |p| [p.description, p.name] } 
 	if request.post?
 	  user = User.authenticate(params[:username], params[:password])
 	  if user
