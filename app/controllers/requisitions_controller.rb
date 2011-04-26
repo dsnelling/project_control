@@ -8,6 +8,7 @@ require "will_paginate"
 class RequisitionsController < ApplicationController
 # check authentication status
   before_filter :check_authentication, :check_authorisation
+  prawnto :prawn => {:page_layout => :landscape}, :inline => false
 
   # GET /requisitions
   # GET /requisitions.xml

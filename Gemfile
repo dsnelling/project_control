@@ -10,7 +10,7 @@ gem "calendar_date_select"
 gem "carrierwave"
 gem "fog"
 gem "prawn"
-
+gem "prawnto"
 
 #gems for development
 group :development do
