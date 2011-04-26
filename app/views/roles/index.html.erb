@@ -18,14 +18,22 @@
 <table>
   <% @roles_not_of_user.each do |role| %>
       <tr>
-	    <td><%=h role.name%></td>
+	    <td><%=h role.name %></td>
  	    <td>
-	      <% form_tag :action => :add_role_to_user, :id => role do%>
+	      <% form_tag :action => :add_role_to_user, :id => role do %>
 	         <%= submit_tag 'Add' %>
 		  <% end %>
-	  </td>
+	    </td>
+	  </tr>
 	 <% end %>
+	 <tr>
+	 <% form_for (@role) do |f| %>
+	   <td><%= f.text_field :name %></td>
+	   <td><%= f.submit 'Create New Role' %></td>
+	 <% end %>
+	 </tr>
 </table>
 
-<%= link_to "Back", users_url %>
+<%= link_to "Back", users_url %> |
+<%= link_to "Manage Rights and Roles", rights_path %>
 <p>Find me in app/views/roles/index.html.erb</p>

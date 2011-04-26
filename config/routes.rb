@@ -16,6 +16,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   map.resources :rights, :collection => { :roles => :get }, :member => 
       { :add_right => :post, :remove_right => :post } 
+  map.resources :roles, :except => [:index, :destroy]
 
 # named routes (some is not very @RESTful, but hey, it works!)
   map.root :controller => :main_menu

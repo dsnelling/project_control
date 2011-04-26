@@ -2,7 +2,7 @@
 # create or destry roles. allows roles allocation to user to be updated
 #
 class RolesController < ApplicationController
-  before_filter :find_user
+  before_filter :find_user, :except => :create
   before_filter :check_authentication, :check_authorisation
 
   def index
@@ -14,9 +14,40 @@ class RolesController < ApplicationController
     else
       @roles_not_of_user = @roles
     end
+	@role = Role.new
   end
 
+  #def show
+  #  @role = Role.find(params[:id])
+  #end
+
+  #def new
+  #  @role = Role.new
+  #end
+
+  #def edit
+  #  @role = Role.find(params[:id])
+  #end
+
   def create
+    @role = Role.new(params[:role])
+	if @role.save
+	  flash[:notice] = "Role sucessfully created..!"
+	  redirect_to users_path # not really the right place to redirect to
+	                         # but we've lost the id of the current user
+	else
+	  render :action => "new"
+	end
+  end
+
+  def update
+    @role = Role.find(params[:id])
+	if @role.update_attributes(params[:role])
+	  flash[:notice] = "Role sucessfully updated ...!"
+	  redirect_to @role
+	else
+	  render :action => "edit"
+	end
   end
 
   def add_role_to_user
