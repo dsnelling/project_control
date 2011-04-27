@@ -9,6 +9,7 @@ gem "paperclip", "~>2.3"
 gem "aws-s3"
 gem "carrierwave", "~>0.4"
 gem "fog"
+gem "aws"
 
 # gems for all environments
 
