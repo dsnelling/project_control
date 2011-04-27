@@ -71,6 +71,7 @@ en:
     title: "Requisitions"
     title_new: "New Requisition"
     title_edit: "Edit Requisition"
+    title_index: "Requisitions"
     legend: "R-O-S: Required on Site date;<br /> RDC: Required date of Purchase Contract"
     req_ref: "Req Ref"
     commodity: "Commodity"
