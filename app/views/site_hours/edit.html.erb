@@ -1,0 +1,35 @@
+<h1><%= t 'site_hr.edit_title' %></h1>
+
+<p><%= t 'site_hr.edit_instructions' %></p>
+
+<% form_for(@site_hour) do |f| %>
+<p>  <%= f.error_messages %></p>
+
+<table>
+  <tr>
+    <td><%= f.label :week_start, t('site_hr.week_start') %>:</td>
+    <td><%= f.calendar_date_select :week_start %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :owner_hr, t('site_hr.owner_hr') %>:</td><br />
+    <td><%= f.text_field :owner_hr %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :epc_hr, t('site_hr.epc_hr') %>:</td>
+    <td><%= f.text_field :epc_hr %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :svision_hr, t('site_hr.svision_hr') %>:</td>
+    <td><%= f.text_field :svision_hr %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :constr_hr, t('site_hr.constr_hr') %>:</td>
+    <td><%= f.text_field :constr_hr %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= f.submit t('update') %></td>
+  </tr>
+</table><br />
+<% end %>
+
+<%= link_to t('back'), site_hours_path %>

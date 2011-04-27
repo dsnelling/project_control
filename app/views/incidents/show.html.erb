@@ -1,0 +1,47 @@
+<h1><%= t 'incident.show_title' %></h1>
+<table class="show-table">
+<tr>
+  <td class="show-table-label"><%= t('incident.project') %></td>
+  <td class="show-table-data"><%=h @incident.project %></td>
+</tr>
+
+<tr>
+  <td class="show-table-label"><%= t('incident.reference') %></td>
+  <td class="show-table-data"><%=h @incident.reference %></td>
+</tr>
+
+<tr>
+  <td class="show-table-label"><%= t('incident.category') %></td>
+  <td class="show-table-data"><%=h @incident.category %></td>
+</tr>
+
+<tr>
+  <td class="show-table-label"><%= t('incident.incident_date') %></td>
+  <td class="show-table-data"><%=h @incident.incident_date %></td>
+</tr>
+
+<tr>
+  <td class="show-table-label"><%= t('incident.title') %></td>
+  <td class="show-table-data"><%=h @incident.title %></td>
+</tr>
+
+<tr>
+  <td class="show-table-label"><%= t('incident.description') %></td>
+  <td class="show-table-data"><%=h @incident.description %></td>
+</tr>
+
+<tr>
+  <td class="show-table-label"><%= t('incident.company') %></td>
+  <td class="show-table-data"><%=h @incident.company %></td>
+</tr>
+
+<tr>
+  <td class="show-table-label"><%= t('incident.report') %></td>
+  <td class="show-table-data"><%= link_to "Report",
+    @incident.incident_report_url if @incident.incident_report_url %></td>
+</tr>
+</table>
+<br />
+
+<%= link_to t('edit'), edit_incident_path(@incident) %> |
+<%= link_to t('back'), incidents_path %>

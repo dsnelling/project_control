@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  project: MyString
+  week_start: 2011-04-21
+  category: MyString
+  owner_hr: 1
+  epc_hr: 1
+  svision_hr: 1
+  constr_hr: 1
+  total_hr: 1
+
+two:
+  project: MyString
+  week_start: 2011-04-21
+  category: MyString
+  owner_hr: 1
+  epc_hr: 1
+  svision_hr: 1
+  constr_hr: 1
+  total_hr: 1

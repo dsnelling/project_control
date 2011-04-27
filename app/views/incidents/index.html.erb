@@ -1,0 +1,40 @@
+<h1><%= t 'incident.index_title' %></h1>
+
+
+<table class="item_table">
+  <tr class="list_header">
+    <th class="list-cell"><%= t'incident.project' %></th>
+    <th class="list-cell"><%= t'incident.reference' %></th>
+    <th class="list-cell"><%= t'incident.category' %></th>
+    <th class="list-cell"><%= t'incident.incident_date'%></th>
+    <th class="list-cell"><%= t'incident.title' %></th>
+    <th class="list-cell"><%= t'incident.description' %></th>
+    <th class="list-cell"><%= t'incident.company' %></th>
+    <th class="list-cell"><%= t'incident.report' %></th>
+	<th class="list-cell" colspan="3"><%= t'action' %></th>
+  </tr>
+
+<% @incidents.each do |incident| %>
+  <tr>
+    <td class="list-cell"><%=h incident.project %></td>
+    <td class="list-cell"><%=h incident.reference %></td>
+    <td class="list-cell"><%=h incident.category %></td>
+    <td class="list-cell"><%=h incident.incident_date %></td>
+    <td class="list-cell"><%=h incident.title %></td>
+    <td class="list-cell"><%=h truncate(incident.description, 40) %></td>
+    <td class="list-cell"><%=h incident.company %></td>
+    <td class="list-cell"><%= link_to 'Report',
+	    incident.incident_report_url if incident.incident_report_url %></td>
+    <td class="list-cell"><%= link_to t('show'), incident %></td>
+    <td class="list-cell"><%= link_to t('edit'), edit_incident_path(incident)
+	  %></td>
+    <td class="list-cell"><%= link_to t('destroy'), incident,
+	   :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to t('incident.new'), new_incident_path %> |
+<%= link_to t('main_menu.safety_stats'), site_hours_path %>

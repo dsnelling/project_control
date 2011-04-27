@@ -1,0 +1,54 @@
+<h1><%= t 'site_hr.index_title' %></h1>
+
+<table class="item_table">
+  <tr class="list_header">
+    <th class="list-cell"><%= t 'site_hr.week_start' %></th>
+    <th class="list-cell"><%= t 'site_hr.owner_hr' %></th>
+    <th class="list-cell"><%= t 'site_hr.epc_hr' %></th>
+    <th class="list-cell"><%= t 'site_hr.svision_hr' %></th>
+    <th class="list-cell"><%= t 'site_hr.constr_hr' %></th>
+    <th class="list-cell"><%= t 'site_hr.total_hr' %></th>
+	<th colspan="2" class="list-cell"><%= t 'action' %></th>
+  </tr>
+  <!-- total row -->
+  <tr>
+    <td class="list-cell">Totals</td>
+    <td class="list-cell-number"><%=
+	  number_with_delimiter(@total_owner) %></td>
+    <td class="list-cell-number"><%=
+	  number_with_delimiter(@total_epc) %></td>
+    <td class="list-cell-number"><%=
+	  number_with_delimiter(@total_svision) %></td>
+    <td class="list-cell-number"><%=
+	  number_with_delimiter(@total_constr) %></td>
+    <td class="list-cell-number"><%=
+	  number_with_delimiter(@total_hours) %></td>
+    <td class="list-cell" colspan="2">&nbsp;</td>
+  </tr>
+
+<% @site_hours.each do |site_hour| %>
+  <tr>
+    <td class="list-cell"><%=h site_hour.week_start %></td>
+    <td class="list-cell-number"><%=
+	  number_with_delimiter(site_hour.owner_hr) %></td>
+    <td class="list-cell-number"><%=
+	  number_with_delimiter(site_hour.epc_hr) %></td>
+    <td class="list-cell-number"><%=
+	  number_with_delimiter(site_hour.svision_hr) %></td>
+    <td class="list-cell-number"><%=
+	  number_with_delimiter(site_hour.constr_hr) %></td>
+    <td class="list-cell-number"><%=
+	  number_with_delimiter(site_hour.total_hr) %></td>
+    <td class="list-cell-number"><%= link_to t('edit'),
+	    edit_site_hour_path(site_hour) %></td>
+    <td class="list-cell"><%= link_to t('destroy'), site_hour, :confirm =>
+	  t('confirm'), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to t('site_hr.new'), new_site_hour_path %> |
+<%= link_to t('main_menu.incidents'), incidents_path %>
+
