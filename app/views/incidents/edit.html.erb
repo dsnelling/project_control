@@ -28,6 +28,12 @@
     <td><%= f.text_field :company %></td>
   </tr>
   <tr>
+    <label>
+	  <td><%= f.check_box :remove_incident_report %></td>
+	  <td>Remove report</td>
+	</label>
+  </tr>
+  <tr>
     <td><%= f.label :incident_report, t('incident.report') %></td>
     <td><%= f.file_field :incident_report %></td>
   </tr>

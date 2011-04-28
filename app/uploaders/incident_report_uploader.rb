@@ -10,6 +10,11 @@ class IncidentReportUploader < CarrierWave::Uploader::Base
   #storage :file
        storage :s3
 
+  # set the cache directory to a writable temp directory
+  def cache_dir
+    "#{Rails.root}/tmp/uploads"
+  end
+
   # Override the directory where uploaded files will be stored
   # This is a sensible default for uploaders that are meant to be mounted:
   #def store_dir

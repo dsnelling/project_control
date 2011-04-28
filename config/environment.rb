@@ -47,6 +47,6 @@ Rails::Initializer.run do |config|
   #config.encoding = "utf-8"
 
 # formats for calendar_date_select plugin
-#CalendarDateSelect.format = :iso_date
+  #CalendarDateSelect.format = :iso_date
 
 end

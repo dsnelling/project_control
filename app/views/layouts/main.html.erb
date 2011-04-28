@@ -8,7 +8,7 @@
 <title>ProjectControlSystem: <%= controller.action_name %></title>
   <%= javascript_include_tag "prototype" %> 
   <%= stylesheet_link_tag 'projectcontrol' %>
-  <%= CalendarDateSelect.format = :iso_date %>
+  <% CalendarDateSelect.format = :iso_date %>
   <%= calendar_date_select_includes "silver" %>
 </head> 
 <body>

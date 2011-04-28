@@ -123,7 +123,7 @@ table {
   }
 
 .show-table-label {
-  text-align: right top;
+  text-align: right;
   font-weight: bold;
   padding: 5px 10px 0px 0px;
   /* border-bottom: 1px dotted silver; */
@@ -269,7 +269,8 @@ a:hover { color: #fff; background-color:#000; }
   }
 .list-cell-number {
   border: 1px solid silver;
-  text-align: right;
+  text-align: right;a
+  }
 
 .list-cell-vert {
   border: 1px solid silver;
