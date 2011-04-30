@@ -130,16 +130,21 @@ en:
 
   site_hr:
     new_title: "Enter Week's Manhours"
-    new_instructions: "Enter the manhours for one week. Owner is CAPC, Supervisoin is Construction Supervison & Safety Consultancy"
+    new_instructions: "Enter the manhours for one week. Manhours are hours under the control of Owner, including sub contractors. Hours in off-site workshops and warehouses not included."
     index_title: "Site Manhours by Week"
     show_title: "Site Manhours for week"
     new: "Enter manhours for new week"
-    week_start: "Week Starting"
+    week_start: "Week Ending"
     owner_hr: "Owner"
     epc_hr: "EPC Co"
     svision_hr: "Supervision"
     constr_hr: "Construction Co"
     total_hr: "Total Manhours"
+    owner_explain: "Manhours for CAPC only"
+    epc_explain: "Manhours for EPC own staff "
+    svision_explain: "Supervsion company  & Safety consulatancy"
+    constr_explain: "Construction company, subcontractors, AP and subcontractrs"
+
 
   incident:
     new_title: "Enter New Incident"

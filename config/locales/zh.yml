@@ -140,6 +140,10 @@ zh:
     svision_hr: "监理公司"
     constr_hr: "施工单位"
     total_hr: "总计人工时"
+    owner_explain: "Manhours for CAPC only"
+    epc_explain: "Manhours for EPC own staff "
+    svision_explain: "Supervsion company  & Safety consulatancy"
+    constr_explain: "Construction company, subcontractors, AP and subcontractors"
 
   incident:
     new_title: "输入新的事故"

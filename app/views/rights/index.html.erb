@@ -2,7 +2,6 @@
 
 <table>
  <tr class="list-header">
-   <th>id</th>
    <th>name</th>
    <th>controller</th>
    <th>action</th>
@@ -11,7 +10,6 @@
 
 <% @rights.each do |right| %>
   <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
-    <td><%=h right.id %></td>
     <td><%=h right.name %></td>
     <td><%=h right.controller %></td>
     <td><%=h right.action %></td>

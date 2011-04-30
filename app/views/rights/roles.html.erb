@@ -12,16 +12,18 @@
     <td valign="top" class="list-cell"><%=h role.id %></td>
 	<td valign="top" class="list-cell"><%=h role.name %></td>
     <td class="list-cell">
+	  <table>
 	   <% unless role.rights.empty? %>
-	     <table>
 	        <%= render :partial => "/rights/right",
 			    :collection => role.rights, :locals => { :role_id => role.id }%>
-	     </table>
 	   <% end %>
+	   <tr>
 	   <% form_tag add_right_right_path(role) do %>
-	     <%= select_tag( :right_id, options_for_select(@rights)) %>
-		 <%= submit_tag 'Add Right' %>
+	     <td><%= select_tag( :right_id, options_for_select(@rights)) %></td>
+		 <td><%= submit_tag 'Add Right' %></td>
 	   <% end %>
+	   </tr>
+	 </table>
 	 &nbsp;</td>
   </tr>
 <% end %>

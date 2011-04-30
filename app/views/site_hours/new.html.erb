@@ -9,22 +9,27 @@
   <tr>
     <td><%= f.label :week_start, t('site_hr.week_start') %>:</td>
     <td><%= f.calendar_date_select :week_start %></td>
+	<td>&nbsp;</td>
   </tr>
   <tr>
     <td><%= f.label :owner_hr, t('site_hr.owner_hr') %>:</td><br />
     <td><%= f.text_field :owner_hr %></td>
+	<td><%= t('site_hr.owner_explain') %></td>
   </tr>
   <tr>
     <td><%= f.label :epc_hr, t('site_hr.epc_hr') %>:</td>
     <td><%= f.text_field :epc_hr %></td>
+	<td><%= t('site_hr.epc_explain') %></td>
   </tr>
   <tr>
     <td><%= f.label :svision_hr, t('site_hr.svision_hr') %>:</td>
     <td><%= f.text_field :svision_hr %></td>
+	<td><%= t('site_hr.svision_explain') %></td>
   </tr>
   <tr>
     <td><%= f.label :constr_hr, t('site_hr.constr_hr') %>:</td>
     <td><%= f.text_field :constr_hr %></td>
+	<td><%= t('site_hr.constr_explain') %></td>
   </tr>
   <tr>
     <td colspan="2"><%= f.submit t('create') %></td>

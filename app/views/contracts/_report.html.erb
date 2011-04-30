@@ -1,0 +1,12 @@
+ <tr class="list-line-even">
+    <td class="list-cell">&nbsp;---></td>
+    <td class="list-cell"><%=h report.commodity %></td>
+    <td class="list-cell"><%=h report.reference %></td>
+    <td class="list-cell"><%=h report.commence_date %></td>
+    <td class="list-cell"><%=h report.supplier %></td>
+    <td class="list-cell"><%=h report.delivery_terms %></td>
+    <td class="list-cell"><%=h report.delivery_date_contract %><br />
+       <%=h report.delivery_date_forecast %></td>
+	<td class="list-cell"><%=h truncate(report.expedite_comment,
+	  :length => 30) %></td>
+  </tr>

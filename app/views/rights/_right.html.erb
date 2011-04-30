@@ -1,8 +1,5 @@
 <tr>
-  <td><%=h right.id %></td>
   <td><%=h right.name %></td>
-  <td><%=h right.controller %></td>
-  <td><%=h right.action %></td>
   <td><span display="inline"><% form_tag remove_right_right_url(right,:role_id => role_id) do %>
      <%= submit_tag "Remove Right" %>
 	 <% end %></span>
