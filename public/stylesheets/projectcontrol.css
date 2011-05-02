@@ -182,6 +182,10 @@ table {
   background-color: yellow; */
   }
 
+.requisition-table {
+  clear: both;
+  }
+
 /* for links at bottom of page */
 #form-navigation {
   clear: both;
