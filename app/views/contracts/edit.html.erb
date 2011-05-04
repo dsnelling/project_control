@@ -70,7 +70,7 @@ Expeditor comments:<br />
 <p><%= f.submit t('update') %></p>
 <% end %>
 
-<%= link_to 'Show',
+<%= link_to t('show'),
    requisition_contract_path(@contract.requisition,@contract) %> |
 <%= link_to t('contr.back'), requisition_path(@contract.requisition) %> |
 <%= link_to t('req.back'), requisitions_path %>

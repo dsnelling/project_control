@@ -1,14 +1,14 @@
 # DS Mar-2011
 
 ActionController::Routing::Routes.draw do |map|
+
   map.resources :incidents
-
   map.resources :site_hours
-
 #  map.resources :contracts  #---> need to think if we want to address contracts independently, or just via requsitions
   map.resources :requisitions, :collection => { :report => :get } do |r|
      r.resources :contracts
 	 r.resources :req_comments
+     r.resources :procurement_docs
   end
   map.resources :projects
   map.resources :service_requests

@@ -38,6 +38,8 @@ en:
     site_hr_update: "Manhour record successfully updated..!"
     incident_create: "Incident record successfully created..!"
     incident_update: "Incident record successfully updated..!"
+    proc_doc_create: "Document record successfully created..!"
+    proc_doc_update: "Document record successfully updated..!"
 
   main_menu:
     title: "Project Management and Tracking System"
@@ -90,12 +92,14 @@ en:
     tbt_cbt: "TBT Issued<br />CBT Issued"
     po_q: "Con?"
     com_q: "Com?"
+    doc_q: "Doc?"
     new: "New Requisition"
     comment_header: "Comments for this Requisition:"
     new_contract: "Add New Contract"
     new_comment: "Add New Comment"
     edit_req: "Edit this Requisition"
     back: "Back to Requsition Listing"
+    report: "Report"
 
   contr:
     title: "Contracts for this Requisition:"
@@ -145,7 +149,6 @@ en:
     svision_explain: "Supervsion company  & Safety consulatancy"
     constr_explain: "Construction company, subcontractors, AP and subcontractrs"
 
-
   incident:
     new_title: "Enter New Incident"
     new_instructions: "blah blha lblah"
@@ -161,3 +164,13 @@ en:
     company: "Company"
     report: "Report"
 
+  proc_doc:
+    new_title: "Enter New Procurement Document"
+    show_title: "Details for Procurement Document"
+    new: "New Procurement Document"
+    category: "Category"
+    source: "Doc Source or Author"
+    document: "Link to Document"
+    remarks: "Remarks"
+    back: "Back to Requisition"
+    remove: "Remove Document"

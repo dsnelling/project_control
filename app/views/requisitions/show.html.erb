@@ -1,5 +1,4 @@
 <% # lets try to use some CSS to make this look good -%>
-
 <div id="form-leftcolumn">
   <div class="form-row-1-label"><%= t 'req.req_ref' %>:</div>
   <div class="form-row-1-data"><%=h @requisition.req_num %></div>
@@ -13,12 +12,13 @@
       %>&nbsp;</div>
   <div class="form-row-1-label"><%= t 'req.mr_doc' %>:</div>
   <div class="form-row-1-data"><%=h @requisition.mr_doc %>&nbsp;</div>
-  <div class="form-row-1-label"><%= t 'req.budget' %>:</div>
-  <div class="form-row-1-data">
-	  <%=h number_to_currency(@requisition.budget_rmb, :unit => "RMB") %>&nbsp;
+  <% if @view_costs %>
+    <div class="form-row-1-label"><%= t 'req.budget' %>:</div>
+    <div class="form-row-1-data">
+	   <%=h number_to_currency(@requisition.budget_rmb, :unit => "RMB") %>&nbsp;
     </div>
+  <% end %>
 </div>
-
 <div id="form-rightcolumn">
   <div class="form-row-1-label"><%= t 'req.ros_date' %>:</div>
   <div class="form-row-1-data">
@@ -37,8 +37,10 @@
   <div class="form-row-1-label"><%= t 'update_by' %>:</div>
   <div class="form-row-1-data"><%=h @requisition.update_by %>&nbsp;</div>
 </div>
+<br />
 
 <div id="req-contracts">
+<%= link_to t('req.edit_req'), edit_requisition_path(@requisition) %>
   <% unless @requisition.contracts.empty? %>
    <!-- contracts for this requisition -->
     <%= render :partial => "/contracts/contract_header" %>
@@ -46,11 +48,30 @@
      :collection => @requisition.contracts.sort_by {|c| c.reference } %>
     <%= render :partial => "/contracts/contract_footer" %>
   <% end %>
-
 <%= link_to t('req.new_contract'),
-          new_requisition_contract_url(@requisition, :commodity => @requisition.commodity)  %> |
-<%= link_to t('req.edit_req'), edit_requisition_path(@requisition) %>
+          new_requisition_contract_url(@requisition, :commodity => @requisition.commodity)  %>
+</div>
 
+
+<div id="req-documents">
+<h3>Documents for this Requisition:</h3>
+<table class="list-table">
+  <tr>
+    <th class="list-header"><%= t('proc_doc.category') %></th>
+	<th class="list-header"><%= t('proc_doc.source') %></th>
+	<th class="list-header"><%= t('proc_doc.document') %></th>
+	<th class="list-header"><%= t('proc_doc.remarks') %></th>
+	<th class="list-header"><%= t('action') %></th>
+  </tr>
+  <% unless @requisition.procurement_docs.empty? %>
+    <%= render :partial => "procurement_docs/procurement_doc",
+	  :collection  => @requisition.procurement_docs %>
+	<% end%>
+  </table>
+  <%= link_to t('proc_doc.new'),
+    new_requisition_procurement_doc_url(@requisition) %>
+</div>
+<br />
   <% unless @requisition.req_comments.empty? %>
     <!-- comments against this requisition -->
     <h3><%= t 'req.comment_header' %></h3>

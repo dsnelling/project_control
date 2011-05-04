@@ -16,7 +16,6 @@ wk:
   next: "N6$t"
   action: "Ac6#$n"
   update: "Up#^$te"
-  create: "Cre($e"
   confirm: "A$e y*u s#$^e?"
   back: "B%@k"
   filter: "F^|%*r"
@@ -37,6 +36,9 @@ wk:
     site_hr_update: "Ma53ur rec#4%d succ#$%#ully upda%#d..!"
     incident_create: "Incident record successfully created..!"
     incident_update: "Incident record successfully updated..!"
+    proc_doc_create: "Document record successfully created..!"
+    proc_doc_update: "Document record successfully updated..!"
+
 
 
   main_menu:
@@ -56,6 +58,7 @@ wk:
 
   service_r:
     title: "Se2#$@4ce Re34j2ts"
+    title_new: "N!2 Sg@#!# Re!$%st"
     project: "Pro^#@t"
     request_ref: "Requ5#%t R&f"
     desc: "Des%@534t25n"
@@ -70,6 +73,7 @@ wk:
     title: "Requ@%*%^ons"
     title_new: "New Requ&$(&tion"
     title_edit: "Ed1t Re@%@52ition"
+    title_index: "Requisitions"
     legend: "R-O-S: Requ265@d on Site date;<br /> RDC: Req@$&^red date of Pu&$hase Cont#%&t"
     req_ref: "R%q R*f"
     commodity: "Comy45%ity"
@@ -88,6 +92,7 @@ wk:
     tbt_cbt: "TBT Is**-ed<br />CBT I**0ed"
     po_q: "P&?"
     com_q: "C*m?"
+    doc_q: "D&c?"
     new: "New Req*#&Bition"
     comment_header: "C9&!%$ts for this Requ%$!(75ion:"
     new_contract: "Add New Cont@%ct"
@@ -140,6 +145,10 @@ wk:
     svision_hr: "Supe@#s!%on"
     constr_hr: "Constr@%#$%on Co"
     total_hr: "To@%#4al Man@#$%urs"
+    owner_explain: "Manhours for CAPC only"
+    epc_explain: "Manhours for EPC own staff "
+    svision_explain: "Supervsion company  & Safety consulatancy"
+    constr_explain: "Construction company, subcontractors, AP and subcontractrs"
 
   incident:
     new_title: "Ent3%er N*w I@$@#nent"
@@ -155,4 +164,15 @@ wk:
     description: "Des#$5ion"
     company: "Com@#$#@y"
     report: "Re#@$t"
+
+  proc_doc:
+    new_title: "E$6er N*w Pro0878*&(nt Docu&(*&t"
+    show_title: "De$*ls for Proc9(%95nt Do(^ent"
+    new: "New Proc(v96ent Doc*$*$*t"
+    category: "Cat%C3y"
+    source: "Doc So*&6ce or Author"
+    document: "Link to Doc(&^bent"
+    remarks: "Re*&v87s"
+    back: "Back to Requ877*%ion"
+    remove: "Remove Doc(&$#t"
 

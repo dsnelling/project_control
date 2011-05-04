@@ -1,5 +1,6 @@
 class ContractsController < ApplicationController
   before_filter :find_requisition
+  before_filter :check_authentication, :check_authorisation
 
   # GET /contracts
   # GET /contracts.xml

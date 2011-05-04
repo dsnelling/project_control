@@ -110,7 +110,7 @@ table {
 
 .form-row-1-data {
   float: left;
-  width: 250px;
+  width: 220px;
   height: 20px;
   text-align: left;
   padding: 0px 0px 0px 0px;
@@ -255,6 +255,9 @@ a:hover { color: #fff; background-color:#000; }
 }
 
 /* tables for listings on index pages */
+.list-table {
+  }
+
 .list-header {
   background-color: #ccc;
   border: 1px solid silver ;

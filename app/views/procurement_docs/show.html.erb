@@ -1,0 +1,33 @@
+<h2><%= t 'proc_doc.show_title' %></h2>
+<table class="show-table">
+  <tr>
+    <td class="show-table-label"><%= t('proc_doc.category') %></td>
+    <td class="show-table-data"><%=h @procurement_doc.category %></td>
+  </tr>
+
+  <tr>
+    <td class="show-table-label"><%= t('proc_doc.source') %></td>
+    <td class="show-table-data"><%=h @procurement_doc.source %></td>
+  </tr>
+
+  <tr>
+    <td class="show-table-label"><%= t('proc_doc.remarks') %></td>
+    <td class="show-table-data"><%=h @procurement_doc.remarks %></td>
+  </tr>
+
+  <tr>
+    <td class="show-table-label"><%= t('proc_doc.document') %></td>
+    <td class="show-table-data"><%= link_to(t('proc_doc.document'),
+	  @procurement_doc.proc_document_url) if @procurement_doc.proc_document_url
+	  %></td>
+  </tr>
+  <tr>
+    <td class="show-table-label"><%= t('update_by') %></td>
+	<td class="show-table-data"><%=h @procurement_doc.update_by %></td>
+  </tr>
+</table>
+<br />
+<%= link_to t('edit'), edit_requisition_procurement_doc_path(@requisition,
+      @procurement_doc) %> |
+<%= link_to t('proc_doc.back'), requisition_path(@requisition) %> |
+<%= link_to t('back'), requisitions_path %>

@@ -4,6 +4,7 @@
 class Requisition < ActiveRecord::Base
   has_many :contracts
   has_many :req_comments
+  has_many :procurement_docs
 
   named_scope :by_req, lambda {|r| {:conditions => ['req_num LIKE ?',
     r.to_s + '%'] }}

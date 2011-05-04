@@ -38,6 +38,9 @@ zh:
     site_hr_update: "人工时记录更新成功..!"
     incident_create: "事故记录创建成功..!"
     incident_update: "事故记录更新成功..!"
+    proc_doc_create: "Document记录创建成功..!"
+    proc_doc_update: "Document 记录更新成功..!"
+
 
   main_menu:
     title: "项目管理和跟踪系统"
@@ -71,6 +74,7 @@ zh:
     title: "招标文件"
     title_new: "新建请购文件"
     title_edit: "编辑请购文件"
+    title_index:  "招标文件"
     legend: "R-O-S: 现场需要日期;<br /> RDC: 合同规定日期"
     req_ref: "请购文件编号"
     commodity: "品名"
@@ -89,6 +93,7 @@ zh:
     tbt_cbt: "技术标评比已发布<br />商务标评比已发布"
     po_q: "合同已签订？"
     com_q: "意见？"
+    doc_q: "Doc?"
     new: "新建请购文件"
     comment_header: "请购文件的意见:"
     new_contract: "添加新合同"
@@ -160,3 +165,13 @@ zh:
     company: "事故单位"
     report: "事故报告"
 
+  proc_doc:
+    new_title: "Enter New Procurement Document"
+    show_title: "Details for Procurement Document"
+    new: "New Procurement Document"
+    category: "Category"
+    source: "Doc Source or Author"
+    document: "Link to Document"
+    remarks: "Remarks"
+    back: "Back to Requisition"
+    remove: "Remove Document"

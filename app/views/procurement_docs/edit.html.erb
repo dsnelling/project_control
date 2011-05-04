@@ -1,0 +1,41 @@
+<h1><%= t('proc_doc.edit_title') %></h1>
+
+<% form_for([@requisition,@procurement_doc],
+     :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+<table>
+  <tr>
+    <td><%= f.label :category, t('proc_doc.category') %></td>
+    <td><%= f.select :category, ProcurementDoc::CATEGORY_TYPES %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :source, t('proc_doc.source') %></td>
+    <td><%= f.text_field :source %></td>
+  </tr>
+  <tr>
+    <label>
+	  <td><%= t('proc_doc.remove') %></td>
+	</label>
+    <td><%= f.check_box :remove_proc_document %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :remarks, t('proc_doc.remarks') %></td>
+    <td><%= f.text_area :remarks, :rows => 5 %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :proc_document, t('proc_doc.document') %></td>
+    <td><%= f.file_field :proc_document %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= f.submit 'Update' %></td>
+  </tr>
+</table>
+<% end %>
+
+<%= link_to t('show'),
+  requisition_procurement_doc_path(@procurement_doc.requisition,
+  @procurement_doc) %> |
+<%= link_to t('proc_doc.back'),
+  requisition_path(@procurement_doc.requisition) %> |
+<%= link_to t('back'), requisitions_path %>
+

@@ -1,6 +1,8 @@
 # render file for the PDF report. uses prawn/prawn_to
 #
 
+#  encoding: utf-8
+
 ## -- set up the report data
 
 today = Time.now
