@@ -1,27 +1,27 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  req_num: MyString
-  commodity: MyString
-  scope: MyString
-  status: MyString
+  req_num: C01
+  commodity: Sausages
+  scope: LPEC PS
+  status: LOI
   mr_doc: MyString
-  budget_rmb: 9.99
+  budget_rmb: 19.99
   required_on_site: 2011-03-11
   enquiry_issued: 2011-03-11
   tbt_issued: 2011-03-11
   cbt_issued: 2011-03-11
-  update_by: MyString
+  update_by: fred
 
 two:
-  req_num: MyString
-  commodity: MyString
-  scope: MyString
-  status: MyString
+  req_num: J41
+  commodity: Buttons
+  scope: LPEC EPC
+  status: PO
   mr_doc: MyString
-  budget_rmb: 9.99
+  budget_rmb: 99.99
   required_on_site: 2011-03-11
   enquiry_issued: 2011-03-11
   tbt_issued: 2011-03-11
   cbt_issued: 2011-03-11
-  update_by: MyString
+  update_by: albert

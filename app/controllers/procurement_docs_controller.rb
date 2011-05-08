@@ -17,6 +17,7 @@ class ProcurementDocsController < ApplicationController
     @procurement_doc = ProcurementDoc.find(params[:id])
 	user = User.find(session[:user_id])
 	@view_costs = user.has_right?("View Costs")
+	@view_doc = user.has_right?("Procurement_docs Show")
 
     respond_to do |format|
       format.html # show.html.erb

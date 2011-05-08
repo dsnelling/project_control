@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class RequisitionTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
+  fixtures :requisitions
+
   test "invalid with empty attributes" do
     req = Requisition.new
 	assert !req.valid?

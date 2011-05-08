@@ -1,10 +1,10 @@
   <tr class="line-list-odd">
-    <td class="list-cell"><%=h procurement_doc.category %></td>
+    <td class="list-cell"><%=h display_category(procurement_doc.category)
+	   %></td>
     <td class="list-cell"><%=h procurement_doc.source %></td>
-    <td class="list-cell"><%= link_to (image_tag("attachment.gif"),
-	  procurement_doc.proc_document_url) \
-	  if (procurement_doc.proc_document_url && @view_doc) %>
-	  &nbsp;</td>
+    <td class="list-cell"><%= link_to_proc_doc( \
+	  procurement_doc.proc_document_url, procurement_doc.category, \
+	  @view_costs, @view_doc) %></td>
     <td class="list-cell"><%=h truncate(procurement_doc.remarks,
 	   :length => 30) %></td>
     <td class="list-cell"><%= link_to t('show'),

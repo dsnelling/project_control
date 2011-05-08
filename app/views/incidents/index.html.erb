@@ -2,7 +2,7 @@
 
 
 <table class="item_table">
-  <tr class="list_header">
+  <tr class="list-header">
     <th class="list-cell"><%= t'incident.project' %></th>
     <th class="list-cell"><%= t'incident.reference' %></th>
     <th class="list-cell"><%= t'incident.category' %></th>
@@ -12,7 +12,7 @@
     <th class="list-cell"><%= t'incident.company' %></th>
 	<th class="list-cell">&nbsp;</th>
     <th class="list-cell"><%= t'incident.report' %></th>
-	<th class="list-cell" colspan="3"><%= t'action' %></th>
+	<th class="list-cell"><%= t'action' %></th>
   </tr>
 
 <% @incidents.each do |incident| %>
@@ -28,11 +28,10 @@
 		incident.incident_report_url) if incident.incident_report_url %></td>
 	 <td class="list-cell"><%= link_to_if incident.incident_report_url, 'Report',
 	    incident.incident_report_url -%></td>
-    <td class="list-cell"><%= link_to t('show'), incident %></td>
-    <td class="list-cell"><%= link_to t('edit'), edit_incident_path(incident)
-	  %></td>
-    <td class="list-cell"><%= link_to t('destroy'), incident,
-	   :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="list-cell"><%= link_to t('show'), incident %> | 
+      <%= link_to t('edit'), edit_incident_path(incident) %> | 
+      <%= link_to t('destroy'), incident, :confirm => 'Are you sure?',
+	  :method => :delete %></td>
   </tr>
 <% end %>
 </table>

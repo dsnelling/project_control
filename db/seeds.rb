@@ -8,8 +8,7 @@
 #
 #-- set up rights for procurement_docs controller
 =begin
- commented out
-=end
+    ---commented out
 controller = "procurement_docs"
 ["create","destroy","edit","new","show","update"].each do |action|
   name=controller.capitalize << " " << action.capitalize
@@ -17,4 +16,5 @@ controller = "procurement_docs"
    r.update_attributes(:controller => controller, :action => action)
 end
 
+=end
 

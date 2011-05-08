@@ -41,7 +41,7 @@
 	<th class="list-cell-vert"><%= t 'req.po_q' %></th>
 	<th class="list-cell-vert"><%= t 'req.com_q' %></th>
 	<th class="list-cell-vert"><%= t 'req.doc_q' %></th>
-    <th class="list-cell" colspan="3"><%= t 'action' %></th>
+    <th class="list-cell"><%= t 'action' %></th>
   </tr>
 
 <% @requisitions.each do |requisition| %>
@@ -65,10 +65,8 @@
 	  </td>
 	<td class="list-cell"><%= requisition.procurement_docs.empty? ? "&nbsp;":
 	  "Y" %></td>
-    <td class="list-cell"><%= link_to t('show'), requisition %></td>
-    <td class="list-cell"><%= link_to t('edit'),
-	    edit_requisition_path(requisition) %></td>
-    <td><%= link_to t('destroy'), requisition, :confirm => t('confirm'),
+    <td class="list-cell"><%= link_to t('show'), requisition %> |
+      <%= link_to t('destroy'), requisition, :confirm => t('confirm'),
 	    :method => :delete %></td>
   </tr>
 <% end %>

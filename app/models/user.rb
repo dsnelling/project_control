@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
   #return true if the current user has the right
   def has_right?(r)
 	self.roles.detect {|role| role.rights.detect {|right| right.name == 
-	  r }}
+	  r }}  || self.superuser
   end
 	
 end

@@ -276,9 +276,14 @@ a:hover { color: #fff; background-color:#000; }
   }
 .list-cell-number {
   border: 1px solid silver;
-  text-align: right;a
+  text-align: right;
   }
 
 .list-cell-vert {
   border: 1px solid silver;
+  }
+.list-cell-total {
+  border: 1px solid silver;
+  text-align: right;
+  font-weight: bold;
   }

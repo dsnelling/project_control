@@ -2,7 +2,8 @@
 <table class="show-table">
   <tr>
     <td class="show-table-label"><%= t('proc_doc.category') %></td>
-    <td class="show-table-data"><%=h @procurement_doc.category %></td>
+    <td class="show-table-data"><%=h display_category(@procurement_doc.category)
+	   %></td>
   </tr>
 
   <tr>
@@ -17,9 +18,9 @@
 
   <tr>
     <td class="show-table-label"><%= t('proc_doc.document') %></td>
-    <td class="show-table-data"><%= link_to(t('proc_doc.document'),
-	  @procurement_doc.proc_document_url) if @procurement_doc.proc_document_url
-	  %></td>
+    <td class="show-table-data"><%= \
+	  link_to_proc_doc(@procurement_doc.proc_document_url,
+	  @procurement_doc.category, @view_costs, @view_doc) %></td>
   </tr>
   <tr>
     <td class="show-table-label"><%= t('update_by') %></td>

@@ -1,7 +1,7 @@
 <h1><%= t 'site_hr.index_title' %></h1>
 
 <table class="item_table">
-  <tr class="list_header">
+  <tr class="list-header">
     <th class="list-cell"><%= t 'site_hr.week_start' %></th>
     <th class="list-cell"><%= t 'site_hr.owner_hr' %></th>
     <th class="list-cell"><%= t 'site_hr.epc_hr' %></th>
@@ -12,18 +12,18 @@
   </tr>
   <!-- total row -->
   <tr>
-    <td class="list-cell">Totals</td>
-    <td class="list-cell-number"><%=
+    <td class="list-cell-total">Totals:</td>
+    <td class="list-cell-total"><%=
 	  number_with_delimiter(@total_owner) %></td>
-    <td class="list-cell-number"><%=
+    <td class="list-cell-total"><%=
 	  number_with_delimiter(@total_epc) %></td>
-    <td class="list-cell-number"><%=
+    <td class="list-cell-total"><%=
 	  number_with_delimiter(@total_svision) %></td>
-    <td class="list-cell-number"><%=
+    <td class="list-cell-total"><%=
 	  number_with_delimiter(@total_constr) %></td>
-    <td class="list-cell-number"><%=
+    <td class="list-cell-total"><%=
 	  number_with_delimiter(@total_hours) %></td>
-    <td class="list-cell" colspan="2">&nbsp;</td>
+    <td class="list-cell">&nbsp;</td>
   </tr>
 
 <% @site_hours.each do |site_hour| %>
@@ -40,8 +40,8 @@
     <td class="list-cell-number"><%=
 	  number_with_delimiter(site_hour.total_hr) %></td>
     <td class="list-cell-number"><%= link_to t('edit'),
-	    edit_site_hour_path(site_hour) %></td>
-    <td class="list-cell"><%= link_to t('destroy'), site_hour, :confirm =>
+	    edit_site_hour_path(site_hour) %> |
+      <%= link_to t('destroy'), site_hour, :confirm =>
 	  t('confirm'), :method => :delete %></td>
   </tr>
 <% end %>
