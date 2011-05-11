@@ -1,11 +1,8 @@
 # render file for the PDF report. uses prawn/prawn_to
 #
+pdf.font "Times-Roman"
 
-#  encoding: utf-8
-
-## -- set up the report data
-
-today = Time.now
+pdf.text "Requisitions Report", :size => 14, :style => :bold
 
 # manually set column widths
 c_widths = [30, 130,80,100,50,50,50,50,80,80]
@@ -60,40 +57,13 @@ items << head
     end
   end
 
-## -- now write the table out
-
-pdf.font "Times-Roman"
-
-pdf.repeat(:all, :dynamic => true) do
-
-#- header
-  pdf.bounding_box [pdf.bounds.left, pdf.bounds.top],
-    :width => pdf.bounds.width do
-    pdf.text "Chengdu Air and Gas Products"
-	pdf.text "Requisitions and Contracts", :align => :center, :size => 16
-    pdf.stroke_horizontal_rule
-  end
-
-#- footer
-  pdf.bounding_box [pdf.bounds.left, pdf.bounds.bottom + 25 ],
-      :width => pdf.bounds.width do
-    pdf.stroke_horizontal_rule
-    pdf.move_down(5)
-    pdf.text "Page #{pdf.page_number}", :align => :center, :size => 8
-    pdf.text "Printed at: #{today}", :align => :right, :size => 8
-  end
+#now write the table out
+pdf.font "#{Prawn::BASEDIR}/data/fonts/gkai00mp.ttf"
+pdf.font_size 8
+pdf.table (items, :header => true) do |t|
+  t.column_widths = c_widths
 end
 
-#pdf.text "Requisitions Report", :size => 14, :style => :bold
-pdf.bounding_box ([pdf.bounds.left, pdf.bounds.top - 50],
-  :width => pdf.bounds.width,
-    :height => pdf.bounds.height - 100) do
-  pdf.font_size = 8
-  pdf.table (items, :header => true) do |t|
-    t.column_widths = c_widths
-	t.row(0).style(:font_style => :bold, :background_color => 'cccccc')
-  end
-end
-
+pdf.number_pages "<page> of <total>",{:at => [pdf.bounds.right - 50, 0] }
 
 

@@ -41,10 +41,12 @@ class Requisition < ActiveRecord::Base
     ["",               ""],
 	["Enq Applic. Review","applic_review"],
 	["Enquiry Issued", "enquiry"],
-	["Bid Review",     "bid_review"],
+	["Tech Bids Received", "bid_review"],
+	["Tech Bids Approved", "tech_bid_approval"],
+	["Commercial Bids Approved","commercial_approval"],
 	["Negotiation",    "neg"],
-	["LOI placed",     "LOI"],
-	["PO placed",      "PO"]
+	["LOI/DOA placed",     "LOI"],
+	["PO chopped",      "PO"]
   ]
 
   SCOPE_TYPES = [
