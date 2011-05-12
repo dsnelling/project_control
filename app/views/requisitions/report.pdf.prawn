@@ -1,5 +1,8 @@
 # render file for the PDF report. uses prawn/prawn_to
 #
+# encoding: utf-8
+
+today = Time.now
 pdf.font "Times-Roman"
 
 pdf.text "Requisitions Report", :size => 14, :style => :bold
@@ -58,12 +61,37 @@ items << head
   end
 
 #now write the table out
-pdf.font "#{Prawn::BASEDIR}/data/fonts/gkai00mp.ttf"
-pdf.font_size 8
-pdf.table (items, :header => true) do |t|
-  t.column_widths = c_widths
+pdf.font "Times-Roman"
+
+pdf.repeat(:all, :dynamic => true) do
+
+#- header
+  pdf.bounding_box [pdf.bounds.left, pdf.bounds.top],
+    :width => pdf.bounds.width do
+    pdf.text "Chengdu Air and Gas Products"
+pdf.text "Requisitions and Contracts", :align => :center, :size => 16
+    pdf.stroke_horizontal_rule
+  end
+
+#- footer
+  pdf.bounding_box [pdf.bounds.left, pdf.bounds.bottom + 25 ],
+      :width => pdf.bounds.width do
+    pdf.stroke_horizontal_rule
+    pdf.move_down(5)
+    pdf.text "Page #{pdf.page_number}", :align => :center, :size => 8
+    pdf.text "Printed at: #{today}", :align => :right, :size => 8
+  end
 end
 
-pdf.number_pages "<page> of <total>",{:at => [pdf.bounds.right - 50, 0] }
-
+# and now the table itself
+pdf.bounding_box ([pdf.bounds.left, pdf.bounds.top - 50],
+  :width => pdf.bounds.width,
+    :height => pdf.bounds.height - 100) do
+  pdf.font_size = 8
+  pdf.font "#{Prawn::BASEDIR}/data/fonts/gkai00mp.ttf"
+  pdf.table (items, :header => true) do |t|
+    t.column_widths = c_widths
+    t.row(0).style(:font_style => :bold, :background_color => 'cccccc')
+  end
+end
 
