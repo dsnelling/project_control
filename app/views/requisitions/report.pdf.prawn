@@ -5,10 +5,10 @@
 today = Time.now
 pdf.font "Times-Roman"
 
-pdf.text "Requisitions Report", :size => 14, :style => :bold
+#pdf.text "Requisitions Report", :size => 14, :style => :bold
 
 # manually set column widths
-c_widths = [30, 130,80,100,50,50,50,50,80,80]
+c_widths = [35, 130,80,100,50,50,50,50,80,80]
 
 #table headers
 head = [
@@ -83,15 +83,16 @@ pdf.text "Requisitions and Contracts", :align => :center, :size => 16
   end
 end
 
+pdf.font "#{Prawn::BASEDIR}/data/fonts/gkai00mp.ttf"
 # and now the table itself
 pdf.bounding_box ([pdf.bounds.left, pdf.bounds.top - 50],
   :width => pdf.bounds.width,
     :height => pdf.bounds.height - 100) do
   pdf.font_size = 8
-  pdf.font "#{Prawn::BASEDIR}/data/fonts/gkai00mp.ttf"
   pdf.table (items, :header => true) do |t|
     t.column_widths = c_widths
-    t.row(0).style(:font_style => :bold, :background_color => 'cccccc')
+    #t.row(0).style(:font_style => :bold, :background_color => 'cccccc')
+    t.row(0).style(:background_color => 'cccccc')
   end
 end
 
