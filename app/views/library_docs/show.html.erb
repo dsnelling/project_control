@@ -1,0 +1,36 @@
+<h1><%= t'library.show_title' %></h1>
+<table class="show-table">
+  <tr>
+    <td class="show-table-label"><%= t'library.category' %>:</td>
+    <td class="show-table-data"><%=h @library_doc.category %></td>
+  </tr>
+
+  <tr>
+    <td class="show-table-label"><%= t'library.reference' %>:</td>
+    <td class="show-table-data"><%=h @library_doc.reference %></td>
+  </tr>
+  <tr>
+    <td class="show-table-label"><%= t'library.title' %>:</td>
+    <td class="show-table-data"><%=h @library_doc.title %></td>
+  </tr>
+
+  <tr>
+    <td class="show-table-label"><%= t'library.remarks' %>:</td>
+    <td class="show-table-data"><%=h @library_doc.remarks %></td>
+  </tr>
+
+  <tr>
+    <td class="show-table-label"><%= t'library.document' %>:</td>
+    <td class="show-table-data"><%= link_to "Download", @library_doc.document_url %></td>
+  </tr>
+
+  <tr>
+    <td class="show-table-label"><%= t'library.updated_at' %>:</td>
+    <td class="show-table-data"><%= @library_doc.updated_at %></td>
+  </tr>
+
+</table>
+<p>
+<%= link_to t('edit'), edit_library_doc_path(@library_doc) %> |
+<%= link_to t('back'), library_docs_path %>
+</p>

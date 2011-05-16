@@ -1,7 +1,32 @@
 == README for projectcontrol application.
 
-(c) Duncan 22-Mar-2011
+An application to support tracking of status information and other supporting funcations for construction projects
 
-One day, I'll tell you all about it!
+(c) Duncan May-2011
 
+
+A simple application to support on-line update and management of basic
+data for construction projects. Data is indtended to be be kept updated
+as various events happen, by the relevant persons, and the live status
+visible by members of the project team.
+
+Supports the following modules:
+ - materials tracking by requisition and purchase contracts
+ - upload and storage of key procurement documents
+ - tracking of service requests
+ - tracking of site manhours
+ - upload and storage of incident reports
+ - library for project forms and procedures (semi-static documents)
+ - users require preassigned usernames and passwords for access
+ - access to actions is controlled by assigning roles to users, and actions to roles
+
+
+User interface is functional, not particularly athestically pleasing. No
+specialist design skills have been employed (and I will be the first to admit
+that it shows!). Suggestions welcome!
+
+Upload uses Amazon S3. Credentials stored in environment variables.
+
+
+Duncan
 

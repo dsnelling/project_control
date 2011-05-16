@@ -1,0 +1,33 @@
+<h1><%= t'library.new_title' %></h1>
+
+<% form_for(@library_doc, :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+<table>
+  <tr>
+    <td><%= f.label :category, t('library.category') %>:</td>
+    <td><%= f.select :category, LibraryDoc::CATEGORY_TYPES %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :reference, t('library.reference') %></td>
+	<td><%= f.text_field :reference %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :title, t('library.title') %>:</td>
+    <td><%= f.text_field :title %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :remarks, t('library.remarks') %>:</td>
+    <td><%= f.text_area :remarks, :rows => 4 %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :document, t('library.upload') %>:</td>
+    <td><%= f.file_field :document %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= f.submit t('create') %></td>
+  </tr>
+</table>
+<% end %>
+<p>
+<%= link_to t('back'), library_docs_path %>
+</p>

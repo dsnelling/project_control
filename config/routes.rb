@@ -1,6 +1,8 @@
 # DS Mar-2011
 
 ActionController::Routing::Routes.draw do |map|
+  map.resources :library_docs
+
 
   map.resources :incidents
   map.resources :site_hours

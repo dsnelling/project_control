@@ -273,6 +273,7 @@ a:hover { color: #fff; background-color:#000; }
 
 .list-cell {
   border: 1px solid silver;
+  padding: 2px 4px 2px 4px;
   }
 .list-cell-number {
   border: 1px solid silver;
