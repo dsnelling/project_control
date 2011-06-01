@@ -6,22 +6,19 @@
     <th class="list-cell"><%= t'library.reference' %></th>
     <th class="list-cell"><%= t'library.title' %></th>
     <th class="list-cell"><%= t'library.remarks' %></th>
-    <th class="list-cell"><%= t'library.document' %></th>
-	<th class="list-cell"><%= t'action' %></th>
+	<th class="list-cell"><%= t'update_at' %></th>
   </tr>
 
 <% @library_docs.each do |library_doc| %>
   <tr>
-    <td class="list-cell"><%=h library_doc.category %></td>
-    <td class="list-cell"><%=h library_doc.reference %></td>
-    <td class="list-cell"><%=h library_doc.title %></td>
+    <td class="list-cell"><%= library_doc.category %></td>
+    <td class="list-cell"><%= link_to(library_doc.reference,
+	  edit_library_doc_path(library_doc)) %></td>
+    <td class="list-cell"><%= link_to(library_doc.title,
+	  library_doc.document_url) %></td>
     <td class="list-cell"><%=h truncate(library_doc.remarks, 40) %></td>
-    <td class="list-cell"><%= link_to t('library.document'),
-	  library_doc.document_url %></td>
-    <td class="list-cell"><%= link_to t('edit'),
-	  edit_library_doc_path(library_doc) %> | 
-      <%= link_to t('destroy'), library_doc, :confirm => t('confirm'),
-	  :method => :delete %></td>
+    <td class="list-cell"><%= library_doc.updated_at.strftime("%Y-%m-%d") if
+	  library_doc.updated_at %></td>
   </tr>
 <% end %>
 </table>

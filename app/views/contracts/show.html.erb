@@ -77,5 +77,7 @@
 <br />
 <%= link_to t('edit'),
    edit_requisition_contract_path(@requisition, @contract) %> |
+<%= link_to t('destroy'),requisition_contract_path(@requisition, @contract),
+  :confirm => t('confirm'), :method => :delete %> |
 <%= link_to t('contr.back'), requisition_path(@requisition) %> |
 <%= link_to t('req.back'), requisitions_path %>

@@ -3,7 +3,7 @@
   <div class="form-row-1-label"><%= t 'req.req_ref' %>:</div>
   <div class="form-row-1-data"><%=h @requisition.req_num %></div>
   <div class="form-row-1-label"><%= t 'req.commodity' %>:</div>
-  <div class="form-row-1-data"><%=h @requisition.commodity %> </div>
+  <div class="form-row-1-data-2h"><%=h @requisition.commodity %> </div>
   <div class="form-row-1-label"><%= t 'req.scope' %>:</div>
   <div class="form-row-1-data"><%=h display_req_scope(@requisition.scope)
       %>&nbsp;</div>
@@ -40,7 +40,11 @@
 <br />
 
 <div id="req-contracts">
-<%= link_to t('req.edit_req'), edit_requisition_path(@requisition) %>
+<%= link_to t('req.edit_req'), edit_requisition_path(@requisition) %> |
+<%= link_to t('destroy'), requisition_path, :confirm => t('confirm'),
+  :method => :delete %> |
+<%= link_to t('req.back'), requisitions_path %>
+
   <% unless @requisition.contracts.empty? %>
    <!-- contracts for this requisition -->
     <%= render :partial => "/contracts/contract_header" %>
@@ -58,10 +62,10 @@
 <table class="list-table">
   <tr>
     <th class="list-header"><%= t('proc_doc.category') %></th>
+	<th class="list-header"><%= t('proc_doc.reference') %></th>
 	<th class="list-header"><%= t('proc_doc.source') %></th>
 	<th class="list-header"><%= t('proc_doc.document') %></th>
 	<th class="list-header"><%= t('proc_doc.remarks') %></th>
-	<th class="list-header"><%= t('action') %></th>
   </tr>
   <% unless @requisition.procurement_docs.empty? %>
     <%= render :partial => "procurement_docs/procurement_doc",

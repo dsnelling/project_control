@@ -3,7 +3,8 @@
   formatting all a bit crap at the moment!              -->
   <tr class="list-line-odd">
     <td class="list-cell"><%=h contract.commodity %></td>
-    <td class="list-cell"><%=h contract.reference %></td>
+    <td class="list-cell"><%= link_to contract.reference,
+      requisition_contract_path(contract.requisition,contract) %></td>
     <td class="list-cell"><%=h contract.commence_date %></td>
     <td class="list-cell"><%=h contract.supplier %></td>
     <td class="list-cell"><%=h contract.currency %></td>
@@ -16,11 +17,4 @@
     <td class="list-cell"><%=h contract.delivery_date_forecast %></td>
 	<td class="list-cell"><%=h truncate(contract.expedite_comment,
 	  :length => 30) %></td>
-    <td class="list-cell"><%= link_to t('show'),
-	    requisition_contract_path(contract.requisition,contract) %> |
-      <%= link_to t('edit'),
-	    edit_requisition_contract_path(contract.requisition,contract) %> |
-      <%= link_to t('destroy'),
-	    requisition_contract_path(contract.requisition, contract),
-		:confirm => t('confirm'), :method => :delete %></td>
   </tr>

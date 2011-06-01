@@ -1,20 +1,13 @@
   <tr class="line-list-odd">
-    <td class="list-cell"><%=h display_category(procurement_doc.category)
-	   %></td>
+    <td class="list-cell"><%= 
+	  link_to display_category(procurement_doc.category),
+	  requisition_procurement_doc_path(procurement_doc.requisition,
+	  procurement_doc) %></td>
+	<td class="list-cell"><%=h procurement_doc.reference %></td>
     <td class="list-cell"><%=h procurement_doc.source %></td>
     <td class="list-cell"><%= link_to_proc_doc( \
 	  procurement_doc.proc_document_url, procurement_doc.category, \
 	  @view_costs, @view_doc) %></td>
     <td class="list-cell"><%=h truncate(procurement_doc.remarks,
 	   :length => 30) %></td>
-    <td class="list-cell"><%= link_to t('show'),
-	   requisition_procurement_doc_path(procurement_doc.requisition,
-	   procurement_doc) %> |
-    <%= link_to t('edit'),
-	   edit_requisition_procurement_doc_path(procurement_doc.requisition,
-	   procurement_doc) %> |
-    <%= link_to t('destroy'),
-	   requisition_procurement_doc_path(procurement_doc.requisition,
-	   procurement_doc), :confirm => t('confirm'),
-	   :method => :delete %></td>
   </tr>

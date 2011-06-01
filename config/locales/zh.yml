@@ -20,6 +20,7 @@ zh:
   back: "返回"
   filter: "筛选筛选"
   update_by: "最后更新者为"
+  update_at: "Updated At"
 
   will_paginate:
     previous: "&laquo; 上一页"
@@ -89,9 +90,9 @@ zh:
     ros_date: "ROS Date"
     rpo_date: "RDC Date"
     ros_rpo: "ROS<br />RDC"
-    tbt_issue: "技术标评比发布日期"
-    cbt_issue: "商务标评比发布日期"
-    tbt_cbt: "技术标评比已发布<br />商务标评比已发布"
+    tbt_issue: "TBA技术标评比发布日期"
+    cbt_issue: "CBT商务标评比发布日期"
+    tbt_cbt: "TBA技术标评比已发布<br />CBT商务标评比已发布"
     po_q: "合同已签订？"
     com_q: "意见？"
     doc_q: "Doc?"
@@ -172,6 +173,7 @@ zh:
     edit_title: "Update Procurement Document"
     new: "New Procurement Document"
     category: "事故类别"
+    reference: "事故编号"
     source: "Author or Source"
     document: "Document"
     upload: "Attach Document"

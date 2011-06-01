@@ -41,12 +41,11 @@
 	<th class="list-cell-vert"><%= t 'req.po_q' %></th>
 	<th class="list-cell-vert"><%= t 'req.com_q' %></th>
 	<th class="list-cell-vert"><%= t 'req.doc_q' %></th>
-    <th class="list-cell"><%= t 'action' %></th>
   </tr>
 
 <% @requisitions.each do |requisition| %>
   <tr class="<%= cycle('list-line-odd', 'list-line-even') %>" >
-    <td class="list-cell"><%=h requisition.req_num %></td>
+    <td class="list-cell"><%= link_to (requisition.req_num, requisition) %></td>
     <td class="list-cell">
 	    <%=h truncate(requisition.commodity, :length => 50) %></td>
     <td class="list-cell">
@@ -65,9 +64,6 @@
 	  </td>
 	<td class="list-cell"><%= requisition.procurement_docs.empty? ? "&nbsp;":
 	  "Y" %></td>
-    <td class="list-cell"><%= link_to t('show'), requisition %> |
-      <%= link_to t('destroy'), requisition, :confirm => t('confirm'),
-	    :method => :delete %></td>
   </tr>
 <% end %>
 </table>

@@ -11,7 +11,7 @@ class LibraryDocsController < ApplicationController
   def index
     # need to think how to order these in a sensible way
     @library_docs = LibraryDoc.paginate(:page => params[:page],
-	  :order => "category" )
+	  :order => "reference, category" )
 
     respond_to do |format|
       format.html # index.html.erb

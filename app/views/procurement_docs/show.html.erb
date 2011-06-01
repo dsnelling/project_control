@@ -5,6 +5,10 @@
     <td class="show-table-data"><%=h display_category(@procurement_doc.category)
 	   %></td>
   </tr>
+  <tr>
+    <td class="show-table-label"><%= t('proc_doc.reference') %></td>
+    <td class="show-table-data"><%=h @procurement_doc.reference %></td>
+  </tr>
 
   <tr>
     <td class="show-table-label"><%= t('proc_doc.source') %></td>
@@ -30,5 +34,8 @@
 <br />
 <%= link_to t('edit'), edit_requisition_procurement_doc_path(@requisition,
       @procurement_doc) %> |
+<%= link_to t('destroy'),
+  requisition_procurement_doc_path(@requisition, @procurement_doc),
+  :confirm => t('confirm'), :method => :delete %></td> |
 <%= link_to t('proc_doc.back'), requisition_path(@requisition) %> |
 <%= link_to t('back'), requisitions_path %>

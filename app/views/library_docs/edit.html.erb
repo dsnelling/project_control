@@ -24,7 +24,9 @@
     <td><%= f.file_field :document %></td>
   </tr>
   <tr>
-    <td colspan="2"><%= f.submit t('update') %></td>
+    <td><%= f.submit t('update') %></td>
+	<td><%= link_to t('destroy'), @library_doc, :confirm => t('confirm'),
+	  :method => :delete %></td>
   </tr>
 </table>
 <% end %>

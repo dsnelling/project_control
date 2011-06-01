@@ -9,6 +9,9 @@
     <td><%= f.select :category, ProcurementDoc::CATEGORY_TYPES %></td>
   </tr>
   <tr>
+    <td><%= f.label :reference, t('proc_doc.reference') %></td>
+	<td><%= f.text_field :reference %></td>
+  <tr>
     <td><%= f.label :source, t('proc_doc.source') %></td>
     <td><%= f.text_field :source %></td>
   </tr>

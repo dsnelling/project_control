@@ -6,6 +6,7 @@ class LibraryDoc < ActiveRecord::Base
   ["Procedure","Procedure"],
   ["Form: Procurement","Form: Procurement"],
   ["Form: Other","Form: Other"],
+  ["Template","Template"],
   ["Other", "Other"]
   ]
 

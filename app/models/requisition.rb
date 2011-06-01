@@ -39,7 +39,7 @@ class Requisition < ActiveRecord::Base
   STATUS_TYPES = [
    #as displayed      in db
     ["",               ""],
-	["Enq Applic. Review","applic_review"],
+	["Enq Applic. Approved","applic_review"],
 	["Enquiry Issued", "enquiry"],
 	["Tech Bids Received", "bid_review"],
 	["Tech Bids Approved", "tech_bid_approval"],
