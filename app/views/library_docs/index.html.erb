@@ -2,23 +2,26 @@
 
 <table class="item_table">
   <tr class="list-header">
-    <th class="list-cell"><%= t'library.category' %></th>
     <th class="list-cell"><%= t'library.reference' %></th>
+    <th class="list-cell"><%= t'library.category' %></th>
     <th class="list-cell"><%= t'library.title' %></th>
     <th class="list-cell"><%= t'library.remarks' %></th>
 	<th class="list-cell"><%= t'update_at' %></th>
+	<th class="list-cell"><%= t'library.document' %></th>
   </tr>
 
 <% @library_docs.each do |library_doc| %>
   <tr>
-    <td class="list-cell"><%= library_doc.category %></td>
     <td class="list-cell"><%= link_to(library_doc.reference,
 	  edit_library_doc_path(library_doc)) %></td>
+    <td class="list-cell"><%= library_doc.category %></td>
     <td class="list-cell"><%= link_to(library_doc.title,
 	  library_doc.document_url) %></td>
     <td class="list-cell"><%=h truncate(library_doc.remarks, 40) %></td>
     <td class="list-cell"><%= library_doc.updated_at.strftime("%Y-%m-%d") if
 	  library_doc.updated_at %></td>
+    <td class="list-cell"><%= link_to(display_icon(library_doc.document_url),
+	  library_doc.document_url) %></td>
   </tr>
 <% end %>
 </table>

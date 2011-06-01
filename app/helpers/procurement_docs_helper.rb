@@ -7,7 +7,7 @@ module ProcurementDocsHelper
 	  code == category}
 	commercial_doc = type && type[1] == "C"
 	permitted = view_doc && url && ( commercial_doc ? view_costs : true )
-	text = permitted ? image_tag("attachment.gif") : t('proc_doc.inactive')
+	text = permitted ? display_icon(url) : t('proc_doc.inactive')
 	link_to_if(permitted, text, url)
 	#"<pre> view_doc=+#{view_doc}+; view_costs=+#{view_costs}+; \
 	#  permitted=+#{permitted}+</pre>"
@@ -18,4 +18,18 @@ module ProcurementDocsHelper
 	  code == category_code }
 	category ? category.first : category_code
   end
+
+  def display_icon(url)
+    #selects the correct icon to display based on the file type of the url
+	ext=url.split('.').last if url
+    case ext
+	  when "pdf" then image_tag("pdficon_large.gif")
+	  when "xls", "xlsx" then image_tag("xlsicon_large.png")
+	  when "jpg" then image_tag("jpgicon_large.png")
+	  when "doc", "docx" then image_tag("docicon_large.png")
+	  else
+	    image_tag("attachment.gif")
+	end
+  end
+
 end

@@ -44,7 +44,7 @@
 <%= link_to t('destroy'), requisition_path, :confirm => t('confirm'),
   :method => :delete %> |
 <%= link_to t('req.back'), requisitions_path %>
-
+<br />
   <% unless @requisition.contracts.empty? %>
    <!-- contracts for this requisition -->
     <%= render :partial => "/contracts/contract_header" %>

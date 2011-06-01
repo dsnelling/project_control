@@ -177,8 +177,8 @@ table {
 .comment-rightcolumn {
   float: left;
   width: 30%;
-  color: red;
-  /* border: 1px solid green; */
+  /* color: red;
+  border: 1px solid green; */
   }
 
 /* for the filter boxes on the requisition index pages */

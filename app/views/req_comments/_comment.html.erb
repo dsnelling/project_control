@@ -8,10 +8,9 @@
   </div>
   <div class="comment-rightcolumn">
     <%= link_to t('edit'), edit_requisition_req_comment_url(:id => comment,
-                                  :requisition_id => comment.requisition_id) %>
-    <br />
+                                :requisition_id => comment.requisition_id) %> |
     <%= link_to t('destroy'), requisition_req_comment_url(:id => comment,
-                                  :requisition_id => comment.requisition_id), 
-                                  :method => :delete %>
+                                :requisition_id => comment.requisition_id), 
+                                :method => :delete %>
   </div>
 </div>
