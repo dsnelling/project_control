@@ -42,7 +42,7 @@ class Requisition < ActiveRecord::Base
 	["Enq Applic. Approved","applic_review"],
 	["Enquiry Issued", "enquiry"],
 	["Tech Bids Received", "bid_review"],
-	["Tech Bids Approved", "tech_bid_approval"],
+	["Tech Bid Approval", "tech_bid_approval"],
 	["Commercial Bids Approved","commercial_approval"],
 	["Negotiation",    "neg"],
 	["LOI/DOA placed",     "LOI"],
