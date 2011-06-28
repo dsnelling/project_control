@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  vdoc_requirement_id: 1
+  doc_number: MyString
+  title: MyString
+  doc_status: MyString
+  date_received: 2011-06-28
+  document: MyString
+  remarks: MyText
+
+two:
+  vdoc_requirement_id: 1
+  doc_number: MyString
+  title: MyString
+  doc_status: MyString
+  date_received: 2011-06-28
+  document: MyString
+  remarks: MyText

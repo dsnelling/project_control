@@ -1,0 +1,52 @@
+<h1><%= t 'vdocs.index_title' %></h1>
+
+<%= render :partial => "contract" %>
+
+<table class="item_table">
+  <tr class="list-header">
+    <th class="list-cell"><%= t 'vdocs.code' %></th>
+    <th class="list-cell"><%= t 'vdocs.desc' %></th>
+    <th class="list-cell"><%= t 'vdocs.purpose' %></th>
+    <th class="list-cell"><%= t 'vdocs.due_date' %></th>
+    <th class="list-cell"><%= t 'vdocs.comment' %></th>
+	<th class="list-cell">Action</th>
+  </tr>
+
+<% @vdocs_requirements.each do |vdocs_requirement| %>
+  <tr>
+    <td class="list-cell"><%= link_to vdocs_requirement.code,
+	  vdocs_requirement %></td>
+    <td class="list-cell"><%=h vdocs_requirement.description %></td>
+    <td class="list-cell"><%= display_purpose(vdocs_requirement.purpose) %></td>
+    <td class="list-cell"><%=h vdocs_requirement.due_date %></td>
+    <td class="list-cell"><%=h truncate(vdocs_requirement.comment, 
+	  :length => 30) %></td>
+    <td class="list-cell"><%= link_to 'Add Document',
+	  new_vdocs_requirement_vendor_doc_path(vdocs_requirement) %> </td>
+  </tr>
+  <!-- display any vendor docs that exist -->
+  <% unless vdocs_requirement.vendor_docs.empty? %> 
+    <tr>
+	  <td colspan="6" class="list-cell">
+	    <table class="vdocs-table">
+		  <tr class="vdocs-header">
+		    <th class="list-cell">Ref</th>
+			<th class="list-cell">Title</th>
+			<th class="list-cell">Code</th>
+			<th class="list-cell">Date Rec'd</th>
+			<th class="list-cell">Remarks</th>
+			<th class="list-cell">Document</th>
+		  <tr>
+	      <%= render :partial => "/vendor_docs/vendor_docs",
+	        :collection => vdocs_requirement.vendor_docs %>
+	    </table>
+	  </td>
+	</tr>
+  <% end %>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to t('vdocs.new'), new_contract_vdocs_requirement_path %> |
+<%= link_to t('back'), contract_path(@contract) %> 

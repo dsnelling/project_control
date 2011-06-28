@@ -126,6 +126,7 @@ en:
     ex_date: "Expedite Last Contact Date"
     ex_status: "Expedite Status"
     ex_comment: "Expedite Comment"
+    vdocs: "Show Supplier Documents"
     back: "Back to this Requisition"
 
   req_com:
@@ -194,3 +195,27 @@ en:
     remarks: "Remarks"
     document: "Document"
     updated_at: "Updated"
+
+  vdocs:
+    index_title: "Supplier Documents"
+    show_title: "Details of Document Requirement"
+    vdocs_show_title: "Details of Supplier Document"
+    new_title: "Enter new Document Requirement"
+    vdocs_new_title: "Enter New Supplier Document"
+    edit_title: "Edit Document Requirement"
+    vdocs_edit_title: "Edit Supplier Document Details"
+    contract_ref: "For Contract:"
+    new: "New Document Requirement"
+    code: "Doc Code"
+    desc: "Description"
+    purpose: "Purpose"
+    due_date: "Due Date"
+    date_received: "Date Received"
+    doc_ref: "Supplier Ref"
+    doc_title: "Doc Title"
+    document: "Document"
+    status: "Status"
+    remarks: "Remarks"
+    comment: "Comments"
+    upload: "Upload"
+

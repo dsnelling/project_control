@@ -1,6 +1,6 @@
 <h1><%= t 'contr.edit_title' %></h1>
 
-<% form_for([@requisition,@contract]) do |f| %>
+<% form_for(@contract) do |f| %>
   <%= f.error_messages %>
 <table>
   <tr>
@@ -71,6 +71,6 @@ Expeditor comments:<br />
 <% end %>
 
 <%= link_to t('show'),
-   requisition_contract_path(@contract.requisition,@contract) %> |
+   contract_path(@contract) %> |
 <%= link_to t('contr.back'), requisition_path(@contract.requisition) %> |
 <%= link_to t('req.back'), requisitions_path %>

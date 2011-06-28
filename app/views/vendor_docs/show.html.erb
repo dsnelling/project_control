@@ -1,0 +1,43 @@
+<h2><%= t 'vdocs.vdocs_show_title' %></h2>
+<table class="show-table">
+  <tr>
+    <td class="show-table-label"><%= t('vdocs.doc_ref') %></td>
+    <td class="show-table-data"><%=h @vendor_doc.doc_number %></td>
+  </tr>
+
+  <tr>
+    <td class="show-table-label"><%= t('vdocs.doc_title') %></td>
+    <td class="show-table-data"><%=h  @vendor_doc.title  %></td>
+  </tr>
+  <tr>
+    <td class="show-table-label"><%= t('vdocs.status') %></td>
+    <td class="show-table-data"><%= display_status(@vendor_doc.doc_status)
+	   %></td>
+  </tr>
+
+  <tr>
+    <td class="show-table-label"><%= t('vdocs.date_received') %></td>
+    <td class="show-table-data"><%=h @vendor_doc.date_received %></td>
+  </tr>
+
+  <tr>
+    <td class="show-table-label"><%= t('vdocs.remarks') %></td>
+    <td class="show-table-data"><%=h @vendor_doc.remarks %></td>
+  </tr>
+
+  <tr>
+    <td class="show-table-label"><%= t('vdocs.document') %></td>
+    <td class="show-table-data">
+	  <%= link_to(display_icon(@vendor_doc.document_url),
+	    @vendor_doc.document_url) %></td>
+  </tr>
+
+
+</table>
+<br />
+
+<%= link_to t('edit'), edit_vendor_doc_path(@vendor_doc) %> |
+<%= link_to t('destroy'), @vendor_doc, :confirm => 'Are you sure?',
+  :method => :delete %> |
+<%= link_to t('back'),
+  contract_vdocs_requirements_path(@vdocs_requirement.contract) %>

@@ -3,6 +3,7 @@
 #
 class Contract < ActiveRecord::Base
   belongs_to :requisition
+  has_many :vdocs_requirements
 
   EXPEDITE_STATUS_TYPES = [
     ["",  ""],

@@ -1,0 +1,21 @@
+<!-- partial with contract details -->
+<div id="contract-header">
+<h3><%= t 'vdocs.contract_ref' %></h3>
+<table class="show-table">
+  <tr>
+    <td class="show-table-label"><%= t 'contr.ref' %>:</td>
+    <td class="show-table-data"><%=h @contract.reference %></td>
+    <td class="show-table-label"><%= t 'contr.commodity' %>:</td>
+    <td class="show-table-data"><%=h @contract.commodity %></td>
+  </tr>
+
+  <tr>
+    <td class="show-table-label"><%= t 'contr.com_date' %>:</td>
+    <td class="show-table-data"><%=h @contract.commence_date %></td>
+    <td class="show-table-label"><%= t 'contr.supplier' %>:</td>
+    <td class="show-table-data"><%=h @contract.supplier %></td>
+  </tr>
+</table>
+</div>
+<br />
+

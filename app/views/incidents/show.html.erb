@@ -37,8 +37,9 @@
 
 <tr>
   <td class="show-table-label"><%= t('incident.report') %></td>
-  <td class="show-table-data"><%= link_to "Report",
-     @incident.incident_report_url if @incident.incident_report_url %></td>
+  <td class="show-table-data">
+     <%= link_to(display_icon(@incident.incident_report_url),
+     @incident.incident_report_url) if @incident.incident_report_url %></td>
 </tr>
 </table>
 <br />

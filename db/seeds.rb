@@ -6,6 +6,9 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
 #
+#-- new roles
+
+
 #-- set up rights for procurement_docs controller
 =begin
     ---commented out
@@ -19,19 +22,26 @@ end
 =end
 
 #-- set up rights for library_docs controller
-controller = "library_docs"
+#controller = "library_docs"
+controller = "vendor_docs"
 ["create","destroy","edit","index","new","show","update"].each do |action|
   name=controller.capitalize << " " << action.capitalize
    r = Right.find_or_create_by_name(name)
    r.update_attributes(:controller => controller, :action => action)
 end
 
-#-- assign library_docs rights to roles.
+role = Role.find_or_create_by_name("Doc Controller")
+
 # maybe there's a clever way to do this
 rights_to_roles = {
   "Basic View" => ["index","show"],
   "Admin" => ["create","destroy","edit","index","new","show","update"],
-  "Project Manager" => ["create","destroy","edit","index","new","show","update"]  }
+  "Project Manager" =>
+     ["create","destroy","edit","index","new","show","update"],
+  "Doc Controller" => 
+     ["create","destroy","edit","index","new","show","update"]
+  }
+
 
 rights_to_roles.each do |role,actions|
   ro = Role.find_by_name(role)

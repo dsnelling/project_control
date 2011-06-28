@@ -1,0 +1,40 @@
+<h1><%= t 'vdocs.show_title' %></h1>
+
+<%= render :partial => "contract" %>
+
+<table class="show-table">
+<tr>
+  <td class="show-table-label"><%= t 'vdocs.code'%>:</td>
+  <td class="show-table-data"><%=h @vdocs_requirement.code %></td>
+</tr>
+
+<tr>
+  <td class="show-table-label"><%= t 'vdocs.desc' %>:</td>
+  <td class="show-table-data"><%=h @vdocs_requirement.description %></td>
+</tr>
+
+<tr>
+  <td class="show-table-label"><%= t 'vdocs.purpose' %>:</td>
+   <td class="show-table-data"><%= display_purpose(@vdocs_requirement.purpose)
+     %>
+</tr>
+
+<tr>
+  <td class="show-table-label"><%= t 'vdocs.due_date' %>:</td>
+   <td class="show-table-data"><%=h @vdocs_requirement.due_date %>
+</tr>
+
+<tr>
+  <td class="show-table-label"><%= t 'vdocs.comment' %>:</td>
+   <td class="show-table-data"><%=h @vdocs_requirement.comment %>
+</tr>
+</table>
+<br />
+
+<%= link_to t('edit'), edit_vdocs_requirement_path(@vdocs_requirement) %> |
+<%= link_to t('destroy'), vdocs_requirement_path, :confirm => 'Are you sure?',
+  :method => :delete %> |
+<%= link_to t('vdocs.new'),
+  new_contract_vdocs_requirement_path(@vdocs_requirement.contract) %> |
+<%= link_to t('back'),
+  contract_vdocs_requirements_path(@vdocs_requirement.contract) %>

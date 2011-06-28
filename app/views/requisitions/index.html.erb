@@ -38,9 +38,7 @@
 	<th class="list-cell"><%= t 'req.bid_applic_s' %></th>
     <th class="list-cell"><%= t 'req.enq_issue' %></th>
     <th class="list-cell"><%= t 'req.tbt_cbt' %></th>
-	<th class="list-cell-vert"><%= t 'req.po_q' %></th>
-	<th class="list-cell-vert"><%= t 'req.com_q' %></th>
-	<th class="list-cell-vert"><%= t 'req.doc_q' %></th>
+	<th class="list-cell"><%= t 'contract' %></th>
   </tr>
 
 <% @requisitions.each do |requisition| %>
@@ -58,12 +56,9 @@
     <td class="list-cell"><%=h requisition.enquiry_issued %></td>
     <td class="list-cell"><%=h requisition.tbt_issued %><br/>
         <%=h requisition.cbt_issued %></td>
-    <td class="list-cell"><%= requisition.contracts.empty? ? "&nbsp;" : "Y" %>
+    <td class="list-cell"><%= render :partial => "/contracts/contract_ref",
+	  :collection => requisition.contracts %>
 	  </td>
-	<td class="list-cell"><%= requisition.req_comments.empty? ? "&nbsp;": "Y" %>
-	  </td>
-	<td class="list-cell"><%= requisition.procurement_docs.empty? ? "&nbsp;":
-	  "Y" %></td>
   </tr>
 <% end %>
 </table>

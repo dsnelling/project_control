@@ -1,0 +1,37 @@
+<h1><%= t 'vdocs.vdoc_edit_title' %></h1>
+
+<% form_for(@vendor_doc, :html => {:multipart => true}) do |f| %>
+   <%= f.error_messages %>
+<table>
+  <tr>
+    <td><%= f.label :doc_number, t('vdocs.doc_ref') %></td>
+    <td><%= f.text_field :doc_number %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :title, t('vdocs.doc_title') %></td>
+    <td><%= f.text_field :title %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :doc_status, t('vdocs.status') %></td>
+    <td><%= f.select :doc_status, VendorDoc::STATUS_TYPES %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :date_received, t('vdocs.date_received') %></td>
+    <td><%= f.calendar_date_select :date_received %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :remarks, t('vdocs.remarks') %></td>
+    <td><%= f.text_area :remarks, :rows => 4 %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :document, t('vdocs.upload') %></td>
+    <td><%= f.file_field :document %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= f.submit 'Update' %></td>
+  </tr>
+</table>
+<% end %>
+
+<%= link_to t('show'), @vendor_doc %> |
+<%= link_to t('back'), vdocs_requirement_path(@vdocs_requirement) %>

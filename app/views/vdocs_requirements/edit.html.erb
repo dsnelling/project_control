@@ -1,0 +1,35 @@
+<h1><%= t 'vdocs.edit_title' %></h1>
+
+<%= render :partial => "contract" %>
+
+<% form_for(@vdocs_requirement) do |f| %>
+  <%= f.error_messages %>
+<table>
+  <tr>
+    <td><%= f.label :code, t('vdocs.code') %></td>
+    <td><%= f.text_field :code %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :description, t('vdocs.desc') %></td>
+    <td><%= f.text_field :description %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :purpose, t('vdocs.purpose') %></td>
+    <td><%= f.select :purpose,VdocsRequirement::PURPOSE_TYPES %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :due_date, t('vdocs.due_date') %></td>
+    <td><%= f.calendar_date_select :due_date %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :comment, t('vdocs.comment') %></td>
+    <td><%= f.text_area :comment, :rows => 3 %></td>
+  </tr>
+</table>
+    <p><%= f.submit t('update') %></p>
+
+<% end %>
+
+<%= link_to t('show'), @vdocs_requirement %> |
+<%= link_to t('back'),
+   contract_vdocs_requirements_path(@vdocs_requirement.contract) %>

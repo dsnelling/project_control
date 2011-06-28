@@ -1,0 +1,32 @@
+<h1>Listing vendor_docs</h1>
+
+<table>
+  <tr>
+    <th>Vdocs requirement</th>
+    <th>Doc number</th>
+    <th>Title</th>
+    <th>Doc status</th>
+    <th>Date received</th>
+    <th>Document</th>
+    <th>Remarks</th>
+  </tr>
+
+<% @vendor_docs.each do |vendor_doc| %>
+  <tr>
+    <td><%=h vendor_doc.vdocs_requirement_id %></td>
+    <td><%=h vendor_doc.doc_number %></td>
+    <td><%=h vendor_doc.title %></td>
+    <td><%=h vendor_doc.doc_status %></td>
+    <td><%=h vendor_doc.date_received %></td>
+    <td><%=h vendor_doc.document %></td>
+    <td><%=h vendor_doc.remarks %></td>
+    <td><%= link_to 'Show', vendor_doc %></td>
+    <td><%= link_to 'Edit', edit_vendor_doc_path(vendor_doc) %></td>
+    <td><%= link_to 'Destroy', vendor_doc, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New vendor_doc', new_vendor_doc_path %>

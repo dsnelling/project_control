@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  contract_id: 1
+  code: MyString
+  description: MyString
+  purpose: MyString
+  due_date: 2011-06-09
+  comment: MyText
+
+two:
+  contract_id: 1
+  code: MyString
+  description: MyString
+  purpose: MyString
+  due_date: 2011-06-09
+  comment: MyText

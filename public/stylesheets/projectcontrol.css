@@ -194,6 +194,13 @@ table {
   clear: both;
   }
 
+#contract-header {
+  width: 700px;
+  border: 1px solid green;
+  margin: 0px 0px 5px 50px;
+  padding: 0px 0px 15px 15px; 
+  }
+
 /* for links at bottom of page */
 #form-navigation {
   clear: both;
@@ -295,4 +302,14 @@ a:hover { color: #fff; background-color:#000; }
   border: 1px solid silver;
   text-align: right;
   font-weight: bold;
+  }
+
+.vdocs-table {
+  border: 2px solid #faa;
+  margin: 0px 0px 0px 30px;
+  }
+
+.vdocs-header {
+  background-color: #fdd;
+  font-style: italic;
   }

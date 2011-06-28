@@ -1,4 +1,11 @@
-module IncidentsHelper
+module VendorDocsHelper
+
+def display_status(code)
+    d = VendorDoc::STATUS_TYPES.detect{|descrip, c| c ==
+	  code}
+	# if the code is not in the array, return the code
+	d ? d.first : code
+  end
 
   def display_icon(url)
     #selects the correct icon to display based on the file type of the url
@@ -12,5 +19,6 @@ module IncidentsHelper
 	    image_tag("attachment.gif")
 	end
   end
+
 
 end

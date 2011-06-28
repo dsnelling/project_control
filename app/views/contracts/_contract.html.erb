@@ -4,7 +4,7 @@
   <tr class="list-line-odd">
     <td class="list-cell"><%=h contract.commodity %></td>
     <td class="list-cell"><%= link_to contract.reference,
-      requisition_contract_path(contract.requisition,contract) %></td>
+      contract_path(contract) %></td>
     <td class="list-cell"><%=h contract.commence_date %></td>
     <td class="list-cell"><%=h contract.supplier %></td>
     <td class="list-cell"><%=h contract.currency %></td>

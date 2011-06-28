@@ -75,9 +75,11 @@
   </p>
 <% end %>
 <br />
+<%= link_to t('contr.vdocs'),contract_vdocs_requirements_path(@contract) %> |
 <%= link_to t('edit'),
-   edit_requisition_contract_path(@requisition, @contract) %> |
-<%= link_to t('destroy'),requisition_contract_path(@requisition, @contract),
+   edit_contract_path(@contract) %> |
+<%= link_to t('destroy'),contract_path(@contract),
   :confirm => t('confirm'), :method => :delete %> |
-<%= link_to t('contr.back'), requisition_path(@requisition) %> |
+<%= link_to t('contr.back'), requisition_path(@contract.requisition) %> |
 <%= link_to t('req.back'), requisitions_path %>
+

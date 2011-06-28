@@ -23,17 +23,18 @@
 <% @service_requests.each do |service_request| %>
   <tr valign="top" class="<%= cycle('list-line-odd','list-line-even') %>">
     <td class="list-cell"><%=h service_request.project %></td>
-    <td class="list-cell"><%=h service_request.request_ref %></td>
+    <td class="list-cell"><%= link_to(service_request.request_ref,
+	  service_request) %></td>
     <td class="list-cell"><%=h truncate(service_request.description, :length => 40) %></td>
     <td class="list-cell"><%=h service_request.disclipline %></td>
     <td class="list-cell"><%=h service_request.status %></td>
-    <td style="text-align: right">
+    <td class="list-cell-number">
 	  <%=h number_to_currency(service_request.auth_cost, :unit => ' ') %></td>
     <td class="list-cell"><%=h service_request.request_date.strftime("%Y-%m-%d") if service_request.request_date%></td>
     <td class="list-cell"><%=h service_request.auth_date.strftime("%Y-%m-%d") if service_request.auth_date %>&nbsp;</td>
-    <td class="list-cell"><%= link_to t('show'), service_request %> |
-      <%= link_to t('edit'), edit_service_request_path(service_request) %> |
-      <%= link_to t('destroy'), service_request, :confirm => t('confirm'), :method => :delete %></td>
+    <td class="list-cell">
+      <%= link_to t('destroy'), service_request, :confirm => t('confirm'),
+	     :method => :delete %></td>
   </tr>
 <% end %>
 </table>
