@@ -38,7 +38,7 @@
 	<th class="list-cell"><%= t 'req.bid_applic_s' %></th>
     <th class="list-cell"><%= t 'req.enq_issue' %></th>
     <th class="list-cell"><%= t 'req.tbt_cbt' %></th>
-	<th class="list-cell"><%= t 'contract' %></th>
+	<th class="list-cell"><%= t 'req.contract' %></th>
   </tr>
 
 <% @requisitions.each do |requisition| %>
@@ -57,7 +57,8 @@
     <td class="list-cell"><%=h requisition.tbt_issued %><br/>
         <%=h requisition.cbt_issued %></td>
     <td class="list-cell"><%= render :partial => "/contracts/contract_ref",
-	  :collection => requisition.contracts %>
+	  :collection => requisition.contracts,
+	  :spacer_template => "/contracts/contract_ref_spacer" %>
 	  </td>
   </tr>
 <% end %>

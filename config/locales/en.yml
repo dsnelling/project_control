@@ -95,6 +95,7 @@ en:
     po_q: "Con?"
     com_q: "Com?"
     doc_q: "Doc?"
+    contract: "Contract"
     new: "New Requisition"
     comment_header: "Comments for this Requisition:"
     new_contract: "Add New Contract"
