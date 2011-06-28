@@ -23,7 +23,8 @@ end
 
 #-- set up rights for library_docs controller
 #controller = "library_docs"
-controller = "vendor_docs"
+controller = "vdocs_requirements"
+#controller = "vendor_docs"
 ["create","destroy","edit","index","new","show","update"].each do |action|
   name=controller.capitalize << " " << action.capitalize
    r = Right.find_or_create_by_name(name)
