@@ -9,7 +9,7 @@ class UserAdminController < ApplicationController
 
   #default action is the listing of all users
   def index
-    @all_users = User.find(:all)
+    @all_users = User.all
 	render "list_users"
   end
 
@@ -39,7 +39,7 @@ class UserAdminController < ApplicationController
 
   #list users
   def list_users
-    @all_users = User.find(:all)
+    @all_users = User.all
   end
 
   def change_password
@@ -107,3 +107,4 @@ class UserAdminController < ApplicationController
   end
 
 end
+

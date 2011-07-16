@@ -10,19 +10,14 @@ class SiteHoursController < ApplicationController
   def index
 
     #only get the records for selected project
-    @site_hours = SiteHour.paginate(:page => params[:page], :conditions =>
-	  ["project = ?", session[:project] ], :order => "week_start DESC")
+    @site_hours = SiteHour.where("project = ?", session[:project]).order("week_start DESC").\
+	  paginate(:page => params[:page])
 	# total hours - perhaps there's a better way to do this using enums..?
-	@total_owner = SiteHour.sum(:owner_hr, :conditions =>
-	  ["project = ?", session[:project] ])
-	@total_epc = SiteHour.sum(:epc_hr, :conditions =>
-	  ["project = ?", session[:project] ])
-	@total_svision = SiteHour.sum(:svision_hr, :conditions =>
-	  ["project = ?", session[:project] ])
-	@total_constr = SiteHour.sum(:constr_hr, :conditions =>
-	  ["project = ?", session[:project] ])
-	@total_hours = SiteHour.sum(:total_hr, :conditions =>
-	  ["project = ?", session[:project] ])
+	@total_owner = SiteHour.where("project = ?", session[:project]).sum(:owner_hr)
+	@total_epc = SiteHour.where("project = ?", session[:project]).sum(:epc_hr)
+	@total_svision = SiteHour.where("project = ?", session[:project]).sum(:svision_hr)
+	@total_constr = SiteHour.where("project = ?", session[:project]).sum(:constr_hr)
+	@total_hours = SiteHour.where("project = ?", session[:project]).sum(:total_hr)
 
     respond_to do |format|
       format.html # index.html.erb

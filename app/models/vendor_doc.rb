@@ -1,11 +1,13 @@
 class VendorDoc < ActiveRecord::Base
-  mount_uploader :document, VendorDocUploader
+  #mount_uploader :document, VendorDocUploader
   belongs_to :vdocs_requirement
 
   STATUS_TYPES = [
-    ["Code 1: Reject","1"],
-	["Code 2: Acceptable as commented","2"],
-	["Code 3: Accepted","3"]
+    ["Code 1: Resubmit","1"],
+	["Code 2: Approved as noted, Resubmit","2"],
+	["Code 3: Approved as noted","3"],
+	["Code 4: Approved", "4"],
+	["Accepeted for Information","5"]
   ]
 
   validates_presence_of :doc_number, :title

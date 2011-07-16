@@ -18,7 +18,7 @@
 			    :collection => role.rights, :locals => { :role_id => role.id }%>
 	   <% end %>
 	   <tr>
-	   <% form_tag add_right_right_path(role) do %>
+	   <%= form_tag add_right_right_path(role) do %>
 	     <td><%= select_tag( :right_id, options_for_select(@rights)) %></td>
 		 <td><%= submit_tag 'Add Right' %></td>
 	   <% end %>

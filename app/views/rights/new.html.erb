@@ -1,7 +1,7 @@
 <h1>New right</h1>
 <table>
-<% form_for(@right) do |f| %>
-  <%= f.error_messages %>
+<%= form_for(@right) do |f| %>
+  <%= render "shared/error_messages", :target => @right %>
   <tr>
     <td><%= f.label :name %></td>
 	<td><%= f.text_field :name %></td>

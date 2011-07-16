@@ -10,10 +10,9 @@ class ServiceRequestsController < ApplicationController
   # GET /service_requests
   # GET /service_requests.xml
   def index
-    @service_requests = ServiceRequest.by_project(params[:proj_filter]).
-	  paginate :page => params[:page],
-	  :order => "project, request_ref"
-	@projects = [""] + Project.find(:all).map {|p| p.name }
+    @service_requests = ServiceRequest.by_project(params[:proj_filter]).\
+	  order("project, request_ref").paginate(:page => params[:page])
+	@projects = [""] + Project.all.map {|p| p.name }
 
     respond_to do |format|
       format.html # index.html.erb
@@ -36,7 +35,7 @@ class ServiceRequestsController < ApplicationController
   # GET /service_requests/new.xml
   def new
     @service_request = ServiceRequest.new
-	@projects = Project.find(:all).map {|p| p.name }
+	@projects = Project.all.map {|p| p.name }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -47,7 +46,7 @@ class ServiceRequestsController < ApplicationController
   # GET /service_requests/1/edit
   def edit
     @service_request = ServiceRequest.find(params[:id])
-	@projects = Project.find(:all).map {|p| p.name }
+	@projects = Project.all.map {|p| p.name }
   end
 
   # POST /service_requests
@@ -63,6 +62,7 @@ class ServiceRequestsController < ApplicationController
         format.html { redirect_to(@service_request) }
         format.xml  { render :xml => @service_request, :status => :created, :location => @service_request }
       else
+	    @projects = Project.all.map {|p| p.name }
         format.html { render :action => "new" }
         format.xml  { render :xml => @service_request.errors, :status => :unprocessable_entity }
       end
@@ -73,23 +73,21 @@ class ServiceRequestsController < ApplicationController
   # PUT /service_requests/1.xml
   def update
     @service_request = ServiceRequest.find(params[:id])
+    if !(@service_request.status.upcase == "APPROVED") 
+	  # no approved date unless service request status is "approved"
+      @service_request.auth_date = nil
+    end
 
     respond_to do |format|
       if @service_request.update_attributes(params[:service_request])
-	    # no approved date unless service request status is "approved"
-		#    - perhaps this should go in the model
-		if !(@service_request.status.upcase == "APPROVED") 
-	      @service_request.auth_date = nil
-        end
-		if @service_request.save
-          flash[:notice] = t('flash.sr_update')
+		  flash[:notice] = t('flash.sr_update')
           format.html { redirect_to(@service_request) }
           format.xml  { head :ok }
-        else
+      else
+          @projects = Project.all.map {|p| p.name }
           format.html { render :action => "edit" }
           format.xml  { render :xml => @service_request.errors, :status => :unprocessable_entity }
-        end
-	  end
+      end
     end
   end
 

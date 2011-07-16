@@ -42,7 +42,6 @@ zh:
     proc_doc_create: "Document记录创建成功..!"
     proc_doc_update: "Document 记录更新成功..!"
 
-
   main_menu:
     title: "项目管理和跟踪系统"
     subtitle: "主菜单"
@@ -96,6 +95,7 @@ zh:
     po_q: "合同已签订？"
     com_q: "意见？"
     doc_q: "Doc?"
+    contract: "Contract"
     new: "新建请购文件"
     comment_header: "请购文件的意见:"
     new_contract: "添加新合同"
@@ -113,7 +113,7 @@ zh:
     commodity: "品名"
     ref: "合同编号"
     com_date: "生效日期"
-    supplier: " 供货商"
+    supplier: "供货商"
     curr: "货币"
     currency: "货币"
     value_o: "原始合同金额"
@@ -127,6 +127,7 @@ zh:
     ex_date: "最后接触日期"
     ex_status: "催交状态"
     ex_comment: "催交意见"
+    vdocs: "Show Supplier Documents"
     back: "返回到该请购文件"
 
   req_com:
@@ -195,3 +196,28 @@ zh:
     remarks: "Remarks"
     document: "Document"
     updated_at: "Updated"
+
+  vdocs:
+    index_title: "Supplier Documents"
+    show_title: "Details of Document Requirement"
+    vdocs_show_title: "Details of Supplier Document"
+    new_title: "Enter new Document Requirement"
+    vdocs_new_title: "Enter New Supplier Document"
+    edit_title: "Edit Document Requirement"
+    vdocs_edit_title: "Edit Supplier Document Details"
+    contract_ref: "For Contract:"
+    new: "New Document Requirement"
+    code: "Doc Code"
+    desc: "Description"
+    purpose: "Purpose"
+    due_date: "Due Date"
+    date_received: "Date Received"
+    doc_ref: "Supplier Ref"
+    doc_title: "Doc Title"
+    document: "Document"
+    status: "Status"
+    remarks: "Remarks"
+    comment: "Comments"
+    upload: "Upload"
+    back: "Back to SDRL"
+

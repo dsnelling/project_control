@@ -13,11 +13,12 @@ development:
   access_key_id: <%= ENV['S3_ACCESS_KEY'] %>
   secret_access_key: <%= ENV['S3_SECRET_KEY'] %>
   bucket: capc-project-development
+  folder: uploads
 
 production:
   access_key_id: <%= ENV['S3_ACCESS_KEY'] %>
   secret_access_key: <%= ENV['S3_SECRET_KEY'] %>
-  bucket: capc-project
-
+  bucket: capc-project-development
+  folder: uploads
 
 

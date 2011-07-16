@@ -21,7 +21,7 @@
     <td class="list-cell"><%=h incident.category %></td>
     <td class="list-cell"><%=h incident.incident_date %></td>
     <td class="list-cell"><%=h incident.title %></td>
-    <td class="list-cell"><%=h truncate(incident.description, 40) %></td>
+    <td class="list-cell"><%=h truncate(incident.description, :length => 50) %></td>
     <td class="list-cell"><%=h incident.company %></td>
     <td class="list-cell">
 	  <%= link_to(display_icon(incident.incident_report_url),

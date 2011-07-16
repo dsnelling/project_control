@@ -1,7 +1,7 @@
 <h1><%= t 'contr.edit_title' %></h1>
 
-<% form_for(@contract) do |f| %>
-  <%= f.error_messages %>
+<%= form_for(@contract) do |f| %>
+  <%= render "shared/error_messages", :target => @contract %>
 <table>
   <tr>
     <td><%= f.label :commodity, t('contr.commodity') %></td>
@@ -13,7 +13,7 @@
   </tr>
   <tr>
     <td><%= f.label :commence_date, t('contr.com_date') %></td>
-    <td><%= f.calendar_date_select :commence_date %></td>
+    <td><%= f.text_field :commence_date %></td>
   </tr>
   <tr>
     <td><%= f.label :supplier, t('contr.supplier') %></td>
@@ -37,11 +37,11 @@
   </tr>
   <tr>
     <td><%= f.label :delivery_date_contract, t('contr.d_date_c') %></td>
-    <td><%= f.calendar_date_select :delivery_date_contract %></td>
+    <td><%= f.text_field :delivery_date_contract %></td>
   </tr>
   <tr>
     <td><%= f.label :delivery_date_forecast, t('contr.d_date_f') %></td>
-    <td><%= f.calendar_date_select :delivery_date_forecast %></td>
+    <td><%= f.text_field :delivery_date_forecast %></td>
   </tr>
   <tr>
     <td><%= f.label :expedite_contract, t('contr.ex_contact') %></td>
@@ -57,7 +57,7 @@
   </tr>
   <tr>
     <td><%= f.label :expedite_last_contact, t('contr.ex_date') %></td>
-    <td><%= f.calendar_date_select :expedite_last_contact %></td>
+    <td><%= f.text_field :expedite_last_contact %></td>
   </tr>
   <tr>
     <td><%= f.label :expedite_status, t('contr.ex_status') %></td>

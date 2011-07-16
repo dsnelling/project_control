@@ -1,7 +1,7 @@
 <h1><%= t  'req.title_edit' %></h1>
 
-<% form_for(@requisition) do |f| %>
-  <%= f.error_messages %>
+<%= form_for(@requisition) do |f| %>
+  <%= render "shared/error_messages", :target => @requisition %>
   <table>
   <tr>
     <td><%= f.label :req_num, t('req.req_ref') %></td>
@@ -29,27 +29,27 @@
   </tr>
   <tr>
     <td><%= f.label :required_on_site, t('req.ros_date') %></td>
-    <td><%= f.calendar_date_select :required_on_site %></td>
+    <td><%= f.text_field :required_on_site %></td>
    <tr>
     <td><%= f.label :required_contract, t('req.rpo_date') %></td>
-    <td><%= f.calendar_date_select :required_contract %></td>
+    <td><%= f.text_field :required_contract %></td>
   </tr>
   </tr>
   <tr>
     <td><%= f.label :bid_applic_approved, t('req.bid_applic') %></td>
-    <td><%= f.calendar_date_select :bid_applic_approved %></td>
+    <td><%= f.text_field :bid_applic_approved %></td>
   </tr>
   <tr>
     <td><%= f.label :enquiry_issued, t('req.enq_issue') %></td>
-    <td><%= f.calendar_date_select :enquiry_issued %></td>
+    <td><%= f.text_field :enquiry_issued %></td>
   </tr>
   <tr>
     <td><%= f.label :tbt_issued, t('req.tbt_issue') %></td>
-    <td><%= f.calendar_date_select :tbt_issued %></td>
+    <td><%= f.text_field :tbt_issued %></td>
   </tr>
   <tr>
     <td><%= f.label :cbt_issued, t('req.cbt_issue') %></td>
-    <td><%= f.calendar_date_select :cbt_issued %></td>
+    <td><%= f.text_field :cbt_issued %></td>
   </tr>
   <tr>
 	<td>&nbsp;</td>

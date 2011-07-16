@@ -8,9 +8,8 @@ class IncidentsController < ApplicationController
   # GET /incidents
   # GET /incidents.xml
   def index
-    @incidents = Incident.paginate(:page => params[:page], :conditions =>
-	  ["project = ?", session[:project] ], :order => "reference DESC")
-
+    @incidents = Incident.where("project = ?", session[:project]).order( "reference DESC").\
+	   paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

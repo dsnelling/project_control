@@ -1,6 +1,7 @@
 <h1>Editing rights</h1>
 <table>
-<% form_for(@right) do |f| %>
+<%= form_for(@right) do |f| %>
+  <%= render "shared/error_messages", :target => @right %>
   <tr>
     <td><%= f.label :name %></td>
 	<td><%= f.text_field :name %></td>

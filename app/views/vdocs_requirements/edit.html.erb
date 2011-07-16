@@ -2,8 +2,8 @@
 
 <%= render :partial => "contract" %>
 
-<% form_for(@vdocs_requirement) do |f| %>
-  <%= f.error_messages %>
+<%= form_for(@vdocs_requirement) do |f| %>
+  <%= render "shared/error_messages", :target => @vdocs_requirement %>
 <table>
   <tr>
     <td><%= f.label :code, t('vdocs.code') %></td>
@@ -19,7 +19,7 @@
   </tr>
   <tr>
     <td><%= f.label :due_date, t('vdocs.due_date') %></td>
-    <td><%= f.calendar_date_select :due_date %></td>
+    <td><%= f.text_field :due_date %></td>
   </tr>
   <tr>
     <td><%= f.label :comment, t('vdocs.comment') %></td>

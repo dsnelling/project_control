@@ -6,7 +6,7 @@ class RightsController < ApplicationController
 # -- standard CRUD methods
 
   def index
-    @rights = Right.find(:all)
+    @rights = Right.all
   end
 
   def new
@@ -50,8 +50,8 @@ class RightsController < ApplicationController
 # allocated rights to roles
 
   def roles
-    @roles = Role.find(:all, :order => "name")
-	@rights = Right.find(:all, :order => "name").map {|r| [r.name, r.id] }
+    @roles = Role.order("name")
+	@rights = Right.order("name").map {|r| [r.name, r.id] }
   end
 
   # remove right from role

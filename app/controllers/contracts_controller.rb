@@ -4,7 +4,7 @@ class ContractsController < ApplicationController
 
   # GET requisition/1/contracts
   def index
-    @contracts = @requisition.contracts.find(:all)
+    @contracts = @requisition.contracts.all
 
     respond_to do |format|
       format.html # index.html.erb

@@ -6,7 +6,7 @@ class MainMenuController < ApplicationController
   
   # this index page is the default home page for the application
   def index
-    @projects = Project.find(:all, :order =>"name").map {|p| [p.description, p.name]}
+    @projects = Project.order("name").map {|p| [p.description, p.name]}
 	if session[:user_id]
       @name = User.find(session[:user_id]).forename
 	else

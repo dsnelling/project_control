@@ -2,13 +2,13 @@
 
 <p><%= t 'site_hr.new_instructions' %></p>
 
-<% form_for(@site_hour) do |f| %>
-<p>  <%= f.error_messages %></p>
+<%= form_for(@site_hour) do |f| %>
+  <%= render "shared/error_messages", :target => @site_hour%>
 
 <table>
   <tr>
     <td><%= f.label :week_start, t('site_hr.week_start') %>:</td>
-    <td><%= f.calendar_date_select :week_start %></td>
+    <td><%= f.text_field :week_start %></td>
 	<td>&nbsp;</td>
   </tr>
   <tr>

@@ -5,7 +5,7 @@
     <td class="list-cell"><%=h vendor_docs.date_received %></td>
     <td class="list-cell"><%=h truncate(vendor_docs.remarks,
 	  :length => 30) %></td>
-    <td class="list-cell"><%= link_to(display_icon(vendor_docs.document_url),
-	    vendor_docs.document_url) %></td>
+    <td class="list-cell"><%= link_to(display_icon(vendor_docs.document),
+	    generate_secure_s3_url(vendor_docs.document)) %></td>
   </tr>
 

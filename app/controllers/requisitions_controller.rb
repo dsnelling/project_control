@@ -25,10 +25,9 @@ class RequisitionsController < ApplicationController
     #uses named scopes chained together to implement filter
    	@requisitions = Requisition.by_req(session[:req_filter]).\
 	  by_scope(session[:scope_filter]).by_status(session[:status_filter]).\
-	  paginate(:page => params[:page],
-	  :conditions => ["project = ?", session[:project] ],
-	  :order => :req_num)
-
+	  where("project = ?", session[:project]).order('req_num').\
+	  paginate(:page => params[:page])
+	  
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @requisitions }
@@ -36,8 +35,7 @@ class RequisitionsController < ApplicationController
   end
 
   def report
-    @requisitions = Requisition.find(:all, :conditions => ["project = ?",
-	  session[:project] ], :order => :req_num)
+    @requisitions = Requisition.where("project = ?", session[:project]).order("req_num")
   end
 
 

@@ -1,6 +1,6 @@
 <h1><%= t 'req.title' %></h1>
 <div class="requisition-filter">
-  <% form_tag(requisitions_path, :method => :get) do %>
+  <%= form_tag(requisitions_path, :method => :get) do %>
     <%= select_tag :req_filter, 
 	    options_for_select (Requisition::REQ_TYPES,session[:req_filter]),
 		:onchange => 'this.form.submit()' %>
@@ -8,7 +8,7 @@
   <% end %>
 </div>
 <div class="requisition-filter">
-  <% form_tag(requisitions_path, :method => :get) do %>
+  <%= form_tag(requisitions_path, :method => :get) do %>
     <%= select_tag :scope_filter, 
 	    options_for_select (Requisition::SCOPE_TYPES,session[:scope_filter]),
 		:onchange => 'this.form.submit()' %>
@@ -16,7 +16,7 @@
   <% end %>
 </div>
 <div class="requisition-filter">
-  <% form_tag(requisitions_path, :method => :get) do %>
+  <%= form_tag(requisitions_path, :method => :get) do %>
     <%= select_tag :status_filter, 
 	    options_for_select (Requisition::STATUS_TYPES,session[:status_filter]),
 		:onchange => 'this.form.submit()' %>

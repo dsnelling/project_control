@@ -1,7 +1,7 @@
 <h1><%= t('incident.new_title') %></h1>
 
-<% form_for @incident, :html => {:multipart => true} do |f| %>
-  <p><%= f.error_messages %></p>
+<%= form_for @incident, :html => {:multipart => true} do |f| %>
+  <%= render "shared/error_messages", :target => @incident %>
 
 <table>
   <tr>
@@ -14,7 +14,7 @@
   </tr>
   <tr>
     <td><%= f.label :incident_date, t('incident.incident_date') %></td>
-    <td><%= f.calendar_date_select :incident_date %></td>
+    <td><%= f.text_field :incident_date %></td>
   </tr>
   <tr>
     <td><%= f.label :title, t('incident.title') %></td>

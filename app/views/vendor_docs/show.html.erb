@@ -28,8 +28,8 @@
   <tr>
     <td class="show-table-label"><%= t('vdocs.document') %></td>
     <td class="show-table-data">
-	  <%= link_to(display_icon(@vendor_doc.document_url),
-	    @vendor_doc.document_url) %></td>
+	  <%= link_to(display_icon(@vendor_doc.document),
+	     generate_secure_s3_url(@vendor_doc.document)) %></td>
   </tr>
 
 
@@ -39,5 +39,5 @@
 <%= link_to t('edit'), edit_vendor_doc_path(@vendor_doc) %> |
 <%= link_to t('destroy'), @vendor_doc, :confirm => 'Are you sure?',
   :method => :delete %> |
-<%= link_to t('back'),
+<%= link_to t('vdocs.back'),
   contract_vdocs_requirements_path(@vdocs_requirement.contract) %>

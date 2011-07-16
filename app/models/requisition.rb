@@ -6,11 +6,11 @@ class Requisition < ActiveRecord::Base
   has_many :req_comments
   has_many :procurement_docs
 
-  named_scope :by_req, lambda {|r| {:conditions => ['req_num LIKE ?',
+  scope :by_req, lambda {|r| {:conditions => ['req_num LIKE ?',
     r.to_s + '%'] }}
-  named_scope :by_scope, lambda {|s| { :conditions => ['scope LIKE ?',
+  scope :by_scope, lambda {|s| { :conditions => ['scope LIKE ?',
     s.to_s + '%'] }}
-  named_scope :by_status, lambda {|s| {:conditions => ['status LIKE ?',
+  scope :by_status, lambda {|s| {:conditions => ['status LIKE ?',
     s.to_s + '%'] }}
 
   REQ_TYPES = [

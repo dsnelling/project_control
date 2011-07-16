@@ -1,7 +1,7 @@
 <h1><%= t 'service_r.title_new' %></h1>
 
-<% form_for(@service_request) do |f| %>
-  <%= f.error_messages %>
+<%= form_for(@service_request) do |f| %>
+  <%= render "shared/error_messages", :target => @service_request %>
 
   <p>
     <%= f.label :project, t('service_r.project') %><br />
@@ -29,11 +29,11 @@
   </p>
   <p>
     <%= f.label :request_date, t('service_r.request') %><br />
-    <%= f.calendar_date_select :request_date %>
+    <%= f.text_field :request_date %>
   </p>
   <p>
     <%= f.label :auth_date, t('service_r.auth_date') %><br />
-    <%= f.calendar_date_select :auth_date %>
+    <%= f.text_field :auth_date %>
   </p>
   <p>
     <%= f.submit t('create') %>

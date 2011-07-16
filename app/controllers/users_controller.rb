@@ -9,13 +9,12 @@ class UsersController < ApplicationController
 
   #default action is the listing of all users
   def index
-    @all_users = User.find(:all, :order => "username")
+    @all_users = User.order("username")
   end
 
 
   def login
-    @projects = Project.find(:all, :order => "name").map {
-	  |p| [p.description, p.name] } 
+    @projects = Project.all.order("name").map {|p| [p.description, p.name] } 
 	if request.post?
 	  user = User.authenticate(params[:username], params[:password])
 	  if user

@@ -2,9 +2,12 @@ class VdocsRequirementsController < ApplicationController
   before_filter :find_contract, :only => [:index, :new, :create]
   before_filter :check_authentication, :check_authorisation
 
+  #layout "main_with_fancyuploader"
+  #layout "main_with_plupload"
+
   # GET /contracts/:contract_id/vdocs_requirements(.:format)
   def index
-    @vdocs_requirements = @contract.vdocs_requirements.find(:all)
+    @vdocs_requirements = @contract.vdocs_requirements.order("code")
 
     respond_to do |format|
       format.html # index.html.erb

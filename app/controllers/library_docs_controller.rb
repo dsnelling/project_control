@@ -10,8 +10,7 @@ class LibraryDocsController < ApplicationController
   # GET /library_docs.xml
   def index
     # need to think how to order these in a sensible way
-    @library_docs = LibraryDoc.paginate(:page => params[:page],
-	  :order => "reference, category" )
+    @library_docs = LibraryDoc.order("reference, category").paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

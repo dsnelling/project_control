@@ -1,8 +1,7 @@
 <h1><%= t 'req_com.edit_title' %></h1>
 
-<%= error_messages_for :comment %>
-
-<% form_for([@requisition,@req_comment]) do |f| %>
+<%= form_for([@requisition,@req_comment]) do |f| %>
+  <%= render "shared/error_messages", :target => @req_comment %>
   <p>
     <b><%= t 'req_com.comment' %>:</b><br />
     <%= f.text_area :comment %>

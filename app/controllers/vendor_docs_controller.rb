@@ -1,7 +1,8 @@
 class VendorDocsController < ApplicationController
   before_filter :find_vdocs_requirement, :only => [:index, :new, :create]
   before_filter :check_authentication, :check_authorisation
-
+  #layout "main_with_fancyuploader"
+  layout "main_with_plupload"
   
 =begin
   # GET /vdocs_requirement/:vdoc_requirement_id/vendor_docs(.:format)

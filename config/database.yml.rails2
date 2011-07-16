@@ -1,0 +1,19 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  database: projectcontrol_development
+  pool: 5
+  username: projectcontrol
+  password: anotherpassword
+  socket: /var/run/mysqld/mysqld.sock
+
+test:
+  adapter: mysql
+  encoding: utf8
+  database: projectcontrol_test
+  pool: 5
+  username: projectcontrol
+  password: anotherpassword
+  socket: /var/run/mysqld/mysqld.sock
+
+

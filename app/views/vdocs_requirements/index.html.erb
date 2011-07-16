@@ -14,9 +14,10 @@
 
 <% @vdocs_requirements.each do |vdocs_requirement| %>
   <tr>
-    <td class="list-cell"><%= link_to vdocs_requirement.code,
-	  vdocs_requirement %></td>
-    <td class="list-cell"><%=h vdocs_requirement.description %></td>
+    <td class="list-cell"><strong><%= link_to vdocs_requirement.code,
+	  vdocs_requirement %></strong></td>
+    <td class="list-cell"><strong><%=h vdocs_requirement.description %>
+	  </strong></td>
     <td class="list-cell"><%= display_purpose(vdocs_requirement.purpose) %></td>
     <td class="list-cell"><%=h vdocs_requirement.due_date %></td>
     <td class="list-cell"><%=h truncate(vdocs_requirement.comment, 
@@ -30,15 +31,15 @@
 	  <td colspan="6" class="list-cell">
 	    <table class="vdocs-table">
 		  <tr class="vdocs-header">
-		    <th class="list-cell">Ref</th>
-			<th class="list-cell">Title</th>
-			<th class="list-cell">Code</th>
-			<th class="list-cell">Date Rec'd</th>
-			<th class="list-cell">Remarks</th>
-			<th class="list-cell">Document</th>
+		    <th class="list-cell"><%= t 'vdocs.doc_ref' %></th>
+			<th class="list-cell"><%= t'vdocs.doc_title' %></th>
+			<th class="list-cell"><%= t'vdocs.code' %></th>
+			<th class="list-cell"><%= t'vdocs.date_received' %></th>
+			<th class="list-cell"><%= t'vdocs.remarks' %></th>
+			<th class="list-cell"><%= t'vdocs.document' %></th>
 		  <tr>
 	      <%= render :partial => "/vendor_docs/vendor_docs",
-	        :collection => vdocs_requirement.vendor_docs %>
+	        :collection => vdocs_requirement.vendor_docs.sort_by {|d| d.doc_number } %>
 	    </table>
 	  </td>
 	</tr>

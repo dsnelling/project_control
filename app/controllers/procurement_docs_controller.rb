@@ -5,7 +5,7 @@ class ProcurementDocsController < ApplicationController
   before_filter :check_authentication, :check_authorisation
 
   def index
-    @procurement_docs = @requisition.procurement_docs.find(:all)
+    @procurement_docs = @requisition.procurement_docs.all
 
     respond_to do |format|
       format.html # index.html.erb
