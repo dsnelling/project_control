@@ -17,7 +17,6 @@ class ApplicationController < ActionController::Base
   layout "main"   # use the standard layout all the time
 
   # Scrub sensitive parameters from your log
-  filter_parameter_logging :password
   before_filter :set_user_locale
 
 private

@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
 
   def login
-    @projects = Project.all.order("name").map {|p| [p.description, p.name] } 
+    @projects = Project.order("name").map {|p| [p.description, p.name] } 
 	if request.post?
 	  user = User.authenticate(params[:username], params[:password])
 	  if user

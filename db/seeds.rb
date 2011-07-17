@@ -8,27 +8,27 @@
 #
 #-- new roles
 
+#create admin user if doesn't exist 
+  unless User.find_by_username("admin01")
+    a = User.new(
+	  :username => "admin01",
+      :superuser => true,
+      :email_addr => "somewhere@elsewhere.com",
+      :password => "secret01")
+    a.save
+  end
 
-#-- set up rights for procurement_docs controller
+
+
+#-- set up rights
 =begin
     ---commented out
-controller = "procurement_docs"
-["create","destroy","edit","new","show","update"].each do |action|
-  name=controller.capitalize << " " << action.capitalize
-   r = Right.find_or_create_by_name(name)
-   r.update_attributes(:controller => controller, :action => action)
-end
-
-=end
-
-#-- set up rights for library_docs controller
-#controller = "library_docs"
-#controller = "vdocs_requirements"
-#controller = "vendor_docs"
-["create","destroy","edit","index","new","show","update"].each do |action|
-  name=controller.capitalize << " " << action.capitalize
-   r = Right.find_or_create_by_name(name)
-   r.update_attributes(:controller => controller, :action => action)
+["procurement_docs","library_docs","vdocs_requirements","vendor_docs"].each do |controller|
+  ["create","destroy","edit","index","new","show","update"].each do |action|
+    name=controller.capitalize << " " << action.capitalize
+     r = Right.find_or_create_by_name(name)
+     r.update_attributes(:controller => controller, :action => action)
+  end
 end
 
 role = Role.find_or_create_by_name("Doc Controller")
@@ -54,5 +54,5 @@ rights_to_roles.each do |role,actions|
   end
 end
 
-
+=end
 
