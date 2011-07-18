@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  description: MyString
+  name: HYCO
+  description: MyStringfor HYCO project
   inactive: false
 
 two:
-  name: MyString
-  description: MyString
+  name: MyStringASU
+  description: MyStringforASUproject
   inactive: false

@@ -6,6 +6,7 @@ one:
   description: MyString
   disclipline: MyString
   status: MyString
+  category: hard work
   auth_cost: 9.99
   request_date: 2011-03-01 01:14:36
   auth_date: 2011-03-01 01:14:36
@@ -15,6 +16,7 @@ two:
   request_ref: MyString
   description: MyString
   disclipline: MyString
+  category: even harder work
   status: MyString
   auth_cost: 9.99
   request_date: 2011-03-01 01:14:36

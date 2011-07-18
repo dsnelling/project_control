@@ -12,6 +12,9 @@ one:
   tbt_issued: 2011-03-11
   cbt_issued: 2011-03-11
   update_by: fred
+  project: HYCO27
+  bid_applic_approved: 2011-05-11
+  required_contract: 2011-10-23
 
 two:
   req_num: J41
@@ -25,3 +28,6 @@ two:
   tbt_issued: 2011-03-11
   cbt_issued: 2011-03-11
   update_by: albert
+  project: HYCO
+  bid_applic_approved: 2011-04-11
+  required_contract: 2011-11-23

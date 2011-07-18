@@ -6,12 +6,12 @@ one:
   description: MyString
   purpose: MyString
   due_date: 2011-06-09
-  comment: MyText
+  comment: MyTextfor a very long comment
 
 two:
-  contract_id: 1
+  contract_id: 2
   code: MyString
   description: MyString
   purpose: MyString
   due_date: 2011-06-09
-  comment: MyText
+  comment: MyText for a very short comment

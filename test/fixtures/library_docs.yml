@@ -2,12 +2,14 @@
 
 one:
   category: MyString
-  title: MyString
+  title: MyStringthis is a nice title
   remarks: MyText
   document: MyString
+  reference: ten egss up on top
 
 two:
   category: MyString
-  title: MyString
+  title: MyStringthis is a horrible title
   remarks: MyText
   document: MyString
+  reference: wutr oi y the cat in the hat

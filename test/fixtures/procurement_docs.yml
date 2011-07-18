@@ -4,10 +4,14 @@ one:
   category: MyString
   source: MyString
   remarks: MyText
-  document: MyString
+  proc_document: MyString
+  update_by: Freddy
+  reference: reference12847
 
 two:
   category: MyString
   source: MyString
   remarks: MyText
-  document: MyString
+  proc_document: MyString
+  update_by: Jimmy
+  reference: Myreference3412

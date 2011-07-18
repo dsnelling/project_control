@@ -1,7 +1,16 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-# one:
-#   column: value
-#
-# two:
+ user_jim:
+   username: user_jim
+   forename: jim
+   surname: smith
+   email_addr: jim@smith.com
+
+
+ user_fred:
+   username: user_fred
+   forename: fred
+   surname: whallop
+   email_addr: fred@whallop.com
+
 #   column: value

@@ -1,115 +1,122 @@
-(in /home/duncs/project_control)
-                    library_docs GET    /library_docs(.:format)                                           {:controller=>"library_docs", :action=>"index"}
-                                 POST   /library_docs(.:format)                                           {:controller=>"library_docs", :action=>"create"}
-                 new_library_doc GET    /library_docs/new(.:format)                                       {:controller=>"library_docs", :action=>"new"}
-                edit_library_doc GET    /library_docs/:id/edit(.:format)                                  {:controller=>"library_docs", :action=>"edit"}
-                     library_doc GET    /library_docs/:id(.:format)                                       {:controller=>"library_docs", :action=>"show"}
-                                 PUT    /library_docs/:id(.:format)                                       {:controller=>"library_docs", :action=>"update"}
-                                 DELETE /library_docs/:id(.:format)                                       {:controller=>"library_docs", :action=>"destroy"}
-                       incidents GET    /incidents(.:format)                                              {:controller=>"incidents", :action=>"index"}
-                                 POST   /incidents(.:format)                                              {:controller=>"incidents", :action=>"create"}
-                    new_incident GET    /incidents/new(.:format)                                          {:controller=>"incidents", :action=>"new"}
-                   edit_incident GET    /incidents/:id/edit(.:format)                                     {:controller=>"incidents", :action=>"edit"}
-                        incident GET    /incidents/:id(.:format)                                          {:controller=>"incidents", :action=>"show"}
-                                 PUT    /incidents/:id(.:format)                                          {:controller=>"incidents", :action=>"update"}
-                                 DELETE /incidents/:id(.:format)                                          {:controller=>"incidents", :action=>"destroy"}
-                      site_hours GET    /site_hours(.:format)                                             {:controller=>"site_hours", :action=>"index"}
-                                 POST   /site_hours(.:format)                                             {:controller=>"site_hours", :action=>"create"}
-                   new_site_hour GET    /site_hours/new(.:format)                                         {:controller=>"site_hours", :action=>"new"}
-                  edit_site_hour GET    /site_hours/:id/edit(.:format)                                    {:controller=>"site_hours", :action=>"edit"}
-                       site_hour GET    /site_hours/:id(.:format)                                         {:controller=>"site_hours", :action=>"show"}
-                                 PUT    /site_hours/:id(.:format)                                         {:controller=>"site_hours", :action=>"update"}
-                                 DELETE /site_hours/:id(.:format)                                         {:controller=>"site_hours", :action=>"destroy"}
-     contract_vdocs_requirements GET    /contracts/:contract_id/vdocs_requirements(.:format)              {:controller=>"vdocs_requirements", :action=>"index"}
-                                 POST   /contracts/:contract_id/vdocs_requirements(.:format)              {:controller=>"vdocs_requirements", :action=>"create"}
-  new_contract_vdocs_requirement GET    /contracts/:contract_id/vdocs_requirements/new(.:format)          {:controller=>"vdocs_requirements", :action=>"new"}
-          edit_vdocs_requirement GET    /vdocs_requirements/:id/edit(.:format)                            {:controller=>"vdocs_requirements", :action=>"edit"}
-               vdocs_requirement GET    /vdocs_requirements/:id(.:format)                                 {:controller=>"vdocs_requirements", :action=>"show"}
-                                 PUT    /vdocs_requirements/:id(.:format)                                 {:controller=>"vdocs_requirements", :action=>"update"}
-                                 DELETE /vdocs_requirements/:id(.:format)                                 {:controller=>"vdocs_requirements", :action=>"destroy"}
-           requisition_contracts GET    /requisitions/:requisition_id/contracts(.:format)                 {:controller=>"contracts", :action=>"index"}
-                                 POST   /requisitions/:requisition_id/contracts(.:format)                 {:controller=>"contracts", :action=>"create"}
-        new_requisition_contract GET    /requisitions/:requisition_id/contracts/new(.:format)             {:controller=>"contracts", :action=>"new"}
-                   edit_contract GET    /contracts/:id/edit(.:format)                                     {:controller=>"contracts", :action=>"edit"}
-                        contract GET    /contracts/:id(.:format)                                          {:controller=>"contracts", :action=>"show"}
-                                 PUT    /contracts/:id(.:format)                                          {:controller=>"contracts", :action=>"update"}
-                                 DELETE /contracts/:id(.:format)                                          {:controller=>"contracts", :action=>"destroy"}
-        requisition_req_comments GET    /requisitions/:requisition_id/req_comments(.:format)              {:controller=>"req_comments", :action=>"index"}
-                                 POST   /requisitions/:requisition_id/req_comments(.:format)              {:controller=>"req_comments", :action=>"create"}
-     new_requisition_req_comment GET    /requisitions/:requisition_id/req_comments/new(.:format)          {:controller=>"req_comments", :action=>"new"}
-    edit_requisition_req_comment GET    /requisitions/:requisition_id/req_comments/:id/edit(.:format)     {:controller=>"req_comments", :action=>"edit"}
-         requisition_req_comment GET    /requisitions/:requisition_id/req_comments/:id(.:format)          {:controller=>"req_comments", :action=>"show"}
-                                 PUT    /requisitions/:requisition_id/req_comments/:id(.:format)          {:controller=>"req_comments", :action=>"update"}
-                                 DELETE /requisitions/:requisition_id/req_comments/:id(.:format)          {:controller=>"req_comments", :action=>"destroy"}
-    requisition_procurement_docs GET    /requisitions/:requisition_id/procurement_docs(.:format)          {:controller=>"procurement_docs", :action=>"index"}
-                                 POST   /requisitions/:requisition_id/procurement_docs(.:format)          {:controller=>"procurement_docs", :action=>"create"}
- new_requisition_procurement_doc GET    /requisitions/:requisition_id/procurement_docs/new(.:format)      {:controller=>"procurement_docs", :action=>"new"}
-edit_requisition_procurement_doc GET    /requisitions/:requisition_id/procurement_docs/:id/edit(.:format) {:controller=>"procurement_docs", :action=>"edit"}
-     requisition_procurement_doc GET    /requisitions/:requisition_id/procurement_docs/:id(.:format)      {:controller=>"procurement_docs", :action=>"show"}
-                                 PUT    /requisitions/:requisition_id/procurement_docs/:id(.:format)      {:controller=>"procurement_docs", :action=>"update"}
-                                 DELETE /requisitions/:requisition_id/procurement_docs/:id(.:format)      {:controller=>"procurement_docs", :action=>"destroy"}
-             report_requisitions GET    /requisitions/report(.:format)                                    {:controller=>"requisitions", :action=>"report"}
-                    requisitions GET    /requisitions(.:format)                                           {:controller=>"requisitions", :action=>"index"}
-                                 POST   /requisitions(.:format)                                           {:controller=>"requisitions", :action=>"create"}
-                 new_requisition GET    /requisitions/new(.:format)                                       {:controller=>"requisitions", :action=>"new"}
-                edit_requisition GET    /requisitions/:id/edit(.:format)                                  {:controller=>"requisitions", :action=>"edit"}
-                     requisition GET    /requisitions/:id(.:format)                                       {:controller=>"requisitions", :action=>"show"}
-                                 PUT    /requisitions/:id(.:format)                                       {:controller=>"requisitions", :action=>"update"}
-                                 DELETE /requisitions/:id(.:format)                                       {:controller=>"requisitions", :action=>"destroy"}
-                        projects GET    /projects(.:format)                                               {:controller=>"projects", :action=>"index"}
-                                 POST   /projects(.:format)                                               {:controller=>"projects", :action=>"create"}
-                     new_project GET    /projects/new(.:format)                                           {:controller=>"projects", :action=>"new"}
-                    edit_project GET    /projects/:id/edit(.:format)                                      {:controller=>"projects", :action=>"edit"}
-                         project GET    /projects/:id(.:format)                                           {:controller=>"projects", :action=>"show"}
-                                 PUT    /projects/:id(.:format)                                           {:controller=>"projects", :action=>"update"}
-                                 DELETE /projects/:id(.:format)                                           {:controller=>"projects", :action=>"destroy"}
-                service_requests GET    /service_requests(.:format)                                       {:controller=>"service_requests", :action=>"index"}
-                                 POST   /service_requests(.:format)                                       {:controller=>"service_requests", :action=>"create"}
-             new_service_request GET    /service_requests/new(.:format)                                   {:controller=>"service_requests", :action=>"new"}
-            edit_service_request GET    /service_requests/:id/edit(.:format)                              {:controller=>"service_requests", :action=>"edit"}
-                 service_request GET    /service_requests/:id(.:format)                                   {:controller=>"service_requests", :action=>"show"}
-                                 PUT    /service_requests/:id(.:format)                                   {:controller=>"service_requests", :action=>"update"}
-                                 DELETE /service_requests/:id(.:format)                                   {:controller=>"service_requests", :action=>"destroy"}
-     add_role_to_user_user_roles POST   /users/:user_id/roles/add_role_to_user(.:format)                  {:controller=>"roles", :action=>"add_role_to_user"}
-remove_role_from_user_user_roles POST   /users/:user_id/roles/remove_role_from_user(.:format)             {:controller=>"roles", :action=>"remove_role_from_user"}
-                      user_roles GET    /users/:user_id/roles(.:format)                                   {:controller=>"roles", :action=>"index"}
-                                 POST   /users/:user_id/roles(.:format)                                   {:controller=>"roles", :action=>"create"}
-                   new_user_role GET    /users/:user_id/roles/new(.:format)                               {:controller=>"roles", :action=>"new"}
-                  edit_user_role GET    /users/:user_id/roles/:id/edit(.:format)                          {:controller=>"roles", :action=>"edit"}
-                       user_role GET    /users/:user_id/roles/:id(.:format)                               {:controller=>"roles", :action=>"show"}
-                                 PUT    /users/:user_id/roles/:id(.:format)                               {:controller=>"roles", :action=>"update"}
-                                 DELETE /users/:user_id/roles/:id(.:format)                               {:controller=>"roles", :action=>"destroy"}
-                    logout_users GET    /users/logout(.:format)                                           {:controller=>"users", :action=>"logout"}
-           change_password_users GET    /users/change_password(.:format)                                  {:controller=>"users", :action=>"change_password"}
-                                 POST   /users/change_password(.:format)                                  {:controller=>"users", :action=>"change_password"}
-                     login_users GET    /users/login(.:format)                                            {:controller=>"users", :action=>"login"}
-                                 POST   /users/login(.:format)                                            {:controller=>"users", :action=>"login"}
-                           users GET    /users(.:format)                                                  {:controller=>"users", :action=>"index"}
-                                 POST   /users(.:format)                                                  {:controller=>"users", :action=>"create"}
-                        new_user GET    /users/new(.:format)                                              {:controller=>"users", :action=>"new"}
-                       edit_user GET    /users/:id/edit(.:format)                                         {:controller=>"users", :action=>"edit"}
-                            user GET    /users/:id(.:format)                                              {:controller=>"users", :action=>"show"}
-                                 PUT    /users/:id(.:format)                                              {:controller=>"users", :action=>"update"}
-                                 DELETE /users/:id(.:format)                                              {:controller=>"users", :action=>"destroy"}
-                    roles_rights GET    /rights/roles(.:format)                                           {:controller=>"rights", :action=>"roles"}
-                          rights GET    /rights(.:format)                                                 {:controller=>"rights", :action=>"index"}
-                                 POST   /rights(.:format)                                                 {:controller=>"rights", :action=>"create"}
-                       new_right GET    /rights/new(.:format)                                             {:controller=>"rights", :action=>"new"}
-                 add_right_right POST   /rights/:id/add_right(.:format)                                   {:controller=>"rights", :action=>"add_right"}
-              remove_right_right POST   /rights/:id/remove_right(.:format)                                {:controller=>"rights", :action=>"remove_right"}
-                      edit_right GET    /rights/:id/edit(.:format)                                        {:controller=>"rights", :action=>"edit"}
-                           right GET    /rights/:id(.:format)                                             {:controller=>"rights", :action=>"show"}
-                                 PUT    /rights/:id(.:format)                                             {:controller=>"rights", :action=>"update"}
-                                 DELETE /rights/:id(.:format)                                             {:controller=>"rights", :action=>"destroy"}
-                           roles POST   /roles(.:format)                                                  {:controller=>"roles", :action=>"create"}
-                        new_role GET    /roles/new(.:format)                                              {:controller=>"roles", :action=>"new"}
-                       edit_role GET    /roles/:id/edit(.:format)                                         {:controller=>"roles", :action=>"edit"}
-                            role GET    /roles/:id(.:format)                                              {:controller=>"roles", :action=>"show"}
-                                 PUT    /roles/:id(.:format)                                              {:controller=>"roles", :action=>"update"}
-                            root        /                                                                 {:controller=>"main_menu", :action=>"index"}
-                       main_menu        /                                                                 {:controller=>"main_menu", :action=>"index"}
-                          logout        /logout                                                           {:controller=>"users", :action=>"logout"}
-                           login        /login                                                            {:controller=>"users", :action=>"login"}
-                           about        /about                                                            {:controller=>"main_menu", :action=>"about"}
-                     set_project        /main_menu/set_project                                            {:controller=>"main_menu", :action=>"set_project"}
-                      debug_info        /main_menu/debug_info                                             {:controller=>"main_menu", :action=>"debug_info"}
+                    library_docs GET    /library_docs(.:format)                                             {:action=>"index", :controller=>"library_docs"}
+                                 POST   /library_docs(.:format)                                             {:action=>"create", :controller=>"library_docs"}
+                 new_library_doc GET    /library_docs/new(.:format)                                         {:action=>"new", :controller=>"library_docs"}
+                edit_library_doc GET    /library_docs/:id/edit(.:format)                                    {:action=>"edit", :controller=>"library_docs"}
+                     library_doc GET    /library_docs/:id(.:format)                                         {:action=>"show", :controller=>"library_docs"}
+                                 PUT    /library_docs/:id(.:format)                                         {:action=>"update", :controller=>"library_docs"}
+                                 DELETE /library_docs/:id(.:format)                                         {:action=>"destroy", :controller=>"library_docs"}
+                       incidents GET    /incidents(.:format)                                                {:action=>"index", :controller=>"incidents"}
+                                 POST   /incidents(.:format)                                                {:action=>"create", :controller=>"incidents"}
+                    new_incident GET    /incidents/new(.:format)                                            {:action=>"new", :controller=>"incidents"}
+                   edit_incident GET    /incidents/:id/edit(.:format)                                       {:action=>"edit", :controller=>"incidents"}
+                        incident GET    /incidents/:id(.:format)                                            {:action=>"show", :controller=>"incidents"}
+                                 PUT    /incidents/:id(.:format)                                            {:action=>"update", :controller=>"incidents"}
+                                 DELETE /incidents/:id(.:format)                                            {:action=>"destroy", :controller=>"incidents"}
+                      site_hours GET    /site_hours(.:format)                                               {:action=>"index", :controller=>"site_hours"}
+                                 POST   /site_hours(.:format)                                               {:action=>"create", :controller=>"site_hours"}
+                   new_site_hour GET    /site_hours/new(.:format)                                           {:action=>"new", :controller=>"site_hours"}
+                  edit_site_hour GET    /site_hours/:id/edit(.:format)                                      {:action=>"edit", :controller=>"site_hours"}
+                       site_hour GET    /site_hours/:id(.:format)                                           {:action=>"show", :controller=>"site_hours"}
+                                 PUT    /site_hours/:id(.:format)                                           {:action=>"update", :controller=>"site_hours"}
+                                 DELETE /site_hours/:id(.:format)                                           {:action=>"destroy", :controller=>"site_hours"}
+   vdocs_requirement_vendor_docs GET    /vdocs_requirements/:vdocs_requirement_id/vendor_docs(.:format)     {:action=>"index", :controller=>"vendor_docs"}
+                                 POST   /vdocs_requirements/:vdocs_requirement_id/vendor_docs(.:format)     {:action=>"create", :controller=>"vendor_docs"}
+new_vdocs_requirement_vendor_doc GET    /vdocs_requirements/:vdocs_requirement_id/vendor_docs/new(.:format) {:action=>"new", :controller=>"vendor_docs"}
+                 edit_vendor_doc GET    /vendor_docs/:id/edit(.:format)                                     {:action=>"edit", :controller=>"vendor_docs"}
+                      vendor_doc GET    /vendor_docs/:id(.:format)                                          {:action=>"show", :controller=>"vendor_docs"}
+                                 PUT    /vendor_docs/:id(.:format)                                          {:action=>"update", :controller=>"vendor_docs"}
+                                 DELETE /vendor_docs/:id(.:format)                                          {:action=>"destroy", :controller=>"vendor_docs"}
+     contract_vdocs_requirements GET    /contracts/:contract_id/vdocs_requirements(.:format)                {:action=>"index", :controller=>"vdocs_requirements"}
+                                 POST   /contracts/:contract_id/vdocs_requirements(.:format)                {:action=>"create", :controller=>"vdocs_requirements"}
+  new_contract_vdocs_requirement GET    /contracts/:contract_id/vdocs_requirements/new(.:format)            {:action=>"new", :controller=>"vdocs_requirements"}
+          edit_vdocs_requirement GET    /vdocs_requirements/:id/edit(.:format)                              {:action=>"edit", :controller=>"vdocs_requirements"}
+               vdocs_requirement GET    /vdocs_requirements/:id(.:format)                                   {:action=>"show", :controller=>"vdocs_requirements"}
+                                 PUT    /vdocs_requirements/:id(.:format)                                   {:action=>"update", :controller=>"vdocs_requirements"}
+                                 DELETE /vdocs_requirements/:id(.:format)                                   {:action=>"destroy", :controller=>"vdocs_requirements"}
+           requisition_contracts GET    /requisitions/:requisition_id/contracts(.:format)                   {:action=>"index", :controller=>"contracts"}
+                                 POST   /requisitions/:requisition_id/contracts(.:format)                   {:action=>"create", :controller=>"contracts"}
+        new_requisition_contract GET    /requisitions/:requisition_id/contracts/new(.:format)               {:action=>"new", :controller=>"contracts"}
+                   edit_contract GET    /contracts/:id/edit(.:format)                                       {:action=>"edit", :controller=>"contracts"}
+                        contract GET    /contracts/:id(.:format)                                            {:action=>"show", :controller=>"contracts"}
+                                 PUT    /contracts/:id(.:format)                                            {:action=>"update", :controller=>"contracts"}
+                                 DELETE /contracts/:id(.:format)                                            {:action=>"destroy", :controller=>"contracts"}
+        requisition_req_comments GET    /requisitions/:requisition_id/req_comments(.:format)                {:action=>"index", :controller=>"req_comments"}
+                                 POST   /requisitions/:requisition_id/req_comments(.:format)                {:action=>"create", :controller=>"req_comments"}
+     new_requisition_req_comment GET    /requisitions/:requisition_id/req_comments/new(.:format)            {:action=>"new", :controller=>"req_comments"}
+    edit_requisition_req_comment GET    /requisitions/:requisition_id/req_comments/:id/edit(.:format)       {:action=>"edit", :controller=>"req_comments"}
+         requisition_req_comment GET    /requisitions/:requisition_id/req_comments/:id(.:format)            {:action=>"show", :controller=>"req_comments"}
+                                 PUT    /requisitions/:requisition_id/req_comments/:id(.:format)            {:action=>"update", :controller=>"req_comments"}
+                                 DELETE /requisitions/:requisition_id/req_comments/:id(.:format)            {:action=>"destroy", :controller=>"req_comments"}
+    requisition_procurement_docs GET    /requisitions/:requisition_id/procurement_docs(.:format)            {:action=>"index", :controller=>"procurement_docs"}
+                                 POST   /requisitions/:requisition_id/procurement_docs(.:format)            {:action=>"create", :controller=>"procurement_docs"}
+ new_requisition_procurement_doc GET    /requisitions/:requisition_id/procurement_docs/new(.:format)        {:action=>"new", :controller=>"procurement_docs"}
+edit_requisition_procurement_doc GET    /requisitions/:requisition_id/procurement_docs/:id/edit(.:format)   {:action=>"edit", :controller=>"procurement_docs"}
+     requisition_procurement_doc GET    /requisitions/:requisition_id/procurement_docs/:id(.:format)        {:action=>"show", :controller=>"procurement_docs"}
+                                 PUT    /requisitions/:requisition_id/procurement_docs/:id(.:format)        {:action=>"update", :controller=>"procurement_docs"}
+                                 DELETE /requisitions/:requisition_id/procurement_docs/:id(.:format)        {:action=>"destroy", :controller=>"procurement_docs"}
+             report_requisitions GET    /requisitions/report(.:format)                                      {:action=>"report", :controller=>"requisitions"}
+                    requisitions GET    /requisitions(.:format)                                             {:action=>"index", :controller=>"requisitions"}
+                                 POST   /requisitions(.:format)                                             {:action=>"create", :controller=>"requisitions"}
+                 new_requisition GET    /requisitions/new(.:format)                                         {:action=>"new", :controller=>"requisitions"}
+                edit_requisition GET    /requisitions/:id/edit(.:format)                                    {:action=>"edit", :controller=>"requisitions"}
+                     requisition GET    /requisitions/:id(.:format)                                         {:action=>"show", :controller=>"requisitions"}
+                                 PUT    /requisitions/:id(.:format)                                         {:action=>"update", :controller=>"requisitions"}
+                                 DELETE /requisitions/:id(.:format)                                         {:action=>"destroy", :controller=>"requisitions"}
+                        projects GET    /projects(.:format)                                                 {:action=>"index", :controller=>"projects"}
+                                 POST   /projects(.:format)                                                 {:action=>"create", :controller=>"projects"}
+                     new_project GET    /projects/new(.:format)                                             {:action=>"new", :controller=>"projects"}
+                    edit_project GET    /projects/:id/edit(.:format)                                        {:action=>"edit", :controller=>"projects"}
+                         project GET    /projects/:id(.:format)                                             {:action=>"show", :controller=>"projects"}
+                                 PUT    /projects/:id(.:format)                                             {:action=>"update", :controller=>"projects"}
+                                 DELETE /projects/:id(.:format)                                             {:action=>"destroy", :controller=>"projects"}
+         report_service_requests GET    /service_requests/report(.:format)                                  {:action=>"report", :controller=>"service_requests"}
+                service_requests GET    /service_requests(.:format)                                         {:action=>"index", :controller=>"service_requests"}
+                                 POST   /service_requests(.:format)                                         {:action=>"create", :controller=>"service_requests"}
+             new_service_request GET    /service_requests/new(.:format)                                     {:action=>"new", :controller=>"service_requests"}
+            edit_service_request GET    /service_requests/:id/edit(.:format)                                {:action=>"edit", :controller=>"service_requests"}
+                 service_request GET    /service_requests/:id(.:format)                                     {:action=>"show", :controller=>"service_requests"}
+                                 PUT    /service_requests/:id(.:format)                                     {:action=>"update", :controller=>"service_requests"}
+                                 DELETE /service_requests/:id(.:format)                                     {:action=>"destroy", :controller=>"service_requests"}
+     add_role_to_user_user_roles POST   /users/:user_id/roles/add_role_to_user(.:format)                    {:action=>"add_role_to_user", :controller=>"roles"}
+remove_role_from_user_user_roles POST   /users/:user_id/roles/remove_role_from_user(.:format)               {:action=>"remove_role_from_user", :controller=>"roles"}
+                      user_roles GET    /users/:user_id/roles(.:format)                                     {:action=>"index", :controller=>"roles"}
+                                 POST   /users/:user_id/roles(.:format)                                     {:action=>"create", :controller=>"roles"}
+                   new_user_role GET    /users/:user_id/roles/new(.:format)                                 {:action=>"new", :controller=>"roles"}
+                  edit_user_role GET    /users/:user_id/roles/:id/edit(.:format)                            {:action=>"edit", :controller=>"roles"}
+                       user_role GET    /users/:user_id/roles/:id(.:format)                                 {:action=>"show", :controller=>"roles"}
+                                 PUT    /users/:user_id/roles/:id(.:format)                                 {:action=>"update", :controller=>"roles"}
+                                 DELETE /users/:user_id/roles/:id(.:format)                                 {:action=>"destroy", :controller=>"roles"}
+                    logout_users GET    /users/logout(.:format)                                             {:action=>"logout", :controller=>"users"}
+           change_password_users GET    /users/change_password(.:format)                                    {:action=>"change_password", :controller=>"users"}
+                                 POST   /users/change_password(.:format)                                    {:action=>"change_password", :controller=>"users"}
+                     login_users GET    /users/login(.:format)                                              {:action=>"login", :controller=>"users"}
+                                 POST   /users/login(.:format)                                              {:action=>"login", :controller=>"users"}
+                           users GET    /users(.:format)                                                    {:action=>"index", :controller=>"users"}
+                                 POST   /users(.:format)                                                    {:action=>"create", :controller=>"users"}
+                        new_user GET    /users/new(.:format)                                                {:action=>"new", :controller=>"users"}
+                       edit_user GET    /users/:id/edit(.:format)                                           {:action=>"edit", :controller=>"users"}
+                            user GET    /users/:id(.:format)                                                {:action=>"show", :controller=>"users"}
+                                 PUT    /users/:id(.:format)                                                {:action=>"update", :controller=>"users"}
+                                 DELETE /users/:id(.:format)                                                {:action=>"destroy", :controller=>"users"}
+                    roles_rights GET    /rights/roles(.:format)                                             {:action=>"roles", :controller=>"rights"}
+                          rights GET    /rights(.:format)                                                   {:action=>"index", :controller=>"rights"}
+                                 POST   /rights(.:format)                                                   {:action=>"create", :controller=>"rights"}
+                       new_right GET    /rights/new(.:format)                                               {:action=>"new", :controller=>"rights"}
+              remove_right_right POST   /rights/:id/remove_right(.:format)                                  {:action=>"remove_right", :controller=>"rights"}
+                 add_right_right POST   /rights/:id/add_right(.:format)                                     {:action=>"add_right", :controller=>"rights"}
+                      edit_right GET    /rights/:id/edit(.:format)                                          {:action=>"edit", :controller=>"rights"}
+                           right GET    /rights/:id(.:format)                                               {:action=>"show", :controller=>"rights"}
+                                 PUT    /rights/:id(.:format)                                               {:action=>"update", :controller=>"rights"}
+                                 DELETE /rights/:id(.:format)                                               {:action=>"destroy", :controller=>"rights"}
+                           roles POST   /roles(.:format)                                                    {:action=>"create", :controller=>"roles"}
+                        new_role GET    /roles/new(.:format)                                                {:action=>"new", :controller=>"roles"}
+                       edit_role GET    /roles/:id/edit(.:format)                                           {:action=>"edit", :controller=>"roles"}
+                            role GET    /roles/:id(.:format)                                                {:action=>"show", :controller=>"roles"}
+                                 PUT    /roles/:id(.:format)                                                {:action=>"update", :controller=>"roles"}
+                            root        /                                                                   {:action=>"index", :controller=>"main_menu"}
+                       main_menu        /                                                                   {:action=>"index", :controller=>"main_menu"}
+                          logout        /logout                                                             {:action=>"logout", :controller=>"users"}
+                           login        /login                                                              {:action=>"login", :controller=>"users"}
+                           about        /about                                                              {:action=>"about", :controller=>"main_menu"}
+                     set_project        /main_menu/set_project                                              {:action=>"set_project", :controller=>"main_menu"}
+                      debug_info        /main_menu/debug_info                                               {:action=>"debug_info", :controller=>"main_menu"}
