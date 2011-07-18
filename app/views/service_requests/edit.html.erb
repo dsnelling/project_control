@@ -20,6 +20,11 @@
     <%= f.text_field :disclipline %>
   </p>
   <p>
+    <%= f.label :category, t('service_r.category')  %><br />
+    <%= f.select :category, ServiceRequest::CATEGORY_TYPES %>
+  </p>
+
+  <p>
     <%= f.label :status, t('service_r.status')  %><br />
     <%= f.select :status, ServiceRequest::STATUS_TYPES %>
   </p>

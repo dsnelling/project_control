@@ -19,6 +19,11 @@
     <td class="show-table-label"><%= t 'service_r.disclipline' %></td>
     <td class="show-table-data"><%=h @service_request.disclipline %></td>
   </tr>
+  <tr>
+    <td class="show-table-label"><%= t 'service_r.category' %></td>
+    <td class="show-table-data"><%= display_category(@service_request.category)
+	  %></td>
+  </tr>
 
   <tr>
     <td class="show-table-label"><%= t 'service_r.status' %></td>

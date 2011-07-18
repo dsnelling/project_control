@@ -1,0 +1,42 @@
+/* projectcontrol-print.css  */
+
+body, p  {
+  font-family: verdana,helvetica,sans-serif;
+  font-size: 65%;
+  line-height: 1.3em;
+  }
+
+#header_menu {
+  display: none;
+  }
+
+#user_project_banner {
+  display: none;
+  }
+
+#content {
+  width: 100%;
+  float: none;
+  }
+
+.noprint {
+  display: none;
+  }
+  
+/* for the filter boxes on the requisition index pages */
+.requisition-filter {
+  display: none;
+  }
+
+/* rails standard stuff */
+#footer {
+  font-size: 50%;
+  font-style: italic;
+  text-align: center;
+  }
+/* clever CSS to give header on each page when printed */
+table { page-break-inside:auto }
+tr    { page-break-inside:avoid; page-break-after:auto }
+thead { display:table-header-group }
+tfoot { display:table-footer-group }
+

@@ -20,6 +20,18 @@ class ServiceRequestsController < ApplicationController
     end
   end
 
+  def report
+    @service_requests = ServiceRequest.order("project, category, request_ref")
+	@projects = [""] + Project.all.map {|p| p.name }
+
+    respond_to do |format|
+      format.html
+      format.xml  { render :xml => @service_requests }
+    end
+  end
+    
+
+
   # GET /service_requests/1
   # GET /service_requests/1.xml
   def show

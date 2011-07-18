@@ -6,11 +6,11 @@ source 'http://rubygems.org'
 
 gem "rails", "~> 3.0.9"
 gem "will_paginate", "~> 2.3.11"
-gem "calendar_date_select"
+#gem "calendar_date_select"
 gem "prawn"
 gem "prawnto"
 gem "carrierwave"
-gem "aws"
+#gem "aws"
 gem "haml"
 gem "fog"
 

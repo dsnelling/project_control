@@ -8,7 +8,7 @@ class LibraryDocUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader
   #storage :file
-  storage :s3
+  storage :fog
 
   # set cache directory to writable temp directory (for Heroku)
   def cache_dir

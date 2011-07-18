@@ -1,5 +1,4 @@
 # Localization file for English. 
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
   hello: "Hello world"
@@ -21,6 +20,11 @@ en:
   filter: "Filter"
   update_by: "Updated By"
   update_at: "Updated At"
+
+  errors:
+    messages:
+      carrierwave_processing_error: "Cannot resize image"
+      carrierwave_integrity_error: "Invalid file type"
 
   will_paginate:
     previous: "&laquo; Previous"
@@ -61,10 +65,12 @@ en:
   service_r:
     title: "Service Requests"
     title_new: "New Service Request"
+    title_report: "Service Requests Report"
     project: "Project"
     request_ref: "Request Ref"
     desc: "Description"
     disclipline: "Disclipline"
+    category: "Category"
     status: "Status"
     auth_cost: "Auth Cost"
     request: "Request Date"
@@ -220,4 +226,5 @@ en:
     comment: "Comments"
     upload: "Upload"
     back: "Back to SDRL"
+
 

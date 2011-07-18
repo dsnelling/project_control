@@ -25,20 +25,20 @@
 </div>
 <div id="requisition-table">
 
-<p><%= t 'req.legend' %></p>
+<p><%= raw(t('req.legend')) %></p>
 <p><%= link_to "Report on Requisitions", report_requisitions_path %></p>
 <table class="item_table">
   <tr class="list-header">
-    <th class="list-cell"><%= t 'req.req_ref' %></th>
-    <th class="list-cell"><%= t 'req.commodity' %></th>
-    <th class="list-cell"><%= t 'req.scope' %></th>
-    <th class="list-cell"><%= t 'req.status' %></th>
-    <th class="list-cell"><%= t 'req.mr_doc' %></th>
-    <th class="list-cell"><%= t 'req.ros_rpo' %></th>
-	<th class="list-cell"><%= t 'req.bid_applic_s' %></th>
-    <th class="list-cell"><%= t 'req.enq_issue' %></th>
-    <th class="list-cell"><%= t 'req.tbt_cbt' %></th>
-	<th class="list-cell"><%= t 'req.contract' %></th>
+    <th class="list-cell"><%= raw(t('req.req_ref')) %></th>
+    <th class="list-cell"><%= raw(t('req.commodity')) %></th>
+    <th class="list-cell"><%= raw(t('req.scope')) %></th>
+    <th class="list-cell"><%= raw(t('req.status')) %></th>
+    <th class="list-cell"><%= raw(t('req.mr_doc')) %></th>
+    <th class="list-cell"><%= raw(t('req.ros_rpo')) %></th>
+	<th class="list-cell"><%= raw(t('req.bid_applic_s')) %></th>
+    <th class="list-cell"><%= raw(t('req.enq_issue')) %></th>
+    <th class="list-cell"><%= raw(t('req.tbt_cbt')) %></th>
+	<th class="list-cell"><%= raw(t('req.contract')) %></th>
   </tr>
 
 <% @requisitions.each do |requisition| %>

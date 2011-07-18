@@ -22,6 +22,11 @@ zh:
   update_by: "最后更新者为"
   update_at: "Updated At"
 
+  errors:
+    messages:
+      carrierwave_processing_error: "Cannot resize image"
+      carrierwave_integrity_error: "Invalid file type"
+
   will_paginate:
     previous: "&laquo; 上一页"
     next: "下一页 &raquo;"
@@ -61,10 +66,12 @@ zh:
   service_r:
     title: "服务申请"
     title_new: "新建服务申请"
+    title_report: "服务申请报告"
     project: "项目"
     request_ref: "申请编号"
     desc: "说明"
     disclipline: "专业"
+    category: "事故类别"
     status: "状态"
     auth_cost: "批准经费"
     request: "申请日期"

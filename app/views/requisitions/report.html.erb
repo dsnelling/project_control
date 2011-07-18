@@ -1,6 +1,7 @@
 <h1>Requsitions and Contracts Report</h1>
 <p><%= link_to "View as PDF", report_requisitions_path(:format => "pdf") %>
 <table class="item_table">
+  <thead>
   <tr class="list-header">
     <th class="list-cell"><%= t 'req.req_ref' %></th>
     <th class="list-cell"><%= t 'req.commodity' %></th>
@@ -23,7 +24,7 @@
       <%= t 'contr.d_date_f' %></th>
 	<th class="list-cell"><%= t 'contr.ex_comment' %></th>
   </tr>
-
+  </thead>
 <% @requisitions.each do |requisition| %>
   <tr class="list-line-odd">
     <td class="list-cell"><%=h requisition.req_num %></td>

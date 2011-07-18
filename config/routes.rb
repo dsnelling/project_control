@@ -19,8 +19,8 @@ ActionController::Routing::Routes.draw do |map|
      r.resources :procurement_docs
   end
   map.resources :projects
-  map.resources :service_requests
-  map.resources :users, :collection => { :login => [:get, :post],
+  map.resources :service_requests, :collection => {:report => :get}
+  map.resources :users, :collection => {:login => [:get, :post],
       :change_password => [:get, :post],
 	  :logout => [:get] } do |user|
 	 user.resources :roles, :collection => { :add_role_to_user => :post,

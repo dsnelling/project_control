@@ -21,6 +21,11 @@ wk:
   filter: "F^|%*r"
   update_by: "U!)^8e By"
 
+  errors:
+    messages:
+      carrierwave_processing_error: "Ca53ot res@5ze im)6e"
+      carrierwave_integrity_error: "I*@id f98e ty*"
+
   will_paginate:
     previous: "&laquo;= P(^6*0^s"
     next: "N*2t =&raquo;"
@@ -60,10 +65,12 @@ wk:
   service_r:
     title: "Se2#$@4ce Re34j2ts"
     title_new: "N!2 Sg@#!# Re!$%st"
+    title_report: "S5@66ce R%#5ts Re&#%t"
     project: "Pro^#@t"
     request_ref: "Requ5#%t R&f"
     desc: "Des%@534t25n"
     disclipline: "D&%^*^%*&ine"
+    category: "Category"
     status: "St#*4s"
     auth_cost: "Au#4* Co^%t"
     request: "Re@#t D%#e"
