@@ -5,6 +5,6 @@ LOCALES_DIRECTORY = "{#RAILS_ROOT}/config/locales/"
 LANGUAGES = {
   'English' => 'en',
   'Wookiespeak' => 'wk',
-  'Chinese中文' => 'zh'
+  'Chinese' => 'zh'
 }
 
