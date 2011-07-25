@@ -43,7 +43,7 @@
 
 <% @requisitions.each do |requisition| %>
   <tr class="<%= cycle('list-line-odd', 'list-line-even') %>" >
-    <td class="list-cell"><%= link_to (requisition.req_num, requisition) %></td>
+    <td class="list-cell"><%= link_to(requisition.req_num, requisition) %></td>
     <td class="list-cell">
 	    <%=h truncate(requisition.commodity, :length => 50) %></td>
     <td class="list-cell">
