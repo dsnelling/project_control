@@ -5,13 +5,17 @@ class ServiceRequest < ActiveRecord::Base
     p.to_s + '%'] }}
 
   CATEGORY_TYPES = [
-    ["Engineering","A21"],
-    ["Procurement","A22"],
-    ["Construction","A24"],
-    ["Comissioning","A25"],
-    ["Operation","A31"],
-    ["Materails Mgt","A32"],
-    ["Other","A36"]
+    ["Project Team Labour","A21"],
+    ["Project Team T&L: local","A22"],
+    ["Project Team T&L: overseas","A23"],
+	["Engineering Support","A51"],
+	["Procurement Support","A52"],
+	["Construction Support","A53"],
+    ["Commissioning Support","A54"],
+    ["Operation","A56"],
+    ["Materails Mgt","A57"],
+    ["Other","A55"],
+	["SAP Support","SAP"]
   ]
 
   STATUS_TYPES = [

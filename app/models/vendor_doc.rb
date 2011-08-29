@@ -1,5 +1,7 @@
 class VendorDoc < ActiveRecord::Base
-  #mount_uploader :document, VendorDocUploader
+  #  uses fancyuploader rather than carrierwave, so uploading is client 
+  #  directly to S3, bypassing rails
+
   belongs_to :vdocs_requirement
 
   STATUS_TYPES = [

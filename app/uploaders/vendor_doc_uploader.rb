@@ -1,5 +1,11 @@
 # encoding: utf-8
 
+
+=begin
+
+note the whole point of using pluploader is to bypass rails, so no point in
+using carrierwave, is there....?!?
+
 class VendorDocUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader
@@ -34,3 +40,7 @@ class VendorDocUploader < CarrierWave::Uploader::Base
   end
 
 end
+
+=end
+
+

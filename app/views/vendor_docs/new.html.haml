@@ -20,20 +20,12 @@
       %td= f.text_area :remarks, :rows => 4
     %tr
       %td= f.label :document, t('vdocs.upload')
-      %td= f.file_field :document
+      %td
+        :plain
+          #{s3_uploader(:key => "test", :max_filesize => 10.megabytes, :verbose => true)}
     %tr
       %td{:colspan=>"2"}= f.submit 'Create'
 
-.tcenter.grayField.ral
-  %h2.borderBottom Upload New Document
-  #progress_bar.ui-progress-bar.ui-container
-    .ui-progress{:style => "width: 5%;"}
-      %span.ui-label{:style => "display:none;"} Uploading
-
-  .plain
-    = link_to "Select File", "#", {:id => "pickfiles", :class => "medium silver button ram"}
-    = raw(s3_uploader_plupload(:max_filesize => 15.megabytes))
-
 = link_to t('vdocs.back'),
-   contract_vdocs_requirements_path(@vdocs_requirement.contract)
+  contract_vdocs_requirements_path(@vdocs_requirement.contract)
 

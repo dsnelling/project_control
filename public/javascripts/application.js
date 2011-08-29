@@ -26,7 +26,6 @@ $(function() {
   $("#vdocs_requirement_due_date").datepicker();
   $("#vendor_doc_date_received").datepicker();
 
-
-
-
 });
+
+
