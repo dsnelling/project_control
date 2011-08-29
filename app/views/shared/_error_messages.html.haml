@@ -1,9 +1,0 @@
--# partial to show the validation errors in forms
-- if target.errors.any?
-  #errorExplanation
-    %h2
-      #{pluralize(target.errors.count, "error")} prohibited this record
-      from being saved/updated
-    %ul
-      = target.errors.full_messages.each do |msg|
-        %li= msg
