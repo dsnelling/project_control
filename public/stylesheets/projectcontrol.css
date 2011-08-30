@@ -25,6 +25,17 @@ em {
 table {
   border-collapse: collapse;
   }
+h1 {
+  text-align: center;
+  margin: 5px 5px 10px 10px;
+  }
+
+/* -- general stuff -- */
+
+.tcenter {
+  text-align: center;
+  }
+
 
 /* -- specific boxes used on application-wide layout -- */
 #header {
@@ -63,6 +74,17 @@ table {
   /* border: 2px solid #f0f; */
   }
 /* -- end of overall stuff --- */
+
+/* -- login box -- */
+#login-box {
+  margin: 0px 0px 50px 0px; 
+  }
+
+#login-box table {
+  margin: 0 auto;
+  /* border: 1px solid red; */
+  }
+
 
 /* -- for menu block in the main menu -- */
 #main-menu {

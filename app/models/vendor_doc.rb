@@ -9,7 +9,7 @@ class VendorDoc < ActiveRecord::Base
 	["Code 2: Approved as noted, Resubmit","2"],
 	["Code 3: Approved as noted","3"],
 	["Code 4: Approved", "4"],
-	["Accepeted for Information","5"]
+	["Accepted for Information","5"]
   ]
 
   validates_presence_of :doc_number, :title

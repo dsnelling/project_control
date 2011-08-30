@@ -1,5 +1,6 @@
  <h1>Please log in:</h1>
 
+<div id="login-box">
 <%= form_tag(:controller => :users, :action =>:login) do %>
   <table>
     <tr>
@@ -24,4 +25,5 @@
       <td><%= submit_tag "Submit" %></td>
     </tr>
   </table>
+</div>
 <% end %>
