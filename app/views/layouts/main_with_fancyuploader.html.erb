@@ -7,13 +7,12 @@
   <meta name="keywords" content="project control system" />
   <title>ProjectControlSystem:
     <%= "#{controller.controller_name}.#{controller.action_name}" %></title>
-  <%= javascript_include_tag ('mootools',
-    'fancyupload/source/Fx.ProgressBar',
-    'fancyupload/source/Swiff.Uploader', 
+  <%= javascript_include_tag 'mootools','fancyupload/source/Fx.ProgressBar',
+    'fancyupload/source/Swiff.Uploader',
     'fancyupload/source/FancyUpload3.Attach', 
-    'fancyupload/source/FancyUpload3.S3Uploader' )  %> 
-  <%= stylesheet_link_tag ('projectcontrol',
-    'jquery-ui/jquery-ui-1.8.14.custom','fancyuploader' ) %>
+    'fancyupload/source/FancyUpload3.S3Uploader'  %> 
+  <%= stylesheet_link_tag 'projectcontrol',
+    'jquery-ui/jquery-ui-1.8.14.custom','fancyuploader' %>
   <%= csrf_meta_tag %>
 </head> 
 <body>
