@@ -8,7 +8,7 @@ class ProcDocumentUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader
   #storage :file
-  storage :s3
+  storage :fog
   
   # set the cache directory to a writable temp directory
   def cache_dir
