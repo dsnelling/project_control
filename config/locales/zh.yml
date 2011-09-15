@@ -83,6 +83,7 @@ zh:
     title_new: "新建请购文件"
     title_edit: "编辑请购文件"
     title_index:  "招标文件"
+    show_title: "招标文件"
     legend: "R-O-S: 现场需要日期;<br /> R-D-C: 合同规定日期"
     req_ref: "请购文件编号"
     commodity: "品名"

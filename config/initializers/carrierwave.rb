@@ -3,7 +3,6 @@
 # updated to use fog (rails-3; carrierwave-0.5) DS jul-11
 #
 #
-puts "initalising CarrierWave....."
 
 
 CarrierWave.configure do |config|

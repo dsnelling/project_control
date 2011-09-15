@@ -19,6 +19,7 @@ class MainMenuController < ApplicationController
   end
 
   # set the project number & locale
+  # POST /main_menu/set_project
   def set_project
     if request.post?
       session[:project] = params[:project] if params[:project]

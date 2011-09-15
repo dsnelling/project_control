@@ -4,6 +4,7 @@
 class ProcurementDoc < ActiveRecord::Base
   mount_uploader :proc_document, ProcDocumentUploader
   belongs_to :requisition
+  default_scope :order => 'updated_at'
 
   CATEGORY_TYPES = [
     #  display name, classification, db name,

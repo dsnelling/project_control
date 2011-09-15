@@ -8,6 +8,8 @@
     <td class="list-cell"><%= link_to_proc_doc( \
 	  procurement_doc.proc_document_url, procurement_doc.category, \
 	  @view_costs, @view_doc) %></td>
+    <td class="list-cell"><%= procurement_doc.updated_at.strftime("%Y-%m-%d")
+      %></td>
     <td class="list-cell"><%=h truncate(procurement_doc.remarks,
 	   :length => 30) %></td>
   </tr>

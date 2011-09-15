@@ -1,47 +1,62 @@
-# DS Mar-2011
+# DS Sep-2011 - migrated to Rails 3
 
-ActionController::Routing::Routes.draw do |map|
-#  map.resources :vendor_docs
+ProjectControl::Application.routes.draw do
 
-#  map.resources :vdocs_requirements
-
-  map.resources :library_docs
-  map.resources :incidents
-  map.resources :site_hours
+  resources :library_docs
+  resources :incidents
+  resources :site_hours
 #  map.resources :contracts  #---> need to think if we want to address contracts independently, or just via requsitions
-  map.resources :requisitions, :collection => { :report => :get } do |r|
-     r.resources :contracts, :shallow => true do |c|
-	   c.resources :vdocs_requirements do |v|
-	     v.resources :vendor_docs
-	   end
-	 end
-	 r.resources :req_comments
-     r.resources :procurement_docs
+  resources :requisitions do
+    get :report, :on => :collection
+    resources :contracts, :shallow => true do
+	  resources :vdocs_requirements do
+	    resources :vendor_docs
+	  end
+	end
+	resources :req_comments
+    resources :procurement_docs
   end
-  map.resources :projects
-  map.resources :service_requests, :collection => {:report => :get}
-  map.resources :users, :collection => {:login => [:get, :post],
-      :change_password => [:get, :post],
-	  :logout => [:get] } do |user|
-	 user.resources :roles, :collection => { :add_role_to_user => :post,
-	    :remove_role_from_user => :post }
+  resources :projects
+  resources :service_requests do
+    get :report, :on => :collection
   end
-  map.resources :rights, :collection => { :roles => :get }, :member => 
-      { :add_right => :post, :remove_right => :post } 
-  map.resources :roles, :except => [:index, :destroy]
+  resources :users do
+    collection do
+	  get :login
+	  post :login
+	  get  :change_password
+	  post :change_password
+	  get :logout
+	end
+	# the roles is a bit messy. index, add_role, remove_role are associated 
+	# with a particular user, whilst....
+	resources :roles, :only => [:index ] do
+	  collection do
+	    post :add_role_to_user
+		post :remove_role_from_user
+	  end
+    end
+  end
+  # ... create and update roles is the list of roles to choose from, independant
+  # of an individual user. It works....
+  resources :roles, :only => [:create, :update]
+  resources :rights do
+    collection do
+	  get :roles
+	end
+	member do
+	  post :add_right
+	  post :remove_right
+	end
+  end
 
-# named routes (some is not very @RESTful, but hey, it works!)
-  map.root :controller => :main_menu
-  map.main_menu '/', :controller => :main_menu
-  map.logout '/logout', :controller => :users, :action => :logout 
-  map.login '/login', :controller => :users, :action => :login
-  map.about '/about', :controller => :main_menu, :action => :about
-  map.set_project '/main_menu/set_project', 
-      :controller => :main_menu, :action => :set_project
-  map.debug_info 'main_menu/debug_info',
-     :controller => :main_menu, :action => :debug_info
+# non-resourceful routes
+  root :to => 'main_menu#index', :as => 'main_menu'
+  match 'logout' => 'users#logout', :as => 'logout'
+  match 'login' => 'user#login', :as => 'login'
+  get 'main_menu/about', :as => 'about'
+  match 'main_menu/set_project' => 'main_menu#set_project',
+    :as => 'set_project', :via => :post
+  match 'debug_info' => 'main_menu#debug_info'
 
-#default routes
-#  map.connect ':controller/:action/:id'
-#  map.connect ':controller/:action/:id.:format'
 end

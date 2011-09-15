@@ -51,10 +51,10 @@ class Requisition < ActiveRecord::Base
 
   SCOPE_TYPES = [
     ["",       ""],
-	["JV Own Purchase","JV"],
-	["Technip PS","technip_ps"],
-	["LPEC PS","lpec_ps"],
-	["LPEC EPC","lpec_epc"],
+	["JV Own Purchase (code 1)","JV"],
+	["Technip PS (code 2)","technip_ps"],
+	["LPEC PS (code 4)","lpec_ps"],
+	["LPEC EPC (code 5)","lpec_epc"],
 	["CTIEI Open Item","ctiei_open"],
 	["CTIEI Closed Item","ctiei_closed"]
   ]

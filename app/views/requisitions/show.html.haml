@@ -1,0 +1,88 @@
+%h2= t('req.show_title')
+%table.show-table
+  %tr
+    %td.show-table-label= "#{t('req.req_ref')}:"
+    %td.show-table-data= @requisition.req_num
+    %td.show-table-label= "#{t('req.ros_date')}:"
+    %td.show-table-data= @requisition.required_on_site 
+  %tr
+    %td.show-table-label= "#{t('req.commodity')}:"
+    %td.show-table-data=  @requisition.commodity
+    %td.show-table-label= "#{t('req.rpo_date')}:"
+    %td.show-table-data= @requisition.required_contract
+  %tr
+    %td.show-table-label &nbsp;
+    %td.show-table-data &nbsp;
+    %td.show-table-label= "#{t('req.bid_applic')}:"
+    %td.show-table-data= @requisition.bid_applic_approved
+  %tr
+    %td.show-table-label= "#{t('req.scope')}:"
+    %td.show-table-data= "#{display_req_scope(@requisition.scope)}&nbsp;".html_safe
+    %td.show-table-label= t('req.enq_issue')
+    %td.show-table-data= @requisition.enquiry_issued
+  %tr
+    %td.show-table-label= "#{t('req.status')}:"
+    %td.show-table-data= "#{display_req_status(@requisition.status)}&nbsp;".html_safe
+    %td.show-table-label= "#{t('req.tbt_issue')}:"
+    %td.show-table-data= @requisition.tbt_issued
+  %tr
+    %td.show-table-label= "#{t('req.mr_doc')}:"
+    %td.show-table-data= @requisition.mr_doc
+    %td.show-table-label= "#{t('req.cbt_issue')}:"
+    %td.show-table-data= @requisition.cbt_issued
+  %tr
+    %td.show-table-label= "#{t('req.budget')}:"
+    %td.show-table-data
+      - if @view_costs
+        = number_to_currency(@requisition.budget_rmb, :unit => "RMB")
+      &nbsp;
+    %td.show-table-label= "#{t('update_by')}:"
+    %td.show-table-data= @requisition.update_by
+%br
+
+#req-contracts
+  = link_to t('req.edit_req'), edit_requisition_path(@requisition)
+  |
+  = link_to t('destroy'), requisition_path, :confirm => t('confirm'),
+    :method => :delete
+  |
+  = link_to t('req.back'), requisitions_path
+%br
+  - unless @requisition.contracts.empty?
+    <!-- contracts for this requisition -->
+    = render :partial => "/contracts/contract_header"
+    = render :partial => "/contracts/contract",
+     :collection => @requisition.contracts.sort_by {|c| c.reference }
+    = render :partial => "/contracts/contract_footer"
+= link_to t('req.new_contract'),
+    new_requisition_contract_url(@requisition,
+    :commodity => @requisition.commodity)
+
+#req-documents
+  %h3 Documents for this Requisition:
+  %table.list-table
+    %tr
+      %th.list-header= t('proc_doc.category')
+      %th.list-header= t('proc_doc.reference')
+      %th.list-header= t('proc_doc.source')
+      %th.list-header= t('proc_doc.document')
+      %th.list-header= t('update_at')
+      %th.list-header= t('proc_doc.remarks')
+    - unless @requisition.procurement_docs.empty?
+      = render :partial => "procurement_docs/procurement_doc",
+	  :collection  => @requisition.procurement_docs
+  = link_to t('proc_doc.new'),
+    new_requisition_procurement_doc_url(@requisition)
+%br
+- unless @requisition.req_comments.empty?
+  <!-- comments against this requisition -->
+  %h3= t('req.comment_header')
+  = render :partial => "/req_comments/comment", 
+       :collection => @requisition.req_comments
+
+#form-navigation
+  = link_to t('req.new_comment'),
+    new_requisition_req_comment_url(@requisition)
+  |
+  = link_to t('req.back'), requisitions_path
+

@@ -19,8 +19,7 @@
   <ul>
     <li><%= link_to t('main_menu.menu_reqs'),
        requisitions_path %></li>
-    <li><%= link_to t('main_menu.menu_sr'), :action => "index",
-	   :controller => "service_requests" %></li>
+    <li><%= link_to t('main_menu.menu_sr'), service_requests_path %></li>
 	<li><%= link_to t('main_menu.safety_stats'), site_hours_path %></li>
     <li><%= link_to t('main_menu.incidents'), incidents_path %></li>
 	<li><%= link_to t('main_menu.library'), library_docs_path %></li>

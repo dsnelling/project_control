@@ -5,6 +5,7 @@ class RolesController < ApplicationController
   before_filter :find_user, :except => :create
   before_filter :check_authentication, :check_authorisation
 
+  #GET users/:id/roles
   def index
     @roles = Role.all
     @roles_of_user = @user.roles.all

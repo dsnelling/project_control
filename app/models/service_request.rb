@@ -5,17 +5,18 @@ class ServiceRequest < ActiveRecord::Base
     p.to_s + '%'] }}
 
   CATEGORY_TYPES = [
+    ["",""],
     ["Project Team Labour","A21"],
     ["Project Team T&L: local","A22"],
     ["Project Team T&L: overseas","A23"],
-	["Engineering Support","A51"],
-	["Procurement Support","A52"],
-	["Construction Support","A53"],
+    ["Engineering Support","A51"],
+    ["Procurement Support","A52"],
+    ["Construction Support","A53"],
     ["Commissioning Support","A54"],
     ["Operation","A56"],
     ["Materails Mgt","A57"],
     ["Other","A55"],
-	["SAP Support","SAP"]
+    ["SAP Support","SAP"]
   ]
 
   STATUS_TYPES = [
@@ -23,9 +24,9 @@ class ServiceRequest < ActiveRecord::Base
     ["",               ""],
     ["Awaiting Issue","Awaiting Issue"],
     ["Pending AP","Pending AP"],
-	["CAPC Review","CAPC review"],
-	["Rejected","Rejected"],
-	["Approved","Approved"]
+    ["CAPC Review","CAPC review"],
+    ["Rejected","Rejected"],
+    ["Approved","Approved"]
   ]
 
   validates_inclusion_of :category,
