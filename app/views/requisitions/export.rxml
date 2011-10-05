@@ -1,0 +1,98 @@
+xml.instruct! :xml, :version=>"1.0", :encoding=>"UTF-8"
+xml.Workbook({
+  'xmlns'   => "urn:schemas-microsoft-com:office:spreadsheet",
+  'xmlns:o' => "urn:schemas-microsoft-com:office:office",
+  'xmlns:x' => "urn:schemas=microsoft-com:office:excel",
+  'xmlns:html' => "http://www.w3.org/TR/REC-html40",
+  'xmlns:ss' => "urn:schemas-microsoft-com:office:spreadsheet"
+  }) do
+
+xml.Styles do
+  xml.Style 'ss:ID' => 'Default', 'ss:Name' => 'Normal' do
+    xml.Alignment 'ss:Vertical' => 'Bottom'
+    xml.Borders
+    xml.Font 'ss:FontName' => 'Verdana'
+    xml.Interior
+    xml.NumberFormat
+    xml.Protection
+  end
+  xml.Style 'ss:ID' => 's22' do
+    xml.NumberFormat 'ss:Format' => 'GeneralDate'
+  end
+  # style 23 - bold, bottom border, grey fill
+  xml.Style 'ss:ID' => 's23' do
+    xml.Borders do
+      xml.Border 'ss:Position' => 'Bottom', 'ss:LineStyle' => 'Continuous',
+        'ss:Weight' => '1'
+    end
+    xml.Font 'ss:Bold' => '1'
+    xml.Interior 'ss:Color' => '#C0C0C0', 'ss:Pattern' => 'Solid'
+  end
+  # style 27 - bold, bottom border, green fill
+  xml.Style 'ss:ID' => 's27' do
+    xml.Borders do
+      xml.Border 'ss:Position' => 'Bottom', 'ss:LineStyle' => 'Continuous',
+        'ss:Weight' => '1'
+    end
+    xml.Font 'ss:Bold' => '1'
+    xml.Interior 'ss:Color' => '#CCFFCC', 'ss:Pattern' => 'Solid'
+  end
+
+end
+
+xml.Worksheet 'ss:Name' => 'Requisitions' do
+  xml.Table do
+    #header
+    xml.Row do
+      # requisition headings
+      for column in ["Req Number","Commodity","Scope","Status","MR Doc"] do
+        xml.Cell 'ss:StyleID' => 's23' do
+          xml.Data(column.to_s, 'ss:Type' => 'String')
+        end
+      end
+      # contract headings
+      for column in ["Reference","Commodity","Supplier","Commence Date",
+          "Currency","Current Value","Delivery Terms","Delivery Date Contract",
+          "Delivery Date Forecast", "Expedite Contact","Expedite Status"] do
+        xml.Cell 'ss:StyleID' => 's27' do
+          xml.Data(column.to_s, 'ss:Type' => 'String')
+        end
+      end
+
+    end
+
+    #rows
+    for req in @requisitions do
+      xml.Row do
+        for column in ["req_num","commodity","scope","status","mr_doc"] do
+          xml.Cell do
+            xml.Data req.send(column), 'ss:Type' => 'String'
+          end
+        end
+      end
+      # export contract information if exists
+      unless req.contracts.empty?
+        for co in req.contracts do
+          xml.Row do
+            xml.Cell 'ss:Index' => '5'
+            for column in ["reference","commodity","supplier","commence_date",
+                "currency","value_current","delivery_terms",
+                "delivery_date_contract","delivery_date_forecast",
+                "expedite_contract","expedite_status"] do
+              xml.Cell do
+                xml.Data co.send(column), 'ss:Type' => 'String'
+              end
+            end
+          end
+        end
+      end
+
+    end
+
+  end
+end
+
+end
+
+
+

@@ -8,6 +8,7 @@ require "will_paginate"
 class RequisitionsController < ApplicationController
 # check authentication status
   before_filter :check_authentication, :check_authorisation
+  layout "layouts/main", :except => :export
   prawnto :prawn => {:page_layout => :landscape, :page_size => 'A4'},
     :inline => true 
 
@@ -35,7 +36,23 @@ class RequisitionsController < ApplicationController
   end
 
   def report
-    @requisitions = Requisition.where("project = ?", session[:project]).order("req_num")
+    @requisitions = Requisition.where("project = ?", session[:project]).
+      order("req_num")
+  end
+
+  def export
+    headers['Content-Type'] = "application/vnd.ms-excel"
+    headers['Content-Disposition'] = 'attachment; filename="requisitions-export.xls"'
+    headers['Cache-Control'] = ''
+    @requisitions = Requisition.
+      #select("req_num, commodity, scope, status, mr_doc").
+      where("project = ?", session[:project]).order("req_num")
+    #@req_contracts = Requisition.find_by_sql(["select rq.req_num, " +
+    #  "rq.commodity, " +
+    #  "co.reference, co.supplier, co.commence_date " +
+    #  "from requisitions as rq, contracts as co " +
+    #  "where rq.id = co.requisition_id " +
+    #  "and rq.project = ?", session[:project]])
   end
 
 

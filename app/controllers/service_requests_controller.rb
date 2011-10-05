@@ -6,6 +6,7 @@ class ServiceRequestsController < ApplicationController
 
   # must be logged in to access this controller
   before_filter :check_authentication, :check_authorisation
+  layout "layouts/main", :except => :export
 
   # GET /service_requests
   # GET /service_requests.xml
@@ -30,7 +31,12 @@ class ServiceRequestsController < ApplicationController
     end
   end
     
-
+  def export
+    headers['Content-Type'] = "application/vnd.ms-excel"
+    headers['Content-Disposition'] = 'attachment; filename="excel-export.xls"'
+    headers['Cache-Control'] = ''
+    @service_requests = ServiceRequest.order("project, category, request_ref")
+  end
 
   # GET /service_requests/1
   # GET /service_requests/1.xml
