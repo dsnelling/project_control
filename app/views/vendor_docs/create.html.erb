@@ -1,5 +1,8 @@
 <h2><%= t 'vdocs.vdocs_show_title' %></h2>
 
+<h4>Params</h4> <%= debug(params) %>
+<h4>Response</h4> <%= debug(response) %>
+
 <table class="show-table">
   <tr>
     <td class="show-table-label"><%= t('vdocs.doc_ref') %></td>
@@ -36,9 +39,3 @@
 
 </table>
 <br />
-
-<%= link_to t('edit'), edit_vendor_doc_path(@vendor_doc) %> |
-<%= link_to t('destroy'), @vendor_doc, :confirm => 'Are you sure?',
-  :method => :delete %> |
-<%= link_to t('vdocs.back'),
-  contract_vdocs_requirements_path(@vdocs_requirement.contract) %>

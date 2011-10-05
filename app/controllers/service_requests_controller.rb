@@ -35,7 +35,7 @@ class ServiceRequestsController < ApplicationController
     headers['Content-Type'] = "application/vnd.ms-excel"
     headers['Content-Disposition'] = 'attachment; filename="excel-export.xls"'
     headers['Cache-Control'] = ''
-    @service_requests = ServiceRequest.order("project, category, request_ref")
+    @service_requests = ServiceRequest.order("project, request_ref")
   end
 
   # GET /service_requests/1

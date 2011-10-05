@@ -45,14 +45,7 @@ class RequisitionsController < ApplicationController
     headers['Content-Disposition'] = 'attachment; filename="requisitions-export.xls"'
     headers['Cache-Control'] = ''
     @requisitions = Requisition.
-      #select("req_num, commodity, scope, status, mr_doc").
       where("project = ?", session[:project]).order("req_num")
-    #@req_contracts = Requisition.find_by_sql(["select rq.req_num, " +
-    #  "rq.commodity, " +
-    #  "co.reference, co.supplier, co.commence_date " +
-    #  "from requisitions as rq, contracts as co " +
-    #  "where rq.id = co.requisition_id " +
-    #  "and rq.project = ?", session[:project]])
   end
 
 

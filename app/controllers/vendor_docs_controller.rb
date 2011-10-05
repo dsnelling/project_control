@@ -1,7 +1,8 @@
 class VendorDocsController < ApplicationController
   before_filter :find_vdocs_requirement, :only => [:index, :new, :create]
   before_filter :check_authentication, :check_authorisation
-  layout "main_with_fancyuploader"
+  #layout "main_with_fancyuploader"
+  layout "main_with_plupload"
   
 =begin
   # GET /vdocs_requirement/:vdoc_requirement_id/vendor_docs(.:format)
@@ -47,14 +48,11 @@ class VendorDocsController < ApplicationController
   # POST /vendor_docs.xml
   def create
     @vendor_doc = VendorDoc.new(params[:vendor_doc])
-	@vendor_doc.document = params[:document]
- # the file itself has already be loaded to S3 by the fancyuploader script, so we only need to save
- # the filename
- # we have to work out which param has the file name stored under in S3. then we can generate a unique name, 
- # copy the file across (use fog for this), and delete the original file on S3.
- # use Fog::Storage::AWS::File.copy and .destroy
- 
-    respond_to do |format|
+	#@vendor_doc.document = params[:document]
+     # the file itself has already be loaded to S3 by the plupload script,
+     # so we only need to save the filename
+
+     respond_to do |format|
       if @vdocs_requirement.vendor_docs << @vendor_doc
         flash[:notice] = 'VendorDoc was successfully created.'
         format.html { redirect_to(@vendor_doc) }
