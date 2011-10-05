@@ -7,12 +7,12 @@
   <meta name="keywords" content="project control system" />
 <title>ProjectControlSystem: <%=  "#{controller.controller_name}.
    #{controller.action_name} (plupload)" %></title>
-  <%= javascript_include_tag ('jquery-1.5.1.min',
-    'jquery-ui-1.8.14.custom.min.js','jquery.rails', 'application', 
-    'plupload/plupload.full') %>
-  <%= stylesheet_link_tag ('projectcontrol',
-    'jquery-ui/jquery-ui-1.8.14.custom',
-	'plupload') %>
+  <%= javascript_include_tag "jquery-1.5.1.min",
+    "jquery-ui-1.8.14.custom.min.js","jquery.rails", "application" %>
+  <%= javascript_include_tag "plupload/plupload.full" %>
+  <%= stylesheet_link_tag 'projectcontrol'
+  <%= stylesheet_link_tag 'jquery-ui/jquery-ui-1.8.14.custom',
+	'plupload' %>
   <%= csrf_meta_tag %>
 </head> 
 <body>
