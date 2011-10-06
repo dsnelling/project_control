@@ -1,0 +1,21 @@
+%h1= t('contr.index')
+
+%table.item_table
+  %tr.list-header
+    %th.list-cell= t('contr.ref')
+    %th.list-cell= t('contr.commodity')
+    %th.list-cell= t('contr.supplier')
+    %th.list-cell= t('contr.vdocs')
+
+  - @contracts.each do |contract|
+    %tr{:valign => "top", :class => cycle('line-list-odd', 'line-list-even')}
+      %td.list-cell= link_to(contract.reference, contract)
+      %td.list-cell= contract.commodity
+      %td.list-cell= contract.supplier
+      %td.list-cell= link_to(t('contr.vdocs'),
+        contract_vdocs_requirements_path(contract))
+
+= will_paginate @contracts, :previous_label => t('will_paginate.previous'),
+  :next_label => t('will_paginate.next')
+
+= link_to(t('req.requisitions'),requisitions_path)

@@ -5,17 +5,17 @@ ProjectControl::Application.routes.draw do
   resources :library_docs
   resources :incidents
   resources :site_hours
-#  map.resources :contracts  #---> need to think if we want to address contracts independently, or just via requsitions
   resources :requisitions do
     get :report, :on => :collection
     get :export, :on => :collection
-    resources :contracts, :shallow => true do
-	  resources :vdocs_requirements do
-	    resources :vendor_docs
-	  end
-	end
-	resources :req_comments
+    resources :req_comments
     resources :procurement_docs
+    resources :contracts
+  end
+  resources :contracts, :shallow => true do
+    resources :vdocs_requirements do
+      resources :vendor_docs
+    end
   end
   resources :projects
   resources :service_requests do

@@ -13,7 +13,7 @@
   </tr>
 
 <% @vdocs_requirements.each do |vdocs_requirement| %>
-  <tr>
+  <tr class="list-major-row">
     <td class="list-cell"><strong><%= link_to vdocs_requirement.code,
 	  vdocs_requirement %></strong></td>
     <td class="list-cell"><strong><%=h vdocs_requirement.description %>
@@ -24,10 +24,10 @@
 	  :length => 30) %></td>
     <td class="list-cell"><%= link_to 'Add Document',
 	  new_vdocs_requirement_vendor_doc_path(vdocs_requirement) %> </td>
-  </tr>
-  <!-- display any vendor docs that exist -->
+   <!-- display any vendor docs that exist -->
   <% unless vdocs_requirement.vendor_docs.empty? %> 
-    <tr>
+     </tr>
+     <tr>
 	  <td colspan="6" class="list-cell">
 	    <table class="vdocs-table">
 		  <tr class="vdocs-header">
@@ -42,8 +42,8 @@
 	        :collection => vdocs_requirement.vendor_docs.sort_by {|d| d.doc_number } %>
 	    </table>
 	  </td>
-	</tr>
   <% end %>
+  </tr>
 <% end %>
 </table>
 

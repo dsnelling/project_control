@@ -54,6 +54,7 @@ en:
     menu_title_1: "User Actions:"
     menu_title_2: "Administrative Actions:"
     menu_reqs: "Requisitions and Contracts"
+    menu_contr: "Contracts"
     menu_sr: "Service Requests"
     safety_stats: "Safety Statistics"
     incidents: "Incidents and Reports"
@@ -113,6 +114,7 @@ en:
 
   contr:
     title: "Contracts for this Requisition:"
+    index: "Contracts"
     edit_title: "Editing Contract Details:"
     new_title: "Details of New Contract:"
     show_title: "Details for Purchase Contract:"

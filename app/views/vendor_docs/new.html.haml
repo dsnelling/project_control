@@ -30,7 +30,7 @@
       #{s3_uploader(:key => "vendor-docs", :max_filesize => 10.megabytes, :verbose => true)}
     %a{:id => "pickfiles", :href => "#", :class => "medium silver button ram"} Select file
   %br
-  = f.submit 'Create'
+  = f.submit 'Submit'
 %br
 = link_to t('vdocs.back'),
   contract_vdocs_requirements_path(@vdocs_requirement.contract)

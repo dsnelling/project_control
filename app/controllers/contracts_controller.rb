@@ -1,10 +1,10 @@
 class ContractsController < ApplicationController
-  before_filter :find_requisition, :only => [ :index, :new, :create]
+  before_filter :find_requisition, :only => [ :new, :create]
   before_filter :check_authentication, :check_authorisation
 
-  # GET requisition/1/contracts
+  # GET contracts
   def index
-    @contracts = @requisition.contracts.all
+    @contracts = Contract.order("reference").paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

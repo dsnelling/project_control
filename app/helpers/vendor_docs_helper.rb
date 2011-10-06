@@ -64,7 +64,7 @@ module VendorDocsHelper
     options[:acl] ||= 'private'
     options[:expiration_date] ||= 10.hours.from_now.utc.iso8601
     options[:max_filesize] ||= 500.megabytes
-    options[:content_type] ||= 'binary/octet-stream'
+    options[:content_type] ||= 'application/pdf'
     options[:filter_title] ||= 'Documents'
     options[:filter_extentions] ||= 'pdf'
 

@@ -55,6 +55,7 @@ zh:
     menu_title_1: "用户操作:"
     menu_title_2: "管理:"
     menu_reqs: "请购文件和采购合同"
+    menu_contr: "Contracts"
     menu_sr: "服务申请"
     safety_stats: "安全统计"
     incidents: "事故和报告"
@@ -114,6 +115,7 @@ zh:
 
   contr:
     title: "本次采购合同:"
+    index: "Contracts"
     edit_title: "编辑合同细节:"
     new_title: "新建合同名称:"
     show_title: "采购合同细节:"

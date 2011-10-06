@@ -17,12 +17,12 @@
 <div id="main-menu">
   <h3><%= t 'main_menu.menu_title_1' %></h3>
   <ul>
-    <li><%= link_to t('main_menu.menu_reqs'),
-       requisitions_path %></li>
+    <li><%= link_to t('main_menu.menu_reqs'), requisitions_path %></li>
+    <li><%= link_to t('main_menu.menu_contr'), contracts_path %></li>
     <li><%= link_to t('main_menu.menu_sr'), service_requests_path %></li>
-	<li><%= link_to t('main_menu.safety_stats'), site_hours_path %></li>
+    <li><%= link_to t('main_menu.safety_stats'), site_hours_path %></li>
     <li><%= link_to t('main_menu.incidents'), incidents_path %></li>
-	<li><%= link_to t('main_menu.library'), library_docs_path %></li>
+    <li><%= link_to t('main_menu.library'), library_docs_path %></li>
     <li><%= link_to t('logout'), "/logout" %></li>
   </ul>
   <h3><%= t 'main_menu.menu_title_2' %></h3>

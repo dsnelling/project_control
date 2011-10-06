@@ -307,6 +307,10 @@ a:hover { color: #fff; background-color:#000; }
   border: 1px solid silver ;
   }
 
+.list-major-row {
+  border-top: 1px solid black;
+  }
+
 .list-line-odd {
   background-color: #fff;
   }
