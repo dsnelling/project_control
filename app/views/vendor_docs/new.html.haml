@@ -19,22 +19,19 @@
     %tr
       %td= f.label :remarks, t('vdocs.remarks')
       %td= f.text_area :remarks, :rows => 4
-    %tr
-      %td{:colspan => "2"}
-        Note: document must be pdf format
-        .tcenter.grayField.ral
-        #progress_bar.ui-progress-bar.ui-container
-          .ui-progress{:style => "width: 5%;"}
-            %span.ui-label{:style => "display:none;"}
-              Uploading
+  .tcenter.grayField.ral
+    %h4.borderBottom Select Document file (must be pdf)
+    #progress_bar.ui-progress-bar.ui-container
+      .ui-progress{:style => "width: 5%;"}
+        %span.ui-label{:style => "display:none;"}
+          Uploading...
 
-        :plain
-          #{s3_uploader(:key => "vendor-docs", :max_filesize => 10.megabytes, :verbose => true)}
-        %a{:id => "pickfiles", :href => "#", :class => "medium silver button ram"} Select file
-
-    %tr
-      %td{:colspan=>"2"}= f.submit 'Create'
-
+    :plain
+      #{s3_uploader(:key => "vendor-docs", :max_filesize => 10.megabytes, :verbose => true)}
+    %a{:id => "pickfiles", :href => "#", :class => "medium silver button ram"} Select file
+  %br
+  = f.submit 'Create'
+%br
 = link_to t('vdocs.back'),
   contract_vdocs_requirements_path(@vdocs_requirement.contract)
 
