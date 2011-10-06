@@ -182,7 +182,8 @@ module VendorDocsHelper
 
     // Update input field in form with filename.
     uploader.bind('FileUploaded', function(up, file, info){
-      $('#vendor_doc_document').val(up.settings.multipart_params.key);
+      $('#vendor_doc_document').attr('value',up.settings.multipart_params.key);
+      $('#vendor_doc_submit').show()
 
     });
 

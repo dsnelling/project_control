@@ -334,11 +334,20 @@ a:hover { color: #fff; background-color:#000; }
   }
 
 .vdocs-table {
+  width: 95%;
   border: 2px solid #faa;
-  margin: 0px 0px 0px 30px;
+  margin: 0px 10px 0px 30px;
   }
 
 .vdocs-header {
   background-color: #fdd;
   font-style: italic;
+  }
+/* styles for plupload stuff */
+#vendor_doc_submit {
+  display: none;
+  }
+
+#vendor_doc_document {
+  display: none;
   }

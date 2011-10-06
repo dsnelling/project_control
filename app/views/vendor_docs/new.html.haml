@@ -2,7 +2,7 @@
 
 = form_for([@vdocs_requirement,@vendor_doc], :html => {:multipart => true}) do |f|
   = render "shared/error_messages", :target => @vendor_doc
-  = f.hidden_field :document
+  = f.text_field :document
   %table
     %tr
       %td= f.label :doc_number, t('vdocs.doc_ref')
