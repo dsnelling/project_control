@@ -4,7 +4,10 @@ class ContractsController < ApplicationController
 
   # GET contracts
   def index
-    @contracts = Contract.order("reference").paginate(:page => params[:page])
+    @contracts = Contract.where("reference like ?",
+      "#{params[:contr_filter]}%").order("reference").
+      paginate(:page => params[:page])
+    session[:contr_filter] = params[:contr_filter]
 
     respond_to do |format|
       format.html # index.html.erb

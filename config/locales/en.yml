@@ -18,6 +18,7 @@ en:
   confirm: "Are you sure?"
   back: "Back"
   filter: "Filter"
+  search: "Search"
   update_by: "Updated By"
   update_at: "Updated At"
 

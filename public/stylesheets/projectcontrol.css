@@ -230,6 +230,14 @@ h1 {
   padding: 0px 0px 15px 15px; 
   }
 
+.contracts-filter {
+  padding: 0px 0px 15px 5px;
+  }
+
+.contracts-filter input {
+  margin: 0px 0px 0px 15px;
+  }
+
 /* for links at bottom of page */
 #form-navigation {
   clear: both;

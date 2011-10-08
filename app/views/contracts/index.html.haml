@@ -1,4 +1,9 @@
 %h1= t('contr.index')
+.contracts-filter
+  %p Search on contract number:
+  = form_tag(contracts_path, :method => :get) do
+    = text_field_tag :contr_filter, session[:contr_filter] #,:onchange => 'this.form.submit()'}
+    = submit_tag t("search")
 
 %table.item_table
   %tr.list-header
