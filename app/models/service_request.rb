@@ -1,4 +1,7 @@
 class ServiceRequest < ActiveRecord::Base
+  has_many :service_reports
+  mount_uploader :service_request_doc, ServiceRequestDocUploader
+
   validates_presence_of :project, :request_ref, :description, :category
   validates_length_of :request_ref, :description, :minimum => 5
    scope :by_project, lambda {|p| {:conditions => ['project LIKE ?',

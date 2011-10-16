@@ -25,6 +25,7 @@ $(function() {
   $("#contract_expedite_last_contact").datepicker();
   $("#vdocs_requirement_due_date").datepicker();
   $("#vendor_doc_date_received").datepicker();
+  $("#service_report_report_date").datepicker();
 
 });
 

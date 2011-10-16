@@ -1,0 +1,10 @@
+  <tr class='list-line-odd'>
+    <td class='list-cell'><%= link_to service_report.report_ref,
+      service_request_service_report_path(service_report.service_request,
+      service_report) %></td>
+    <td class='list-cell'><%= service_report.description %></td>
+    <td class='list-cell'><%= service_report.actual_cost %></td>
+    <td class='list-cell'><%= service_report.status %></td>
+    <td class='list-cell'><%= service_report.report_date %></td>
+    <td class='list-cell'><%= service_report.document %></td>
+

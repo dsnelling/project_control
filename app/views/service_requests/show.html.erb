@@ -46,7 +46,24 @@
     <td class="show-table-data"><%=h @service_request.auth_date.strftime(
 	  '%Y-%m-%d') if @service_request.auth_date  %>&nbsp;</td>
   </tr>
+    <tr>
+      <td class="show-table-label"><%= t 'service_r.document' %>:</td>
+      <td class="show-table-data"><%= link_to "Download",
+         @service_request.service_request_doc_url %></td>
+    </tr>
 </table>
+
+  <%= render :partial => "service_reports/service_report_header" %>
+  <% unless @service_request.service_reports.empty? %>
+    <%= render :partial => "service_reports/service_report",
+      :collection => @service_request.service_reports %>
+  <% end %>
+</table>
+<br />
+<%= link_to t('service_rep.new'),
+  new_service_request_service_report_path(@service_request) %>
+
+<br />
 <br />
 <%= link_to t('edit'), edit_service_request_path(@service_request) %> |
 <%= link_to t('back'), service_requests_path %>

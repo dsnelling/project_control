@@ -306,6 +306,11 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+.translation_missing {
+  color: fuchsia;
+  background-color: teal;
+  }
+
 /* tables for listings on index pages */
 .list-table {
   }

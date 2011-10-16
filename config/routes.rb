@@ -21,6 +21,7 @@ ProjectControl::Application.routes.draw do
   resources :service_requests do
     get :report, :on => :collection
     get :export, :on => :collection
+    resources :service_reports
   end
   resources :users do
     collection do

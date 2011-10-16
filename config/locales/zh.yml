@@ -79,6 +79,19 @@ zh:
     request: "申请日期"
     auth_date: "批准日期"
     new: "新建服务申请"
+    document: "Document"
+
+  service_rep:
+    title:
+    show_title: "Service Reports for Request:"
+    edit_title: "Edit Service Report"
+    new: "New Service Report"
+    ref: "Report Ref"
+    description: "Description"
+    actual_cost: "Actual Cost"
+    status: "Status"
+    date: "Date"
+    document: "Document"
 
   req:
     title: "招标文件"

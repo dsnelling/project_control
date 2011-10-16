@@ -1,0 +1,42 @@
+<%= form_for([@service_request,@service_report]) do |f| %>
+  <% if @service_report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@service_report.errors.count, "error") %> prohibited this service_report from being saved:</h2>
+
+      <ul>
+      <% @service_report.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :report_ref, t('service_rep.ref') %><br />
+    <%= f.text_field :report_ref %>
+  </div>
+  <div class="field">
+    <%= f.label :description, t('service_rep.description') %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :actual_cost, t('service_rep.actual_cost') %><br />
+    <%= f.text_field :actual_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :status, t('service_rep.status') %><br />
+    <%= f.select :status, ServiceReport::REPORT_STATUS_TYPES %>
+  </div>
+  <div class="field">
+    <%= f.label :report_date, t('service_rep.date') %><br />
+    <%= f.text_field :report_date %>
+  </div>
+    <div class="field">
+    <%= f.label :document, t('service_rep.document') %><br />
+    <%= f.text_field :document %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

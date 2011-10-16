@@ -84,7 +84,7 @@ class ContractsController < ApplicationController
   # DELETE /contracts/:id(.format)
   def destroy
     contract = Contract.find(params[:id])
-	@requisition = contract.requisition
+    @requisition = contract.requisition
     @requisition.contracts.delete(contract)
 
     respond_to do |format|

@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  report_ref: MyString
+  description: MyString
+  actual_cost: 1
+  status: MyString
+  document: MyString
+  report_date: 2011-10-17
+
+two:
+  report_ref: MyString
+  description: MyString
+  actual_cost: 1
+  status: MyString
+  document: MyString
+  report_date: 2011-10-17

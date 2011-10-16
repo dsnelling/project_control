@@ -53,7 +53,8 @@ class ServiceRequestsController < ApplicationController
   # GET /service_requests/new.xml
   def new
     @service_request = ServiceRequest.new
-	@projects = Project.all.map {|p| p.name }
+    @projects = Project.all.map {|p| p.name }
+    @service_request.project = session[:project]
 
     respond_to do |format|
       format.html # new.html.erb

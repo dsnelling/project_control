@@ -41,6 +41,10 @@
     <%= f.text_field :auth_date %>
   </p>
   <p>
+    <%= f.label :service_request_doc, t('service_r.upload') %><br />
+    <%= f.file_field :service_request_doc %>
+  </p>
+  <p>
     <%= f.submit t('update') %>
   </p>
 <% end %>

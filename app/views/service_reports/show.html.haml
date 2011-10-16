@@ -1,0 +1,32 @@
+%h2
+  = t 'service_rep.show_title'
+  =  @service_report.service_request.request_ref
+
+%table.show-table
+  %tr
+    %td.show-table-label
+      = "#{t('service_rep.ref')}:"
+    %td.show-table-data= @service_report.report_ref
+  %tr
+    %td.show-table-label
+      = "#{t('service_rep.description')}:"
+    %td.show-table-data= @service_report.description
+  %tr
+    %td.show-table-label
+      = "#{t('service_rep.actual_cost')}:"
+    %td.show-table-data
+      RMB
+      = @service_report.actual_cost
+  %tr
+    %td.show-table-label
+      = "#{t('service_rep.status')}:"
+    %td.show-table-data= @service_report.status
+  %tr
+    %td.show-table-label
+      = "#{t('service_rep.date')}:"
+    %td.show-table-data= @service_report.report_date
+%p
+  = link_to t('edit'),
+     edit_service_request_service_report_path(@service_report.service_request,       @service_report)
+  |
+  = link_to t('back'), service_request_path(@service_report.service_request)

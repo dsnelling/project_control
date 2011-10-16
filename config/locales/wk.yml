@@ -78,6 +78,19 @@ wk:
     request: "Re@#t D%#e"
     auth_date: "A$#h D##e"
     new: "Create New Se$#!$ice Re!#$est"
+    document: "Document"
+
+  service_rep:
+    title:
+    show_title: "Service Reports for Request:"
+    edit_title: "Edit Service Report"
+    new: "New Service Report"
+    ref: "Report Ref"
+    description: "Description"
+    actual_cost: "Actual Cost"
+    status: "Status"
+    date: "Date"
+    document: "Document"
 
   req:
     title: "Requ@%*%^ons"

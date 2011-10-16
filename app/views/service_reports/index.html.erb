@@ -1,0 +1,33 @@
+<h1>Listing service_reports</h1>
+
+<table>
+  <tr>
+    <th>Report ref</th>
+    <th>Description</th>
+    <th>Actual cost</th>
+    <th>Status</th>
+    <th>Document</th>
+    <th>Report date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @service_reports.each do |service_report| %>
+  <tr>
+    <td><%= service_report.report_ref %></td>
+    <td><%= service_report.description %></td>
+    <td><%= service_report.actual_cost %></td>
+    <td><%= service_report.status %></td>
+    <td><%= service_report.document %></td>
+    <td><%= service_report.report_date %></td>
+    <td><%= link_to 'Show', service_report %></td>
+    <td><%= link_to 'Edit', edit_service_report_path(service_report) %></td>
+    <td><%= link_to 'Destroy', service_report, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Service report', new_service_report_path %>

@@ -1,0 +1,8 @@
+<h1><%= t('service_rep.edit_title') %></h1>
+
+<%= render 'form' %>
+
+<%= link_to t('show'),
+  service_request_service_report_path(@service_report.service_request,
+  @service_report) %> |
+<%= link_to t('back'), service_request_path(@service_request) %>
