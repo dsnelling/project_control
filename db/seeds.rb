@@ -9,7 +9,8 @@
 #-- new roles
 
 #create admin user if doesn't exist 
-  unless User.find_by_username("admin01")
+=begin
+unless User.find_by_username("admin01")
     a = User.new(
 	  :username => "admin01",
       :superuser => true,
@@ -17,13 +18,12 @@
       :password => "secret01")
     a.save
   end
-
+=end
 
 
 #-- set up rights
-=begin
-    ---commented out
-["procurement_docs","library_docs","vdocs_requirements","vendor_docs"].each do |controller|
+
+["service_reports"].each do |controller|
   ["create","destroy","edit","index","new","show","update"].each do |action|
     name=controller.capitalize << " " << action.capitalize
      r = Right.find_or_create_by_name(name)
@@ -41,6 +41,8 @@ rights_to_roles = {
      ["create","destroy","edit","index","new","show","update"],
   "Doc Controller" => 
      ["create","destroy","edit","index","new","show","update"]
+  "Service Request View" =>
+     ["show"]
   }
 
 
@@ -54,5 +56,4 @@ rights_to_roles.each do |role,actions|
   end
 end
 
-=end
 
