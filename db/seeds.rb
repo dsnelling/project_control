@@ -22,6 +22,19 @@ unless User.find_by_username("admin01")
 
 
 #-- set up rights
+#  role = Role.find_or_create_by_name("Doc Controller")
+
+rights_to_roles = {
+  "Basic View" => ["index","show"],
+  "Admin" => ["create","destroy","edit","index","new","show","update"],
+  "Project Manager" =>
+     ["create","destroy","edit","index","new","show","update"],
+  "Doc Controller" => 
+     ["create","destroy","edit","index","new","show","update"],
+  "Service Request View" =>
+     ["show"]
+}
+
 
 ["service_reports"].each do |controller|
   ["create","destroy","edit","index","new","show","update"].each do |action|
@@ -29,31 +42,17 @@ unless User.find_by_username("admin01")
      r = Right.find_or_create_by_name(name)
      r.update_attributes(:controller => controller, :action => action)
   end
-end
-
-role = Role.find_or_create_by_name("Doc Controller")
-
-# maybe there's a clever way to do this
-rights_to_roles = {
-  "Basic View" => ["index","show"],
-  "Admin" => ["create","destroy","edit","index","new","show","update"],
-  "Project Manager" =>
-     ["create","destroy","edit","index","new","show","update"],
-  "Doc Controller" => 
-     ["create","destroy","edit","index","new","show","update"]
-  "Service Request View" =>
-     ["show"]
-  }
 
 
-rights_to_roles.each do |role,actions|
-  ro = Role.find_by_name(role)
-  actions.each do |action|
-    name = controller.capitalize << " " << action.capitalize
-    if right = Right.find_by_name(name)
+
+  rights_to_roles.each do |role,actions|
+    ro = Role.find_by_name(role)
+    actions.each do |action|
+      name = controller.capitalize << " " << action.capitalize
+      if right = Right.find_by_name(name)
 	  ro.rights << right
-	end
+      end
+    end
   end
+
 end
-
-
