@@ -52,7 +52,9 @@ class ServiceReportsController < ApplicationController
 
     respond_to do |format|
       if @service_report.update_attributes(params[:service_report])
-        format.html { redirect_to service_request_path(@service_report.service_request, :notice => 'Service report was successfully updated.') }
+        format.html { redirect_to \
+          service_request_path(@service_report.service_request,
+            :notice => 'Service report was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -64,12 +66,12 @@ class ServiceReportsController < ApplicationController
   # DELETE /service_reports/1
   # DELETE /service_reports/1.xml
   def destroy
-    @service_report = ServiceReport.find(params[:id])
+    service_report = ServiceReport.find(params[:id])
     @service_request = service_report.service_request
-    @service_request.service_reports.delete(service_report)
+    @service_request.service_reports.destroy(service_report)
 
     respond_to do |format|
-      format.html { redirect_to(service_reports_url) }
+      format.html { redirect_to(service_request_url(@service_request)) }
       format.xml  { head :ok }
     end
   end

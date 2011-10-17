@@ -1,4 +1,5 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+<% SALT = "shinythings" unless defined?(SALT) %>
 
  user_jim:
    username: user_jim
@@ -13,4 +14,15 @@
    surname: whallop
    email_addr: fred@whallop.com
 
-#   column: value
+ user_super:
+   username: super
+   forename: mr
+   surname: incredible
+   superuser: true
+
+ user_dave:
+   username: dave
+   password_hash: <%= Digest::SHA256.hexdigest('secret' + SALT) %>
+   password_salt: <%= SALT %>
+
+

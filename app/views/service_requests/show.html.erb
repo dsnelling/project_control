@@ -1,4 +1,4 @@
-
+<h2><%= t('service_r.title') %></h2>
 <table class="show-table">
  <tr>
     <td class="show-table-label"><%= t 'service_r.project' %></td>
@@ -48,8 +48,9 @@
   </tr>
     <tr>
       <td class="show-table-label"><%= t 'service_r.document' %>:</td>
-      <td class="show-table-data"><%= link_to "Download",
-         @service_request.service_request_doc_url %></td>
+      <td class="show-table-data">
+        <%= link_to(display_icon(@service_request.service_request_doc_url),
+          @service_request.service_request_doc_url) %></td>
     </tr>
 </table>
 

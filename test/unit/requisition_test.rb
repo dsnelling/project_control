@@ -5,17 +5,17 @@ class RequisitionTest < ActiveSupport::TestCase
 
   test "invalid with empty attributes" do
     req = Requisition.new
-	assert !req.valid?
-	assert req.errors.invalid?(:req_num)
-	assert req.errors.invalid?(:project)
-	assert req.errors.invalid?(:commodity)
+	assert req.invalid?
+	assert req.errors[:req_num].any?
+	assert req.errors[:project].any?
+	assert req.errors[:commodity].any?
   end
 
   test "req scope in list" do
     req = Requisition.new(:req_num => "X34",:project => "my project",
 	  :commodity => "some commodity", :scope => "JV", :status => "enquiry")
     req.scope = "blah"
-    assert !req.valid?
+    assert req.invalid?
 
     req.scope = "lpec_ps"
     assert req.valid?
@@ -25,7 +25,7 @@ class RequisitionTest < ActiveSupport::TestCase
     req = Requisition.new(:req_num => "X34",:project => "my project",
 	  :commodity => "some commodity", :scope => "JV", :status => "enquiry")
     req.status = "blah"
-    assert !req.valid?
+    assert req.invalid?
 
     req.status = "LOI"
     assert req.valid?
@@ -37,10 +37,10 @@ class RequisitionTest < ActiveSupport::TestCase
     req1.save
     req2 = Requisition.new(:req_num => "X35",:project => "my project",
 	  :commodity => "some commodity", :scope => "JV", :status => "enquiry")
-    assert !req2.valid?
+    assert req2.invalid?
 
-	req2.project = "your project"
-	assert req2.valid?
+    req2.project = "your project"
+    assert req2.valid?
 
   end
 

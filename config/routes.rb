@@ -56,7 +56,7 @@ ProjectControl::Application.routes.draw do
 # non-resourceful routes
   root :to => 'main_menu#index', :as => 'main_menu'
   match 'logout' => 'users#logout', :as => 'logout'
-  match 'login' => 'user#login', :as => 'login'
+  match 'login' => 'users#login', :as => 'login'
   get 'main_menu/about', :as => 'about'
   match 'main_menu/set_project' => 'main_menu#set_project',
     :as => 'set_project', :via => :post

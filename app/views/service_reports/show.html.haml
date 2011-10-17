@@ -25,8 +25,18 @@
     %td.show-table-label
       = "#{t('service_rep.date')}:"
     %td.show-table-data= @service_report.report_date
+  %tr
+    %td.show-table-label
+      = "#{t('service_rep.document')}:"
+    %td.show-table-date= link_to(display_icon(@service_report.document_url),@service_report.document_url)
+
 %p
   = link_to t('edit'),
      edit_service_request_service_report_path(@service_report.service_request,       @service_report)
+  |
+  = link_to t('delete'),
+    service_request_service_report_path(@service_report.service_request),
+    :confirm => 'Are you sure?',
+    :method => :delete
   |
   = link_to t('back'), service_request_path(@service_report.service_request)

@@ -21,6 +21,7 @@ en:
   search: "Search"
   update_by: "Updated By"
   update_at: "Updated At"
+  download: "Download"
 
   errors:
     messages:
@@ -67,30 +68,33 @@ en:
   service_r:
     title: "Service Requests"
     title_new: "New Service Request"
+    title_edit: "Edit Service Request"
     title_report: "Service Requests Report"
     project: "Project"
     request_ref: "Request Ref"
-    desc: "Description"
-    disclipline: "Disclipline"
-    category: "Category"
+    desc: "Scope of Service"
+    disclipline: "Requesting Dept"
+    category: "CAPC Charge Code"
     status: "Status"
     auth_cost: "Auth Cost"
     request: "Request Date"
     auth_date: "Auth Date"
     new: "New Service Request"
-    document: "Document"
+    document: "Request Form"
+    upload: "Upload Form"
 
   service_rep:
     title:
-    show_title: "Service Reports for Request:"
+    show_title: "Service Reports for Request: "
     edit_title: "Edit Service Report"
-    new: "New Service Report"
+    new: "New Service Report: "
     ref: "Report Ref"
     description: "Description"
-    actual_cost: "Actual Cost"
+    actual_cost: "Actual Cost (RMB)"
     status: "Status"
     date: "Date"
-    document: "Document"
+    document: "Report Form"
+    upload: "Upload Form"
 
 
   req:

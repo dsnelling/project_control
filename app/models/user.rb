@@ -3,17 +3,16 @@ require 'digest/sha2'
 # uses right/role based authorisation
 #
 class User < ActiveRecord::Base
-  has_and_belongs_to_many :roles
-  validates_uniqueness_of :username
-  validates_presence_of :username
-  validates_format_of :email_addr, :with =>/^[0-9A-Za-z\._\-]+@[0-9A-Za-z_\.\-]+/
-
   attr_accessor :password_confirmation
+  attr_reader :password
+  has_and_belongs_to_many :roles
+  validates :username, :presence => true, :uniqueness => true
+  validates :email_addr, :format => {
+    :with => /^[0-9A-Za-z\._\-]+@[0-9A-Za-z_\.\-]+/,
+    :message => "email address invalid"
+    }
   #validates_confirmation_of :password
-
-  def validate
-    errors.add_to_base("Missing password") if password_hash.blank?
-  end
+  validate :password_must_be_present
 
   # generates salt and hashed password as methods of the user instance
   def password=(pass)
@@ -52,6 +51,11 @@ class User < ActiveRecord::Base
   def has_right?(r)
 	self.roles.detect {|role| role.rights.detect {|right| right.name == 
 	  r }}  || self.superuser
+  end
+
+private
+  def password_must_be_present
+    errors.add(:password, "Missing password") unless password_hash.present?
   end
 	
 end

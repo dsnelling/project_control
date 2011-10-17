@@ -6,5 +6,6 @@
     <td class='list-cell'><%= service_report.actual_cost %></td>
     <td class='list-cell'><%= service_report.status %></td>
     <td class='list-cell'><%= service_report.report_date %></td>
-    <td class='list-cell'><%= service_report.document %></td>
+    <td class='list-cell'><%= link_to t("download"),
+    service_report.document_url %></td>
 

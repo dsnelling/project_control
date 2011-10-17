@@ -6,10 +6,10 @@ class ProcurementDocTest < ActiveSupport::TestCase
 
 test "invalid with empty attributes" do
     pdoc = ProcurementDoc.new
-	assert !pdoc.valid?
-	assert pdoc.errors.invalid?(:category)
-	assert pdoc.errors.invalid?(:source)
-	assert pdoc.errors.invalid?(:proc_document)
+	assert pdoc.invalid?
+	assert pdoc.errors[:category].any?
+	assert pdoc.errors[:source].any?
+	assert pdoc.errors[:proc_document].any?
   end
 
 =begin

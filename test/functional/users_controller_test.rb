@@ -3,11 +3,11 @@ require 'test_helper'
 class UsersControllerTest < ActionController::TestCase
   fixtures :users
 
-  test "index without user" do
-    get :index
-	assert_redirected_to login_url
-	assert_equal "Failed authentication...", flash[:notice]
-  end
+  #test "index without user" do
+  #  get :index
+  #    assert_redirected_to login_url
+  #    assert_equal "Failed authentication...", flash[:notice]
+  #end
 
   test "index with user" do
     get :index, {}, { :user_id => users(:user_jim).id }
@@ -15,24 +15,22 @@ class UsersControllerTest < ActionController::TestCase
 	assert_template "index"
   end
 
-  test "login" do
-    jim = users(:user_jim)
-	pw = "password_jim"
-	jim.password = pw
-	jim.save
-	post :login, :username => jim.username, :password => pw
-	assert_redirected_to main_menu_path
-	assert_equal jim.id, session[:user_id]
+  test "should_login" do
+    dave = users(:user_dave)
+    pw = "secret"
+    post :login, :username => dave.username, :password => pw
+    assert_redirected_to main_menu_path
+	assert_equal dave.id, session[:user_id]
   end
 
   test "bad password" do
     jim = users(:user_jim)
-	pw = "password_jim"
-	jim.password = pw
-	jim.save
-	post :login, :username => jim.username, :password => "wrong_pw"
-	assert_template "login"
-	assert_equal "Invalid user/password!!", flash[:notice]
+    pw = "password_jim"
+    jim.password = pw
+    jim.save
+    post :login, :username => jim.username, :password => "wrong_pw"
+    assert_template "login"
+    assert_equal "Invalid user/password!!", flash[:notice]
   end
 
   test "change password screen" do
