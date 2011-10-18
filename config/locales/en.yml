@@ -22,6 +22,8 @@ en:
   update_by: "Updated By"
   update_at: "Updated At"
   download: "Download"
+  export: "Export to excel xls"
+  report: "Generate Report"
 
   errors:
     messages:
@@ -79,12 +81,13 @@ en:
     auth_cost: "Auth Cost"
     request: "Request Date"
     auth_date: "Auth Date"
+    actual_cost: "Actual Cost"
     new: "New Service Request"
-    document: "Request Form"
+    document: "Request Document"
     upload: "Upload Form"
 
   service_rep:
-    title:
+    title: "Service Reports"
     show_title: "Service Reports for Request: "
     edit_title: "Edit Service Report"
     new: "New Service Report: "
@@ -93,7 +96,7 @@ en:
     actual_cost: "Actual Cost (RMB)"
     status: "Status"
     date: "Date"
-    document: "Report Form"
+    document: "Report Document"
     upload: "Upload Form"
 
 

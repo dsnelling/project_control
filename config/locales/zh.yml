@@ -22,6 +22,9 @@ zh:
   search: "Search"
   update_by: "最后更新者为"
   update_at: "Updated At"
+  download: "Download"
+  export: "Export to excel(.xls)"
+  report: "Generate Report"
 
   errors:
     messages:
@@ -68,18 +71,21 @@ zh:
   service_r:
     title: "服务申请"
     title_new: "新建服务申请"
+    title_edit: "Edit Service Request"
     title_report: "服务申请报告"
     project: "项目"
     request_ref: "申请编号"
-    desc: "说明"
-    disclipline: "专业"
-    category: "事故类别"
+    desc: "Scope of Service"
+    disclipline: "Requesting Dept"
+    category: "Charge code"
     status: "状态"
     auth_cost: "批准经费"
     request: "申请日期"
     auth_date: "批准日期"
+    actual_cost: "Actual Cost"
     new: "新建服务申请"
-    document: "Document"
+    document: "Request Document"
+    upload: "Upload Form"
 
   service_rep:
     title:
@@ -91,7 +97,7 @@ zh:
     actual_cost: "Actual Cost"
     status: "Status"
     date: "Date"
-    document: "Document"
+    document: "Report Document"
 
   req:
     title: "招标文件"
@@ -113,7 +119,7 @@ zh:
     rpo_date: "RDC Date"
     ros_rpo: "ROS<br />RDC"
     tbt_issue: "TBA技术标评比发布日期"
-    cbt_issue: "CBT商务标评比发布日期"
+    cbt_issue: " CBT商务标评比发布日期"
     tbt_cbt: "TBA技术标评比已发布<br />CBT商务标评比已发布"
     po_q: "合同已签订？"
     com_q: "意见？"

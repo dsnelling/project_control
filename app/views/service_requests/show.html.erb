@@ -67,4 +67,6 @@
 <br />
 <br />
 <%= link_to t('edit'), edit_service_request_path(@service_request) %> |
+<%= link_to t('destroy'), @service_request, :confirm => t('confirm'),
+      :method => :delete %> |
 <%= link_to t('back'), service_requests_path %>

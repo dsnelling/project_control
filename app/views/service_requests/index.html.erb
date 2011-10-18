@@ -6,8 +6,12 @@
 	  options_for_select(@projects, params[:proj_filter]), :onchange =>'this.form.submit()' %>
   <% end %>
 </div>
-<p><%= link_to "Report on Service Requests", report_service_requests_path %></p>
-<p><%= link_to "Export to excel", export_service_requests_path %></p>
+<p><%= link_to t('report'), report_service_requests_path %> |
+ <%= link_to t('export'), export_service_requests_path %></p>
+<p> <%= will_paginate @service_requests,  :previous_label =>
+   t('will_paginate.previous'), :next_label => t('will_paginate.next') %>
+</p>
+
 <table class="item-table">
   <tr valign="top" class="list-header">
     <th class="list-cell"><%= t('service_r.project') %></th>
@@ -19,7 +23,7 @@
     <th class="list-cell"><%= t('service_r.auth_cost') %></th>
     <th class="list-cell"><%= t('service_r.request') %></th>
     <th class="list-cell"><%= t('service_r.auth_date') %></th>
-	<th class="list-cell"><%= t('action') %></th>
+    <th class="list-cell"><%= t('service_r.actual_cost') %></th>
   </tr>
 
 <% @service_requests.each do |service_request| %>
@@ -36,9 +40,9 @@
 	  <%=h number_to_currency(service_request.auth_cost, :unit => ' ') %></td>
     <td class="list-cell"><%=h service_request.request_date.strftime("%Y-%m-%d") if service_request.request_date%></td>
     <td class="list-cell"><%=h service_request.auth_date.strftime("%Y-%m-%d") if service_request.auth_date %>&nbsp;</td>
-    <td class="list-cell">
-      <%= link_to(t('destroy'), service_request, :confirm => t('confirm'),
-	     :method => :delete) %></td>
+    <td class="list-cell-number">
+      <%= number_to_currency(service_request.service_reports.
+        where('status <> "Rejected"').sum(:actual_cost), :unit => ' ') %></td>
   </tr>
 <% end %>
 </table>

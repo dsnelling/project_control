@@ -34,9 +34,9 @@
   = link_to t('edit'),
      edit_service_request_service_report_path(@service_report.service_request,       @service_report)
   |
-  = link_to t('delete'),
+  = link_to t('destroy'),
     service_request_service_report_path(@service_report.service_request),
-    :confirm => 'Are you sure?',
+    :confirm => t('confirm'),
     :method => :delete
   |
   = link_to t('back'), service_request_path(@service_report.service_request)
