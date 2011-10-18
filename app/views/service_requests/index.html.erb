@@ -42,7 +42,7 @@
     <td class="list-cell"><%=h service_request.auth_date.strftime("%Y-%m-%d") if service_request.auth_date %>&nbsp;</td>
     <td class="list-cell-number">
       <%= number_to_currency(service_request.service_reports.
-        where('status <> "Rejected"').sum(:actual_cost), :unit => ' ') %></td>
+        where("status <> 'Rejected'").sum(:actual_cost), :unit => ' ') %></td>
   </tr>
 <% end %>
 </table>
