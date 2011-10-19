@@ -1,6 +1,7 @@
 <h1><%= t('service_r.title') %></h1>
 
 <div class="sr-filter">
+  Filter by Project: 
   <%= form_tag(service_requests_path, :method => :get) do %>
     <%= select_tag :proj_filter,
 	  options_for_select(@projects, params[:proj_filter]), :onchange =>'this.form.submit()' %>
@@ -37,12 +38,12 @@
 	  %></td>
 	<td class="list-cell"><%= service_request.status %></td>
     <td class="list-cell-number">
-	  <%=h number_to_currency(service_request.auth_cost, :unit => ' ') %></td>
+	  <%=h number_to_rmb(service_request.auth_cost) %></td>
     <td class="list-cell"><%=h service_request.request_date.strftime("%Y-%m-%d") if service_request.request_date%></td>
     <td class="list-cell"><%=h service_request.auth_date.strftime("%Y-%m-%d") if service_request.auth_date %>&nbsp;</td>
     <td class="list-cell-number">
-      <%= number_to_currency(service_request.service_reports.
-        where("status <> 'Rejected'").sum(:actual_cost), :unit => ' ') %></td>
+      <%= number_to_rmb(service_request.service_reports.
+        where("status <> 'Rejected'").sum(:actual_cost)) %></td>
   </tr>
 <% end %>
 </table>

@@ -45,7 +45,8 @@ xml.Worksheet 'ss:Name' => 'ServiceRequest' do
       xml.Row do
         for column in ServiceRequest.content_columns do
           xml.Cell do
-            xml.Data service_request.send(column.name), 'ss:Type' => 'String'
+            xml.Data service_request.send(column.name).to_s,
+              'ss:Type' => 'String'
           end
         end
       end

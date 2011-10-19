@@ -12,4 +12,10 @@ module ApplicationHelper
 	    image_tag("attachment.gif")
 	end
   end
+
+  def number_to_rmb(number)
+   #formats number as RMB
+    number_to_currency(number, :unit => '元', :precision=> 0, :format => '%n%u')
+  end
+
 end

@@ -32,7 +32,8 @@
 
   <tr>
     <td class="show-table-label"><%= t 'service_r.auth_cost'%></td>
-    <td class="show-table-data">RMB <%=h @service_request.auth_cost %></td>
+    <td class="show-table-data-number"> <%= number_to_rmb(@service_request.
+    auth_cost) %></td>
   </tr>
 
   <tr>

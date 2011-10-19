@@ -1,6 +1,8 @@
 class ServiceReport < ActiveRecord::Base
   belongs_to :service_request
   mount_uploader :document, ServiceReportUploader
+  validates :actual_cost, :numericality => true
+
 
   REPORT_STATUS_TYPES = [
     ["",               ""],

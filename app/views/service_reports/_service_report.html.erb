@@ -3,9 +3,10 @@
       service_request_service_report_path(service_report.service_request,
       service_report) %></td>
     <td class='list-cell'><%= service_report.description %></td>
-    <td class='list-cell'><%= service_report.actual_cost %></td>
+    <td class='list-cell-number'><%= number_to_rmb(service_report.
+      actual_cost) %></td>
     <td class='list-cell'><%= service_report.status %></td>
     <td class='list-cell'><%= service_report.report_date %></td>
     <td class='list-cell'><%= link_to t("download"),
-    service_report.document_url %></td>
+      service_report.document_url %></td>
 

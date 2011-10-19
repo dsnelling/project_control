@@ -1,16 +1,6 @@
 <%= form_for([@service_request,@service_report],
   :html => {:multipart => true}) do |f| %>
-  <% if @service_report.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@service_report.errors.count, "error") %> prohibited this service_report from being saved:</h2>
-
-      <ul>
-      <% @service_report.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <%= render "shared/error_messages", :target => @service_report %>
 
   <div class="field">
     <%= f.label :report_ref, t('service_rep.ref') %><br />
@@ -41,3 +31,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+<br />

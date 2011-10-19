@@ -4,7 +4,8 @@ class ServiceRequest < ActiveRecord::Base
 
   validates_presence_of :project, :request_ref, :description, :category
   validates_length_of :request_ref, :description, :minimum => 5
-   scope :by_project, lambda {|p| {:conditions => ['project LIKE ?',
+  validates :auth_cost, :numericality => true
+  scope :by_project, lambda {|p| {:conditions => ['project LIKE ?',
     p.to_s + '%'] }}
 
   CATEGORY_TYPES = [

@@ -26,8 +26,8 @@
 <div id="requisition-table">
 
 <p><%= raw(t('req.legend')) %></p>
-<p><%= link_to "Report on Requisitions", report_requisitions_path %></p>
-<p><%= link_to "Export to excel", export_requisitions_path %></p>
+<p><%= link_to "Report on Requisitions", report_requisitions_path %> |
+  <%= link_to t('export'), export_requisitions_path %></p>
 <table class="item_table">
   <tr class="list-header">
     <th class="list-cell"><%= raw(t('req.req_ref')) %></th>

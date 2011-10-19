@@ -93,7 +93,7 @@ en:
     new: "New Service Report: "
     ref: "Report Ref"
     description: "Description"
-    actual_cost: "Actual Cost (RMB)"
+    actual_cost: "Actual Cost"
     status: "Status"
     date: "Date"
     document: "Report Document"
