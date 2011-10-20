@@ -1,7 +1,7 @@
-<div class="comment-box">
+<div class="comment">
   <div class="comment-caption">
-  By <%=h comment.comment_by %> at 
-	   <%= comment.updated_at.strftime("%Y-%m-%d") %>:
+    <%= "#{comment.comment_by} at " +  
+	    "#{comment.updated_at.strftime("%Y-%m-%d")}:" %>
   </div>
   <div class="comment-leftcolumn">
     <%=h comment.comment %>

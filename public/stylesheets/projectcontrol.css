@@ -79,6 +79,17 @@ h1 {
   margin: 20px 20px 20px 20px;
   padding: 10px 10px 10px 10px;
   }
+
+.tagline {
+  margin: 2px 0px 5px 10px;
+  font-style: italic;
+
+  }
+
+.cleardiv {
+  clear: both;
+  height: 1em;
+  }
 /* -- end of overall stuff --- */
 
 /* -- login box -- */
@@ -183,11 +194,17 @@ h1 {
   clear: both;
   /* border: 1px solid #0ff; */
   }
+/* box around all the comments */
+.comment-box {
+  position: static;
+  width: 700px;
+  border: 1px solid black;
+  margin: 0px 0px 0px 30px;
+  }
 
 /* comments partial */
-.comment-box {
+.comment {
   clear: both;
-  /* border: 1px solid silver; */
   margin: 5px 5px 5px 5px;
   }
 
@@ -198,16 +215,15 @@ h1 {
 
 .comment-leftcolumn {
   float: left;
-  width: 40%;
+  width: 550px;
   padding: 0px 0px 0px 30px;
-  /* border: 1px solid #f70; */
+  border-bottom: 1px dotted silver;
   }
 
 .comment-rightcolumn {
-  float: left;
-  width: 30%;
-  /* color: red;
-  border: 1px solid green; */
+  float: right;
+  width: 100px;
+  padding: 0px 10px 0px 0px;
   }
 
 /* for the filter boxes on the requisition index pages */

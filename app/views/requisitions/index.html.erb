@@ -28,6 +28,8 @@
 <p><%= raw(t('req.legend')) %></p>
 <p><%= link_to "Report on Requisitions", report_requisitions_path %> |
   <%= link_to t('export'), export_requisitions_path %></p>
+<%= will_paginate @requisitions, :previous_label => t('will_paginate.previous'),
+   :next_label => t('will_paginate.next') %>
 <table class="item_table">
   <tr class="list-header">
     <th class="list-cell"><%= raw(t('req.req_ref')) %></th>
@@ -65,8 +67,7 @@
 <% end %>
 </table>
 </div>
-<br />
 <%= will_paginate @requisitions, :previous_label => t('will_paginate.previous'),
    :next_label => t('will_paginate.next') %>
-
+<br />
 <%= link_to t('req.new'), new_requisition_path %>

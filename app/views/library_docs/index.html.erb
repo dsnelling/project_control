@@ -1,4 +1,7 @@
 <h1><%= t 'library.index_title' %></h1>
+<div class="tagline">
+  Collection of forms, procedures, templates, etc useful for project execution
+  </div>
 
 <table class="item_table">
   <tr class="list-header">
@@ -9,7 +12,6 @@
 	<th class="list-cell"><%= t'update_at' %></th>
 	<th class="list-cell"><%= t'library.document' %></th>
   </tr>
-
 <% @library_docs.each do |library_doc| %>
   <tr>
     <td class="list-cell"><%= library_doc.reference %></td>
@@ -24,6 +26,11 @@
   </tr>
 <% end %>
 </table>
+<div class="paginate">
+  <%= will_paginate @library_doc,  :previous_label =>
+    t('will_paginate.previous'), :next_label => t('will_paginate.next') %>
+</div>
+
 
 <br />
 

@@ -15,8 +15,7 @@
     %td.show-table-label
       = "#{t('service_rep.actual_cost')}:"
     %td.show-table-data
-      RMB
-      = @service_report.actual_cost
+      = number_to_rmb(@service_report.actual_cost)
   %tr
     %td.show-table-label
       = "#{t('service_rep.status')}:"
@@ -28,7 +27,8 @@
   %tr
     %td.show-table-label
       = "#{t('service_rep.document')}:"
-    %td.show-table-date= link_to(display_icon(@service_report.document_url),@service_report.document_url)
+    %td.show-table-date= link_to(display_icon(@service_report.document_url),
+      @service_report.document_url)
 
 %p
   = link_to t('edit'),

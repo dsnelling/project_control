@@ -68,11 +68,15 @@
     <td class="show-table-data"><%=h @contract.update_by %></td>
   </tr>
 </table>
+<br />
 <% if @contract.expedite_comment %>
-  <p>
-    Expeditors comments:<br />
-    <%=h @contract.expedite_comment %>
-  </p>
+  <div class="comment-box">
+    <div class="comment">
+      <div class="comment-caption">Expeditors comments:</div>
+      <div class="comment-leftcolumn"><%=h @contract.expedite_comment %></div>
+    </div>
+    <div class="cleardiv"></div>
+  </div>
 <% end %>
 <br />
 <%= link_to t('contr.vdocs'),contract_vdocs_requirements_path(@contract) %> |

@@ -34,7 +34,7 @@
     %td.show-table-label= "#{t('req.budget')}:"
     %td.show-table-data
       - if @view_costs
-        = number_to_currency(@requisition.budget_rmb, :unit => "RMB")
+        = number_to_rmb(@requisition.budget_rmb)
       &nbsp;
     %td.show-table-label= "#{t('update_by')}:"
     %td.show-table-data= @requisition.update_by
@@ -47,7 +47,7 @@
     :method => :delete
   |
   = link_to t('req.back'), requisitions_path
-%br
+
   - unless @requisition.contracts.empty?
     <!-- contracts for this requisition -->
     = render :partial => "/contracts/contract_header"
@@ -77,8 +77,10 @@
 - unless @requisition.req_comments.empty?
   <!-- comments against this requisition -->
   %h3= t('req.comment_header')
-  = render :partial => "/req_comments/comment", 
-       :collection => @requisition.req_comments
+  .comment-box
+    = render :partial => "/req_comments/comment", 
+        :collection => @requisition.req_comments
+    .cleardiv
 
 #form-navigation
   = link_to t('req.new_comment'),
