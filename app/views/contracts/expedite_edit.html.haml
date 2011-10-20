@@ -1,0 +1,52 @@
+%h1= t('contr.edit_title')
+
+= render "shared/error_messages", :target => @contract
+%table
+  %tr
+    %td= t('contr.commodity')
+    %td= @contract.commodity
+  %tr
+    %td= t('contr.ref')
+    %td= @contract.reference
+  %tr
+    %td=  t('contr.com_date')
+    %td= @contract.commence_date
+  %tr
+    %td= t('contr.supplier')
+    %td= @contract.supplier
+  %tr
+    %td= t('contr.d_terms')
+    %td= @contract.delivery_terms
+  %tr
+    %td=  t('contr.d_date_c')
+    %td= @contract.delivery_date_contract
+  = form_for(@contract, :url => {:action => :expedite_update}) do |f|
+    %tr
+      %td= f.label :delivery_date_forecast, t('contr.d_date_f')
+      %td= f.text_field :delivery_date_forecast
+    %tr
+      %td= f.label :expedite_contract, t('contr.ex_contact')
+      %td= f.text_field :expedite_contract
+    %tr
+      %td= f.label :expedite_email, t('contr.ex_email')
+      %td= f.text_field :expedite_email
+    %tr
+      %td= f.label :expedite_phone, t('contr.ex_phone')
+      %td= f.text_field :expedite_phone
+    %tr
+      %td= f.label :expedite_last_contact, t('contr.ex_date')
+      %td= f.text_field :expedite_last_contact
+    %tr
+      %td= f.label :expedite_status, t('contr.ex_status')
+      %td= f.select :expedite_status, Contract::EXPEDITE_STATUS_TYPES
+    %tr
+      %td Expeditor comments:
+      %td= f.text_area :expedite_comment, :rows => 5
+    %tr
+      %td &nbsp;
+      %td= f.submit t('update')
+%br\
+= link_to t('show'),
+   expedite_show_contract_path(@contract)
+|
+= link_to t('contr.back_c'), expedite_contracts_path

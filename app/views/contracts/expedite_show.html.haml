@@ -1,0 +1,82 @@
+%h2= t('contr.show_title')
+%table.show-table
+  %tr
+    %td.show-table-label
+      = t('contr.ref')
+      \:
+    %td.show-table-data= @contract.reference
+    %td.show-table-label
+      = t('contr.commodity')
+      \:
+    %td.show-table-data= @contract.commodity
+  %tr
+    %td.show-table-label
+      = t('contr.com_date')
+      \:
+    %td.show-table-data= @contract.commence_date
+    %td.show-table-label
+      = t('contr.supplier')
+      \:
+    %td.show-table-data= @contract.supplier
+  %tr
+    %td.show-table-label
+      = t('contr.d_terms')
+      \:
+    %td.show-table-data= @contract.delivery_terms
+    %td.show-table-label
+      = t('contr.d_date_c')
+      \:
+    %td.show-table-data= @contract.delivery_date_contract
+  %tr
+    %td.show-table-label &nbsp;
+    %td.show-table-label &nbsp;
+    %td.show-table-label
+      = t('contr.d_date_f')
+      \:
+    %td.show-table-data= @contract.delivery_date_forecast
+  %tr
+    %td.show-table-label
+      = t('contr.ex_status')
+      \:
+    %td.show-table-data= @contract.expedite_status
+    %td.show-table-label
+      = t('contr.ex_contact')
+      \:
+    %td.show-table-data= @contract.expedite_contract
+  %tr
+    %td.show-table-label
+      = t('contr.ex_date')
+      \:
+    %td.show-table-data= @contract.expedite_last_contact
+    %td.show-table-label
+      = t('contr.ex_email')
+      \:
+    %td.show-table-data= @contract.expedite_email
+  %tr
+    %td.show-table-label &nbsp;
+    %td.show-table-label &nbsp;
+    %td.show-table-label
+      = t('contr.ex_phone')
+      \:
+    %td.show-table-data= @contract.expedite_phone
+  %tr
+    %td.show-table-label{:colspan => "2"}
+      = t('update_by')
+      \:
+    %td.show-table-data{:colspan => "2"}
+      =@contract.update_by
+
+%br/
+- if @contract.expedite_comment
+  .comment-box
+    .comment
+      .comment-caption Expeditors comments:
+      .comment-leftcolumn= @contract.expedite_comment
+      .cleardiv
+
+<br />
+
+= link_to t('edit'), expedite_edit_contract_path(@contract)
+|
+= link_to t('contr.back_c'), expedite_contracts_path
+

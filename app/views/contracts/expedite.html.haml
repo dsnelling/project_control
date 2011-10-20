@@ -1,0 +1,35 @@
+%h1= t('contr.expedite')
+.contracts-filter
+  %p Search on contract number:
+  = form_tag(contracts_path, :method => :get) do
+    = text_field_tag :contr_filter, session[:contr_filter] #,:onchange => 'this.form.submit()'}
+    = submit_tag t("search")
+
+%table.item_table
+  %tr.list-header
+    %th.list-cell= t('contr.ref')
+    %th.list-cell= t('contr.commodity')
+    %th.list-cell= t('contr.supplier')
+    %th.list-cell= t('contr.d_terms')
+    %th.list-cell= t('contr.d_date_c')
+    %th.list-cell= t('contr.d_date_f')
+    %th.list-cell= t('contr.ex_date')
+    %th.list-cell= t('contr.ex_status')
+    %th.list-cell= t('contr.ex_comment')
+
+  - @contracts.each do |contract|
+    %tr{:valign => "top", :class => cycle('line-list-odd', 'line-list-even')}
+      %td.list-cell= link_to(contract.reference,
+        expedite_show_contract_path(contract))
+      %td.list-cell= contract.commodity
+      %td.list-cell= contract.supplier
+      %td.list-cell= contract.delivery_terms
+      %td.list-cell= contract.delivery_date_contract
+      %td.list-cell= contract.delivery_date_forecast
+      %td.list-cell= contract.expedite_last_contact
+      %td.list-cell= contract.expedite_status
+      %td.list-cell= truncate(contract.expedite_comment, :length => 40)
+
+= will_paginate @contracts, :previous_label => t('will_paginate.previous'),
+  :next_label => t('will_paginate.next')
+
