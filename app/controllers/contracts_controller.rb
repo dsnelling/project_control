@@ -93,10 +93,59 @@ class ContractsController < ApplicationController
     end
   end
 
-  # show_vdocs_contract;  GET /contracts/:id/show_vdocs(.format)
-  #def show_vdocs
-  #  @contract = Contract.find(params[:id])
-  #end
+#----- nonstandard actions
+  # GET /contracts/expedite(.format) 
+  def expedite
+      @contracts = Contract.where("expedite_status <> 'released'").
+        where("reference like ?","#{params[:contr_filter]}%").
+        where("requisitions.project = ?",session[:project]).
+        joins("inner join requisitions on contracts.requisition_id = " +
+          "requisitions.id").  
+        order("delivery_date_contract").
+        paginate(:page => params[:page])
+
+    respond_to do |format|
+      format.html
+      format.xml  { render :xml => @contracts }
+    end
+  end
+
+  # GET /contracts/:id/expedite_show(.:format)
+  def expedite_show
+    @contract = Contract.find(params[:id])
+	#@requisition = @contract.requisition
+	user = User.find(session[:user_id])
+	@view_costs = user.has_right?("View Costs")
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @contract }
+    end
+  end
+
+  # GET /contracts/:id/expedite_edit(.:format)
+  def expedite_edit
+    @contract = Contract.find(params[:id])
+  end
+
+  # PUT /contracts/:id/expedite_update(.:format)
+  def expedite_update
+    @contract = Contract.find(params[:id])
+    @contract.update_by = session[:username]
+
+    respond_to do |format|
+      if @contract.update_attributes(params[:contract])
+        flash[:notice] = t 'flash.contr_update'
+        format.html { redirect_to expedite_show_contract_url(@contract) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @contract.errors,
+		  :status => :unprocessable_entity }
+      end
+    end
+  end
+  
 
 private
   def find_requisition

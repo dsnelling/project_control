@@ -16,6 +16,10 @@ ProjectControl::Application.routes.draw do
     resources :vdocs_requirements do
       resources :vendor_docs
     end
+    get :expedite, :on => :collection
+    get :expedite_show, :on => :member
+    get :expedite_edit, :on => :member
+    put :expedite_update, :on => :member
   end
   resources :projects
   resources :service_requests do

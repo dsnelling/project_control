@@ -1,14 +1,15 @@
 <div id="header_menu">
-  <table width="100%"><tr>
-    <td><%= link_to t('main_menu.home'), main_menu_path %></td>
-	<td><%= link_to t('main_menu.menu_reqs'), requisitions_path %></td>
-        <td><%= link_to t('main_menu.menu_contr'), contracts_path %></td>
-	<td><%= link_to t('main_menu.menu_sr'), service_requests_path %></td>
-	<td><%= link_to t('main_menu.safety_stats'),site_hours_path %></td>
-	<td><%= link_to t('main_menu.library'), library_docs_path %></td>
-	<td><%= link_to t('main_menu.user_admin'), users_path %></td>
-	<td><%= link_to t('logout'), :logout %>
-  </tr></table>
+  <ul>
+    <li><%= link_to t('main_menu.home'), main_menu_path %></li>
+    <li><%= link_to t('main_menu.menu_reqs'), requisitions_path %></li>
+    <li><%= link_to t('main_menu.menu_contr'), contracts_path %></li>
+    <li><%= link_to t('main_menu.expedite'), expedite_contracts_path %></li>
+    <li><%= link_to t('main_menu.menu_sr'), service_requests_path %></li>
+    <li><%= link_to t('main_menu.safety_stats'),site_hours_path %></li>
+    <li><%= link_to t('main_menu.library'), library_docs_path %></li>
+    <li><%= link_to t('main_menu.user_admin'), users_path %></li>
+    <li><%= link_to t('logout'), :logout %></li>
+  </ul>
 </div>
 
 

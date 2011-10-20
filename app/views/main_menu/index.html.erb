@@ -1,30 +1,23 @@
 <h1><%= t 'main_menu.title' %></h1>
-<h2><%= t 'main_menu.subtitle' %></h2>
-
-<% if !session[:user_id] -%>
-  <%= render :partial => "/users/login" %>
-<% else %>
-<h3><%= t 'main_menu.set_project' %></h3>
+<div id="leftnav">
+  <h3><%= t 'main_menu.set_project' %></h3>
   <%= form_tag set_project_path do %>
-    <%= select_tag(:project,
+    <p>
+      <%= select_tag(:project,
 	      options_for_select(@projects, session[:project]),
 		  :onchange => 'this.form.submit()') %>
+    </p>
+    <p>
     <%= select_tag :locale, options_for_select(LANGUAGES,I18n.locale),
 	   :onchange => 'this.form.submit()' %>
+    </p>
+    <p>
 	<%= submit_tag "Set" %>
+    </p>
   <% end %>
+</div>
 
-<div id="main-menu">
-  <h3><%= t 'main_menu.menu_title_1' %></h3>
-  <ul>
-    <li><%= link_to t('main_menu.menu_reqs'), requisitions_path %></li>
-    <li><%= link_to t('main_menu.menu_contr'), contracts_path %></li>
-    <li><%= link_to t('main_menu.menu_sr'), service_requests_path %></li>
-    <li><%= link_to t('main_menu.safety_stats'), site_hours_path %></li>
-    <li><%= link_to t('main_menu.incidents'), incidents_path %></li>
-    <li><%= link_to t('main_menu.library'), library_docs_path %></li>
-    <li><%= link_to t('logout'), "/logout" %></li>
-  </ul>
+<div id="right-menu">
   <h3><%= t 'main_menu.menu_title_2' %></h3>
   <ul>
     <li><%= link_to t('main_menu.proj_numbers'), projects_path %></li>
@@ -34,6 +27,18 @@
     <li><%= link_to t('main_menu.about'), about_path %></li>
   </ul>
 </div>
-<% end %>
+<div id="main-menu">
+  <h3><%= t 'main_menu.menu_title_1' %></h3>
+  <ul>
+    <li><%= link_to t('main_menu.menu_reqs'), requisitions_path %></li>
+    <li><%= link_to t('main_menu.menu_contr'), contracts_path %></li>
+    <li><%= link_to t('main_menu.expedite'), expedite_contracts_path %></li>
+    <li><%= link_to t('main_menu.menu_sr'), service_requests_path %></li>
+    <li><%= link_to t('main_menu.safety_stats'), site_hours_path %></li>
+    <li><%= link_to t('main_menu.incidents'), incidents_path %></li>
+    <li><%= link_to t('main_menu.library'), library_docs_path %></li>
+    <li><%= link_to t('logout'), "/logout" %></li>
+  </ul>
+</div>
 
 <br /><br />

@@ -61,6 +61,25 @@ h1 {
   margin: 0px 0px 5px 0px; 
   }
 
+#header_menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  }
+#header_menu ul li {
+  display: inline;
+  }
+
+#header_menu ul li a {
+  padding: .2em 1em;
+  }
+
+#header_menu ul li a:hover {
+  color: #fff;
+  background-color: #88ff88; 
+  }
+
 #user_project_banner {
   float: right;
   text-align: right;
@@ -83,7 +102,6 @@ h1 {
 .tagline {
   margin: 2px 0px 5px 10px;
   font-style: italic;
-
   }
 
 .cleardiv {
@@ -102,13 +120,38 @@ h1 {
   /* border: 1px solid red; */
   }
 
+#leftnav {
+ float: left;
+ width: 260px;
+ margin: 0px;
+ padding: 15px 0px 0px 5px;
+ }
 
 /* -- for menu block in the main menu -- */
 #main-menu {
   font-size: 18px;
   line-height: 130%;
-  padding: 20px 0px 10px 100px;
-  /* border: 1px solid cyan; */
+  margin-left: 300px;
+  padding: 5px;
+  }
+
+#main-menu ul li a:hover {
+  background-color: #ccffcc;
+  color: #000;
+  }
+
+#right-menu {
+  font-size: 18px;
+  line-height: 130%;
+  float: right;
+  width: 250px;
+  margin: 0px
+  padding: 1em;
+  }
+
+#right-menu ul li a:hover {
+  background-color: #ccffcc;
+  color: #000;
   }
 
 /* for form-looking stuff */

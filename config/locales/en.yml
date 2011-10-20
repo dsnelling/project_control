@@ -1,4 +1,5 @@
 # Localization file for English. 
+#
 
 en:
   hello: "Hello world"
@@ -57,9 +58,10 @@ en:
     set_project: "Set Project and Language:"
     menu_title_1: "User Actions:"
     menu_title_2: "Administrative Actions:"
-    menu_reqs: "Requisitions and Contracts"
+    menu_reqs: "Requisitions"
     menu_contr: "Contracts"
     menu_sr: "Service Requests"
+    expedite: "Expediting"
     safety_stats: "Safety Statistics"
     incidents: "Incidents and Reports"
     library: "Document Library"
@@ -98,7 +100,6 @@ en:
     date: "Date"
     document: "Report Document"
     upload: "Upload Form"
-
 
   req:
     title: "Requisitions"
@@ -160,6 +161,8 @@ en:
     ex_comment: "Expedite Comment"
     vdocs: "Show Supplier Documents"
     back: "Back to this Requisition"
+    expedite: "Contracts for Expediting"
+    back_c: "Back to Contracts List"
 
   req_com:
     edit_title: "Editing Comment"

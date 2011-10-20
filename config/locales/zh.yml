@@ -61,6 +61,7 @@ zh:
     menu_reqs: "请购文件和采购合同"
     menu_contr: "Contracts"
     menu_sr: "服务申请"
+    expedite: "Expediting"
     safety_stats: "安全统计"
     incidents: "事故和报告"
     library: "Library"
@@ -98,6 +99,7 @@ zh:
     status: "Status"
     date: "Date"
     document: "Report Document"
+    upload: "Upload Form"
 
   req:
     title: "招标文件"
@@ -159,6 +161,8 @@ zh:
     ex_comment: "催交意见"
     vdocs: "Show Supplier Documents"
     back: "返回到该请购文件"
+    expedite: "Contracts for Expediting"
+    back_c: "Back to Contracts List"
 
   req_com:
     edit_title: "编辑这条意见"
