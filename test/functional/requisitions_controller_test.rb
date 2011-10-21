@@ -1,6 +1,18 @@
 require 'test_helper'
 
 class RequisitionsControllerTest < ActionController::TestCase
+
+  setup do
+    @req1 = {
+      :req_num => 'Z44',
+      :project => 'knitting',
+      :commodity => 'wool',
+      :scope => 'JV',
+      :status => 'PO'
+      }
+    p @req1.req_num
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -13,8 +25,9 @@ class RequisitionsControllerTest < ActionController::TestCase
   end
 
   test "should create requisition" do
+    p "req_ref: +#{@req1.req_num}+, +#{@req1.project}+"
     assert_difference('Requisition.count') do
-      post :create, :requisition => { }
+      post :create, :requisition => @req1
     end
 
     assert_redirected_to requisition_path(assigns(:requisition))

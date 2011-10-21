@@ -1,6 +1,6 @@
 <h1><%= t('service_r.title_edit') %></h1>
 
-<%= form_for(@service_request) do |f| %>
+<%= form_for(@service_request, :html => {:multipart => true}) do |f| %>
   <%= render "shared/error_messages", :target => @service_request %>
 
   <p>

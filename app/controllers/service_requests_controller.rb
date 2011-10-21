@@ -74,8 +74,8 @@ class ServiceRequestsController < ApplicationController
     @service_request = ServiceRequest.new(params[:service_request])
 
     respond_to do |format|
-	  @service_request.auth_date = nil if \
-          !(@service_request.status.upcase == "APPROVED") 
+	  @service_request.auth_date = nil unless \
+            (@service_request.status.upcase == "APPROVED") 
       if @service_request.save
         flash[:notice] = t('flash.sr_create')
         format.html { redirect_to(@service_request) }

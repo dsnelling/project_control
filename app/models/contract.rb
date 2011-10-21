@@ -16,7 +16,9 @@ class Contract < ActiveRecord::Base
 	["Supplier Late","late"],
 	["Late, but under control","Late-under control"],
 	["late, not in control","not in control"],
-	["Released","released"]
+	["Released","released"],
+        ["Service; in progress","service in progress"],
+        ["Service; complete","service complete"]
   ]	
   CURRENCY_TYPES = [
     ["",""],

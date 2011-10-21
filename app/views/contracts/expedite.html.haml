@@ -20,7 +20,7 @@
   - @contracts.each do |contract|
     %tr{:valign => "top", :class => cycle('line-list-odd', 'line-list-even')}
       %td.list-cell= link_to(contract.reference,
-        expedite_show_contract_path(contract))
+        expedite_edit_contract_path(contract))
       %td.list-cell= contract.commodity
       %td.list-cell= contract.supplier
       %td.list-cell= contract.delivery_terms

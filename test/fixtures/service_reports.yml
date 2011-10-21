@@ -1,11 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
+# removed 'document' field as appears to mess with carrierwave, and cause
+# test to fail if not online
+
 one:
   report_ref: 0012
   description: MyString
   actual_cost: 1
   status: MyString
-  document: MyString
   report_date: 2011-10-17
 
 two:
@@ -13,5 +15,4 @@ two:
   description: MyString
   actual_cost: 122
   status: MyString
-  document: MyString
   report_date: 2011-10-17

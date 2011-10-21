@@ -9,12 +9,14 @@ class ServiceRequestsControllerTest < ActionController::TestCase
       :request_ref => 'HYCO-977',
       :description => 'jolly fun',
       :category => 'A21', # needs to be a valid category
+      :auth_cost => '1278.2',
       :status => 'sexy'
       }
       @update2 = {
       :project => 'SHOPPING',
       :request_ref => 'HYCO-9e7',
       :description => 'even more fun',
+      :auth_cost => '0',
       :category => 'A53', # needs to be a valid category
       :status => 'sexier'
       }
@@ -35,6 +37,7 @@ class ServiceRequestsControllerTest < ActionController::TestCase
   test "should create service_request" do
     assert_difference('ServiceRequest.count') do
       post :create, :service_request => @update1
+      #p "Flash = +#{flash[:notice]}+"
     end
 
     assert_redirected_to service_request_path(assigns(:service_request))
