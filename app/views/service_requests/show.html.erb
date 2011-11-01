@@ -62,7 +62,8 @@
   <%= render :partial => "service_reports/service_report_header" %>
   <% unless @service_request.service_reports.empty? %>
     <%= render :partial => "service_reports/service_report",
-      :collection => @service_request.service_reports %>
+      :collection => @service_request.service_reports.
+        sort_by {|r| r.report_ref} %>
   <% end %>
 </table>
 <%= link_to t('service_rep.new'),
