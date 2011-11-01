@@ -38,6 +38,9 @@ xml.Worksheet 'ss:Name' => 'ServiceRequest' do
           xml.Data column.human_name, 'ss:Type' => 'String'
         end
       end
+      xml.Cell 'ss:StyleID' => 's23' do
+        xml.Data 'Actual Cost', 'ss:Type' => 'String'
+      end
     end
 
     #rows
@@ -48,6 +51,11 @@ xml.Worksheet 'ss:Name' => 'ServiceRequest' do
             xml.Data service_request.send(column.name).to_s,
               'ss:Type' => 'String'
           end
+        end
+        xml.Cell do
+          xml.Data service_request.service_reports.
+            where("status <> 'Rejected'").sum(:actual_cost).to_s,
+              'ss:Type' => 'String'
         end
       end
     end

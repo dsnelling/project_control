@@ -74,6 +74,7 @@ en:
     title_new: "New Service Request"
     title_edit: "Edit Service Request"
     title_report: "Service Requests Report"
+    new: "Create Service Request"
     project: "Project"
     request_ref: "Request Ref"
     desc: "Scope of Service"
@@ -87,6 +88,7 @@ en:
     new: "New Service Request"
     document: "Request Document"
     upload: "Upload Form"
+    back: "Back to Service Request List"
 
   service_rep:
     title: "Service Reports"

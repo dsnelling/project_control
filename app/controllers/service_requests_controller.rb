@@ -11,7 +11,9 @@ class ServiceRequestsController < ApplicationController
   # GET /service_requests
   # GET /service_requests.xml
   def index
-    @service_requests = ServiceRequest.by_project(params[:proj_filter]).\
+    # keep filter
+    session[:proj_filter] = params[:proj_filter] if params[:proj_filter]
+    @service_requests = ServiceRequest.by_project(session[:proj_filter]).\
 	  order("project, request_ref").paginate(:page => params[:page])
 	@projects = [""] + Project.all.map {|p| p.name }
 

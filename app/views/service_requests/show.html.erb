@@ -54,6 +54,10 @@
           @service_request.service_request_doc_url) %></td>
     </tr>
 </table>
+<%= link_to t('edit'), edit_service_request_path(@service_request) %> |
+<%= link_to t('destroy'), @service_request, :confirm => t('confirm'),
+      :method => :delete %> |
+<%= link_to t('service_r.new'), new_service_request_path %>
 
   <%= render :partial => "service_reports/service_report_header" %>
   <% unless @service_request.service_reports.empty? %>
@@ -61,13 +65,9 @@
       :collection => @service_request.service_reports %>
   <% end %>
 </table>
-<br />
 <%= link_to t('service_rep.new'),
   new_service_request_service_report_path(@service_request) %>
 
 <br />
 <br />
-<%= link_to t('edit'), edit_service_request_path(@service_request) %> |
-<%= link_to t('destroy'), @service_request, :confirm => t('confirm'),
-      :method => :delete %> |
-<%= link_to t('back'), service_requests_path %>
+<%= link_to t('service_r.back'), service_requests_path %>

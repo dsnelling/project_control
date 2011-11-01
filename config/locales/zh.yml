@@ -74,6 +74,7 @@ zh:
     title_new: "新建服务申请"
     title_edit: "Edit Service Request"
     title_report: "服务申请报告"
+    new: "Create Service Request"
     project: "项目"
     request_ref: "申请编号"
     desc: "Scope of Service"
@@ -87,6 +88,7 @@ zh:
     new: "新建服务申请"
     document: "Request Document"
     upload: "Upload Form"
+    back: "Back to Service Request List"
 
   service_rep:
     title:

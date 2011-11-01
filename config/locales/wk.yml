@@ -68,6 +68,8 @@ wk:
     title: "Se2#$@4ce Re34j2ts"
     title_new: "N!2 Sg@#!# Re!$%st"
     title_report: "S5@66ce R%#5ts Re&#%t"
+    title_edit: "E@^t S@r^1ce R@qu@5t"
+    new: "Cr$!%e Se%@#$e Req#%st"
     project: "Pro^#@t"
     request_ref: "Requ5#%t R&f"
     desc: "Des%@534t25n"
@@ -79,6 +81,8 @@ wk:
     auth_date: "A$#h D##e"
     new: "Create New Se$#!$ice Re!#$est"
     document: "Document"
+    upload: "U7l0@d"
+    back: "B@ck to S#er*5e R%#92 L15t"
 
   service_rep:
     title:

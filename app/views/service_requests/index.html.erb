@@ -4,7 +4,7 @@
   Filter by Project: 
   <%= form_tag(service_requests_path, :method => :get) do %>
     <%= select_tag :proj_filter,
-	  options_for_select(@projects, params[:proj_filter]), :onchange =>'this.form.submit()' %>
+	  options_for_select(@projects, session[:proj_filter]), :onchange =>'this.form.submit()' %>
   <% end %>
 </div>
 <p><%= link_to t('report'), report_service_requests_path %> |

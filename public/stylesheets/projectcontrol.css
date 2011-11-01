@@ -93,6 +93,10 @@ h1 {
   /* border: 2px solid #f0f; */
   }
 
+#top {
+  padding: 2px;
+  }
+
 #about {
   border: 1px solid blue;
   margin: 20px 20px 20px 20px;
@@ -106,7 +110,8 @@ h1 {
 
 .cleardiv {
   clear: both;
-  height: 1em;
+  height: 1px;
+  /* background-color: #ace; */
   }
 /* -- end of overall stuff --- */
 

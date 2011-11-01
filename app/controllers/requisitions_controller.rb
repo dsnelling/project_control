@@ -19,9 +19,9 @@ class RequisitionsController < ApplicationController
   #
   def index
     #keep filter for next time
-	session[:req_filter] = params[:req_filter] if params[:req_filter]
-	session[:scope_filter] = params[:scope_filter] if params[:scope_filter]
-	session[:status_filter] = params[:status_filter] if params[:status_filter]
+    session[:req_filter] = params[:req_filter] if params[:req_filter]
+    session[:scope_filter] = params[:scope_filter] if params[:scope_filter]
+    session[:status_filter] = params[:status_filter] if params[:status_filter]
 
     #uses named scopes chained together to implement filter
    	@requisitions = Requisition.by_req(session[:req_filter]).\
