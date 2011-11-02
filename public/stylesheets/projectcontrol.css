@@ -90,6 +90,9 @@ h1 {
 /* overall div to enclose page specific stuff */
 #content {
   clear: both;
+  width: 98%;
+  margin: 0 auto;
+  padding: 0;
   /* border: 2px solid #f0f; */
   }
 
@@ -137,6 +140,7 @@ h1 {
   font-size: 18px;
   line-height: 130%;
   margin-left: 300px;
+  margin-right: 300px;
   padding: 5px;
   }
 
@@ -146,7 +150,7 @@ h1 {
   }
 
 #right-menu {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 130%;
   float: right;
   width: 250px;
@@ -431,4 +435,8 @@ a:hover { color: #fff; background-color:#000; }
 
 #vendor_doc_document {
   display: none;
+  }
+
+.sr_filter form .sr_filter form div {
+  display: inline;
   }
