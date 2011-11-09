@@ -1,5 +1,7 @@
 <h1><%= t 'req.title' %></h1>
+<div class="filter-heading">Filter by.....</div>
 <div class="requisition-filter">
+  Req No:
   <%= form_tag(requisitions_path, :method => :get) do %>
     <%= select_tag :req_filter, 
 	    options_for_select(Requisition::REQ_TYPES, session[:req_filter]),
@@ -8,6 +10,7 @@
   <% end %>
 </div>
 <div class="requisition-filter">
+  Scope:
   <%= form_tag(requisitions_path, :method => :get) do %>
     <%= select_tag :scope_filter, 
 	    options_for_select(Requisition::SCOPE_TYPES, session[:scope_filter]),
@@ -16,6 +19,7 @@
   <% end %>
 </div>
 <div class="requisition-filter">
+  Status:
   <%= form_tag(requisitions_path, :method => :get) do %>
     <%= select_tag :status_filter, 
 	    options_for_select(Requisition::STATUS_TYPES, session[:status_filter]),
@@ -24,8 +28,8 @@
   <% end %>
 </div>
 <div id="requisition-table">
-
-<p><%= raw(t('req.legend')) %></p>
+<div class="cleardiv"></div>
+<p style="float: right"><%= raw(t('req.legend')) %></p>
 <p><%= link_to "Report on Requisitions", report_requisitions_path %> |
   <%= link_to t('export'), export_requisitions_path %></p>
 <%= will_paginate @requisitions, :previous_label => t('will_paginate.previous'),

@@ -1,6 +1,6 @@
 <h1><%= t('service_r.title') %></h1>
 
-<div class="sr-filter">
+<div class="filter">
   Filter by Project: 
   <%= form_tag(service_requests_path, :method => :get) do %>
     <%= select_tag :proj_filter,

@@ -13,10 +13,12 @@ img {
   border:0;
   display:block;}
 
+/*
 div {
   padding: 2px;
   width: 100%;
   }
+*/
 
 em {
   font-weight: bold;
@@ -281,10 +283,21 @@ h1 {
 /* for the filter boxes on the requisition index pages */
 .requisition-filter {
   float: left;
-  width: 300px;
+  width: 30%;
   padding: 0px 0px 10px 0px;
   /*border: 1px solid green;
   background-color: yellow; */
+  }
+
+.requisition-filter form {
+  display: inline;
+}
+
+.filter-heading {
+  font-size: 15px;
+  font-style: italic;
+  /* font-weight: bold; */
+  margin: 10px 0px 5px 0px;
   }
 
 .requisition-table {
@@ -437,6 +450,13 @@ a:hover { color: #fff; background-color:#000; }
   display: none;
   }
 
-.sr_filter form .sr_filter form div {
+/*
+.sr-filter {
+  border: 1px solid black;
+  }
+
+
+.sr-filter form {
   display: inline;
   }
+*/
