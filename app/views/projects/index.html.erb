@@ -1,20 +1,24 @@
 <h1>Listing projects</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Inactive</th>
+<div class="tagline">
+  Set the master list of valid projects
+</div>
+<table class="item_table">
+  <tr class="list-header">
+    <th class="list-cell">Name</th>
+    <th class="list-cell">Description</th>
+    <th class="list-cell">Inactive?</th>
+    <th class="list-cell">Action</th>
   </tr>
 
 <% @projects.each do |project| %>
   <tr>
-    <td><%=h project.name %></td>
-    <td><%=h project.description %></td>
-    <td><%=h project.inactive %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="list-cell"><strong><%=h project.name %></strong></td>
+    <td class="list-cell"><%=h project.description %></td>
+    <td class="list-cell"><%=h project.inactive %></td>
+    <td class="list-cell"><%= link_to 'Show', project %> |
+      <%= link_to 'Edit', edit_project_path(project) %> |
+      <%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

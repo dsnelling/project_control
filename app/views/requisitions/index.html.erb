@@ -34,6 +34,7 @@
   <%= link_to t('export'), export_requisitions_path %></p>
 <%= will_paginate @requisitions, :previous_label => t('will_paginate.previous'),
    :next_label => t('will_paginate.next') %>
+<div class="cleardiv"></div>
 <table class="item_table">
   <tr class="list-header">
     <th class="list-cell"><%= raw(t('req.req_ref')) %></th>

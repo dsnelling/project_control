@@ -29,7 +29,7 @@
   %br/
   %p Duncan
 
-  %p this version 09-Nov-2011
+  %p= File.read("#{Rails.root}/VERSION-FILE")
 
 = link_to "Back", :action => "index"
 
